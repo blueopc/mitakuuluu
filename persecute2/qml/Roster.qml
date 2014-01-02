@@ -58,8 +58,6 @@ Page {
         onContactChanged: {
             if (data.jid == pendingGroup) {
                 pendingGroup = ""
-                newGroup.creating = false
-                newGroup.accept()
                 pageStack.push(groupPage)
                 groupPage.loadContact(data)
             }
@@ -423,48 +421,24 @@ Page {
     Dialog {
         id: newGroup
         allowedOrientations: Orientation.Portrait
-        property bool creating: false
-        canAccept: false//groupTitle.text.trim().length > 0
+        canAccept: groupTitle.text.trim().length > 0
 
         onStatusChanged: {
             if (status == DialogStatus.Opened) {
+                groupTitle.text = ""
                 groupTitle.forceActiveFocus()
             }
         }
 
-        onDone: {
-            groupTitle.focus = false
-            listView.forceActiveFocus()
-            groupTitle.text = ""
-        }
-
         onAccepted: {
-            if (creatingTimeout.running)
-                creatingTimeout.stop()
-        }
-
-        Timer {
-            id: creatingTimeout
-            repeat: false
-            triggeredOnStart: false
-            interval: 20000
-            onTriggered: {
-                groupTitle.text = ""
-                newGroup.reject()
-            }
+            groupTitle.deselect()
+            whatsapp.createGroup(groupTitle.text.trim())
+            groupTitle.focus = false
+            roster.forceActiveFocus()
         }
 
         DialogHeader {
             title: qsTr("Create group")
-
-            BusyIndicator {
-                size: BusyIndicatorSize.Large
-                visible: newGroup.creating
-                running: visible
-                anchors.left: parent.left
-                anchors.leftMargin: parent.height
-                anchors.verticalCenter: parent.verticalCenter
-            }
         }
 
         TextField {
@@ -472,18 +446,7 @@ Page {
             anchors.centerIn: parent
             width: parent.width - (Theme.paddingLarge * 2)
             placeholderText: qsTr("Write name of new group here")
-            EnterKey.enabled: text.trim().length > 0
-            EnterKey.highlighted: text.trim().length > 0
-            EnterKey.iconSource: "image://theme/icon-m-enter-next"
-            EnterKey.onClicked: {
-                if (groupTitle.text.trim() !== "") {
-                    groupTitle.deselect()
-                    whatsapp.createGroup(groupTitle.text.trim())
-                    newGroup.creating = true
-                    groupTitle.focus = false
-                    listView.forceActiveFocus()
-                }
-            }
+            EnterKey.enabled: false
         }
     }
 

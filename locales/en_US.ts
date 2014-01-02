@@ -803,6 +803,10 @@
         <source>Always online</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Load delegates asynchronously</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>UserProfile</name>
@@ -832,6 +836,10 @@
     </message>
     <message>
         <source>Save chat history to file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status: %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

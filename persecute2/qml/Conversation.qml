@@ -368,7 +368,7 @@ Page {
                 id: delegateComponent
                 Loader {
                     width: parent.width
-                    asynchronous: true
+                    asynchronous: asynchronousDelegate
                     source: conversationTheme
                 }
             }

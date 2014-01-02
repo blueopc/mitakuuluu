@@ -54,11 +54,34 @@ Dialog {
         model: contactsModel
         delegate: contactsDelegate
         clip: true
+        section.property: "nickname"
+        section.criteria: ViewSection.FirstCharacter
+        section.delegate: Component {
+            id: sectionDelegate
+            Item {
+                width: parent.width //ListView.view.width
+                height: sectionLabel.paintedHeight
+                Label {
+                    id: sectionLabel
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingSmall
+                    horizontalAlignment: Text.AlignRight
+                    font.pixelSize: Theme.fontSizeMediu
+                    color: Theme.highlightColor
+                    text: section
+                }
+            }
+        }
+
+        FastScroll {
+            id: fastScroll
+            listView: listView
+        }
     }
 
-    VerticalScrollDecorator {
+    /*VerticalScrollDecorator {
         flickable: listView
-    }
+    }*/
 
     ContactsModel {
         id: contactsModel

@@ -90,7 +90,7 @@ Page {
             Label {
                 id: presenceLabel
                 width: parent.width
-                text: arg("Status: %1").arg(Utilities.emojify(presence, emojiPath))
+                text: qsTr("Status: %1").arg(Utilities.emojify(presence, emojiPath))
                 textFormat: Text.RichText
             }
 

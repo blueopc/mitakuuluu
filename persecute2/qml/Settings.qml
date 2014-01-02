@@ -100,6 +100,15 @@ Page {
             }
 
             TextSwitch {
+                checked: asynchronousDelegate
+                text: qsTr("Load delegates asynchronously")
+                onClicked: {
+                    asynchronousDelegate = checked
+                    settings.setValue("asynchronousDelegate", checked)
+                }
+            }
+
+            TextSwitch {
                 checked: notifyActive
                 text: qsTr("Vibrate in active conversation")
                 onCheckedChanged: {
@@ -236,6 +245,7 @@ Page {
                     id: onlineSwitch
                     anchors.left: parent.left
                     checked: !alwaysOffline
+                    enabled: !followPresence
                     onClicked: {
                         offlineSwitch.checked = !checked
                         settings.setValue("alwaysOffline", !checked)
@@ -244,8 +254,9 @@ Page {
 
                 Label {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: reqSms.verticalCenter
+                    anchors.verticalCenter: onlineSwitch.verticalCenter
                     text: alwaysOffline ? qsTr("Always offline") : qsTr("Always online")
+                    enabled: !followPresence
 
                     MouseArea {
                         anchors.fill: parent
@@ -259,6 +270,7 @@ Page {
                     id: offlineSwitch
                     anchors.right: parent.right
                     checked: alwaysOffline
+                    enabled: !followPresence
                     onClicked: {
                         onlineSwitch.checked = !checked
                         settings.setValue("alwaysOffline", checked)

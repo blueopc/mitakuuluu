@@ -24,6 +24,7 @@ ApplicationWindow {
     property string conversationTheme: "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
     property int conversationIndex: 0
     property bool alwaysOffline: false
+    property bool asynchronousDelegate: true
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -103,6 +104,7 @@ ApplicationWindow {
         resizeImagesToMPix = settings.value("resizeImagesToMPix", parseInt(5))
         conversationTheme = settings.value("conversationTheme", "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml")
         alwaysOffline = settings.value("alwaysOffline", false)
+        asynchronousDelegate = settings.value("asynchronousDelegate", true)
     }
 
     AddContact {
