@@ -320,11 +320,12 @@ Page {
                     id: nameText
                     width: parent.width
                     horizontalAlignment: Text.AlignHCenter
-                    truncationMode: TruncationMode.Fade
                     wrapMode: Text.Wrap
                     color: Theme.highlightColor
                     font.pixelSize: Theme.fontSizeMedium
                     font.family: Theme.fontFamily
+                    elide: Text.ElideRight
+                    truncationMode: TruncationMode.Fade
                     text: Utilities.emojify(page.title, emojiPath)
                 }
                 Label {

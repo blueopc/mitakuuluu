@@ -38,8 +38,8 @@ ApplicationWindow {
 
     function profileAction(jid) {
         if (jid.indexOf("-") !== -1) {
-            pageStack.push(groupPage)
             groupPage.loadContact(roster.getContactModel(jid))
+            pageStack.push(groupPage)
         }
         else {
             userProfile.jid = jid

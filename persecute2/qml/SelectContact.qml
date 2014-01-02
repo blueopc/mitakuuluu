@@ -56,22 +56,6 @@ Dialog {
         clip: true
         section.property: "nickname"
         section.criteria: ViewSection.FirstCharacter
-        section.delegate: Component {
-            id: sectionDelegate
-            Item {
-                width: parent.width //ListView.view.width
-                height: sectionLabel.paintedHeight
-                Label {
-                    id: sectionLabel
-                    anchors.right: parent.right
-                    anchors.rightMargin: Theme.paddingSmall
-                    horizontalAlignment: Text.AlignRight
-                    font.pixelSize: Theme.fontSizeMediu
-                    color: Theme.highlightColor
-                    text: section
-                }
-            }
-        }
 
         FastScroll {
             id: fastScroll
@@ -115,7 +99,7 @@ Dialog {
                 anchors.left: ava.right
                 anchors.leftMargin: 16
                 anchors.top: parent.top
-                anchors.topMargin: Theme.paddingMedium
+                anchors.topMargin: Theme.paddingSmall
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingMedium
                 wrapMode: Text.NoWrap
@@ -130,7 +114,7 @@ Dialog {
                 anchors.left: ava.right
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.bottom: parent.bottom
-                anchors.bottomMargin: Theme.paddingMedium
+                anchors.bottomMargin: Theme.paddingSmall
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingMedium
                 wrapMode: Text.NoWrap

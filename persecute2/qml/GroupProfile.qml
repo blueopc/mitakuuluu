@@ -36,6 +36,7 @@ Page {
 
     function setGroupInfo(value) {
         page.subject = value.nickname
+        subjectArea.text = page.subject
         page.ownerJid = value.owner
         page.owner = roster.getNicknameByJid(value.owner)
         page.creation = value.timestamp
@@ -75,6 +76,14 @@ Page {
                 setGroupInfo(model)
             }
         }*/
+        onNewGroupSubject: {
+            if (data.jid == page.jid) {
+                page.subject = data.message
+                subjectArea.text = page.subject
+                page.sowner = roster.getNicknameByJid(data.subowner)
+                page.screation = data.subtimestamp
+            }
+        }
         onParticipantAdded: {
             if (gjid == page.jid) {
                 var model = roster.getContactModel(pjid)
@@ -96,7 +105,7 @@ Page {
             }
         }
         onPictureUpdated: {
-            if (pjid == page.jid) {
+            if (pjid == page.jid && path.length > 0) {
                 page.avatar = ""
                 page.avatar = path
             }
@@ -141,7 +150,7 @@ Page {
             text: qsTr("Subject: ")
         }
 
-        TextArea {
+        TextField {
             id: subjectArea
             anchors.top: title.bottom
             anchors.topMargin: - Theme.paddingLarge
@@ -153,6 +162,8 @@ Page {
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: {
                 whatsapp.setGroupSubject(page.jid, text.trim())
+                subjectArea.focus = false
+                page.forceActiveFocus()
             }
             onActiveFocusChanged: {
                 if (activeFocus) {

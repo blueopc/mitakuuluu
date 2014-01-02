@@ -83,7 +83,6 @@ Page {
                         width: parent.width
                         model: conversationDelegates
                         delegate: MenuItem {
-                            parent: urlMenuRepeater
                             text: modelData
                             onClicked: {
                                 console.log("selected " + modelData + " delegate")
