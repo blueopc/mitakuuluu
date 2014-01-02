@@ -43,12 +43,17 @@ Page {
     function sendMedia(path) {
         console.log("send media: " + path)
         whatsapp.sendMedia([page.jid], path)
-        banner.notify("Media uploading started")
+        banner.notify(qsTr("Media uploading started"))
     }
 
-    function unbindMedia() {
+    function unbindMediaImage() {
+        selectPicture.selected.disconnect(page.sendMedia)
+        selectPicture.done.disconnect(page.unbindMediaImage)
+    }
+
+    function unbindMediaFile() {
         selectFile.selected.disconnect(page.sendMedia)
-        selectFile.done.disconnect(page.unbindMedia)
+        selectFile.done.disconnect(page.unbindMediaFile)
     }
 
     function loadContactModel(model) {
@@ -130,14 +135,8 @@ Page {
         return (d1.getDate() == d2.getDate() && d1.getMonth() == d2.getMonth())
     }
 
-    function bytesToSize(bytes) {
-        var sizes = [ 'n/a', 'bytes', 'KiB', 'MiB', 'GiB']
-        var i = +Math.floor(Math.log(bytes) / Math.log(1024))
-        return  (bytes / Math.pow(1024, i)).toFixed( i ? 1 : 0 ) + ' ' + sizes[ isNaN( bytes ) ? 0 : i+1 ]
-    }
-
     function intToTime(value) {
-        var sizes = [ 'n/a', 'S', 'M', 'H']
+        var sizes = [ qsTr('n/a'), qsTr('S'), qsTr('M'), qsTr('H')]
         var i = +Math.floor(Math.log(value) / Math.log(60))
         return  (value / Math.pow(60, i)).toFixed( i ? 1 : 0 ) + ' ' + sizes[ isNaN( value ) ? 0 : i+1 ]
     }
@@ -146,16 +145,16 @@ Page {
         var fromMe = model.author === roster.myJid
         var direction = " "
         if (fromMe)
-            direction = "Outgoing "
+            direction = qsTr("Outgoing ")
         else
-            direction = "Incoming "
+            direction = qsTr("Incoming ")
         if (model.msgtype === 3) { //media
             switch (model.mediatype) {
-            case 1: return direction + "picture " + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 2: return direction + "audio " + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 3: return direction + "video " + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 4: return direction + "contact " + model.medianame
-            case 5: return direction + "location LAT: " + model.medialon + " LON: " + model.medialat
+            case 1: return direction + qsTr("picture ") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 2: return direction + qsTr("audio ") + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 3: return direction + qsTr("video ") + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 4: return direction + qsTr("contact ") + model.medianame
+            case 5: return direction + qsTr("location ") + qsTr("LAT: %1").arg(model.medialon) + qsTr(" LON: %1").arg(model.medialat)
             default: return direction + "unknown media"
             }
         }
@@ -163,7 +162,7 @@ Page {
             return Utilities.linkify(Utilities.emojify(model.message, emojiPath), Theme.highlightColor)
         }
         else {
-            return "System message."
+            return qsTr("System message.")
         }
     }
 
@@ -239,22 +238,19 @@ Page {
         PullDownMenu {
             MenuItem {
                 id: mediaSend
-                text: "Send media"
+                text: qsTr("Send media")
                 enabled: roster.connectionStatus == 4
                 onClicked: {
-                    selectFile.processPath("/home/nemo")
-                    selectFile.open()
-                    selectFile.selected.connect(page.sendMedia)
-                    selectFile.done.connect(page.unbindMedia)
+                    pageStack.push(selectMedia)
                 }
             }
 
             MenuItem {
                 id: removeAll
-                text: "Remove all messages"
+                text: qsTr("Remove all messages")
                 onClicked: {
                     var rjid = page.jid
-                    remorseAll.execute("Remove all messages",
+                    remorseAll.execute(qsTr("Remove all messages"),
                                        function() {
                                            conversationModel.removeConversation(rjid)
                                            roster.reloadContact(rjid)
@@ -265,7 +261,7 @@ Page {
 
             MenuItem {
                 id: contactInfo
-                text: "Profile"
+                text: qsTr("Profile")
                 enabled: (roster.connectionStatus == 4) ? true : (page.jid.indexOf("-") == -1)
                 onClicked: {
                     profileAction(page.jid)
@@ -274,7 +270,7 @@ Page {
 
             MenuItem {
                 id: locationSend
-                text: "Load old conversation"
+                text: qsTr("Load old conversation")
                 visible: conversationView.count > 19
                 onClicked: {
                     conversationModel.loadOldConversation(20)
@@ -288,9 +284,15 @@ Page {
             Rectangle {
                 smooth: true
                 width: parent.width
-                height: 2
+                height: 20
                 anchors.bottom: parent.bottom
-                color:  page.blocked ? "#40FF0000" : (roster.connectionStatus == 4 ? (page.available ? "#4000FF00" : "transparent") : "transparent")
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "transparent" }
+                    GradientStop {
+                        position: 1.0
+                        color: page.blocked ? "#40FF0000" : (roster.connectionStatus == 4 ? (page.available ? "#4000FF00" : "transparent") : "transparent")
+                    }
+                }
             }
             AvatarHolder {
                 id: pic
@@ -362,7 +364,14 @@ Page {
             pressDelay: 0
             interactive: true
             boundsBehavior: Flickable.StopAtBounds
-            delegate: listDelegate
+            delegate: Component {
+                id: delegateComponent
+                Loader {
+                    width: parent.width
+                    asynchronous: true
+                    source: conversationTheme
+                }
+            }
             property bool shouldGotoEnd: false
             property bool shouldLoadLast: false
             property int contentYPos: 0
@@ -430,7 +439,7 @@ Page {
                     horizontalAlignment: Text.AlignHCenter
                     elide: Text.ElideRight
                     wrapMode: Text.Wrap
-                    text: "New message"
+                    text: qsTr("New message")
                 }
 
                 onClicked: {
@@ -460,7 +469,7 @@ Page {
         anchors.leftMargin: - Theme.paddingMedium
         anchors.right: page.right
         anchors.rightMargin: - Theme.paddingMedium
-        placeholderText: "Tap here to enter message"
+        placeholderText: qsTr("Tap here to enter message")
         property int lastYPos: 0
         property bool forceFocus: false
         showEmoji: false
@@ -557,6 +566,66 @@ Page {
         id: remorseAll
     }
 
+    Page {
+        id: selectMedia
+
+        SilicaFlickable {
+            id: mFlick
+            anchors.fill: parent
+            property int itemWidth: width / 2
+            property int itemHeight: (height / 2) - (mHeader.height / 2)
+
+            PageHeader {
+                id: mHeader
+                title: qsTr("Select media type")
+            }
+
+            SquareButton {
+                anchors.left: parent.left
+                anchors.top: mHeader.bottom
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-image"
+                onClicked: {
+                    selectPicture.selected.connect(page.sendMedia)
+                    selectPicture.setProcessImages()
+                    selectPicture.open(true)
+                    selectFile.done.connect(page.unbindMediaImage)
+                }
+            }
+
+            SquareButton {
+                anchors.right: parent.right
+                anchors.top: mHeader.bottom
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-video"
+                onClicked: {
+                    selectFile.processPath("/home/nemo", qsTr("Select video"))
+                    selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
+                    pageStack.replace(selectFile)
+                    selectFile.selected.connect(page.sendMedia)
+                    selectFile.done.connect(page.unbindMediaFile)
+                }
+            }
+
+            SquareButton {
+                anchors.left: parent.left
+                anchors.bottom: parent.bottom
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-music"
+                onClicked: {
+                    selectFile.processPath("/home/nemo", qsTr("Select audio"))
+                    selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
+                    pageStack.replace(selectFile)
+                    selectFile.selected.connect(page.sendMedia)
+                    selectFile.done.connect(page.unbindMediaFile)
+                }
+            }
+        }
+    }
+
     ConversationModel {
         id: conversationModel
         onLastMessageChanged: {
@@ -594,252 +663,6 @@ Page {
                 onClicked: {
                     console.log("header hide all")
                     conversationView.hideAll("")
-                }
-            }
-        }
-    }
-
-    Component {
-        id: listDelegate
-        Item {
-            id: item
-            width: parent.width
-            height: msg.height + (isGroup ? msginfo.height : 0) + (prevClip.visible ? (prev.status == Image.Ready ? prevClip.height : 0) : 0) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
-            //color:
-            opacity: mArea.pressed ? 0.5 : 1.0
-            property bool showPreview: false
-
-            Connections {
-                target: conversationView
-                onHideAll: {
-                    if (imsgid != model.msgid)
-                        showPreview = false
-                }
-            }
-
-            Rectangle {
-                anchors.top: parent.top
-                width: parent.width
-                anchors.bottom: parent.bottom
-                color: getContactColor(model.author)
-            }
-
-            Rectangle {
-                width: (model.msgstatus == 5) ? 10 : 5
-                color: msgStatusColor(model)
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
-                anchors.right: parent.right
-            }
-
-            Label {
-                id: msginfo
-                font.pixelSize: fontSize
-                text: (showTimestamp ? timestampToTime(model.timestamp) : "") + " <b>&lt;" + roster.getNicknameByJid(model.author) + "&gt;</b> "
-                //text: (showTimestamp ? ((isGroup ? "" : "[") + timestampToTime(model.timestamp) + (isGroup ? "" : "]")) : "") + (isGroup ? (" <b>&lt;" + roster.getNicknameByJid(model.author) + "&gt;</b> ") : "")
-                anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
-                anchors.top: parent.top
-                anchors.right: parent.right
-                anchors.rightMargin: Theme.paddingMedium
-                elide: Text.ElideRight
-                visible: isGroup
-                textFormat: Text.RichText
-            }
-
-            Label {
-                id: msg
-                wrapMode: Text.Wrap
-                anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
-                anchors.top: isGroup ? msginfo.bottom : parent.top
-                anchors.right: parent.right
-                anchors.rightMargin: Theme.paddingMedium
-                font.pixelSize: fontSize
-                text: isGroup ? getMessageText(model) : ((showTimestamp ? ("[" + timestampToTime(model.timestamp) + "] ") : "") + getMessageText(model))
-                textFormat: Text.RichText
-                horizontalAlignment: virtualText.horizontalAlignment
-            }
-
-            Text {
-                id: virtualText
-                visible: false
-                text: getMessageText(model)
-            }
-
-            Item {
-                id: prevClip
-                anchors.top: msg.bottom
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width
-                height: showPreview ? prev.height: 100
-                visible: model.msgtype == 3 && (model.mediatype == 1 || model.mediatype == 3 || model.mediatype == 5)
-                clip: true
-                Image {
-                    id: prev
-                    fillMode: Image.PreserveAspectFit
-                    source: visible ? (model.localurl.length > 0 ? model.localurl : (model.mediathumb.length > 0 ? ("data:image/png;base64," + model.mediathumb) : "")) : ""
-                    width: parent.width
-                    sourceSize.width: parent.width
-                    asynchronous: true
-                    cache: true
-                    clip: true
-                    smooth: true
-                }
-            }
-
-            Image {
-                id: progressIndicator
-                anchors.left: parent.left
-                anchors.top: parent.top
-                anchors.bottom: menuIndicator.top
-                anchors.bottomMargin: - menuIndicator.height
-                fillMode: Image.Tile
-                horizontalAlignment: Image.AlignLeft
-                verticalAlignment: Image.AlignTop
-                width: parent.width / 100 * model.mediaprogress
-                visible: model.mediaprogress > 0 && model.mediaprogress < 100
-                source: "/usr/share/harbour-mitakuuluu/images/progress-pattern-black.png"
-            }
-
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
-                onPressed: {
-                    if (!inMenu.active)
-                        conversationView.hideAll(model.msgid)
-                }
-                onClicked: {
-                    if (model.msgtype == 2) {
-                        //console.log(msg.text)
-                        var links = msg.text.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/gi);
-                        if (links && links.length > 0) {
-                            //console.log(JSON.stringify(links))
-                            var urlmodel = []
-                            links.forEach(function(link) {
-                                var groups = link.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/i);
-                                //console.log(JSON.stringify(groups))
-                                var urlink = [groups[2], groups[1]]
-                                urlmodel[urlmodel.length] = urlink
-                            });
-                            urlMenu.model = urlmodel
-                            urlMenu.show(item)
-                        }
-                    }
-                    else if (!showPreview) {
-                        if (model.msgtype == 3 && model.mediatype > 0 && model.mediatype < 4 && model.localurl.length == 0) {
-                            whatsapp.downloadMedia(model.msgid, page.jid)
-                            banner.notify("Media download started...")
-                        }
-                        else {
-                            showPreview = true
-                            scrollTimer.position(model.index)
-                        }
-                    }
-                    else {
-                        if (model.msgtype == 3) {
-                            if (model.mediatype > 0 && model.mediatype < 4) {
-                                if (model.localurl.length > 0) {
-                                    Qt.openUrlExternally(model.localurl)
-                                }
-                                else {
-                                    whatsapp.downloadMedia(model.msgid, page.jid)
-                                }
-                            }
-                            else if (model.mediatype == 4) {
-                                whatsapp.openVCardData(model.medianame, model.message)
-                            }
-                            else if (model.mediatype == 5) {
-                                Qt.openUrlExternally("geo:" + model.medialon + "," + model.medialat + "?action=showOnMap")
-                            }
-                        }
-                    }
-                }
-                onPressAndHold: {
-                    console.log(model.message)
-                    inMenu.show(item)
-                }
-            }
-
-            Connections {
-                target: conversationView
-                onRemove: {
-                    var dmsgid = rmsgid
-                    if (dmsgid === model.msgid) {
-                        removeItem.execute(item,
-                                           "Remove message",
-                                           function() {
-                                               conversationModel.deleteMessage(dmsgid)
-                                           },
-                                           5000)
-                    }
-                }
-            }
-
-            RemorseItem {
-                id: removeItem
-                anchors.fill: parent
-            }
-
-            MenuIndicator {
-                id: menuIndicator
-                anchors.bottom: item.bottom
-                anchors.bottomMargin: inMenu.height - (height / 2)
-                width: item.width
-                visible: inMenu.active || urlMenu.active
-            }
-
-            ContextMenu {
-                id: urlMenu
-                anchors.bottom: item.bottom
-                width: item.width
-                property alias model: urlMenuRepeater.model
-                Repeater {
-                    id: urlMenuRepeater
-                    property alias childs: urlMenuRepeater.model
-                    width: parent.width
-                    delegate: MenuItem {
-                        parent: urlMenuRepeater
-                        text: modelData[0]
-                        onClicked: {
-                            Qt.openUrlExternally(modelData[1])
-                        }
-                    }
-                }
-            }
-
-            ContextMenu {
-                id: inMenu
-                anchors.bottom: item.bottom
-                width: item.width
-
-                MenuItem {
-                    text: "Copy"
-                    enabled: conversationModel.getModelByMsgId(model.msgid).mediatype != 4
-                    onClicked: {
-                        conversationModel.copyToClipboard(model.msgid)
-                        banner.notify("Message copied to clipboard")
-                    }
-                }
-
-                MenuItem {
-                    text: "Forward"
-                    enabled: roster.connectionStatus == 4
-                    onClicked: {
-                        forwardMessage.loadMessage(conversationModel.getModelByMsgId(model.msgid), page.jid)
-                        forwardMessage.open()
-                    }
-                }
-
-                MenuItem {
-                    id: removeMsg
-                    text: (model.mediaprogress > 0 && model.mediaprogress < 100) ? "Cancel download" : "Delete"
-                    onClicked: {
-                        if (model.mediaprogress > 0 && model.mediaprogress < 100)
-                            whatsapp.cancelDownload(dmsgid, page.jid)
-                        else
-                            conversationView.remove(model.msgid)
-                    }
                 }
             }
         }

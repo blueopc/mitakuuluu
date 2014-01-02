@@ -24,7 +24,7 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
-                text: "Add contact"
+                text: qsTr("Add contact")
                 onClicked: {
                     selectContact.hideGroups = true
                     selectContact.contactsChanged()
@@ -37,7 +37,7 @@ Dialog {
 
         DialogHeader {
             id: title
-            title: "Send broadcast"
+            title: qsTr("Send broadcast")
         }
 
 
@@ -136,7 +136,7 @@ Dialog {
                 id: textArea
                 visible: messageText.checked
                 width: parent.width
-                placeholderText: "Enter your message here..."
+                placeholderText: qsTr("Enter your message here...")
             }
 
             Label {
@@ -161,7 +161,7 @@ Dialog {
                 id: mediaSelect
                 visible: messageMedia.checked
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Select media"
+                text: qsTr("Select media")
                 onClicked: {
                     selectFile.processPath("/home/nemo")
                     selectFile.open()
@@ -202,7 +202,7 @@ Dialog {
             color: Theme.secondaryHighlightColor
             font.bold: pArea.pressed
             visible: listModel.count == 0
-            text: "Select «Add contact» menu item to select contacts"
+            text: qsTr("Select «Add contact» menu item to select contacts")
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.WordWrap

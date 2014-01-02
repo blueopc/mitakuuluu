@@ -44,7 +44,7 @@ Dialog {
 
     DialogHeader {
         id: title
-        title: "Select contact"
+        title: qsTr("Select contact")
     }
 
     SilicaListView {
@@ -103,7 +103,7 @@ Dialog {
             Label {
                 id: status
                 font.pixelSize: Theme.fontSizeSmall
-                text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : "Group chat"
+                text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : qsTr("Group chat")
                 anchors.left: ava.right
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.bottom: parent.bottom

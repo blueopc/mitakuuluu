@@ -46,7 +46,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Add number"
+                text: qsTr("Add number")
                 onClicked: {
                     addDialog.open()
                     addNumber.forceActiveFocus()
@@ -54,7 +54,7 @@ Page {
             }
 
             MenuItem {
-                text: "Select contacts"
+                text: qsTr("Select contacts")
                 onClicked: {
                     selectContact.hideGroups = true
                     selectContact.hideContacts = false
@@ -68,7 +68,7 @@ Page {
 
         header: PageHeader {
             id: title
-            title: "Blacklist"
+            title: qsTr("Blacklist")
         }
 
         function selectionFinished() {
@@ -94,7 +94,7 @@ Page {
         anchors.fill: listView
         color: Theme.secondaryHighlightColor
         font.pixelSize: Theme.fontSizeMedium
-        text: "Blacklist is empty"
+        text: qsTr("Blacklist is empty")
         visible: listView.count == 0
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
@@ -122,7 +122,7 @@ Page {
         }
 
         DialogHeader {
-            title: "Add to blacklist"
+            title: qsTr("Add to blacklist")
         }
 
         Label {
@@ -137,7 +137,7 @@ Page {
             id: addNumber
             width: parent.width - (Theme.paddingLarge * 2)
             anchors.centerIn: parent
-            placeholderText: "1234567890"
+            placeholderText: qsTr("1234567890")
             validator: RegExpValidator{ regExp: /[0-9]*/;}
             inputMethodHints: Qt.ImhDialableCharactersOnly
             EnterKey.enabled: false

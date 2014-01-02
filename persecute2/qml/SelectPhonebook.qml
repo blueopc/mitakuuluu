@@ -31,7 +31,7 @@ Dialog {
 
     onAccepted: {
         whatsapp.syncContacts(numbers, names, avatars)
-        banner.notify("Phonebook syncing started...")
+        banner.notify(qsTr("Phonebook syncing started..."))
     }
 
     Connections {
@@ -51,16 +51,16 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
-                text: "Sync all phonebook"
+                text: qsTr("Sync all phonebook")
                 onClicked: {
                     whatsapp.syncAllPhonebook()
-                    banner.notify("Phonebook syncing started...")
+                    banner.notify(qsTr("Phonebook syncing started..."))
                     page.reject()
                 }
             }
 
             MenuItem {
-                text: "Add number"
+                text: qsTr("Add number")
                 onClicked: {
                     addContact.open(true, false)
                 }
@@ -93,7 +93,7 @@ Dialog {
 
         DialogHeader {
             id: header
-            title: "Sync contacts"
+            title: numbers.length > 0 ? qsTr("Sync %1 contacts").arg(numbers.length) : qsTr("Select contacts")
         }
 
         SilicaListView {
@@ -112,15 +112,15 @@ Dialog {
             section.property: "nickname"
             section.criteria: ViewSection.FirstCharacter
 
-            /*FastScroll {
+            FastScroll {
                 id: fastScroll
                 listView: listView
-            }*/
+            }
         }
 
-        VerticalScrollDecorator {
+        /*VerticalScrollDecorator {
             flickable: listView
-        }
+        }*/
 
         BusyIndicator {
             anchors.centerIn: listView

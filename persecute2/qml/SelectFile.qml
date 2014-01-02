@@ -3,23 +3,30 @@ import Sailfish.Silica 1.0
 import org.coderus.mitakuuluu 1.0
 
 
-Dialog {
+Page {
     id: page
     objectName: "selectFile"
     allowedOrientations: Orientation.Portrait
 
     signal selected(string path)
+    signal done
 
-    function processPath(path) {
-        mediaImage.checked = true
-        mediaMusic.checked = false
-        mediaVideo.checked = false
+    onStatusChanged: {
+        if (status == PageStatus.Inactive)
+            page.done()
+    }
+
+    function setFilter(filter) {
+        filesModel.filter = filter
+    }
+
+    function processPath(path, title) {
+        headerLabel.text = title
         header.subtitle = path
-        filesModel.filter = ["*.png", "*.jpg", "*.gif"]
         filesModel.path = path
     }
 
-    DialogHeader {
+    PageHeader {
         id: header
         title: " "
         property alias subtitle: subtitleLabel.text
@@ -29,8 +36,9 @@ Dialog {
         id: headerLabel
         anchors.top: page.top
         anchors.topMargin: Theme.paddingMedium
-        anchors.horizontalCenter: page.horizontalCenter
-        text: "Select file"
+        anchors.right: page.right
+        anchors.rightMargin: Theme.paddingLarge
+        text: qsTr("Select file")
         color: Theme.primaryColor
         font {
             pixelSize: Theme.fontSizeLarge
@@ -41,45 +49,17 @@ Dialog {
     Label {
         id: subtitleLabel
         anchors.right: page.right
-        anchors.rightMargin: header.height - Theme.paddingLarge
+        anchors.rightMargin: Theme.paddingLarge
         anchors.left: page.left
         anchors.leftMargin: header.height - Theme.paddingLarge
         anchors.top: headerLabel.bottom
         color: Theme.secondaryColor
         horizontalAlignment: Text.AlignRight
         elide: Text.ElideLeft
+        truncationMode: TruncationMode.Fade
         font {
             pixelSize: Theme.fontSizeExtraSmall
             family: Theme.fontFamily
-        }
-    }
-
-    Rectangle {
-        width: Theme.iconSizeLarge
-        height: Theme.iconSizeLarge
-        radius: Theme.iconSizeLarge / 2
-        anchors.top: headerLabel.top
-        anchors.left: page.left
-        anchors.leftMargin: header.height - Theme.paddingLarge
-        border.color: dArea.pressed ? "#80FFFFFF" : "#40FFFFFF"
-        border.width: 1
-        color: "transparent"
-        Image {
-            anchors.centerIn: parent
-            width: Theme.iconSizeMedium
-            height: Theme.iconSizeMedium
-            smooth: true
-            source: "image://theme/icon-m-" + (mediaImage.checked ? "image" : (mediaMusic.checked ? "music" : "video"))
-        }
-        MouseArea {
-            id: dArea
-            anchors.fill: parent
-            onClicked: {
-                if (panel.open)
-                    panel.hide()
-                else
-                    panel.show()
-            }
         }
     }
 
@@ -138,7 +118,7 @@ Dialog {
                     }
                     else {
                         page.selected(model.path)
-                        page.accept()
+                        pageStack.pop()
                     }
                 }
             }
@@ -147,74 +127,5 @@ Dialog {
 
     VerticalScrollDecorator {
         flickable: listView
-    }
-
-    DockedPanel {
-        id: panel
-        dock: Dock.Bottom
-        width: parent.width
-        height: Theme.itemSizeExtraLarge + Theme.paddingLarge
-
-        Row {
-            id: mediaRow
-            anchors.centerIn: parent
-
-            Switch {
-                id: mediaImage
-                icon.source: "image://theme/icon-l-image"
-                checked: true
-                onClicked: {
-                    if (checked) {
-                        mediaVideo.checked = false
-                        mediaMusic.checked = false
-                        var filters = ["*.png", "*.jpg", "*.gif"]
-                        filesModel.filter = filters
-                        filesModel.processPath(filesModel.path)
-                    }
-                    else {
-                        checked = true
-                    }
-                    panel.hide()
-                }
-            }
-
-            Switch {
-                id: mediaVideo
-                icon.source: "image://theme/icon-l-video"
-                checked: false
-                onClicked: {
-                    if (checked) {
-                        mediaImage.checked = false
-                        mediaMusic.checked = false
-                        var filters = ["*.mp4", "*.avi", "*.mov"]
-                        filesModel.filter = filters
-                        filesModel.processPath(filesModel.path)
-                    }
-                    else {
-                        checked = true
-                    }
-                    panel.hide()
-                }
-            }
-
-            Switch {
-                id: mediaMusic
-                icon.source: "image://theme/icon-l-music"
-                checked: false
-                onClicked: {
-                    if (checked) {
-                        mediaVideo.checked = false
-                        mediaImage.checked = false
-                        var filters = ["*.mp3", "*.aac", "*.flac", "*.wav"]
-                        filesModel.filter = filters
-                        filesModel.processPath(filesModel.path)
-                    }
-                    else {
-                        checked = true
-                    }
-                    panel.hide()
-                }
-            }
-        }
     }
 }

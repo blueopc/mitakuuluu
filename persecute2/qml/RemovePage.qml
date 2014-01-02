@@ -23,7 +23,7 @@ Page {
 
     Button {
         anchors.centerIn: page
-        text: "Quit"
+        text: qsTr("Quit")
         visible: page.status == PageStatus.Active && !processing
         onClicked: {
             whatsapp.shutdown()

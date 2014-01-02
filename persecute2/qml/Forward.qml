@@ -71,7 +71,7 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
-                text: "Forward to group"
+                text: qsTr("Forward to group")
                 onClicked: {
                     selectContact.hideGroups = false
                     selectContact.hideContacts = true
@@ -82,7 +82,7 @@ Dialog {
             }
 
             MenuItem {
-                text: "Add contact"
+                text: qsTr("Add contact")
                 onClicked: {
                     selectContact.hideGroups = true
                     selectContact.contactsChanged()
@@ -94,7 +94,7 @@ Dialog {
 
         PageHeader {
             id: title
-            title: "Forward"
+            title: qsTr("Forward")
         }
 
         Label {
@@ -155,7 +155,7 @@ Dialog {
             font.pixelSize: Theme.fontSizeLarge
             color: "gray"
             visible: listModel.count == 0
-            text: "Select «Add contact» menu item to select contacts"
+            text: qsTr("Select «Add contact» menu item to select contacts")
             wrapMode: Text.WordWrap
         }
 

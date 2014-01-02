@@ -72,26 +72,26 @@ Page {
             pageStack.push(conversation, {}, PageStackAction.Immediate)
         }
         onSynchronizationFinished: {
-            banner.notify("Contacts syncing finished!")
+            banner.notify(qsTr("Contacts syncing finished!"))
         }
         onSynchronizationFailed: {
-            banner.notify("Contacts syncing failed!", "#A0FF4000")
+            banner.notify(qsTr("Contacts syncing failed!"), "#A0FF4000")
         }
         onUploadMediaFailed: {
-            banner.notify("Media uploading failed!", "#A0FF2020")
+            banner.notify(qsTr("Media uploading failed!"), "#A0FF2020")
         }
     }
 
     function parseConnectionStatus(value) {
-        var array = ["Unknown",
-                     "Waiting for connection",
-                     "Connecting...",
-                     "Connected",
-                     "Logged in",
-                     "Login failure!",
-                     "Disconnected",
-                     "Registering...",
-                     "Registration failed!"]
+        var array = [qsTr("Unknown"),
+                     qsTr("Waiting for connection"),
+                     qsTr("Connecting..."),
+                     qsTr("Connected"),
+                     qsTr("Logged in"),
+                     qsTr("Login failure!"),
+                     qsTr("Disconnected"),
+                     qsTr("Registering..."),
+                     qsTr("Registration failed!")]
         return array[value]
     }
 
@@ -109,15 +109,15 @@ Page {
     }
 
     function parseConnectionAction(value) {
-        var array = ["No action",
-                     "Force connect",
-                     "Disconnect",
-                     "Disconnect",
-                     "Disconnect",
-                     "Register",
-                     "Connect",
-                     "No action",
-                     "Register"]
+        var array = [qsTr("No action"),
+                     qsTr("Force connect"),
+                     qsTr("Disconnect"),
+                     qsTr("Disconnect"),
+                     qsTr("Disconnect"),
+                     qsTr("Register"),
+                     qsTr("Connect"),
+                     qsTr("No action"),
+                     qsTr("Register")]
         return array[value]
     }
 
@@ -127,7 +127,7 @@ Page {
 
     function getNicknameByJid(jid) {
         if (jid == myJid)
-            return "You"
+            return qsTr("You")
         var model = contactsModel.getModel(jid)
         if (model && model.nickname)
             return model.nickname
@@ -156,11 +156,11 @@ Page {
         PullDownMenu {
             MenuItem {
                 id: shutdown
-                text: "Quit"
+                text: qsTr("Quit")
                 font.bold: true
                 //color: enabled ? (down || highlighted ? "#FF0000" : "#E0FF2020") : "#C00000"
                 onClicked: {
-                    remorseDisconnect.execute("Quit and shutdown engine",
+                    remorseDisconnect.execute(qsTr("Quit and shutdown engine"),
                                                function() {
                                                    whatsapp.shutdown()
                                                    Qt.quit()
@@ -171,7 +171,7 @@ Page {
 
             MenuItem {
                 id: goSettings
-                text: "Settings"
+                text: qsTr("Settings")
                 onClicked: {
                     pageStack.push(settingsPage)
                 }
@@ -179,7 +179,7 @@ Page {
 
             MenuItem {
                 id: createGroup
-                text: "New group"
+                text: qsTr("New group")
                 enabled: connectionStatus == 4
                 onClicked: {
                     newGroup.open()
@@ -188,7 +188,7 @@ Page {
 
             MenuItem {
                 id: broadcastMessage
-                text: "Broadcast"
+                text: qsTr("Broadcast")
                 enabled: connectionStatus == 4
                 onClicked: {
                     broadcast.open()
@@ -196,7 +196,7 @@ Page {
             }
 
             MenuItem {
-                text: "Add contacts"
+                text: qsTr("Add contacts")
                 enabled: connectionStatus == 4
                 onClicked: {
                     //whatsapp.syncContactList()
@@ -213,7 +213,7 @@ Page {
                         whatsapp.forceConnection()
                     }
                     else if (connectionStatus > 1 && connectionStatus < 5) {
-                        remorseDisconnect.execute("Disconnecting",
+                        remorseDisconnect.execute(qsTr("Disconnecting"),
                                                    function() {
                                                        whatsapp.disconnect()
                                                    },
@@ -303,7 +303,7 @@ Page {
                 id: searchField
                 anchors.verticalCenter: parent.verticalCenter
                 width: parent.width
-                placeholderText: "Enter contact name to search"
+                placeholderText: qsTr("Enter contact name to search")
                 inputMethodHints: Qt.ImhNoPredictiveText
                 onTextChanged: {
                     if (activeFocus) {
@@ -369,7 +369,7 @@ Page {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             font.pixelSize: Theme.fontSizeLarge
-            text: "Contacts list is empty. Sync phonebook or add contacts manually."
+            text: qsTr("Contacts list is empty. Sync phonebook or add contacts manually.")
             color: Theme.secondaryHighlightColor
             visible: listView.count == 0
         }
@@ -394,14 +394,14 @@ Page {
         canAccept: nameField.text.trim().length > 0
 
         DialogHeader {
-            title: "Rename contact"
+            title: qsTr("Rename contact")
         }
 
         TextField {
             id: nameField
             anchors.centerIn: parent
             width: parent.width - (Theme.paddingLarge * 2)
-            placeholderText: "Enter new name"
+            placeholderText: qsTr("Enter new name")
             EnterKey.enabled: text.length > 0
             EnterKey.highlighted: text.length > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -455,7 +455,7 @@ Page {
         }
 
         DialogHeader {
-            title: "Create group"
+            title: qsTr("Create group")
 
             BusyIndicator {
                 size: BusyIndicatorSize.Large
@@ -471,7 +471,7 @@ Page {
             id: groupTitle
             anchors.centerIn: parent
             width: parent.width - (Theme.paddingLarge * 2)
-            placeholderText: "Write name of new group here"
+            placeholderText: qsTr("Write name of new group here")
             EnterKey.enabled: text.trim().length > 0
             EnterKey.highlighted: text.trim().length > 0
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -564,7 +564,7 @@ Page {
             Label {
                 id: status
                 font.pixelSize: Theme.fontSizeSmall
-                text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : "Group chat"
+                text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : qsTr("Group chat")
                 anchors.left: ava.right
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.top: nickname.bottom
@@ -595,7 +595,7 @@ Page {
                     if (rmjid === model.jid) {
                         console.log("should remove " + rjid)
                         removeItem.execute(itemDelegate,
-                                           (rjid.indexOf("-") == -1 ? "Delete " : "Leave group ") + model.nickname,
+                                           (rjid.indexOf("-") == -1 ? qsTr("Delete ") : qsTr("Leave group %1").arg(model.nickname)),
                                            function () {
                                                contactsModel.deleteContact(rjid)
                                                if (rjid.indexOf("-") != -1) {
@@ -629,7 +629,7 @@ Page {
                 width: itemDelegate.width
 
                 MenuItem {
-                    text: "Profile"
+                    text: qsTr("Profile")
                     enabled: (roster.connectionStatus == 4) ? true : (model.jid.indexOf("-") == -1)
                     onClicked: {
                         profileAction(model.jid)
@@ -637,15 +637,16 @@ Page {
                 }
 
                 MenuItem {
-                    text: "Refresh"
+                    text: qsTr("Refresh")
                     enabled: roster.connectionStatus == 4
                     onClicked: {
                         whatsapp.refreshContact(model.jid)
+                        banner.notify(qsTr("Contact syncing started..."))
                     }
                 }
 
                 MenuItem {
-                    text: "Rename"
+                    text: qsTr("Rename")
                     visible: model.jid.indexOf("-") == -1
                     onClicked: {
                         renameContact.showData(model.jid, model.nickname)
@@ -653,7 +654,7 @@ Page {
                 }
 
                 MenuItem {
-                    text: model.jid.indexOf("-") == -1 ? "Delete" : "Leave group"
+                    text: model.jid.indexOf("-") == -1 ? qsTr("Delete") : qsTr("Leave group")
                     enabled: (roster.connectionStatus == 4) ? true : (model.jid.indexOf("-") == -1)
                     onClicked: {
                         listView.remove(model.jid)
@@ -661,7 +662,7 @@ Page {
                 }
 
                 MenuItem {
-                    text: model.jid.indexOf("-") == -1 ? (model.blocked ? "Unblock" : "Block") : (model.blocked ? "Unmute" : "Mute")
+                    text: model.jid.indexOf("-") == -1 ? (model.blocked ? qsTr("Unblock") : qsTr("Block")) : (model.blocked ? qsTr("Unmute") : qsTr("Mute"))
                     enabled: roster.connectionStatus == 4
                     onClicked: {
                         if (model.jid.indexOf("-") == -1)

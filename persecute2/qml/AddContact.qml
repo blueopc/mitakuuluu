@@ -33,7 +33,7 @@ Dialog {
     }
 
     DialogHeader {
-        title: "Add contact"
+        title: qsTr("Add contact")
     }
 
     Column {
@@ -56,7 +56,7 @@ Dialog {
                 id: phoneField
                 width: parent.width
                 inputMethodHints: Qt.ImhDialableCharactersOnly
-                placeholderText: "1234567890"
+                placeholderText: qsTr("1234567890")
                 validator: RegExpValidator{ regExp: /[0-9]*/;}
                 EnterKey.enabled: acceptableInput && (text.trim().length > 0)
                 EnterKey.highlighted: acceptableInput && (text.trim().length > 0)
@@ -74,7 +74,7 @@ Dialog {
         TextField {
             id: aliasField
             width: parent.width
-            placeholderText: "Enter contact name here"
+            placeholderText: qsTr("Enter contact name here")
             EnterKey.enabled: true//addContact.canAccept
             EnterKey.highlighted: text.length > 0 //addContact.canAccept
             EnterKey.iconSource: "image://theme/icon-m-enter-next"

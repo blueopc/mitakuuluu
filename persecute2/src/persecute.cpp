@@ -51,6 +51,9 @@
 
 #include <QDebug>
 
+#include <QLocale>
+#include <QTranslator>
+
 //WhatsApp *whatsapp = NULL;
 
 void writeLog(const QString &type, const QMessageLogContext &context, const QString &message)
@@ -99,6 +102,18 @@ int main(int argc, char *argv[])
     qInstallMessageHandler(messageHandler);
     qDebug() << "Starting application";
     QGuiApplication *app = SailfishApp::application(argc, argv);
+    QLocale locale;
+    QString baseName("/usr/share/harbour-mitakuuluu/locales/");
+    QString qmName(baseName + locale.name() + ".qm");
+    if (QFile(qmName).exists()) {
+        QTranslator translator;
+        translator.load(qmName);
+        app->installTranslator(&translator);
+        qDebug() << "Using locale:" << locale.name();
+    }
+    else {
+        qDebug() << "Locale" << locale.name() << "not found";
+    }
     QQuickView *view = SailfishApp::createView();
     view->rootContext()->setContextProperty("view", view);
     view->rootContext()->setContextProperty("app", app);
@@ -126,6 +141,13 @@ int main(int argc, char *argv[])
     qDebug() << "Creating Settings object";
     Settings *settings = new Settings(view);
     view->rootContext()->setContextProperty("settings", settings);
+
+    QStringList customDelegates;
+    QDir delegates("/home/nemo/.whatsapp/delegates/");
+    if (delegates.exists()) {
+        customDelegates = delegates.entryList(QStringList() << "*.qml", QDir::Files | QDir::NoDotAndDotDot, QDir::Name | QDir::IgnoreCase);
+    }
+    view->rootContext()->setContextProperty("conversationDelegates", customDelegates);
 
     qDebug() << "Checking if emoji actually exists";
     QFile emoji("/usr/share/harbour-mitakuuluu/emoji/1F4B5.png");

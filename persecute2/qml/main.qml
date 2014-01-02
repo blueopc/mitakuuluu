@@ -17,6 +17,13 @@ ApplicationWindow {
     property bool acceptUnknown: true
     property bool notifyActive: true
     //property bool softbankReplacer: false
+    property bool resizeImages: false
+    property bool resizeBySize: false
+    property int resizeImagesTo: 1048546
+    property int resizeImagesToMPix: 5
+    property string conversationTheme: "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
+    property int conversationIndex: 0
+    property bool alwaysOffline: false
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -37,6 +44,12 @@ ApplicationWindow {
             userProfile.jid = jid
             pageStack.push(userProfile)
         }
+    }
+
+    function bytesToSize(bytes) {
+        var sizes = [ qsTr('n/a'), qsTr('bytes'), qsTr('KiB'), qsTr('MiB'), qsTr('GiB')]
+        var i = +Math.floor(Math.log(bytes) / Math.log(1024))
+        return  (bytes / Math.pow(1024, i)).toFixed( i ? 1 : 0 ) + ' ' + sizes[ isNaN( bytes ) ? 0 : i+1 ]
     }
 
     onApplicationActiveChanged: {
@@ -84,6 +97,12 @@ ApplicationWindow {
         acceptUnknown = settings.value("acceptUnknown", true)
         notifyActive = settings.value("notifyActive", true)
         //softbankReplacer = settings.value("softbankReplacer", false)
+        resizeImages = settings.value("resizeImages", false);
+        resizeBySize = settings.value("resizeBySize", true)
+        resizeImagesTo = settings.value("resizeImagesTo", parseInt(1048576))
+        resizeImagesToMPix = settings.value("resizeImagesToMPix", parseInt(5))
+        conversationTheme = settings.value("conversationTheme", "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml")
+        alwaysOffline = settings.value("alwaysOffline", false)
     }
 
     AddContact {

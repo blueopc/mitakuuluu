@@ -6,17 +6,17 @@ Dialog {
     id: page
     objectName: "selectFile"
     allowedOrientations: Orientation.Portrait
+    canAccept: selectedPath.length > 0
 
     property string selectedPath: ""
     signal selected(string path)
 
     DialogHeader {
         id: title
-        title: "Select file"
+        title: qsTr("Select picture")
     }
 
     function setProcessImages() {
-        console.log("set process imsges")
         var filters = ["*.jpg", "*.JPG", "*.jpeg", "*.JPEG", "*.png", "*.PNG", "*.gif", "*.GIF"]
         var dirs = ["/home/nemo/"]
         files.filter = filters
@@ -80,7 +80,12 @@ Dialog {
                     FadeAnimation {}
                 }
             }
-
+            Rectangle {
+                anchors.fill: parent
+                color: Theme.highlightColor
+                visible: model.path == page.selectedPath
+                opacity: 0.5
+            }
             Rectangle {
                 id: rec
                 color: Theme.secondaryHighlightColor
@@ -106,9 +111,10 @@ Dialog {
                 id: mArea
                 anchors.fill: parent
                 onClicked: {
-                    //page.selectedPath = model.path
-                    //page.accept()
-                    page.selected(model.path)
+                    if (page.selectedPath == model.path)
+                        page.selectedPath = ""
+                    else
+                        page.selectedPath = model.path
                 }
             }
         }

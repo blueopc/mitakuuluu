@@ -27,7 +27,7 @@ CoverBackground {
 
     Label {
         id: wacount
-        text: roster.inStack ? (roster.unreadCount > 0 ? ("Unread messages: " + roster.unreadCount) : "No unread messages") : "Registration"
+        text: roster.inStack ? (roster.unreadCount > 0 ? (qsTr("Unread messages: %1").qrg(roster.unreadCount)) : qsTr("No unread messages")) : qsTr("Registration")
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Theme.paddingLarge
         font.pixelSize: Theme.fontSizeMedium

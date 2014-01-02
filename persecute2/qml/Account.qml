@@ -11,7 +11,7 @@ Dialog {
     property int creation: 0
     property int expiration: 0
     property bool active: true
-    property bool isFree: true
+    property string kind: "free"
     property string avatar: "/home/nemo/.whatsapp/avatar/" + roster.myJid
 
     canAccept: (roster.connectionStatus == 4) && (pushnameArea.text.length > 0) && (presenceArea.text.length > 0)
@@ -35,7 +35,7 @@ Dialog {
             presenceArea.text = presence
             creation = settings.value("creation", 0)
             expiration = settings.value("expiration", 0)
-            isFree = settings.value("kind", "free") == "free"
+            kind = settings.value("kind", "free")
             active = settings.value("accountstatus", "active") == "active"
         }
     }
@@ -65,17 +65,17 @@ Dialog {
 
         PullDownMenu {
             MenuItem {
-                text: "Delete everything"
+                text: qsTr("Delete everything")
                 enabled: roster.connectionStatus == 4
                 onClicked: {
                     deleteDialog.open()
                 }
             }
             MenuItem {
-                text: "Remove account"
+                text: qsTr("Remove account")
                 enabled: roster.connectionStatus == 4
                 onClicked: {
-                    remorseAccount.execute("Remove current account",
+                    remorseAccount.execute(qsTr("Remove current account"),
                                            function() {
                                                 whatsapp.disconnect()
                                                 whatsapp.removeAccount()
@@ -89,13 +89,13 @@ Dialog {
 
         DialogHeader {
             id: header
-            title: "Account"
-            acceptText: "Save"
+            title: qsTr("Account")
+            acceptText: qsTr("Save")
         }
 
         Label {
             id: pushnameLabel
-            text: "Nickname:"
+            text: qsTr("Nickname:")
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingMedium
             anchors.top: pushnameArea.top
@@ -127,7 +127,7 @@ Dialog {
 
         Label {
             id: presenceLabel
-            text: "Status:"
+            text: qsTr("Status:")
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingMedium
             anchors.top: presenceArea.top
@@ -159,7 +159,7 @@ Dialog {
 
         Label {
             id: labelCreated
-            text: "Created: " + timestampToFullDate(page.creation)
+            text: qsTr("Created: %1").arg(timestampToFullDate(page.creation))
             anchors.top: presenceArea.bottom
             anchors.topMargin: Theme.paddingLarge
             anchors.left: ava.right
@@ -173,7 +173,7 @@ Dialog {
 
         Label {
             id: labelExpired
-            text: "Expiration: " + timestampToFullDate(page.expiration)
+            text: qsTr("Expiration: %1").arg(timestampToFullDate(page.expiration))
             anchors.top: labelCreated.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.left: ava.right
@@ -187,7 +187,7 @@ Dialog {
 
         Label {
             id: labelActive
-            text: "Account status: " + (page.active ? "active" : "blocked")
+            text: qsTr("Account status: %1").arg(page.kind)
             anchors.top: labelExpired.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.left: ava.right
@@ -201,7 +201,7 @@ Dialog {
 
         Label {
             id: labelType
-            text: "Account type: " + (page.isFree ? "free" : "paid")
+            text: qsTr("Account type: %1").arg(page.isFree ? qsTr("free") : qsTr("paid"))
             anchors.top: labelActive.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.left: ava.right
@@ -246,12 +246,12 @@ Dialog {
                 spacing: Theme.paddingLarge
                 DialogHeader {
                     id: dheader
-                    title: "Delete everything"
-                    acceptText: "Delete!"
+                    title: qsTr("Delete everything")
+                    acceptText: qsTr("Delete!")
                 }
                 Label {
                     width: parent.width
-                    text: "This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain."
+                    text: qsTr("This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.")
                     wrapMode: Text.WordWrap
                     horizontalAlignment: Text.AlignHCenter
                 }
@@ -317,7 +317,7 @@ Dialog {
         Button {
             anchors.top: avaView.bottom
             anchors.horizontalCenter: avaView.horizontalCenter
-            text: "Select"
+            text: qsTr("Select")
             onClicked: {
                 selectPicture.selected.connect(avatarView.resizeAvatar)
                 selectPicture.setProcessImages()

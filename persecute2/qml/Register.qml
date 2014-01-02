@@ -23,26 +23,26 @@ Page {
             pageStack.replace(roster)
         }
         onRegistrationFailed: {
-            errorLabel.text = "Registration failed\n\n" + parseServerReply(reason)
+            errorLabel.text = qsTr("Registration failed\n\n") + parseServerReply(reason)
             errorArea.visible = true
             phoneField.text = ""
             codeArea.text = ""
             busyIndicator.visible = false
         }
         onAccountExpired: {
-            errorLabel.text = "Account expired\n" + JSON.stringify(reason)
+            errorLabel.text = qsTr("Account expired\n") + JSON.stringify(reason)
             busyIndicator.visible = false
             errorArea.visible = true
             phoneField.text = ""
             codeArea.text = ""
         }
         onExistsRequestFailed: {
-            banner.notify("No exists information for your account.")
+            banner.notify(qsTr("No exists information for your account."))
             busyIndicator.visible = false
             codeDialog.open(false, PageStackAction.Immediate)
         }
         onCodeRequestFailed: {
-            errorLabel.text = "Code request failed\n\n" + parseServerReply(serverReply)
+            errorLabel.text = qsTr("Code request failed\n\n") + parseServerReply(serverReply)
             busyIndicator.visible = false
             errorArea.visible = true
             phoneField.text = ""
@@ -50,20 +50,20 @@ Page {
             phoneDialog.open(false, PageStackAction.Immediate)
         }
         onCodeRequested: {
-            banner.notify("Activation code requested. Wait for " + (reqSms.checked ? "sms message" : "voice call") + " soon.")
+            banner.notify(qsTr("Activation code requested. Wait for %1 soon").arg(reqSms.checked ? qsTr("sms message") : qsTr("voice call")))
             busyIndicator.visible = false
             codeDialog.open(false, PageStackAction.Immediate)
             codeArea.forceActiveFocus()
         }
         onCodeReceived: {
             pageStack.pop(page, PageStackAction.Immediate)
-            actionLabel.text = "Registering account..."
+            actionLabel.text = qsTr("Registering account...")
             busyIndicator.visible = true
             codeArea.focus = false
             page.forceActiveFocus()
         }
         onRegistrationComplete: {
-            banner.notify("Successfully registered in WhatsApp!")
+            banner.notify(qsTr("Successfully registered in WhatsApp!"))
             busyIndicator.visible = false
             phoneField.text = ""
             codeArea.text = ""
@@ -125,7 +125,7 @@ Page {
 
         PageHeader {
             id: titleBar
-            title: "Registration"
+            title: qsTr("Registration")
         }
 
         BusyIndicator {
@@ -180,7 +180,7 @@ Page {
 
         onAccepted: {
             whatsapp.regRequest(phoneField.text.trim(), reqSms.checked ? "sms" : "voice")
-            actionLabel.text = "Checking account..."
+            actionLabel.text = qsTr("Checking account...")
             busyIndicator.visible = true
             codeArea.focus = false
             page.forceActiveFocus()
@@ -192,7 +192,7 @@ Page {
             anchors.fill: parent
 
             DialogHeader {
-                title: "Registration"
+                title: qsTr("Registration")
             }
 
             Column {
@@ -220,7 +220,7 @@ Page {
                         anchors.right: parent.right
                         width: parent.width - plusSign.width
                         inputMethodHints: Qt.ImhDialableCharactersOnly
-                        placeholderText: "Enter phone number here"
+                        placeholderText: qsTr("Enter phone number here")
                         onTextChanged: {
                             if (text.indexOf(/[^0-9]/) !== -1) {
                                 console.log("have incorrect symbols inside")
@@ -247,7 +247,7 @@ Page {
                     Label {
                         anchors.left: reqSms.right
                         anchors.verticalCenter: reqSms.verticalCenter
-                        text: "SMS"
+                        text: qsTr("SMS")
                         color: reqSms.checked ? Theme.primaryColor : Theme.secondaryColor
 
                         MouseArea {
@@ -261,7 +261,7 @@ Page {
                     Label {
                         anchors.right: reqVoice.left
                         anchors.verticalCenter: reqVoice.verticalCenter
-                        text: "Voice"
+                        text: qsTr("Voice")
                         color: reqVoice.checked ? Theme.primaryColor : Theme.secondaryColor
 
                         MouseArea {
@@ -285,7 +285,7 @@ Page {
                 Button {
                     id: haveCode
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: "I have registration code"
+                    text: qsTr("I have registration code")
                     enabled: phoneDialog.canAccept
                     onClicked: {
                         codeDialog.open(false, PageStackAction.Immediate)
@@ -304,7 +304,7 @@ Page {
         onAccepted: {
             whatsapp.enterCode(phoneField.text.trim(), codeArea.text.trim())
             pageStack.pop(page, PageStackAction.Immediate)
-            actionLabel.text = "Registering account..."
+            actionLabel.text = qsTr("Registering account...")
             busyIndicator.visible = true
             codeArea.focus = false
             page.forceActiveFocus()
@@ -321,7 +321,7 @@ Page {
             anchors.fill: parent
 
             DialogHeader {
-                title: "Registration"
+                title: qsTr("Registration")
             }
 
             Column {
@@ -331,7 +331,7 @@ Page {
                 anchors.centerIn: parent
 
                 Label {
-                    text: "Enter registration code. 6-digits, no '-' sign."
+                    text: qsTr("Enter registration code. 6-digits, no '-' sign.")
                     anchors.horizontalCenter: parent.horizontalCenter
                     width: parent.width
                     wrapMode: Text.WordWrap
@@ -344,7 +344,7 @@ Page {
                     width: parent.width - (Theme.paddingLarge * 2)
                     inputMethodHints: Qt.ImhDigitsOnly
                     anchors.horizontalCenter: parent.horizontalCenter
-                    placeholderText: "Tap here to enter code"
+                    placeholderText: qsTr("Tap here to enter code")
                     EnterKey.enabled: false
                 }
             }

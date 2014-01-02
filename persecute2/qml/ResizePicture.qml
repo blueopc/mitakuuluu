@@ -26,7 +26,7 @@ Dialog {
 
     DialogHeader {
         id: title
-        title: "Resize picture"
+        title: qsTr("Resize picture")
     }
 
     InteractionArea {

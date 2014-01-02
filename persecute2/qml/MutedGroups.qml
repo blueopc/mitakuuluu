@@ -41,7 +41,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Add group"
+                text: qsTr("Add group")
                 onClicked: {
                     selectContact.hideGroups = false
                     selectContact.hideContacts = true
@@ -55,7 +55,7 @@ Page {
 
         header: PageHeader {
             id: title
-            title: "Muted groups"
+            title: qsTr("Muted groups")
         }
 
         function selectionFinished() {
@@ -73,7 +73,7 @@ Page {
         anchors.fill: listView
         color: Theme.secondaryHighlightColor
         font.pixelSize: Theme.fontSizeMedium
-        text: "No muted groups"
+        text: qsTr("No muted groups")
         visible: listView.count == 0
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter

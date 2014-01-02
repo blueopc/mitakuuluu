@@ -111,7 +111,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: "Add contacts"
+                text: qsTr("Add contacts")
                 enabled: listView.count > 0
                 onClicked: {
                     selectContact.added.connect(listView.contactAdded)
@@ -127,7 +127,7 @@ Page {
 
         PageHeader {
             id: title
-            title: "Group profile"
+            title: qsTr("Group profile")
             //second: participantsModel.count + " participants"
         }
 
@@ -138,7 +138,7 @@ Page {
             wrapMode: Text.NoWrap
             anchors.top: subjectArea.top
             anchors.topMargin: Theme.paddingSmall
-            text: "Subject: "
+            text: qsTr("Subject: ")
         }
 
         TextArea {
@@ -192,7 +192,7 @@ Page {
 
         Label {
             id: labelOwner
-            text: "Owner: " + Utilities.emojify(page.owner, emojiPath)
+            text: qsTr("Owner: %1").arg(Utilities.emojify(page.owner, emojiPath))
             anchors.top: subjectArea.bottom
             anchors.topMargin: - Theme.paddingLarge
             anchors.right: page.isPortrait ? parent.right : listView.left
@@ -206,7 +206,7 @@ Page {
 
         Label {
             id: labelCreation
-            text: "Creation: " + timestampToFullDate(page.creation)
+            text: qsTr("Creation: %1").arg(timestampToFullDate(page.creation))
             anchors.top: labelOwner.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.right: page.isPortrait ? parent.right : listView.left
@@ -220,7 +220,7 @@ Page {
 
         Label {
             id: subjectOwner
-            text: "Subject by: " + Utilities.emojify(page.sowner, emojiPath)
+            text: qsTr("Subject by: %1").arg(Utilities.emojify(page.sowner, emojiPath))
             anchors.top: labelCreation.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.right: page.isPortrait ? parent.right : listView.left
@@ -234,7 +234,7 @@ Page {
 
         Label {
             id: subjectCreation
-            text: "Subject set: " + timestampToFullDate(page.screation)
+            text: qsTr("Subject set: %1").arg(timestampToFullDate(page.screation))
             anchors.top: subjectOwner.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.right: page.isPortrait ? parent.right : listView.left
@@ -289,7 +289,7 @@ Page {
         Label {
             anchors.top: busy.bottom
             anchors.horizontalCenter: busy.horizontalCenter
-            text: "Fetching participants..."
+            text: qsTr("Fetching participants...")
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.secondaryHighlightColor
             visible: listView.count == 0
@@ -404,7 +404,7 @@ Page {
         Button {
             anchors.top: avaView.bottom
             anchors.horizontalCenter: avaView.horizontalCenter
-            text: "Select"
+            text: qsTr("Select")
             onClicked: {
                 selectPicture.selected.connect(changeAvatar.resizeAvatar)
                 selectPicture.setProcessImages()

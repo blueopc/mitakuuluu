@@ -83,28 +83,28 @@ Page {
             Label {
                 id: pushnameLabel
                 width: parent.width
-                text: "Nickname: " + Utilities.emojify(pushname, emojiPath)
+                text: qsTr("Nickname: %1").arg(Utilities.emojify(pushname, emojiPath))
                 textFormat: Text.RichText
             }
 
             Label {
                 id: presenceLabel
                 width: parent.width
-                text: "Status: " + Utilities.emojify(presence, emojiPath)
+                text: arg("Status: %1").arg(Utilities.emojify(presence, emojiPath))
                 textFormat: Text.RichText
             }
 
             Label {
                 id: phoneLabel
                 width: parent.width
-                text: "Phone: +" + phone
+                text: qsTr("Phone: +%1").arg(phone)
                 textFormat: Text.RichText
             }
 
             Label {
                 id: ifBlocked
                 width: parent.width
-                text: "Contact blocked"
+                text: qsTr("Contact blocked")
                 visible: page.blocked
             }
 
@@ -112,7 +112,7 @@ Page {
                 id: blockButton
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: roster.connectionStatus == 4
-                text: blocked ? "Unblock contact" : " Block contact"
+                text: blocked ? qsTr("Unblock contact") : qsTr("Block contact")
                 onClicked: {
                     page.blocked = !page.blocked
                     whatsapp.blockOrUnblockContact(page.jid)
@@ -122,7 +122,7 @@ Page {
             Button {
                 id: saveButton
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Save to phonebook"
+                text: qsTr("Save to phonebook")
                 onClicked: {
                     whatsapp.openProfile(pushname, "+" + phone)
                 }
@@ -131,7 +131,7 @@ Page {
             Button {
                 id: saveChatButton
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Save chat history to file"
+                text: qsTr("Save chat history to file")
                 onClicked: {
                     conversationPage.saveHistory(page.jid, page.pushname)
                 }
