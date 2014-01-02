@@ -1,0 +1,415 @@
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+import "Utilities.js" as Utilities
+
+Page {
+    id: page
+    objectName: "groupProfile"
+    allowedOrientations: Orientation.Portrait
+
+    property string jid: ""
+    property string subject: ""
+
+    property string ownerJid: ""
+    property string owner: ""
+    property int creation: 0
+    property string sowner: ""
+    property int screation: 0
+    property string avatar: ""
+
+    function loadContact(value) {
+        subject = value.nickname
+        jid = value.jid
+        participantsModel.clear()
+
+        //var model = roster.getContactModel(jid)
+        setGroupInfo(value)
+
+        whatsapp.getGroupInfo(jid)
+        whatsapp.getParticipants(jid)
+    }
+
+    function timestampToFullDate(stamp) {
+        var d = new Date(stamp*1000)
+        return Qt.formatDateTime(d, "dd MMM yyyy")
+    }
+
+    function setGroupInfo(value) {
+        page.subject = value.nickname
+        page.ownerJid = value.owner
+        page.owner = roster.getNicknameByJid(value.owner)
+        page.creation = value.timestamp
+        page.sowner = roster.getNicknameByJid(value.subowner)
+        page.screation = value.subtimestamp
+        if (typeof(value.avatar) != "undefined" && value.avatar != "undefined" && value.avatar.length > 0)
+            page.avatar = value.avatar
+        else
+            page.avatar = ""
+    }
+
+    Connections {
+        target: whatsapp
+        onGroupParticipant: {
+            if (gjid == page.jid) {
+                var model = roster.getContactModel(pjid)
+                participantsModel.append({"jid": model.jid,
+                                          "name": roster.getNicknameByJid(model.jid),
+                                          "avatar": model.avatar})
+            }
+        }
+        /*onGroupInfo: {
+            console.log("got group info: " + group.jid)
+            if (group.jid == page.jid) {
+                setGroupInfo(group)
+            }
+        }*/
+        onContactChanged: {
+            if (data.jid == page.jid) {
+                setGroupInfo(data)
+            }
+        }
+        /*onContactsChanged: {
+            console.log("contacts changed")
+            if (page.jid.length > 0) {
+                var model = roster.getContactModel(page.jid)
+                setGroupInfo(model)
+            }
+        }*/
+        onParticipantAdded: {
+            if (gjid == page.jid) {
+                var model = roster.getContactModel(pjid)
+                var avatar = (typeof(model.avatar) != "undefined" && model.avatar != "undefined" && model.avatar.length > 0) ? model.avatar : ""
+                participantsModel.append({"jid": model.jid,
+                                          "name": roster.getNicknameByJid(model.jid),
+                                          "avatar": avatar})
+            }
+        }
+        onParticipantRemoved: {
+            if (gjid == page.jid) {
+                for (var i = 0; i < participantsModel.count; i ++) {
+                    var model = participantsModel.get(i)
+                    if (pjid == model.jid) {
+                        participantsModel.remove(i)
+                        break;
+                    }
+                }
+            }
+        }
+        onPictureUpdated: {
+            if (pjid == page.jid) {
+                page.avatar = ""
+                page.avatar = path
+            }
+        }
+    }
+
+    SilicaFlickable {
+        id: flickable
+        anchors.fill: page
+        anchors.leftMargin: Theme.paddingMedium
+        anchors.rightMargin: Theme.paddingMedium
+
+        PullDownMenu {
+            MenuItem {
+                text: "Add contacts"
+                enabled: listView.count > 0
+                onClicked: {
+                    selectContact.added.connect(listView.contactAdded)
+                    selectContact.removed.connect(listView.contactRemoved)
+                    selectContact.done.connect(listView.selectFinished)
+                    selectContact.contactsChanged()
+                    selectContact.select(participantsModel)
+                    selectContact.jid = page.jid
+                    selectContact.open()
+                }
+            }
+        }
+
+        PageHeader {
+            id: title
+            title: "Group profile"
+            //second: participantsModel.count + " participants"
+        }
+
+        Label {
+            id: subjectLabel
+            anchors.left: parent.left
+            anchors.leftMargin: Theme.paddingSmall
+            wrapMode: Text.NoWrap
+            anchors.top: subjectArea.top
+            anchors.topMargin: Theme.paddingSmall
+            text: "Subject: "
+        }
+
+        TextArea {
+            id: subjectArea
+            anchors.top: title.bottom
+            anchors.topMargin: - Theme.paddingLarge
+            anchors.left: subjectLabel.right
+            anchors.right: parent.right
+            text: page.subject
+            EnterKey.enabled: text.trim().length > 0
+            EnterKey.highlighted: EnterKey.enabled
+            EnterKey.iconSource: "image://theme/icon-m-enter-next"
+            EnterKey.onClicked: {
+                whatsapp.setGroupSubject(page.jid, text.trim())
+            }
+            onActiveFocusChanged: {
+                if (activeFocus) {
+                    hsubject = page.subject
+                }
+                else {
+                    text = hsubject
+                }
+            }
+            property string hsubject: ""
+        }
+
+        AvatarHolder {
+            id: ava
+            width: Theme.iconSizeLarge
+            height: Theme.iconSizeLarge
+            anchors.top: subjectArea.bottom
+            anchors.topMargin: - Theme.paddingLarge
+            anchors.left: parent.left
+            anchors.leftMargin: Theme.paddingSmall
+            source: page.avatar
+        }
+
+        BusyIndicator {
+            anchors.centerIn: ava
+            running: visible
+            visible: false
+            size: BusyIndicatorSize.Large
+        }
+
+        MouseArea {
+            anchors.fill: ava
+            onClicked: {
+                changeAvatar.show(ava.source)
+            }
+        }
+
+        Label {
+            id: labelOwner
+            text: "Owner: " + Utilities.emojify(page.owner, emojiPath)
+            anchors.top: subjectArea.bottom
+            anchors.topMargin: - Theme.paddingLarge
+            anchors.right: page.isPortrait ? parent.right : listView.left
+            anchors.rightMargin: Theme.paddingSmall
+            anchors.left: ava.right
+            anchors.leftMargin: Theme.paddingSmall
+            wrapMode: Text.NoWrap
+            horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
+            font.pixelSize: Theme.fontSizeExtraSmall
+        }
+
+        Label {
+            id: labelCreation
+            text: "Creation: " + timestampToFullDate(page.creation)
+            anchors.top: labelOwner.bottom
+            anchors.topMargin: Theme.paddingSmall
+            anchors.right: page.isPortrait ? parent.right : listView.left
+            anchors.rightMargin: Theme.paddingSmall
+            anchors.left: ava.right
+            anchors.leftMargin: Theme.paddingSmall
+            wrapMode: Text.NoWrap
+            horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
+            font.pixelSize: Theme.fontSizeExtraSmall
+        }
+
+        Label {
+            id: subjectOwner
+            text: "Subject by: " + Utilities.emojify(page.sowner, emojiPath)
+            anchors.top: labelCreation.bottom
+            anchors.topMargin: Theme.paddingSmall
+            anchors.right: page.isPortrait ? parent.right : listView.left
+            anchors.rightMargin: Theme.paddingSmall
+            anchors.left: ava.right
+            anchors.leftMargin: Theme.paddingSmall
+            wrapMode: Text.NoWrap
+            horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
+            font.pixelSize: Theme.fontSizeExtraSmall
+        }
+
+        Label {
+            id: subjectCreation
+            text: "Subject set: " + timestampToFullDate(page.screation)
+            anchors.top: subjectOwner.bottom
+            anchors.topMargin: Theme.paddingSmall
+            anchors.right: page.isPortrait ? parent.right : listView.left
+            anchors.rightMargin: Theme.paddingSmall
+            anchors.left: ava.right
+            anchors.leftMargin: Theme.paddingSmall
+            wrapMode: Text.NoWrap
+            horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
+            font.pixelSize: Theme.fontSizeExtraSmall
+        }
+
+        SilicaListView {
+            id: listView
+            clip: true
+            anchors.top: page.isPortrait ? subjectCreation.bottom : subjectArea.bottom
+            anchors.topMargin: page.isPortrait ? Theme.paddingLarge: ( - Theme.paddingLarge)
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            width: page.isPortrait ? page.width : (page.width / 2)
+            model: participantsModel
+            delegate: listDelegate
+
+            function contactAdded(pjid) {
+                if (pjid != roster.myJid)
+                    whatsapp.addParticipant(page.jid, pjid)
+            }
+
+            function contactRemoved(pjid) {
+                if (pjid != roster.myJid)
+                    whatsapp.removeParticipant(page.jid, pjid)
+            }
+
+            function selectFinished() {
+                selectContact.done.disconnect(listView.selectFinished)
+                selectContact.added.disconnect(listView.contactAdded)
+                selectContact.removed.disconnect(listView.contactRemoved)
+            }
+        }
+
+        VerticalScrollDecorator {
+            flickable: listView
+        }
+
+        BusyIndicator {
+            id: busy
+            anchors.centerIn: listView
+            visible: listView.count == 0
+            running: visible
+            size: BusyIndicatorSize.Large
+        }
+
+        Label {
+            anchors.top: busy.bottom
+            anchors.horizontalCenter: busy.horizontalCenter
+            text: "Fetching participants..."
+            font.pixelSize: Theme.fontSizeSmall
+            color: Theme.secondaryHighlightColor
+            visible: listView.count == 0
+        }
+    }
+
+    ListModel {
+        id: participantsModel
+    }
+
+    Component {
+        id: listDelegate
+        Rectangle {
+            id: item
+            width: parent.width - Theme.paddingLarge
+            anchors.horizontalCenter: parent.horizontalCenter
+            height: Theme.itemSizeMedium
+            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
+
+            AvatarHolder {
+                id: contactava
+                height: Theme.iconSizeLarge
+                width: Theme.iconSizeLarge
+                source: model.avatar
+                anchors.left: parent.left
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.verticalCenter: parent.verticalCenter
+            }
+
+            Label {
+                id: contact
+                anchors.left: contactava.right
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.verticalCenter: parent.verticalCenter
+                anchors.right: remove.left
+                anchors.rightMargin: Theme.paddingSmall
+                font.pixelSize: Theme.fontSizeMedium
+                text: Utilities.emojify(model.name, emojiPath)
+                color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
+                truncationMode: TruncationMode.Fade
+            }
+
+            MouseArea {
+                id: mArea
+                anchors.fill: parent
+            }
+
+            IconButton {
+                id: remove
+                width: Theme.iconSizeLarge
+                height: Theme.iconSizeLarge
+                anchors.right: parent.right
+                anchors.rightMargin: Theme.paddingSmall
+                anchors.verticalCenter: parent.verticalCenter
+                visible: page.ownerJid == roster.myJid && model.jid != roster.myJid
+                icon.source: "image://theme/icon-m-clear"
+                highlighted: pressed
+                onClicked: {
+                    whatsapp.removeParticipant(page.jid, model.jid)
+                    participantsModel.remove(index)
+                }
+            }
+        }
+    }
+
+    Rectangle {
+        id: changeAvatar
+        anchors.fill: parent
+        color: "#A0000000"
+        opacity: 0.0
+        visible: opacity > 0.0
+        Behavior on opacity {
+            FadeAnimation {}
+        }
+        function show(path) {
+            avaView.source = path
+            changeAvatar.opacity = 1.0
+            page.backNavigation = false
+        }
+        function hide() {
+            avaView.source = ""
+            changeAvatar.opacity = 0.0
+            page.backNavigation = true
+        }
+        function resizeAvatar(path) {
+            selectPicture.selected.disconnect(changeAvatar.resizeAvatar)
+            resizePicture.picture = path
+            resizePicture.jid = page.jid
+            resizePicture.selected.connect(changeAvatar.setNewAvatar)
+            resizePicture.open(true)
+        }
+        function setNewAvatar(path) {
+            resizePicture.selected.disconnect(changeAvatar.setNewAvatar)
+            avaView.source = ""
+            avaView.source = path
+            whatsapp.setPicture(page.jid, avaView.source)
+        }
+        Image {
+            id: avaView
+            anchors.centerIn: parent
+            asynchronous: true
+            cache: false
+        }
+        MouseArea {
+            enabled: changeAvatar.visible
+            anchors.fill: parent
+            onClicked: {
+                console.log("changeAvatar clicked")
+                changeAvatar.hide()
+            }
+        }
+        Button {
+            anchors.top: avaView.bottom
+            anchors.horizontalCenter: avaView.horizontalCenter
+            text: "Select"
+            onClicked: {
+                selectPicture.selected.connect(changeAvatar.resizeAvatar)
+                selectPicture.setProcessImages()
+                selectPicture.open()
+            }
+        }
+    }
+}

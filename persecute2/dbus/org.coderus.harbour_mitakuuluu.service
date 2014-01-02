@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.coderus.harbour_mitakuuluu
+Exec=/usr/bin/invoker --type=silica-qt5 -s /usr/bin/harbour-mitakuuluu
