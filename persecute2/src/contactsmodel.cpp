@@ -331,6 +331,7 @@ void ContactsModel::contactChanged(const QVariantMap &data)
     contact["nickname"] = nickname;
     JidNameStampPair pair(jid, nickname, 0);
     if (_modelData.keys().contains(jid)) {
+        pair._stamp = _modelData[jid]["lastmessage"].toInt();
         QString avatar = _modelData[jid]["avatar"].toString();
         contact["avatar"] = avatar;
         int row = getIndexByJid(jid);
@@ -443,6 +444,7 @@ void ContactsModel::newGroupSubject(const QVariantMap &data)
         QString subowner = data["subowner"].toString();
         int lastmessage = _modelData[jid]["lastmessage"].toInt();
         QString subtimestamp = data["subtimestamp"].toString();
+        qDebug() << "Model upgate group subject" << message << "jid:" << jid << "lastmessage:" << QString::number(lastmessage);
         int row = getIndexByJid(jid);
         if (row > -1) {
             _modelData[jid]["message"] = message;

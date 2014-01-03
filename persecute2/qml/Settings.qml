@@ -28,6 +28,12 @@ Page {
                     pageStack.push(aboutPage)
                 }
             }
+            /*MenuItem {
+                text: qsTr("Send logfile to author")
+                onClicked: {
+                    whatsapp.sendRecentLogs() //disabled until mailto attach not working
+                }
+            }*/
             MenuItem {
                 text: qsTr("Account")
                 onClicked: {
@@ -98,14 +104,14 @@ Page {
                 }
             }
 
-            TextSwitch {
+            /*TextSwitch {
                 checked: asynchronousDelegate
                 text: qsTr("Load delegates asynchronously")
                 onClicked: {
                     asynchronousDelegate = checked
                     settings.setValue("asynchronousDelegate", checked)
                 }
-            }
+            }*/
 
             TextSwitch {
                 checked: notifyActive
@@ -187,6 +193,34 @@ Page {
                 text: qsTr("Common")
             }
 
+            ComboBox {
+                label: qsTr("Language")
+                menu: ContextMenu {
+                    Repeater {
+                        width: parent.width
+                        model: localeNames
+                        delegate: MenuItem {
+                            text: modelData
+                        }
+                    }
+                }
+                onCurrentItemChanged: {
+                    if (pageStack.currentPage.objectName !== "roster") {
+                        //console.log(" index: " + currentIndex)
+                        //console.log("selected: " + localeNames[currentIndex] + " locale: " + locales[currentIndex] + " index: " + currentIndex)
+                        settings.setValue("locale", locales[currentIndex])
+                        whatsapp.setLocale(locales[currentIndex])
+                        banner.notify(qsTr("Restart application to change language"))
+                        //pageStack.clear()
+                        //pageStack.push(roster)
+                    }
+                }
+                Component.onCompleted: {
+                    //console.log("default: " + localeNames[localeIndex] + " locale: " + locales[localeIndex] + " index: " + localeIndex)
+                    currentIndex = parseInt(localeIndex)
+                }
+            }
+
             TextSwitch {
                 id: showMyself
                 checked: showMyJid
@@ -248,6 +282,7 @@ Page {
                     onClicked: {
                         offlineSwitch.checked = !checked
                         settings.setValue("alwaysOffline", !checked)
+                        alwaysOffline = !checked
                     }
                 }
 
@@ -273,6 +308,7 @@ Page {
                     onClicked: {
                         onlineSwitch.checked = !checked
                         settings.setValue("alwaysOffline", checked)
+                        alwaysOffline = checked
                     }
                 }
             }

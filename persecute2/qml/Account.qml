@@ -187,7 +187,7 @@ Dialog {
 
         Label {
             id: labelActive
-            text: qsTr("Account status: %1").arg(page.kind)
+            text: page.active ? qsTr("Account is active") : qsTr("Account is blocked")
             anchors.top: labelExpired.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.left: ava.right
@@ -201,7 +201,7 @@ Dialog {
 
         Label {
             id: labelType
-            text: qsTr("Account type: %1").arg(page.isFree ? qsTr("free") : qsTr("paid"))
+            text: qsTr("Account type: %1").arg(page.kind)
             anchors.top: labelActive.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.left: ava.right
@@ -240,15 +240,15 @@ Dialog {
         id: deleteDialog
         SilicaFlickable {
             anchors.fill: parent
+            DialogHeader {
+                id: dheader
+                title: qsTr("Delete everything")
+                acceptText: qsTr("Delete!")
+            }
             Column {
                 width: parent.width - (Theme.paddingLarge * 2)
                 anchors.centerIn: parent
                 spacing: Theme.paddingLarge
-                DialogHeader {
-                    id: dheader
-                    title: qsTr("Delete everything")
-                    acceptText: qsTr("Delete!")
-                }
                 Label {
                     width: parent.width
                     text: qsTr("This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.")

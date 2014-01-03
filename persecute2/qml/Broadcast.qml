@@ -202,7 +202,7 @@ Dialog {
             color: Theme.secondaryHighlightColor
             font.bold: pArea.pressed
             visible: listModel.count == 0
-            text: qsTr("Select «Add contact» menu item to select contacts")
+            text: qsTr("Select &quot;Add contact&quot; menu item to select contacts")
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.WordWrap

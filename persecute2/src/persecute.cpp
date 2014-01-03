@@ -102,21 +102,13 @@ int main(int argc, char *argv[])
     qInstallMessageHandler(messageHandler);
     qDebug() << "Starting application";
     QGuiApplication *app = SailfishApp::application(argc, argv);
-    QLocale locale;
-    QString baseName("/usr/share/harbour-mitakuuluu/locales/");
-    QString qmName(baseName + locale.name() + ".qm");
-    if (QFile(qmName).exists()) {
-        QTranslator translator;
-        translator.load(qmName);
-        app->installTranslator(&translator);
-        qDebug() << "Using locale:" << locale.name();
-    }
-    else {
-        qDebug() << "Locale" << locale.name() << "not found";
-    }
     QQuickView *view = SailfishApp::createView();
     view->rootContext()->setContextProperty("view", view);
     view->rootContext()->setContextProperty("app", app);
+
+    qDebug() << "Creating Settings object";
+    Settings *settings = new Settings(view);
+    view->rootContext()->setContextProperty("settings", settings);
 
     qDebug() << "Checking if directories exists";
     QDir home = QDir::home();
@@ -138,9 +130,27 @@ int main(int argc, char *argv[])
     WhatsApp *whatsapp = new WhatsApp(view);
     view->rootContext()->setContextProperty("whatsapp", whatsapp);
 
-    qDebug() << "Creating Settings object";
-    Settings *settings = new Settings(view);
-    view->rootContext()->setContextProperty("settings", settings);
+    QStringList locales;
+    QStringList localeNames;
+    QString baseName("/usr/share/harbour-mitakuuluu/locales/");
+    QDir localesDir(baseName);
+    if (localesDir.exists()) {
+        locales = localesDir.entryList(QStringList() << "*.qm", QDir::Files | QDir::NoDotAndDotDot, QDir::Name | QDir::IgnoreCase);
+    }
+    foreach (const QString &locale, locales) {
+        localeNames << QLocale(locale).nativeLanguageName();
+    }
+    view->rootContext()->setContextProperty("locales", locales);
+    view->rootContext()->setContextProperty("localeNames", localeNames);
+
+    int localeIndex = 0;
+    QString currentLocale = settings->value("locale", QLocale::system().name()).toString();
+    if (locales.contains(currentLocale)) {
+        qDebug() << "loading" << currentLocale;
+        localeIndex = locales.indexOf(currentLocale);
+        whatsapp->setLocale(currentLocale);
+    }
+    view->rootContext()->setContextProperty("localeIndex", localeIndex);
 
     QStringList customDelegates;
     QDir delegates("/home/nemo/.whatsapp/delegates/");

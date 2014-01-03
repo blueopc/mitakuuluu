@@ -182,6 +182,15 @@ Page {
     }
 
     Connections {
+        target: roster.contacts
+        onNicknameChanged: {
+            if (pjid == page.jid) {
+                page.title = nickname
+            }
+        }
+    }
+
+    Connections {
         target: whatsapp
         onPresenceAvailable: {
             if (mjid == page.jid) {
@@ -218,10 +227,15 @@ Page {
         }
         onMessageReceived: {
             if (data.jid == page.jid && data.author != roster.myJid && notifyActive) {
-                whatsapp.feedbackEffect()
+                vibration.start()
             }
             else if (data.author == roster.myJid) {
                 scrollDown.start()
+            }
+        }
+        onNewGroupSubject: {
+            if (data.jid == page.jid) {
+                page.title = data.message
             }
         }
     }
@@ -342,12 +356,12 @@ Page {
             }
             ProgressBar {
                 id: typingItem
-                anchors.top: hColumn.bottom
-                anchors.horizontalCenter: hColumn.horizontalCenter
-                width: nameText.width
+                width: parent.width
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: - Theme.paddingLarge - (height * 2)
                 height: 5
                 indeterminate: true
-                visible: typingTimer.running
+                visible: contactTypingTimer.running
                 minimumValue: 0
                 maximumValue: 1
                 value: 1
@@ -361,7 +375,7 @@ Page {
             width: parent.width
             anchors.bottom: parent.bottom
             clip: true
-            cacheBuffer: page.height * 2
+            cacheBuffer: 1600
             pressDelay: 0
             interactive: true
             boundsBehavior: Flickable.StopAtBounds
@@ -369,7 +383,7 @@ Page {
                 id: delegateComponent
                 Loader {
                     width: parent.width
-                    asynchronous: asynchronousDelegate
+                    asynchronous: false
                     source: conversationTheme
                 }
             }
@@ -382,8 +396,9 @@ Page {
             section.property: "msgdate"
             section.delegate: sectionDelegate
             onMovementEnded: {
-                if (shouldLoadLast && conversationView.count > 19)
+                if (shouldLoadLast && conversationView.count > 19) {
                     conversationModel.loadOldConversation(20)
+                }
                 shouldLoadLast = false
                 bottomHeight = contentHeight - contentY - height
             }
@@ -591,7 +606,7 @@ Page {
                     selectPicture.selected.connect(page.sendMedia)
                     selectPicture.setProcessImages()
                     selectPicture.open(true)
-                    selectFile.done.connect(page.unbindMediaImage)
+                    selectPicture.done.connect(page.unbindMediaImage)
                 }
             }
 

@@ -109,8 +109,30 @@ Dialog {
             pressDelay: 0
             interactive: true
             boundsBehavior: Flickable.StopAtBounds
-            section.property: "nickname"
+            section.property: "modelData"
             section.criteria: ViewSection.FirstCharacter
+            section.delegate: Component {
+                id: sectionDelegate
+                Item {
+                    width: parent.width //ListView.view.width
+                    height: sectionLabel.paintedHeight
+                    Label {
+                        id: sectionLabel
+                        anchors.right: parent.right
+                        anchors.rightMargin: Theme.paddingSmall
+                        horizontalAlignment: Text.AlignRight
+                        font.pixelSize: Theme.fontSizeMedium
+                        color: Theme.highlightColor
+                        text: section.nickname
+                    }
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            console.log(section.nickname)
+                        }
+                    }
+                }
+            }
 
             FastScroll {
                 id: fastScroll

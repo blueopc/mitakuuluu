@@ -7,6 +7,7 @@ Dialog {
     id: page
     objectName: "selectContact"
     allowedOrientations: Orientation.Portrait
+    canAccept: jids.length > 0
 
     property string jid: ""
     property variant jids: []
@@ -44,7 +45,7 @@ Dialog {
 
     DialogHeader {
         id: title
-        title: qsTr("Select contact")
+        title: jids.length == 0 ? qsTr("Select contact") : qsTr("Selected %1 contacts")
     }
 
     SilicaListView {

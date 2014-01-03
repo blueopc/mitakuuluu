@@ -245,7 +245,7 @@ function emojify(inputText, emojiPath) {
     var regb = /([\ue001-\ue537])/g
     var regc = /([\u2001-\u3030])/g
 
-    //replacedText = to_softbank(replacedText)
+    replacedText = to_softbank(replacedText)
 
     replacedText = replacedText.replace(regb, function(s, eChar){
         return '<img src="'+emojiPath+eChar.charCodeAt(0).toString(16).toUpperCase()+'.png">';

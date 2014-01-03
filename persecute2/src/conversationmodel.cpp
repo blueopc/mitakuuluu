@@ -328,12 +328,12 @@ void ConversationModel::dbResults(const QVariant &result)
         beginResetModel();
         _modelData.clear();
         _sortedTimestampMsgidList.clear();
-        endResetModel();
+        //endResetModel();
 
         Q_EMIT lastMessageToBeChanged(jid);
         QVariantList records = reply["messages"].toList();
         if (records.size() > 0) {
-            beginInsertRows(QModelIndex(), 0, records.size() - 1);
+            //beginInsertRows(QModelIndex(), 0, records.size() - 1);
             foreach (const QVariant &c, records) {
                 QVariantMap data = c.toMap();
                 QString msgId = data["msgid"].toString();
@@ -348,8 +348,9 @@ void ConversationModel::dbResults(const QVariant &result)
                 }
             }
             qSort(_sortedTimestampMsgidList);
-            endInsertRows();
+            //endInsertRows();
         }
+        endResetModel();
         _loadingBusy = false;
         Q_EMIT lastMessageChanged(jid, true);
         break;

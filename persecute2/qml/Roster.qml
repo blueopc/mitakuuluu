@@ -483,7 +483,7 @@ Page {
                 anchors.left: itemDelegate.left
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.top: itemDelegate.top
-                anchors.topMargin: Theme.paddingSmall
+                anchors.topMargin: Theme.paddingSmall / 2
                 width: Theme.iconSizeLarge
                 height: Theme.iconSizeLarge
 
@@ -509,34 +509,34 @@ Page {
                 }
             }
 
-            Label {
-                id: nickname
-                font.pixelSize: Theme.fontSizeMedium
-                text: Utilities.emojify(model.nickname, emojiPath)
+            Column {
                 anchors.left: ava.right
                 anchors.leftMargin: Theme.paddingLarge
-                anchors.top: itemDelegate.top
-                anchors.topMargin: Theme.paddingMedium
+                anchors.verticalCenter: ava.verticalCenter
                 anchors.right: itemDelegate.right
                 anchors.rightMargin: Theme.paddingSmall
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-                color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
-            }
+                clip: true
+                spacing: Theme.paddingSmall
 
-            Label {
-                id: status
-                font.pixelSize: Theme.fontSizeSmall
-                text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : qsTr("Group chat")
-                anchors.left: ava.right
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.top: nickname.bottom
-                anchors.topMargin: Theme.paddingSmall
-                anchors.right: itemDelegate.right
-                anchors.rightMargin: Theme.paddingSmall
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-                color: mArea.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                Label {
+                    id: nickname
+                    font.pixelSize: Theme.fontSizeMedium
+                    width: parent.width
+                    text: Utilities.emojify(model.nickname, emojiPath)
+                    wrapMode: Text.NoWrap
+                    elide: Text.ElideRight
+                    color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
+                }
+
+                Label {
+                    id: status
+                    font.pixelSize: Theme.fontSizeSmall
+                    width: parent.width
+                    text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : qsTr("Group chat")
+                    wrapMode: Text.NoWrap
+                    elide: Text.ElideRight
+                    color: mArea.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                }
             }
 
             MouseArea {
@@ -547,6 +547,7 @@ Page {
                     pageStack.push(conversation)
                 }
                 onPressAndHold: {
+                    console.log("last message: " + model.lastmessage)
                     inMenu.show(itemDelegate)
                 }
             }

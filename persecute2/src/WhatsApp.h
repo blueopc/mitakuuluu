@@ -24,8 +24,6 @@
 #include <QtContacts/QContactPhoneNumber>
 #include <QtContacts/QContactAvatar>
 
-#include <QtFeedback/QtFeedback>
-
 using namespace QtContacts;
 
 class WhatsApp: public QObject
@@ -52,6 +50,8 @@ private:
     QString _pendingJid;
 
     QDBusInterface *iface;
+
+    QTranslator translator;
 
 signals:
     void ready();
@@ -166,7 +166,7 @@ public slots:
     void syncAllPhonebook();
     void removeAccountFromServer();
     void forceConnection();
-    void feedbackEffect();
+    void setLocale(const QString &localeName);
 };
 
 #endif // WHATSAPP_H

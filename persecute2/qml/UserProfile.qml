@@ -15,6 +15,15 @@ Page {
     property bool blocked: false
 
     Connections {
+        target: roster.contacts
+        onNicknameChanged: {
+            if (pjid == page.jid) {
+                pushname = nickname
+            }
+        }
+    }
+
+    Connections {
         target: whatsapp
 
         onPictureUpdated: {

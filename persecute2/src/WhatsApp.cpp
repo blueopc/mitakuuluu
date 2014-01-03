@@ -619,18 +619,16 @@ void WhatsApp::forceConnection()
     }
 }
 
-void WhatsApp::feedbackEffect()
+void WhatsApp::setLocale(const QString &localeName)
 {
-    QFeedbackActuator *actuator = new QFeedbackActuator(this);
-    QFeedbackHapticsEffect *feedback = new QFeedbackHapticsEffect(this);
-    feedback->setActuator(actuator);
-    feedback->setAttackIntensity(0);
-    feedback->setAttackTime(250);
-    feedback->setIntensity(1);
-    feedback->setDuration(200);
-    feedback->setFadeTime(250);
-    feedback->setFadeIntensity(0);
-    feedback->start();
-    feedback->deleteLater();
-    actuator->deleteLater();
+    QGuiApplication::removeTranslator(&translator);
+
+    QString locale = localeName.split(".").first();
+    qDebug() << "loading translation:" << locale;
+    qDebug() << (translator.load(locale, "/usr/share/harbour-mitakuuluu/locales", QString(), ".qm") ? "Translator loaded" : "Error loading translator");
+    qDebug() << (QGuiApplication::installTranslator(&translator) ? "Translator installed" : "Error installing translator");
+
+    if (iface) {
+        iface->call(QDBus::NoBlock, "setLocale", locale);
+    }
 }

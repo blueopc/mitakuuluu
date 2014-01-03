@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import QtFeedback 5.0
 
 ApplicationWindow {
     id: appWindow
@@ -24,7 +25,6 @@ ApplicationWindow {
     property string conversationTheme: "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
     property int conversationIndex: 0
     property bool alwaysOffline: false
-    property bool asynchronousDelegate: true
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -104,7 +104,7 @@ ApplicationWindow {
         resizeImagesToMPix = settings.value("resizeImagesToMPix", parseInt(5))
         conversationTheme = settings.value("conversationTheme", "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml")
         alwaysOffline = settings.value("alwaysOffline", false)
-        asynchronousDelegate = settings.value("asynchronousDelegate", true)
+        //asynchronousDelegate = settings.value("asynchronousDelegate", true)
     }
 
     AddContact {
@@ -188,6 +188,17 @@ ApplicationWindow {
 
     Popup {
         id: banner
+    }
+
+    HapticsEffect {
+        id: vibration
+        intensity: 1.0
+        duration: 200
+        attackTime: 250
+        fadeTime: 250
+        attackIntensity: 0.0
+        fadeIntensity: 0.0
+        //actuator: Actuator {}
     }
 }
 

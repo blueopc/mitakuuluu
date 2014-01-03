@@ -29,6 +29,7 @@ Dialog {
 
     onDone: {
         files.clear()
+        selectedPath = ""
     }
 
     FilesModel {
