@@ -287,9 +287,9 @@ Dialog {
             avatarView.opacity = 0.0
             page.backNavigation = true
         }
-        function resizeAvatar(path) {
-            selectPicture.selected.disconnect(avatarView.resizeAvatar)
-            resizePicture.picture = path
+        function resizeAvatar() {
+            selectPicture.accepted.disconnect(avatarView.resizeAvatar)
+            resizePicture.picture = selectPicture.selectedPath
             resizePicture.jid = roster.myJid
             resizePicture.selected.connect(avatarView.setNewAvatar)
             resizePicture.open(true)
@@ -319,7 +319,7 @@ Dialog {
             anchors.horizontalCenter: avaView.horizontalCenter
             text: qsTr("Select")
             onClicked: {
-                selectPicture.selected.connect(avatarView.resizeAvatar)
+                selectPicture.accepted.connect(avatarView.resizeAvatar)
                 selectPicture.setProcessImages()
                 selectPicture.open()
             }

@@ -23,13 +23,14 @@ Dialog {
         files.showRecursive(dirs)
     }
 
-    onAccepted: {
-        page.selected(page.selectedPath)
+    onStatusChanged: {
+        if (page.status == DialogStatus.Opened) {
+            selectedPath = ""
+        }
     }
 
     onDone: {
         files.clear()
-        selectedPath = ""
     }
 
     FilesModel {
@@ -45,7 +46,7 @@ Dialog {
         anchors.right: parent.right
         cellWidth: page.isPortrait ? (page.width / 4) : (page.width / 7)
         cellHeight: cellWidth
-        cacheBuffer: page.height
+        cacheBuffer: cellHeight * 2
 
         model: files
 

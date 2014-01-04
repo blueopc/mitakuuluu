@@ -385,9 +385,9 @@ Page {
             changeAvatar.opacity = 0.0
             page.backNavigation = true
         }
-        function resizeAvatar(path) {
-            selectPicture.selected.disconnect(changeAvatar.resizeAvatar)
-            resizePicture.picture = path
+        function resizeAvatar() {
+            selectPicture.accepted.disconnect(changeAvatar.resizeAvatar)
+            resizePicture.picture = selectPicture.selectedPath
             resizePicture.jid = page.jid
             resizePicture.selected.connect(changeAvatar.setNewAvatar)
             resizePicture.open(true)
@@ -417,7 +417,7 @@ Page {
             anchors.horizontalCenter: avaView.horizontalCenter
             text: qsTr("Select")
             onClicked: {
-                selectPicture.selected.connect(changeAvatar.resizeAvatar)
+                selectPicture.accepted.connect(changeAvatar.resizeAvatar)
                 selectPicture.setProcessImages()
                 selectPicture.open()
             }

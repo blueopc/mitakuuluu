@@ -46,8 +46,12 @@ Page {
         banner.notify(qsTr("Media uploading started"))
     }
 
+    function sendMediaImage() {
+        sendMedia(selectPicture.selectedPath)
+    }
+
     function unbindMediaImage() {
-        selectPicture.selected.disconnect(page.sendMedia)
+        selectPicture.accepted.disconnect(page.sendMedia)
         selectPicture.done.disconnect(page.unbindMediaImage)
     }
 
@@ -603,7 +607,7 @@ Page {
                 height: mFlick.itemHeight
                 icon.source: "image://theme/icon-m-image"
                 onClicked: {
-                    selectPicture.selected.connect(page.sendMedia)
+                    selectPicture.accepted.connect(page.sendMedia)
                     selectPicture.setProcessImages()
                     selectPicture.open(true)
                     selectPicture.done.connect(page.unbindMediaImage)
