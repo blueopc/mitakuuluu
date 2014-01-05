@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
         locales = localesDir.entryList(QStringList() << "*.qm", QDir::Files | QDir::NoDotAndDotDot, QDir::Name | QDir::IgnoreCase);
     }
     foreach (const QString &locale, locales) {
-        localeNames << QLocale(locale).nativeLanguageName();
+        localeNames << QLocale::languageToString(QLocale(locale).language());
     }
     view->rootContext()->setContextProperty("locales", locales);
     view->rootContext()->setContextProperty("localeNames", localeNames);

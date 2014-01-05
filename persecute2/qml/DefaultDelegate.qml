@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "file:///usr/share/harbour-mitakuuluu/qml"
 
 Item {
     id: item
@@ -85,6 +86,7 @@ Item {
             cache: true
             clip: true
             smooth: true
+            rotation: (model.localurl.length > 0) ? whatsapp.getExifRotation(model.localurl) : 0
         }
     }
 

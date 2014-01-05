@@ -58,12 +58,12 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is active</source>
-        <translation type="unfinished"/>
+        <translation>Account attivo</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is blocked</source>
-        <translation type="unfinished"/>
+        <translation>Account bloccato</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="204"/>
@@ -78,7 +78,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="254"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation>Questa azione eliminerà il tuo account dai server di WhatsApp, le informazioni di accesso, le conversazioni e i contatti. I media scaricati saranno mantenuti.</translation>
+        <translation>Quest&apos;azione eliminerà il tuo account dai server di WhatsApp, le informazioni di accesso, le conversazioni e i contatti. I media scaricati saranno mantenuti.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="320"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="77"/>
         <source>Enter contact name here</source>
-        <translation>Inserire il nome del contatto qui</translation>
+        <translation>Inserisci qui il nome del contatto</translation>
     </message>
 </context>
 <context>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona &apos;Aggiungi contatto&apos; nel menu per selezionare i contatti</translation>
     </message>
 </context>
 <context>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
         <source>Mitakuuluu share</source>
-        <translation>Condividi Mitakuuluu</translation>
+        <translation>Condivisione Mitakuuluu</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
@@ -155,7 +155,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="46"/>
         <source>Media uploading started</source>
-        <translation>Caricamento media avviato</translation>
+        <translation>Caricamento media in corso</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
@@ -236,7 +236,7 @@
         <location filename="../persecute2/qml/Conversation.qml" line="264"/>
         <location filename="../persecute2/qml/Conversation.qml" line="267"/>
         <source>Remove all messages</source>
-        <translation>Rimuovi tutti i messaggi</translation>
+        <translation>Elimina tutti i messaggi</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="278"/>
@@ -246,7 +246,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="287"/>
         <source>Load old conversation</source>
-        <translation>Carica vecchia conversazione</translation>
+        <translation>Carica altro</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="458"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="488"/>
         <source>Tap here to enter message</source>
-        <translation>Clicca qui per scrivere il messaggio</translation>
+        <translation>Scrivi qui il tuo messaggio</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="596"/>
@@ -302,7 +302,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="170"/>
         <source>Remove message</source>
-        <translation>Rimuovi messaggio</translation>
+        <translation>Elimina messaggio</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="217"/>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona &apos;Aggiungi contatto&apos; nel menu per selezionare i contatti</translation>
     </message>
 </context>
 <context>
@@ -494,7 +494,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>Activation code requested. Wait for %1 soon</source>
-        <translation>Codice di attivazione richiesto. Attendere %1 presto</translation>
+        <translation>Codice di attivazione richiesto. %1 in arrivo</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
@@ -532,7 +532,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="223"/>
         <source>Enter phone number here</source>
-        <translation>Inserisci il numero di telefono qui</translation>
+        <translation>Inserisci qui il numero di telefono</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="250"/>
@@ -557,7 +557,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="347"/>
         <source>Tap here to enter code</source>
-        <translation>Clicca qui per scrivere il codice</translation>
+        <translation>Scrivi qui il tuo codice</translation>
     </message>
 </context>
 <context>
@@ -616,12 +616,12 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="88"/>
         <source>Logged in</source>
-        <translation>Loggato</translation>
+        <translation>Autenticato</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="89"/>
         <source>Login failure!</source>
-        <translation>Login fallito!</translation>
+        <translation>Autenticazione fallita!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="90"/>
@@ -642,7 +642,7 @@
         <location filename="../persecute2/qml/Roster.qml" line="110"/>
         <location filename="../persecute2/qml/Roster.qml" line="117"/>
         <source>No action</source>
-        <translation>Nessun azione</translation>
+        <translation>Nessun&apos;azione</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="111"/>
@@ -710,7 +710,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="304"/>
         <source>Enter contact name to search</source>
-        <translation>Inserisci nome per cercare</translation>
+        <translation>Inserisci nome da cercare</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="370"/>
@@ -725,7 +725,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="402"/>
         <source>Enter new name</source>
-        <translation>Inserisci il nuovo nome</translation>
+        <translation>Inserisci nuovo nome</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="441"/>
@@ -735,7 +735,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="448"/>
         <source>Write name of new group here</source>
-        <translation>Scrivi il nome del gruppo qui</translation>
+        <translation>Scrivi qui il nome del gruppo</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="535"/>
@@ -813,7 +813,7 @@
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Selected %1 contacts</source>
-        <translation type="unfinished"/>
+        <translation>%1 contatti selezionati</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="72"/>
         <source>Conversation</source>
-        <translation>Conversazioni</translation>
+        <translation>Conversazione</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="76"/>
@@ -906,7 +906,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="118"/>
         <source>Vibrate in active conversation</source>
-        <translation>Vibra in conversazione attiva</translation>
+        <translation>Vibra nelle conversazioni attive</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="130"/>
@@ -951,12 +951,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Lingua</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
         <source>Restart application to change language</source>
-        <translation type="unfinished"/>
+        <translation>Riavvia l&apos;applicazione per cambiare lingua</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="227"/>

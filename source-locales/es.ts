@@ -38,7 +38,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="98"/>
         <source>Nickname:</source>
-        <translation>Nombre de perfil:</translation>
+        <translation>Apodo:</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="130"/>
@@ -58,12 +58,12 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is active</source>
-        <translation type="unfinished"/>
+        <translation>La cuenta está activa</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is blocked</source>
-        <translation type="unfinished"/>
+        <translation>La cuenta está bloqueada</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="204"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Selecciona &amp;quot;Añadir contacto&amp;quot; del menú para seleccionar contactos</translation>
     </message>
 </context>
 <context>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Selecciona &amp;quot;Añadir contacto&amp;quot; del menú para seleccionar contactos</translation>
     </message>
 </context>
 <context>
@@ -481,7 +481,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="40"/>
         <source>No exists information for your account.</source>
-        <translation>No existe información para su cuenta.</translation>
+        <translation>No hay información de su cuenta.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="45"/>
@@ -553,7 +553,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="334"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
-        <translation>Introduce el código de registro. Escribe los 6 dígitos sin &apos;-&apos;.</translation>
+        <translation>Introduce el código de registro. Escribe los 6 dígitos sin el &apos;-&apos;.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="347"/>
@@ -716,7 +716,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="370"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
-        <translation>La lista de contactos esta vacia. Sincroniza la agenda o añade contactos manualmente</translation>
+        <translation>La lista de contactos esta vacia. Sincroniza la agenda o añade los contactos manualmente</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="395"/>
@@ -814,7 +814,7 @@
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Selected %1 contacts</source>
-        <translation type="unfinished"/>
+        <translation>Seleccionados %1 contactos</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
@@ -952,12 +952,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
         <source>Restart application to change language</source>
-        <translation type="unfinished"/>
+        <translation>Reinicia la aplicación para cambiar idioma</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="227"/>
@@ -1015,7 +1015,7 @@
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="95"/>
         <source>Nickname: %1</source>
-        <translation>Nombre de perfil: %1</translation>
+        <translation>Apodo: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="102"/>

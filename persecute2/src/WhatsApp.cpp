@@ -624,11 +624,41 @@ void WhatsApp::setLocale(const QString &localeName)
     QGuiApplication::removeTranslator(&translator);
 
     QString locale = localeName.split(".").first();
-    qDebug() << "loading translation:" << locale;
+
+    qDebug() << "Loading translation:" << locale;
     qDebug() << (translator.load(locale, "/usr/share/harbour-mitakuuluu/locales", QString(), ".qm") ? "Translator loaded" : "Error loading translator");
     qDebug() << (QGuiApplication::installTranslator(&translator) ? "Translator installed" : "Error installing translator");
+}
 
-    if (iface) {
-        iface->call(QDBus::NoBlock, "setLocale", locale);
+int WhatsApp::getExifRotation(const QString &image)
+{
+    if ((image.toLower().endsWith("jpg") || image.toLower().endsWith("jpeg")) && QFile(image).exists()) {
+        ExifData *ed;
+        ed = exif_data_new_from_file(image.toLocal8Bit().data());
+        if (!ed) {
+            qDebug() << "File not readable or no EXIF data in file" << image;
+        }
+        else {
+            ExifEntry *entry = exif_content_get_entry(ed->ifd[EXIF_IFD_0], EXIF_TAG_ORIENTATION);
+            if (entry) {
+                char buf[1024];
+
+                /* Get the contents of the tag in human-readable form */
+                exif_entry_get_value(entry, buf, sizeof(buf));
+
+                int rotation = 0;
+
+                QString value = QString(buf).toLower();
+                qDebug() << value << image;
+
+                if (value == "right-top")
+                    rotation = 90;
+                else
+                    rotation = 0;
+
+                return rotation;
+            }
+        }
     }
+    return 0;
 }

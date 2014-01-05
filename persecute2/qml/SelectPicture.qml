@@ -66,6 +66,7 @@ Dialog {
                 smooth: true
                 cache: true
                 asynchronous: true
+                rotation: whatsapp.getExifRotation(model.path)
 
                 states: [
                     State {

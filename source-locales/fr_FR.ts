@@ -58,12 +58,12 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is active</source>
-        <translation type="unfinished"/>
+        <translation>Compte actif</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is blocked</source>
-        <translation type="unfinished"/>
+        <translation>Compte bloqué</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="204"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Sélectionnez  le menu&amp;quot;Ajouter contact&amp;quot; pour sélectionner des contacts</translation>
     </message>
 </context>
 <context>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Sélectionnez  le menu&amp;quot;Ajouter contact&amp;quot; pour sélectionner des contacts</translation>
     </message>
 </context>
 <context>
@@ -809,7 +809,7 @@
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Selected %1 contacts</source>
-        <translation type="unfinished"/>
+        <translation>%1 contacts sélectionnés</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
@@ -948,12 +948,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Langue</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
         <source>Restart application to change language</source>
-        <translation type="unfinished"/>
+        <translation>Redémarrer l&apos;application pour changer la langue</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="227"/>

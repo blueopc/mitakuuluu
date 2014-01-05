@@ -1051,7 +1051,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="143"/>
         <source>Save chat history to file</source>
-        <translation>Guardar histórico de conversas em ficheiro</translation>
+        <translation>Guardar histórico em ficheiro</translation>
     </message>
 </context>
 <context>

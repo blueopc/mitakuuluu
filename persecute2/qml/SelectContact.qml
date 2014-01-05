@@ -45,7 +45,9 @@ Dialog {
 
     DialogHeader {
         id: title
-        title: jids.length == 0 ? qsTr("Select contact") : qsTr("Selected %1 contacts")
+        title: jids.length == 0 ? (page.hideContacts ? qsTr("Select group") : qsTr("Select contacts"))
+                                : (jids.length == 1 ? (page.hideContacts ? qsTr("Group selected") : qsTr('One contact selected'))
+                                                    : (page.hideContacts ? qsTr("Selected %1 groups").arg(jids.length) : qsTr("Selected %1 contacts").arg(jids.length)))
     }
 
     SilicaListView {

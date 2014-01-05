@@ -180,27 +180,27 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
         <source>Outgoing </source>
-        <translation>Lähtevä</translation>
+        <translation>Lähtevä </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="150"/>
         <source>Incoming </source>
-        <translation>Saapuva</translation>
+        <translation>Saapuva </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="153"/>
         <source>picture </source>
-        <translation>kuva</translation>
+        <translation>kuva </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="154"/>
         <source>audio </source>
-        <translation>ääni</translation>
+        <translation>ääni </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="155"/>
         <source>video </source>
-        <translation>video</translation>
+        <translation>video </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="156"/>
@@ -261,7 +261,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="596"/>
         <source>Select media type</source>
-        <translation>Valitse mediatyyppi</translation>
+        <translation>Valitse tiedostotyyppi</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="620"/>
@@ -388,7 +388,7 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="248"/>
         <source>Subject set: %1</source>
-        <translation>Asetettu otsikko: %1</translation>
+        <translation>Otsikko asetettu: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="303"/>
@@ -814,7 +814,7 @@
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Selected %1 contacts</source>
-        <translation>%1 henkilöä valittu</translation>
+        <translation>Valitse %1 yhteystieto(a)</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
@@ -902,7 +902,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="76"/>
         <source>Conversation theme</source>
-        <translation>Keskustelun teema</translation>
+        <translation>Keskusteluteema</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="118"/>
@@ -912,7 +912,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="130"/>
         <source>Show messages timestamp</source>
-        <translation>Näytä viestien aika</translation>
+        <translation>Näytä viestin aika</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="142"/>
@@ -937,7 +937,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="181"/>
         <source>Chat font size</source>
-        <translation>Kirjaisimen koko</translation>
+        <translation>Kirjasimen koko</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="183"/>
@@ -977,12 +977,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="292"/>
         <source>Always offline</source>
-        <translation>Aina ilman yhteyttä</translation>
+        <translation>Aina poissaolevana</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="292"/>
         <source>Always online</source>
-        <translation>Aina yhteydessä</translation>
+        <translation>Aina paikalla</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="316"/>
@@ -992,22 +992,22 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="321"/>
         <source>Resize sending images</source>
-        <translation>Muuta lähetettävien kuvien koko</translation>
+        <translation>Muuta lähetettävien kuvien kokoa</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
         <source>Maximum image size by file size</source>
-        <translation>Kuvan suurin tiedostokoko</translation>
+        <translation>Suurin tiedostokoko</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="384"/>
         <source>Maximum image size by resolution</source>
-        <translation>Kuvan suurin resoluutio</translation>
+        <translation>Suurin resoluutio megapikseleinä</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="386"/>
         <source>%1 MPx</source>
-        <translation>%1 MP</translation>
+        <translation>%1 mp</translation>
     </message>
 </context>
 <context>

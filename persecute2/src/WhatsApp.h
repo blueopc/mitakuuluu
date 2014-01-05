@@ -1,15 +1,12 @@
 #ifndef WHATSAPP_H
 #define WHATSAPP_H
 
-//#include "dbclient.h"
 #include <QObject>
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 #include <QStringList>
-//#include <qjson/parser.h>
 #include <QtDBus/QtDBus>
-//#include <QtCrypto/QtCrypto>
 
 #include <QDir>
 #include <QFile>
@@ -23,6 +20,10 @@
 #include <QtContacts/QContactName>
 #include <QtContacts/QContactPhoneNumber>
 #include <QtContacts/QContactAvatar>
+
+#include <libexif/exif-loader.h>
+#include <libexif/exif-entry.h>
+#include <libexif/exif-data.h>
 
 using namespace QtContacts;
 
@@ -167,6 +168,7 @@ public slots:
     void removeAccountFromServer();
     void forceConnection();
     void setLocale(const QString &localeName);
+    int getExifRotation(const QString &image);
 };
 
 #endif // WHATSAPP_H

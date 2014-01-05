@@ -4,7 +4,7 @@
     <message id="components-he-dialog_accept">
         <location filename="../persecute2/qml/DialogRowsHeader.qml" line="53"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation>Aanvaar</translation>
     </message>
 </context>
 <context>
@@ -13,7 +13,7 @@
         <location filename="../persecute2/qml/Account.qml" line="68"/>
         <location filename="../persecute2/qml/Account.qml" line="245"/>
         <source>Delete everything</source>
-        <translation type="unfinished"/>
+        <translation>Wis alles</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="75"/>
@@ -38,12 +38,12 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="98"/>
         <source>Nickname:</source>
-        <translation type="unfinished"/>
+        <translation>Bynaam</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="130"/>
         <source>Status:</source>
-        <translation type="unfinished"/>
+        <translation>Status:</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="162"/>
@@ -73,7 +73,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="246"/>
         <source>Delete!</source>
-        <translation type="unfinished"/>
+        <translation>Wis!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="254"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="59"/>
         <source>1234567890</source>
-        <translation type="unfinished"/>
+        <translation>1234567890</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="77"/>
@@ -165,17 +165,17 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>S</source>
-        <translation type="unfinished"/>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>M</source>
-        <translation type="unfinished"/>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>H</source>
-        <translation type="unfinished"/>
+        <translation>H</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
@@ -307,7 +307,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="217"/>
         <source>Copy</source>
-        <translation type="unfinished"/>
+        <translation>Kopiëer</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="221"/>
@@ -317,7 +317,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="226"/>
         <source>Forward</source>
-        <translation type="unfinished"/>
+        <translation>Vorentoe</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
@@ -327,7 +327,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Wis</translation>
     </message>
 </context>
 <context>
@@ -345,7 +345,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="97"/>
         <source>Forward</source>
-        <translation type="unfinished"/>
+        <translation>Vorentoe</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
@@ -368,7 +368,7 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="150"/>
         <source>Subject: </source>
-        <translation type="unfinished"/>
+        <translation>Onderwerp:</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="206"/>
@@ -398,7 +398,7 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="418"/>
         <source>Select</source>
-        <translation type="unfinished"/>
+        <translation>Kies</translation>
     </message>
 </context>
 <context>
@@ -457,7 +457,7 @@
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="140"/>
         <source>1234567890</source>
-        <translation type="unfinished"/>
+        <translation>1234567890</translation>
     </message>
 </context>
 <context>
@@ -533,7 +533,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="250"/>
         <source>SMS</source>
-        <translation type="unfinished"/>
+        <translation>SMS</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="264"/>
@@ -592,7 +592,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>Onbekend</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="85"/>
@@ -666,7 +666,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="128"/>
         <source>You</source>
-        <translation type="unfinished"/>
+        <translation>Jy</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="157"/>
@@ -741,7 +741,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="562"/>
         <source>Delete </source>
-        <translation type="unfinished"/>
+        <translation>Wis</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="562"/>
@@ -771,7 +771,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="621"/>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Wis</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="621"/>
@@ -867,7 +867,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Omtrent</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="38"/>
@@ -942,12 +942,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="193"/>
         <source>Common</source>
-        <translation type="unfinished"/>
+        <translation>Algemeen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Taal</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
@@ -1058,7 +1058,7 @@
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>bytes</source>
-        <translation type="unfinished"/>
+        <translation>grepe</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>

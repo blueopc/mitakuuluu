@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Wähle &amp;quot;Kontakt hinzufügen&amp;quot; Eintrag um Kontakte auszuwählen</translation>
+        <translation>Wähle &quot;Kontakt hinzufügen&quot; Eintrag um Kontakte auszuwählen</translation>
     </message>
 </context>
 <context>
@@ -350,7 +350,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Wähle &amp;quot;Kontakt hinzufügen&amp;quot; Eintrag um Kontakte auszuwählen</translation>
+        <translation>Wähle &quot;Kontakt hinzufügen&quot; Eintrag um Kontakte auszuwählen</translation>
     </message>
 </context>
 <context>
@@ -841,7 +841,7 @@
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="54"/>
         <source>Sync all phonebook</source>
-        <translation>Alle Telefonkontakte synchroniesieren</translation>
+        <translation>Alle Telefonkontakte synchronisieren</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="63"/>
@@ -947,7 +947,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="193"/>
         <source>Common</source>
-        <translation>Gebräuchlich</translation>
+        <translation>Allgemein</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
@@ -972,7 +972,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="262"/>
         <source>Set unavailable when window closed or minimized</source>
-        <translation>Auf Abwesend setzen, sobald das Fenster minimiert oder geschlossen ist</translation>
+        <translation>Abwesend,  sobald das Fenster minimiert oder geschlossen ist</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="292"/>

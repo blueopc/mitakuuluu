@@ -43,32 +43,32 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="130"/>
         <source>Status:</source>
-        <translation type="unfinished"/>
+        <translation>狀態:</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="162"/>
         <source>Created: %1</source>
-        <translation type="unfinished"/>
+        <translation>已建立: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="176"/>
         <source>Expiration: %1</source>
-        <translation type="unfinished"/>
+        <translation>過期：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is active</source>
-        <translation type="unfinished"/>
+        <translation>活躍帳戶</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is blocked</source>
-        <translation type="unfinished"/>
+        <translation>帳戶被封鎖</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="204"/>
         <source>Account type: %1</source>
-        <translation type="unfinished"/>
+        <translation>帳戶類型: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="246"/>
@@ -78,7 +78,8 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="254"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation type="unfinished"/>
+        <translation>此動作會將你的帳戶從Whatsapp服務器、登入資料、對話及聯絡人中刪除。
+已下載的檔案則會保留。</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="320"/>
@@ -114,7 +115,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="40"/>
         <source>Send broadcast</source>
-        <translation type="unfinished"/>
+        <translation>傳送廣播</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="139"/>
@@ -124,7 +125,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="164"/>
         <source>Select media</source>
-        <translation type="unfinished"/>
+        <translation>選擇媒體</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
@@ -137,12 +138,12 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
         <source>Mitakuuluu share</source>
-        <translation type="unfinished"/>
+        <translation>Mitakuuluu分享</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
         <source>Can&apos;t share media when offline</source>
-        <translation type="unfinished"/>
+        <translation>下線時不能分享媒體</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2761"/>
@@ -155,27 +156,27 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="46"/>
         <source>Media uploading started</source>
-        <translation type="unfinished"/>
+        <translation>媒體上載開始</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>n/a</source>
-        <translation type="unfinished"/>
+        <translation>n/a</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>S</source>
-        <translation type="unfinished"/>
+        <translation>S</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>M</source>
-        <translation type="unfinished"/>
+        <translation>M</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="139"/>
         <source>H</source>
-        <translation type="unfinished"/>
+        <translation>H</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
@@ -210,17 +211,17 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="157"/>
         <source>location </source>
-        <translation type="unfinished"/>
+        <translation>位置</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="157"/>
         <source>LAT: %1</source>
-        <translation type="unfinished"/>
+        <translation>緯度：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="157"/>
         <source> LON: %1</source>
-        <translation type="unfinished"/>
+        <translation>經度：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="165"/>
@@ -230,7 +231,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="255"/>
         <source>Send media</source>
-        <translation type="unfinished"/>
+        <translation>發送媒體</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="264"/>
@@ -241,12 +242,12 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="278"/>
         <source>Profile</source>
-        <translation type="unfinished"/>
+        <translation>簡介</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="287"/>
         <source>Load old conversation</source>
-        <translation type="unfinished"/>
+        <translation>載入以前對話</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="458"/>
@@ -256,12 +257,12 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="488"/>
         <source>Tap here to enter message</source>
-        <translation type="unfinished"/>
+        <translation>按此輸入訊息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="596"/>
         <source>Select media type</source>
-        <translation type="unfinished"/>
+        <translation>選擇媒體類別</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="620"/>
@@ -279,12 +280,12 @@
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>Unread messages: %1</source>
-        <translation type="unfinished"/>
+        <translation>%1未讀訊息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>No unread messages</source>
-        <translation type="unfinished"/>
+        <translation>沒有未讀訊息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
@@ -297,7 +298,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="132"/>
         <source>Media download started...</source>
-        <translation type="unfinished"/>
+        <translation>媒體下載開始</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="170"/>
@@ -312,7 +313,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="221"/>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished"/>
+        <translation>訊息已複製到剪貼板</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="226"/>
@@ -363,7 +364,7 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="139"/>
         <source>Group profile</source>
-        <translation>群組頭像</translation>
+        <translation>群組簡介</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="150"/>
@@ -406,7 +407,7 @@
     <message>
         <location filename="../persecute2/qml/InteractionArea.qml" line="81"/>
         <source>Error loading image</source>
-        <translation type="unfinished"/>
+        <translation>載入圖片出現錯誤</translation>
     </message>
 </context>
 <context>
@@ -432,12 +433,12 @@
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="49"/>
         <source>Add number</source>
-        <translation type="unfinished"/>
+        <translation>加入號碼</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="57"/>
         <source>Select contacts</source>
-        <translation type="unfinished"/>
+        <translation>選擇聯絡人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="71"/>
@@ -447,7 +448,7 @@
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="97"/>
         <source>Blacklist is empty</source>
-        <translation type="unfinished"/>
+        <translation>黑名單空白</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="125"/>
@@ -488,28 +489,30 @@
         <source>Code request failed
 
 </source>
-        <translation type="unfinished"/>
+        <translation>啟動碼要求失敗
+
+</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>Activation code requested. Wait for %1 soon</source>
-        <translation type="unfinished"/>
+        <translation>要求發出啟動碼，請等候%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>sms message</source>
-        <translation type="unfinished"/>
+        <translation>sms短訊</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>voice call</source>
-        <translation type="unfinished"/>
+        <translation>語音通話</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="60"/>
         <location filename="../persecute2/qml/Register.qml" line="307"/>
         <source>Registering account...</source>
-        <translation type="unfinished"/>
+        <translation>帳戶註冊中...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="66"/>
@@ -521,12 +524,12 @@
         <location filename="../persecute2/qml/Register.qml" line="195"/>
         <location filename="../persecute2/qml/Register.qml" line="324"/>
         <source>Registration</source>
-        <translation type="unfinished"/>
+        <translation>註冊</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="183"/>
         <source>Checking account...</source>
-        <translation type="unfinished"/>
+        <translation>帳戶檢查中...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="223"/>
@@ -541,7 +544,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="264"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>語音</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="288"/>
@@ -572,7 +575,7 @@
     <message>
         <location filename="../persecute2/qml/ResizePicture.qml" line="29"/>
         <source>Resize picture</source>
-        <translation type="unfinished"/>
+        <translation>重設圖片大小</translation>
     </message>
 </context>
 <context>
@@ -580,17 +583,17 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="73"/>
         <source>Contacts syncing finished!</source>
-        <translation type="unfinished"/>
+        <translation>聯絡人同步完成！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="76"/>
         <source>Contacts syncing failed!</source>
-        <translation type="unfinished"/>
+        <translation>聯絡人同步失敗！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="79"/>
         <source>Media uploading failed!</source>
-        <translation type="unfinished"/>
+        <translation>媒體上載失敗！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="84"/>
@@ -625,7 +628,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="90"/>
         <source>Disconnected</source>
-        <translation type="unfinished"/>
+        <translation>已斷線</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="91"/>
@@ -653,7 +656,7 @@
         <location filename="../persecute2/qml/Roster.qml" line="113"/>
         <location filename="../persecute2/qml/Roster.qml" line="114"/>
         <source>Disconnect</source>
-        <translation type="unfinished"/>
+        <translation>斷線</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="115"/>
@@ -679,7 +682,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="161"/>
         <source>Quit and shutdown engine</source>
-        <translation type="unfinished"/>
+        <translation>離開並關掉電話</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="172"/>
@@ -694,7 +697,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="189"/>
         <source>Broadcast</source>
-        <translation type="unfinished"/>
+        <translation>廣播</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="197"/>
@@ -704,7 +707,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="214"/>
         <source>Disconnecting</source>
-        <translation type="unfinished"/>
+        <translation>斷線中</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="304"/>
@@ -719,17 +722,17 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="395"/>
         <source>Rename contact</source>
-        <translation type="unfinished"/>
+        <translation>重新命名聯絡人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="402"/>
         <source>Enter new name</source>
-        <translation type="unfinished"/>
+        <translation>輸入新名字</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="441"/>
         <source>Create group</source>
-        <translation>創造群組</translation>
+        <translation>建立群組</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="448"/>
@@ -739,7 +742,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="535"/>
         <source>Group chat</source>
-        <translation type="unfinished"/>
+        <translation>群組聊天</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="562"/>
@@ -754,7 +757,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="596"/>
         <source>Profile</source>
-        <translation type="unfinished"/>
+        <translation>簡介</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="604"/>
@@ -764,7 +767,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="608"/>
         <source>Contact syncing started...</source>
-        <translation type="unfinished"/>
+        <translation>聯絡人同步開始...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="613"/>
@@ -784,12 +787,12 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Unblock</source>
-        <translation type="unfinished"/>
+        <translation>解鎖</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Block</source>
-        <translation type="unfinished"/>
+        <translation>封鎖</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
@@ -812,12 +815,12 @@
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Selected %1 contacts</source>
-        <translation type="unfinished"/>
+        <translation>已選擇%1聯絡人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
         <source>Group chat</source>
-        <translation type="unfinished"/>
+        <translation>群組聊天</translation>
     </message>
 </context>
 <context>
@@ -834,12 +837,12 @@
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="34"/>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="57"/>
         <source>Phonebook syncing started...</source>
-        <translation type="unfinished"/>
+        <translation>電話簿同步開始...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="54"/>
         <source>Sync all phonebook</source>
-        <translation type="unfinished"/>
+        <translation>與電話簿同步</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="63"/>
@@ -849,7 +852,7 @@
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
         <source>Sync %1 contacts</source>
-        <translation type="unfinished"/>
+        <translation>同步%1聯絡人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
@@ -895,12 +898,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="72"/>
         <source>Conversation</source>
-        <translation type="unfinished"/>
+        <translation>對話</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="76"/>
         <source>Conversation theme</source>
-        <translation type="unfinished"/>
+        <translation>對話主題</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="118"/>
@@ -910,37 +913,37 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="130"/>
         <source>Show messages timestamp</source>
-        <translation type="unfinished"/>
+        <translation>展示訊息時間</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="142"/>
         <source>Show seconds in messages timestamp</source>
-        <translation type="unfinished"/>
+        <translation>訊息時間展示秒數</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="155"/>
         <source>Send messages by Enter</source>
-        <translation type="unfinished"/>
+        <translation>按確定轉送訊息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="166"/>
         <source>Show keyboard automatically</source>
-        <translation type="unfinished"/>
+        <translation>鍵盤自動出現</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="167"/>
         <source>Automatically show keyboard when opening conversation</source>
-        <translation type="unfinished"/>
+        <translation>展開對話時鍵盤自動出現</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="181"/>
         <source>Chat font size</source>
-        <translation type="unfinished"/>
+        <translation>字型大小</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="183"/>
         <source>%1 px</source>
-        <translation type="unfinished"/>
+        <translation>%1 px</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="193"/>
@@ -950,12 +953,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>語言</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
         <source>Restart application to change language</source>
-        <translation type="unfinished"/>
+        <translation>重新啟動程式以改變語言</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="227"/>
@@ -965,12 +968,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="238"/>
         <source>Accept messages from unknown contacts</source>
-        <translation type="unfinished"/>
+        <translation>接受不明聯絡人的訊息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="262"/>
         <source>Set unavailable when window closed or minimized</source>
-        <translation type="unfinished"/>
+        <translation>當對話關閉或縮小時設為沒空</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="292"/>
@@ -985,12 +988,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="316"/>
         <source>Media</source>
-        <translation type="unfinished"/>
+        <translation>媒體</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="321"/>
         <source>Resize sending images</source>
-        <translation type="unfinished"/>
+        <translation>傳送圖片時重設大小</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1005,7 +1008,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="386"/>
         <source>%1 MPx</source>
-        <translation type="unfinished"/>
+        <translation>%1 MPx</translation>
     </message>
 </context>
 <context>
@@ -1013,42 +1016,42 @@
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="95"/>
         <source>Nickname: %1</source>
-        <translation type="unfinished"/>
+        <translation>暱稱：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="102"/>
         <source>Status: %1</source>
-        <translation type="unfinished"/>
+        <translation>狀態: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="109"/>
         <source>Phone: +%1</source>
-        <translation type="unfinished"/>
+        <translation>電話：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="116"/>
         <source>Contact blocked</source>
-        <translation type="unfinished"/>
+        <translation>聯絡人已被封鎖</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="124"/>
         <source>Unblock contact</source>
-        <translation type="unfinished"/>
+        <translation>解封聯絡人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="124"/>
         <source>Block contact</source>
-        <translation type="unfinished"/>
+        <translation>封鎖聯絡人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="134"/>
         <source>Save to phonebook</source>
-        <translation type="unfinished"/>
+        <translation>儲存到電話簿</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="143"/>
         <source>Save chat history to file</source>
-        <translation type="unfinished"/>
+        <translation>儲存對話歷史</translation>
     </message>
 </context>
 <context>
@@ -1056,7 +1059,7 @@
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>n/a</source>
-        <translation type="unfinished"/>
+        <translation>n/a</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>

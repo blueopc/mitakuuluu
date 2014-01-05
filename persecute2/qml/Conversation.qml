@@ -48,11 +48,12 @@ Page {
 
     function sendMediaImage() {
         sendMedia(selectPicture.selectedPath)
+        unbindMediaImage()
     }
 
     function unbindMediaImage() {
-        selectPicture.accepted.disconnect(page.sendMedia)
-        selectPicture.done.disconnect(page.unbindMediaImage)
+        selectPicture.accepted.disconnect(page.sendMediaImage)
+        selectPicture.rejected.disconnect(page.unbindMediaImage)
     }
 
     function unbindMediaFile() {
@@ -607,10 +608,10 @@ Page {
                 height: mFlick.itemHeight
                 icon.source: "image://theme/icon-m-image"
                 onClicked: {
-                    selectPicture.accepted.connect(page.sendMedia)
+                    selectPicture.accepted.connect(page.sendMediaImage)
                     selectPicture.setProcessImages()
                     selectPicture.open(true)
-                    selectPicture.done.connect(page.unbindMediaImage)
+                    selectPicture.rejected.connect(page.unbindMediaImage)
                 }
             }
 

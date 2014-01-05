@@ -799,7 +799,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Unmute</source>
-        <translation>Включить</translation>
+        <translation>Уведомлять</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>

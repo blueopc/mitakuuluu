@@ -2,9 +2,12 @@ TEMPLATE = subdirs
 SUBDIRS = whatsapp-server persecute2
 
 locales.files = \
+    locales/af_ZA.qm \
     locales/ar.qm \
     locales/ca.qm \
     locales/de.qm \
+    locales/el.qm \
+    locales/en_US.qm \
     locales/es.qm \
     locales/fa.qm \
     locales/fi.qm \
@@ -12,6 +15,7 @@ locales.files = \
     locales/hr_HR.qm \
     locales/it.qm \
     locales/nl_NL.qm \
+    locales/no.qm \
     locales/pl_PL.qm \
     locales/pt_BR.qm \
     locales/pt_PT.qm \

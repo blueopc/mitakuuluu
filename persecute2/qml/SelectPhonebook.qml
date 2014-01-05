@@ -93,7 +93,9 @@ Dialog {
 
         DialogHeader {
             id: header
-            title: numbers.length > 0 ? qsTr("Sync %1 contacts").arg(numbers.length) : qsTr("Select contacts")
+            title: numbers.length > 0
+                   ? ((numbers.length == 1) ? qsTr("Sync contact") : qsTr("Sync %1 contacts").arg(numbers.length))
+                   : qsTr("Select contacts")
         }
 
         SilicaListView {

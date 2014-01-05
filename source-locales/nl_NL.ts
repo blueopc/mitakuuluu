@@ -814,7 +814,7 @@
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Selected %1 contacts</source>
-        <translation>%1 geselecteerde contacts</translation>
+        <translation>%1 contacten geselecteerd </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
