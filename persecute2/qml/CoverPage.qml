@@ -6,7 +6,7 @@ CoverBackground {
 
     Image {
         id: waimage
-        source: "/usr/share/icons/hicolor/86x86/apps/harbour-mitakuuluu.png"
+        source: "image://theme/harbour-mitakuuluu"
         anchors.centerIn: parent
         smooth: true
     }

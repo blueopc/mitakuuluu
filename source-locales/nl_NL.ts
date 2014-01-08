@@ -23,7 +23,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="78"/>
         <source>Remove current account</source>
-        <translation>Verwijder huidig account</translation>
+        <translation>Huidig account verwijderen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="92"/>
@@ -38,7 +38,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="98"/>
         <source>Nickname:</source>
-        <translation>Bijnaam</translation>
+        <translation>Bijnaam:</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="130"/>
@@ -68,7 +68,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="204"/>
         <source>Account type: %1</source>
-        <translation>Account type: %1</translation>
+        <translation>Type account: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="246"/>
@@ -78,12 +78,12 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="254"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation>Met deze actie verwijder je het account van de WhatsApp server, login informatie, gesprekken en contacten. Mediabestanden die zijn gedownload blijven wel bestaan.</translation>
+        <translation>Met deze actie verwijder je het account inclusief alle inloggegevens, gesprekken en contacten van de WhatsApp server. Gedownloade mediabestanden blijven wel bewaard.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="320"/>
         <source>Select</source>
-        <translation>Selecteer</translation>
+        <translation>Selecteren</translation>
     </message>
 </context>
 <context>
@@ -124,12 +124,17 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="164"/>
         <source>Select media</source>
-        <translation>Selecteer media</translation>
+        <translation>Selecteer mediabestand</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Broadcast.qml" line="166"/>
+        <source>Select file</source>
+        <translation>Selecteer bestand</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Selecteer &amp;quot;Contact toevoegen&amp;quot; menu om contacten te selecteren</translation>
+        <translation>Selecteer &apos;Contact toevoegen&apos; om contacten te selecteren</translation>
     </message>
 </context>
 <context>
@@ -142,7 +147,7 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
         <source>Can&apos;t share media when offline</source>
-        <translation>Je kunt geen media delen in offline modus</translation>
+        <translation>Je kunt geen mediabestand delen in offline modus</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2761"/>
@@ -155,121 +160,141 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="46"/>
         <source>Media uploading started</source>
-        <translation>Media upload gestart</translation>
+        <translation>Uploaden mediabestand gestart</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>n/a</source>
         <translation>n.v.t.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>H</source>
-        <translation>H</translation>
+        <translation>U</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="153"/>
         <source>Outgoing </source>
         <translation>Uitgaand</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="150"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="155"/>
         <source>Incoming </source>
         <translation>Binnenkomend</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="153"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="158"/>
         <source>picture </source>
-        <translation>foto</translation>
+        <translation>afbeelding</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="154"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="159"/>
         <source>audio </source>
         <translation>audio</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="155"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="160"/>
         <source>video </source>
         <translation>video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="161"/>
         <source>contact </source>
         <translation>contact</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>location </source>
         <translation>locatie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>LAT: %1</source>
         <translation>LAT: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source> LON: %1</source>
         <translation>LON: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="165"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>System message.</source>
         <translation>Systeembericht.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="255"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="270"/>
         <source>Send media</source>
-        <translation>Verstuur media</translation>
+        <translation>Verstuur mediabestand</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="264"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="267"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="279"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="282"/>
         <source>Remove all messages</source>
         <translation>Verwijder alle berichten</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="278"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="293"/>
         <source>Profile</source>
         <translation>Profiel</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="287"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unmute</source>
+        <translation>Geluid aan</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unblock</source>
+        <translation>Deblokkeren</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Mute</source>
+        <translation>Geluid uit</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Block</source>
+        <translation>Blokkeren</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Load old conversation</source>
         <translation>Laad oude gesprekken</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="458"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="484"/>
         <source>New message</source>
         <translation>Nieuw bericht</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="488"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="514"/>
         <source>Tap here to enter message</source>
         <translation>Tik hier om een bericht te typen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="596"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="622"/>
         <source>Select media type</source>
-        <translation>Selecteer media type</translation>
+        <translation>Selecteer type mediabestand</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="620"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="646"/>
         <source>Select video</source>
         <translation>Selecteer video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="635"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="661"/>
         <source>Select audio</source>
         <translation>Selecteer audio</translation>
     </message>
@@ -291,43 +316,48 @@
         <source>Registration</source>
         <translation>Registratie</translation>
     </message>
+    <message>
+        <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
+        <source>One unread message</source>
+        <translation>Eén ongelezen bericht</translation>
+    </message>
 </context>
 <context>
     <name>DefaultDelegate</name>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="132"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="134"/>
         <source>Media download started...</source>
-        <translation>Media download gestart...</translation>
+        <translation>Download mediabestand gestart</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="170"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="172"/>
         <source>Remove message</source>
-        <translation>Verwijder bericht</translation>
+        <translation>Verwijderen bericht</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="217"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="219"/>
         <source>Copy</source>
         <translation>Kopiëren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="221"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="223"/>
         <source>Message copied to clipboard</source>
-        <translation>Bericht  gekopieërd naar klembord</translation>
+        <translation>Bericht gekopieerd naar klembord</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="226"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="228"/>
         <source>Forward</source>
         <translation>Doorsturen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="238"/>
         <source>Cancel download</source>
         <translation>Download annuleren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="238"/>
         <source>Delete</source>
-        <translation>Verwijder</translation>
+        <translation>Verwijderen</translation>
     </message>
 </context>
 <context>
@@ -350,7 +380,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Selecteer &amp;quot;Contact toevoegen&amp;quot; menu om contacten te selecteren</translation>
+        <translation>Selecteer &apos;Contact toevoegen&apos; om contacten te selecteren</translation>
     </message>
 </context>
 <context>
@@ -388,7 +418,7 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="248"/>
         <source>Subject set: %1</source>
-        <translation>Onderwerp gemaakt op: %1</translation>
+        <translation>Onderwerp ingesteld op: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="303"/>
@@ -398,7 +428,7 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="418"/>
         <source>Select</source>
-        <translation>Selecteer</translation>
+        <translation>Selecteren</translation>
     </message>
 </context>
 <context>
@@ -406,7 +436,7 @@
     <message>
         <location filename="../persecute2/qml/InteractionArea.qml" line="81"/>
         <source>Error loading image</source>
-        <translation>Fout tijdens het laden van het plaatje</translation>
+        <translation>Fout bij het laden van de afbeelding</translation>
     </message>
 </context>
 <context>
@@ -419,12 +449,12 @@
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="58"/>
         <source>Muted groups</source>
-        <translation>Onderdrukte groepen</translation>
+        <translation>Gedempte groepen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="76"/>
         <source>No muted groups</source>
-        <translation>Geen onderdrukte groepen</translation>
+        <translation>Geen gedempte groepen</translation>
     </message>
 </context>
 <context>
@@ -442,17 +472,17 @@
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="71"/>
         <source>Blacklist</source>
-        <translation>Geblokkeerde lijst</translation>
+        <translation>Geblokkeerde contacten</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="97"/>
         <source>Blacklist is empty</source>
-        <translation>Geblokkeerde lijst is leeg</translation>
+        <translation>Geen geblokkeerde contacten</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="125"/>
         <source>Add to blacklist</source>
-        <translation>toevoegen aan geblokkeerde lijst</translation>
+        <translation>Contact blokkeren</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="140"/>
@@ -481,14 +511,14 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="40"/>
         <source>No exists information for your account.</source>
-        <translation>Er bestaat geen account informatie over jouw account.</translation>
+        <translation>Er is geen informatie over jouw account beschikbaar</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="45"/>
         <source>Code request failed
 
 </source>
-        <translation>Code aanvraag mislukt
+        <translation>Aanvraag code mislukt
 
 </translation>
     </message>
@@ -500,23 +530,23 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>sms message</source>
-        <translation>sms bericht</translation>
+        <translation>sms-bericht</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>voice call</source>
-        <translation>telefonische oproep</translation>
+        <translation>spraakoproep</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="60"/>
         <location filename="../persecute2/qml/Register.qml" line="307"/>
         <source>Registering account...</source>
-        <translation>Registeren van het account...</translation>
+        <translation>Account registreren...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="66"/>
         <source>Successfully registered in WhatsApp!</source>
-        <translation>Registratie in WhatsApp succesvol!</translation>
+        <translation>Registratie bij WhatsApp gelukt!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="128"/>
@@ -533,7 +563,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="223"/>
         <source>Enter phone number here</source>
-        <translation>Vul hier uw telefoonnummer in</translation>
+        <translation>Vul hier je telefoonnummer in</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="250"/>
@@ -543,7 +573,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="264"/>
         <source>Voice</source>
-        <translation>Voice</translation>
+        <translation>Spraak</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="288"/>
@@ -553,7 +583,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="334"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
-        <translation>Vul hier de registratie code in. 6 getallen zonder het &quot;-&quot; teken.</translation>
+        <translation>Vul hier de registratiecode in. Zes cijfers zonder koppelteken.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="347"/>
@@ -582,17 +612,17 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="73"/>
         <source>Contacts syncing finished!</source>
-        <translation>Contacten synchroniseren voltooid!</translation>
+        <translation>Synchronisatie contacten voltooid!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="76"/>
         <source>Contacts syncing failed!</source>
-        <translation>Contacten synchroniseren mislukt!</translation>
+        <translation>Synchronisatie contacten mislukt!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="79"/>
         <source>Media uploading failed!</source>
-        <translation>Media upload mislukt!</translation>
+        <translation>Uploaden mediabestand mislukt!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="84"/>
@@ -607,7 +637,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="86"/>
         <source>Connecting...</source>
-        <translation>Verbinding maken...</translation>
+        <translation>Verbinden...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="87"/>
@@ -655,7 +685,7 @@
         <location filename="../persecute2/qml/Roster.qml" line="113"/>
         <location filename="../persecute2/qml/Roster.qml" line="114"/>
         <source>Disconnect</source>
-        <translation>Verbinding verbroken</translation>
+        <translation>Verbinding verbreken</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="115"/>
@@ -666,7 +696,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="116"/>
         <source>Connect</source>
-        <translation>Verbinding maken</translation>
+        <translation>Verbinden</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="128"/>
@@ -681,7 +711,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="161"/>
         <source>Quit and shutdown engine</source>
-        <translation>Afsluiten en stoppen van het proces</translation>
+        <translation>Afsluiten en achtergrondproces stoppen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="172"/>
@@ -711,7 +741,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="304"/>
         <source>Enter contact name to search</source>
-        <translation>Vul hier de contactnaam in om te zoeken</translation>
+        <translation>Voer op te zoeken naam in</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="370"/>
@@ -731,12 +761,12 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="441"/>
         <source>Create group</source>
-        <translation>Groep maken</translation>
+        <translation>Groep aanmaken</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="448"/>
         <source>Write name of new group here</source>
-        <translation>Vul hier de nieuwe groeps naam in</translation>
+        <translation>Vul hier de nieuwe groepsnaam in</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="535"/>
@@ -771,12 +801,12 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="613"/>
         <source>Rename</source>
-        <translation>Hernoem</translation>
+        <translation>Hernoemen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="621"/>
         <source>Delete</source>
-        <translation>Verwijder</translation>
+        <translation>Verwijderen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="621"/>
@@ -796,28 +826,52 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Unmute</source>
-        <translation>Niet meer onderdrukken</translation>
+        <translation>Niet meer dempen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Mute</source>
-        <translation>Onderdrukken</translation>
+        <translation>Dempen</translation>
     </message>
 </context>
 <context>
     <name>SelectContact</name>
     <message>
-        <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Select contact</source>
-        <translation>Selecteer contact</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
+        <source>Select group</source>
+        <translation>Selecteer groep</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
+        <source>Select contacts</source>
+        <translation>Selecteer contacten</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
+        <source>Group selected</source>
+        <translation>Groep geselecteerd</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
+        <source>One contact selected</source>
+        <translation>Eén contact geselecteerd</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="50"/>
         <source>Selected %1 contacts</source>
         <translation>%1 contacten geselecteerd </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
+        <location filename="../persecute2/qml/SelectContact.qml" line="50"/>
+        <source>Selected %1 groups</source>
+        <translation>%1 groepen geselecteerd</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="116"/>
         <source>Group chat</source>
         <translation>Groepschat</translation>
     </message>
@@ -836,12 +890,12 @@
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="34"/>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="57"/>
         <source>Phonebook syncing started...</source>
-        <translation>Telefoonboek synchronisatie is gestart...</translation>
+        <translation>Synchronisatie telefoonboek gestart...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="54"/>
         <source>Sync all phonebook</source>
-        <translation>Synchroniseer volledige telefoonboek</translation>
+        <translation>Synchroniseer volledig telefoonboek</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="63"/>
@@ -849,12 +903,17 @@
         <translation>Nummer toevoegen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="97"/>
         <source>Sync %1 contacts</source>
-        <translation>Synchroniseer %1 contacten</translation>
+        <translation>Synchroniseren %1 contacten</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="97"/>
+        <source>Sync contact</source>
+        <translation>Contact synchroniseren</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="98"/>
         <source>Select contacts</source>
         <translation>Selecteer contacten</translation>
     </message>
@@ -882,12 +941,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="44"/>
         <source>Muted groups</source>
-        <translation>Onderdrukte groepen</translation>
+        <translation>Gedempte groepen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="52"/>
         <source>Blacklist</source>
-        <translation>Geblokkeerde lijst</translation>
+        <translation>Geblokkeerde contacten</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="68"/>
@@ -897,12 +956,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="72"/>
         <source>Conversation</source>
-        <translation>Conversatie</translation>
+        <translation>Gesprek</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="76"/>
         <source>Conversation theme</source>
-        <translation>Conversatie thema</translation>
+        <translation>Gespreksthema</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="118"/>
@@ -912,12 +971,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="130"/>
         <source>Show messages timestamp</source>
-        <translation>Tijdstempel bij berichten</translation>
+        <translation>Tijdsaanduiding bij berichten</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="142"/>
         <source>Show seconds in messages timestamp</source>
-        <translation>Laat secondes zien in tijdstempel</translation>
+        <translation>Laat secondes zien in tijdsaanduiding</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="155"/>
@@ -927,7 +986,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="166"/>
         <source>Show keyboard automatically</source>
-        <translation>Laat toestenbord automatisch zien</translation>
+        <translation>Laat toetsenbord automatisch zien</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="167"/>
@@ -937,7 +996,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="181"/>
         <source>Chat font size</source>
-        <translation>Gesprekstekst grootte</translation>
+        <translation>Tekstgrootte gesprekken</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="183"/>
@@ -957,12 +1016,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
         <source>Restart application to change language</source>
-        <translation>Herstart de applicatie om de taal te veranderen</translation>
+        <translation>Herstart de applicatie om de taal te wijzigen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="227"/>
         <source>Show yourself in contact list, if present</source>
-        <translation>Laat je zelf zien in de contactenlijst</translation>
+        <translation>Laat jezelf zien in contactenlijst</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="238"/>
@@ -972,40 +1031,40 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="262"/>
         <source>Set unavailable when window closed or minimized</source>
-        <translation>Verander status naar onbeschikbaar bij het sluiten of minimaliseren</translation>
+        <translation>Verander status naar &quot;niet beschikbaar&quot; bij het sluiten of minimaliseren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always offline</source>
         <translation>Altijd offline</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always online</source>
         <translation>Altijd online</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="316"/>
+        <location filename="../persecute2/qml/Settings.qml" line="323"/>
         <source>Media</source>
-        <translation>Media</translation>
+        <translation>Mediabestand</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="321"/>
+        <location filename="../persecute2/qml/Settings.qml" line="328"/>
         <source>Resize sending images</source>
         <translation>Formaat wijzigen bij versturen afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="353"/>
+        <location filename="../persecute2/qml/Settings.qml" line="360"/>
         <source>Maximum image size by file size</source>
         <translation>Maximale bestandsgrootte voor afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="384"/>
+        <location filename="../persecute2/qml/Settings.qml" line="391"/>
         <source>Maximum image size by resolution</source>
         <translation>Maximale resolutie voor afbeeldingen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="386"/>
+        <location filename="../persecute2/qml/Settings.qml" line="393"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>

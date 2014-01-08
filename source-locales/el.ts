@@ -48,27 +48,27 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="162"/>
         <source>Created: %1</source>
-        <translation type="unfinished"/>
+        <translation>Δημιουργία: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="176"/>
         <source>Expiration: %1</source>
-        <translation type="unfinished"/>
+        <translation>Λήξη: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is active</source>
-        <translation type="unfinished"/>
+        <translation>Ενεργός λογαριασμός</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="190"/>
         <source>Account is blocked</source>
-        <translation type="unfinished"/>
+        <translation>Αποκλεισμένος λογαριασμός</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="204"/>
         <source>Account type: %1</source>
-        <translation type="unfinished"/>
+        <translation>Τύπος λογαριασμου: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="246"/>
@@ -78,7 +78,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="254"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation type="unfinished"/>
+        <translation>Με αυτή την ενέργεια θα διαγραφεί ο λογαριασμός σας από τον διακομιστή του WhatsApp, οι πληροφορίες σύνδεσης, οι συζητησεις και οι επαφές σας. Τα κατεβασμένα αρχεία μέσων θα παραμείνουν.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="320"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="40"/>
         <source>Send broadcast</source>
-        <translation type="unfinished"/>
+        <translation>Αποστολή εκπομπής</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="139"/>
@@ -127,9 +127,14 @@
         <translation>Επιλογή μέσου</translation>
     </message>
     <message>
+        <location filename="../persecute2/qml/Broadcast.qml" line="166"/>
+        <source>Select file</source>
+        <translation>Επιλογή αρχείου</translation>
+    </message>
+    <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Επιλέξτε το στοιχείο μενού &amp;quot;Προσθήκη επαφής&amp;quot; για επιλογή επαφών</translation>
     </message>
 </context>
 <context>
@@ -137,12 +142,12 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
         <source>Mitakuuluu share</source>
-        <translation type="unfinished"/>
+        <translation>Διαμοιρασμός Mitakuuluu</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2018"/>
         <source>Can&apos;t share media when offline</source>
-        <translation type="unfinished"/>
+        <translation>Δεν είναι δυνατός ο διαμοιρασμός αρχείων μέσων σε κατάσταση αποσύνδεσης</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2761"/>
@@ -155,121 +160,141 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="46"/>
         <source>Media uploading started</source>
-        <translation type="unfinished"/>
+        <translation>Εκκίνηση μεταφόρτωσης αρχείων μέσων</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>n/a</source>
-        <translation type="unfinished"/>
+        <translation>δ/υ</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>S</source>
         <translation>Δ</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>M</source>
         <translation>Λ</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>H</source>
         <translation>Ω</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="153"/>
         <source>Outgoing </source>
         <translation>Εξερχόμενα</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="150"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="155"/>
         <source>Incoming </source>
         <translation>Εισερχόμενα</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="153"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="158"/>
         <source>picture </source>
         <translation>εικόνα</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="154"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="159"/>
         <source>audio </source>
         <translation>ήχος</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="155"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="160"/>
         <source>video </source>
         <translation>βίντεο</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="161"/>
         <source>contact </source>
         <translation>επαφή</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>location </source>
         <translation>τοποθεσία</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>LAT: %1</source>
-        <translation type="unfinished"/>
+        <translation>ΓΥ: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source> LON: %1</source>
-        <translation type="unfinished"/>
+        <translation> ΓΠ: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="165"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>System message.</source>
         <translation>Μήνυμα συστήματος.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="255"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="270"/>
         <source>Send media</source>
         <translation>Αποστολή μέσου</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="264"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="267"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="279"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="282"/>
         <source>Remove all messages</source>
         <translation>Διαγραφή όλων των μηνυμάτων</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="278"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="293"/>
         <source>Profile</source>
         <translation>Προφίλ</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="287"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unmute</source>
+        <translation>Αναίρεση σίγασης</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unblock</source>
+        <translation>Αναίρεση αποκλεισμού</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Mute</source>
+        <translation>Σίγαση</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Block</source>
+        <translation>Αποκλεισμός</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Load old conversation</source>
         <translation>Φόρτωση παλαιότερης συνομιλίας</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="458"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="484"/>
         <source>New message</source>
         <translation>Νέο μήνυμα</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="488"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="514"/>
         <source>Tap here to enter message</source>
         <translation>Πατήστε εδώ για εισαγωγή μηνύματος</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="596"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="622"/>
         <source>Select media type</source>
         <translation>Επιλογή τύπου μέσου</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="620"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="646"/>
         <source>Select video</source>
         <translation>Επιλογή βίντεο</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="635"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="661"/>
         <source>Select audio</source>
         <translation>Επιλογή ήχο</translation>
     </message>
@@ -279,55 +304,60 @@
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>Unread messages: %1</source>
-        <translation type="unfinished"/>
+        <translation>Μη αναγνωσμένα μηνύματα: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>No unread messages</source>
-        <translation type="unfinished"/>
+        <translation>Δεν υπάρχουν μη αναγνωσμένα μηνύματα</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>Registration</source>
         <translation>Εγγραφή</translation>
     </message>
+    <message>
+        <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
+        <source>One unread message</source>
+        <translation>Ένα μη αναγνωσμένο μήνυμα</translation>
+    </message>
 </context>
 <context>
     <name>DefaultDelegate</name>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="132"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="134"/>
         <source>Media download started...</source>
-        <translation type="unfinished"/>
+        <translation>Εκκίνηση μεταφόρτωσης αρχείων μέσων...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="170"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="172"/>
         <source>Remove message</source>
-        <translation type="unfinished"/>
+        <translation>Διαγραφή μηνύματος</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="217"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="219"/>
         <source>Copy</source>
-        <translation type="unfinished"/>
+        <translation>Αντιγραφή</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="221"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="223"/>
         <source>Message copied to clipboard</source>
-        <translation type="unfinished"/>
+        <translation>Μήνυμα αντιγράφηκε στο πρόχειρο</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="226"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="228"/>
         <source>Forward</source>
-        <translation type="unfinished"/>
+        <translation>Προώθηση</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="238"/>
         <source>Cancel download</source>
-        <translation type="unfinished"/>
+        <translation>Ακύρωση μεταφόρτωσης</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="238"/>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
@@ -350,7 +380,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Επιλέξτε το στοιχείο μενού &amp;quot;Προσθήκη επαφής&amp;quot; για επιλογή επαφών</translation>
     </message>
 </context>
 <context>
@@ -373,27 +403,27 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="206"/>
         <source>Owner: %1</source>
-        <translation type="unfinished"/>
+        <translation>Κάτοχος: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="220"/>
         <source>Creation: %1</source>
-        <translation type="unfinished"/>
+        <translation>Δημιουργία: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="234"/>
         <source>Subject by: %1</source>
-        <translation type="unfinished"/>
+        <translation>Θέμα κατά: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="248"/>
         <source>Subject set: %1</source>
-        <translation type="unfinished"/>
+        <translation>Ορισμός θέματος: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="303"/>
         <source>Fetching participants...</source>
-        <translation type="unfinished"/>
+        <translation>Λήψη συμμετεχόντων...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="418"/>
@@ -469,6 +499,8 @@
 </source>
         <translation>Η εγγραφή απέτυχε
 
+
+
 </translation>
     </message>
     <message>
@@ -495,7 +527,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>Activation code requested. Wait for %1 soon</source>
-        <translation type="unfinished"/>
+        <translation>Απαιτείται κωδικός ενεργοποίησης. Περιμένετε για %1 σύντομα</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="53"/>
@@ -574,7 +606,7 @@
     <message>
         <location filename="../persecute2/qml/ResizePicture.qml" line="29"/>
         <source>Resize picture</source>
-        <translation type="unfinished"/>
+        <translation>Αλλαγή μεγέθους εικόνας</translation>
     </message>
 </context>
 <context>
@@ -582,27 +614,27 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="73"/>
         <source>Contacts syncing finished!</source>
-        <translation type="unfinished"/>
+        <translation>Ολοκλήρωση συγχρονισμού επαφών!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="76"/>
         <source>Contacts syncing failed!</source>
-        <translation type="unfinished"/>
+        <translation>Αποτυχία συγχρονισμού επαφών!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="79"/>
         <source>Media uploading failed!</source>
-        <translation type="unfinished"/>
+        <translation>Αποτυχία μεταφόρτωσης αρχείων μέσων!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="84"/>
         <source>Unknown</source>
-        <translation type="unfinished"/>
+        <translation>Άγνωστο</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="85"/>
         <source>Waiting for connection</source>
-        <translation type="unfinished"/>
+        <translation>Αναμονή σύνδεσης</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="86"/>
@@ -617,61 +649,61 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="88"/>
         <source>Logged in</source>
-        <translation type="unfinished"/>
+        <translation>Σε σύνδεση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="89"/>
         <source>Login failure!</source>
-        <translation type="unfinished"/>
+        <translation>Αποτυχία σύνδεσης!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="90"/>
         <source>Disconnected</source>
-        <translation type="unfinished"/>
+        <translation>Αποσύνδεση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="91"/>
         <source>Registering...</source>
-        <translation type="unfinished"/>
+        <translation>Εγγραφή...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="92"/>
         <source>Registration failed!</source>
-        <translation type="unfinished"/>
+        <translation>Αποτυχία εγγραφής!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="110"/>
         <location filename="../persecute2/qml/Roster.qml" line="117"/>
         <source>No action</source>
-        <translation type="unfinished"/>
+        <translation>Καμία ενέργεια</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="111"/>
         <source>Force connect</source>
-        <translation type="unfinished"/>
+        <translation>Εξαναγκασμός σύνδεσης</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="112"/>
         <location filename="../persecute2/qml/Roster.qml" line="113"/>
         <location filename="../persecute2/qml/Roster.qml" line="114"/>
         <source>Disconnect</source>
-        <translation type="unfinished"/>
+        <translation>Αποσύνδεση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="115"/>
         <location filename="../persecute2/qml/Roster.qml" line="118"/>
         <source>Register</source>
-        <translation type="unfinished"/>
+        <translation>Εγγραφή</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="116"/>
         <source>Connect</source>
-        <translation type="unfinished"/>
+        <translation>Σύνδεση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="128"/>
         <source>You</source>
-        <translation type="unfinished"/>
+        <translation>Εσύ</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="157"/>
@@ -681,7 +713,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="161"/>
         <source>Quit and shutdown engine</source>
-        <translation type="unfinished"/>
+        <translation>Έξοδος και διακοπή μηχανής</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="172"/>
@@ -696,7 +728,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="189"/>
         <source>Broadcast</source>
-        <translation type="unfinished"/>
+        <translation>Εκπομπή</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="197"/>
@@ -706,42 +738,42 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="214"/>
         <source>Disconnecting</source>
-        <translation type="unfinished"/>
+        <translation>Αποσύνδεση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="304"/>
         <source>Enter contact name to search</source>
-        <translation type="unfinished"/>
+        <translation>Εισαγωγή ονόματος επαφής για αναζήτηση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="370"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
-        <translation type="unfinished"/>
+        <translation>Η λίστα επαφών είναι κενή. Συγχρονίστε τον τηλεφωνικό κατάλογο ή προσθέστε επαφές χειροκίνητα.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="395"/>
         <source>Rename contact</source>
-        <translation type="unfinished"/>
+        <translation>Μετονομασία επαφής</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="402"/>
         <source>Enter new name</source>
-        <translation type="unfinished"/>
+        <translation>Εισαγωγή νέου ονόματος</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="441"/>
         <source>Create group</source>
-        <translation type="unfinished"/>
+        <translation>Δημιουργία ομάδας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="448"/>
         <source>Write name of new group here</source>
-        <translation type="unfinished"/>
+        <translation>Γράψτε εδώ το όνομα της νέας ομάδας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="535"/>
         <source>Group chat</source>
-        <translation type="unfinished"/>
+        <translation>Συνομιλία ομάδας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="562"/>
@@ -751,7 +783,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="562"/>
         <source>Leave group %1</source>
-        <translation type="unfinished"/>
+        <translation>Εγκατάλειψη ομάδας %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="596"/>
@@ -761,65 +793,89 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="604"/>
         <source>Refresh</source>
-        <translation type="unfinished"/>
+        <translation>Ανανέωση</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="608"/>
         <source>Contact syncing started...</source>
-        <translation type="unfinished"/>
+        <translation>Έναρξη συγχρονισμού επαφών...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="613"/>
         <source>Rename</source>
-        <translation type="unfinished"/>
+        <translation>Μετονομασία</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="621"/>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="621"/>
         <source>Leave group</source>
-        <translation type="unfinished"/>
+        <translation>Εγκατάλειψη ομάδας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Unblock</source>
-        <translation type="unfinished"/>
+        <translation>Αναίρεση αποκλεισμού</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Block</source>
-        <translation type="unfinished"/>
+        <translation>Αποκλεισμός</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Unmute</source>
-        <translation type="unfinished"/>
+        <translation>Αναίρεση σίγασης</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Mute</source>
-        <translation type="unfinished"/>
+        <translation>Σίγαση</translation>
     </message>
 </context>
 <context>
     <name>SelectContact</name>
     <message>
-        <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Select contact</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
-        <source>Selected %1 contacts</source>
-        <translation type="unfinished"/>
+        <source>Select group</source>
+        <translation>Επιλογή ομάδας</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
+        <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
+        <source>Select contacts</source>
+        <translation>Επιλογή επαφών</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
+        <source>Group selected</source>
+        <translation>Επιλεγμένη ομάδα</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
+        <source>One contact selected</source>
+        <translation>Μια επιλεγμένη επαφή</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="50"/>
+        <source>Selected %1 contacts</source>
+        <translation>Επιλεγμένες %1 επαφές</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="50"/>
+        <source>Selected %1 groups</source>
+        <translation>%1 επιλεγμένες ομάδες</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="116"/>
         <source>Group chat</source>
-        <translation type="unfinished"/>
+        <translation>Συνομιλία ομάδας</translation>
     </message>
 </context>
 <context>
@@ -827,7 +883,7 @@
     <message>
         <location filename="../persecute2/qml/SelectFile.qml" line="41"/>
         <source>Select file</source>
-        <translation type="unfinished"/>
+        <translation>Επιλογή αρχείου</translation>
     </message>
 </context>
 <context>
@@ -836,27 +892,32 @@
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="34"/>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="57"/>
         <source>Phonebook syncing started...</source>
-        <translation type="unfinished"/>
+        <translation>Έναρξη συγχρονισμού τηλεφωνικού καταλόγου...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="54"/>
         <source>Sync all phonebook</source>
-        <translation type="unfinished"/>
+        <translation>Συγχρονισμός όλου του τηλεφςνικού καταλόγου</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="63"/>
         <source>Add number</source>
-        <translation type="unfinished"/>
+        <translation>Προσθήκη αριθμού</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="97"/>
         <source>Sync %1 contacts</source>
-        <translation type="unfinished"/>
+        <translation>Συγχρονισμός %1 επαφών</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="97"/>
+        <source>Sync contact</source>
+        <translation>Συγχρονισμός επαφής</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="98"/>
         <source>Select contacts</source>
-        <translation type="unfinished"/>
+        <translation>Επιλογή επαφών</translation>
     </message>
 </context>
 <context>
@@ -864,7 +925,7 @@
     <message>
         <location filename="../persecute2/qml/SelectPicture.qml" line="16"/>
         <source>Select picture</source>
-        <translation type="unfinished"/>
+        <translation>Επιλογή εικόνας</translation>
     </message>
 </context>
 <context>
@@ -872,142 +933,142 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>About</source>
-        <translation type="unfinished"/>
+        <translation>Σχετικά</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="38"/>
         <source>Account</source>
-        <translation type="unfinished"/>
+        <translation>Λογαριασμός</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="44"/>
         <source>Muted groups</source>
-        <translation type="unfinished"/>
+        <translation>Ομάδες σε σιγή</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="52"/>
         <source>Blacklist</source>
-        <translation type="unfinished"/>
+        <translation>Λίστα αποκλεισμένων</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="68"/>
         <source>Settings</source>
-        <translation type="unfinished"/>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="72"/>
         <source>Conversation</source>
-        <translation type="unfinished"/>
+        <translation>Συνομιλία</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="76"/>
         <source>Conversation theme</source>
-        <translation type="unfinished"/>
+        <translation>Θέμα συνομιλίας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="118"/>
         <source>Vibrate in active conversation</source>
-        <translation type="unfinished"/>
+        <translation>Δόνηση στην ενεργή συνομιλία</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="130"/>
         <source>Show messages timestamp</source>
-        <translation type="unfinished"/>
+        <translation>Εμφάνιση χρονοσφραγίδας στα μηνύματα</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="142"/>
         <source>Show seconds in messages timestamp</source>
-        <translation type="unfinished"/>
+        <translation>Εμφάνιση δευτερολέπτων στη χρονοσφραγίδα μηνυμάτων</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="155"/>
         <source>Send messages by Enter</source>
-        <translation type="unfinished"/>
+        <translation>Αποστολή μηνυμάτων πατώντας Enter</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="166"/>
         <source>Show keyboard automatically</source>
-        <translation type="unfinished"/>
+        <translation>Αυτόματη εμφάνιση πληκτρολογίου</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="167"/>
         <source>Automatically show keyboard when opening conversation</source>
-        <translation type="unfinished"/>
+        <translation>Αυτόματη εμφάνιση πληκτρολογίου κατά το άνοιγμα συνομιλίας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="181"/>
         <source>Chat font size</source>
-        <translation type="unfinished"/>
+        <translation>Μέγεθος γραμματοσειράς συνομιλίας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="183"/>
         <source>%1 px</source>
-        <translation type="unfinished"/>
+        <translation>%1 px</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="193"/>
         <source>Common</source>
-        <translation type="unfinished"/>
+        <translation>Κοινό</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation>Γλώσσα</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
         <source>Restart application to change language</source>
-        <translation type="unfinished"/>
+        <translation>Επανεκκίνηση εφαρμογής για αλλαγή γλώσσας</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="227"/>
         <source>Show yourself in contact list, if present</source>
-        <translation type="unfinished"/>
+        <translation>Να εμφανίζεστε στη λίστα επαφών, αν είστε παρόν</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="238"/>
         <source>Accept messages from unknown contacts</source>
-        <translation type="unfinished"/>
+        <translation>Αποδοχή μηνυμάτων από άγνωστες επαφές</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="262"/>
         <source>Set unavailable when window closed or minimized</source>
-        <translation type="unfinished"/>
+        <translation>Μη διαθέσιμο σετ όταν το παράθυρο είναι κλειστό ή ελαχιστοποιημένο</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always offline</source>
-        <translation type="unfinished"/>
+        <translation>Πάντα εκτός σύνδεσης</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always online</source>
-        <translation type="unfinished"/>
+        <translation>Πάντα σε σύνδεση</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="316"/>
+        <location filename="../persecute2/qml/Settings.qml" line="323"/>
         <source>Media</source>
-        <translation type="unfinished"/>
+        <translation>Μέσα</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="321"/>
+        <location filename="../persecute2/qml/Settings.qml" line="328"/>
         <source>Resize sending images</source>
-        <translation type="unfinished"/>
+        <translation>Αλλαγή μεγέθους απεσταλμένων εικόνων</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="353"/>
+        <location filename="../persecute2/qml/Settings.qml" line="360"/>
         <source>Maximum image size by file size</source>
-        <translation type="unfinished"/>
+        <translation>Μέγιστο μέγεθος εικόνας ανά μέγεθος αρχείου</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="384"/>
+        <location filename="../persecute2/qml/Settings.qml" line="391"/>
         <source>Maximum image size by resolution</source>
-        <translation type="unfinished"/>
+        <translation>Μέγιστο μέγεθος εικόνας κατά ανάλυση</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="386"/>
+        <location filename="../persecute2/qml/Settings.qml" line="393"/>
         <source>%1 MPx</source>
-        <translation type="unfinished"/>
+        <translation>%1 MPx</translation>
     </message>
 </context>
 <context>
@@ -1015,42 +1076,42 @@
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="95"/>
         <source>Nickname: %1</source>
-        <translation type="unfinished"/>
+        <translation>Ψευδώνυμο: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="102"/>
         <source>Status: %1</source>
-        <translation type="unfinished"/>
+        <translation>Κατάσταση: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="109"/>
         <source>Phone: +%1</source>
-        <translation type="unfinished"/>
+        <translation>Τηλέφωνο: +%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="116"/>
         <source>Contact blocked</source>
-        <translation type="unfinished"/>
+        <translation>Επαφή αποκλείστηκε</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="124"/>
         <source>Unblock contact</source>
-        <translation type="unfinished"/>
+        <translation>Αναίρεση αποκλεισμού επαφής</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="124"/>
         <source>Block contact</source>
-        <translation type="unfinished"/>
+        <translation>Αποκλεισμός επαφής</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="134"/>
         <source>Save to phonebook</source>
-        <translation type="unfinished"/>
+        <translation>Αποθήκευση σε τηλεφωνικό κατάλογο</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="143"/>
         <source>Save chat history to file</source>
-        <translation type="unfinished"/>
+        <translation>Αποθύκευση ιστορικού συνομιλίας σε αρχείο</translation>
     </message>
 </context>
 <context>
@@ -1058,27 +1119,27 @@
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>n/a</source>
-        <translation type="unfinished"/>
+        <translation>δ/υ</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>bytes</source>
-        <translation type="unfinished"/>
+        <translation>bytes</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>KiB</source>
-        <translation type="unfinished"/>
+        <translation>KiB</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>MiB</source>
-        <translation type="unfinished"/>
+        <translation>MiB</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="51"/>
         <source>GiB</source>
-        <translation type="unfinished"/>
+        <translation>GiB</translation>
     </message>
 </context>
 </TS>

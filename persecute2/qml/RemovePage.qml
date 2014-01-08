@@ -5,7 +5,6 @@ Page {
     id: page
     objectName: "removePage"
     property bool processing: true
-    allowedOrientations: Orientation.Portrait
 
     Connections {
         target: roster.contacts

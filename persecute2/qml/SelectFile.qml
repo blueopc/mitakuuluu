@@ -6,7 +6,6 @@ import org.coderus.mitakuuluu 1.0
 Page {
     id: page
     objectName: "selectFile"
-    allowedOrientations: Orientation.Portrait
 
     signal selected(string path)
     signal done

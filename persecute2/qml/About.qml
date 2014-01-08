@@ -4,7 +4,6 @@ import Sailfish.Silica 1.0
 Page {
     id: page
     objectName: "about"
-    allowedOrientations: Orientation.Portrait
 
     onStatusChanged: {
         if (status === PageStatus.Active) {

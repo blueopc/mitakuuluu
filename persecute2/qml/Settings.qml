@@ -4,7 +4,6 @@ import Sailfish.Silica 1.0
 Page {
     id: page
     objectName: "settings"
-    allowedOrientations: Orientation.Portrait
 
     onStatusChanged: {
         if (status === PageStatus.Inactive) {
@@ -173,6 +172,16 @@ Page {
                 }
             }
 
+            TextSwitch {
+                checked: deleteMediaFiles
+                text: qsTr("Delete media files")
+                description: qsTr("Delete received media files when deleting message")
+                onClicked: {
+                    deleteMediaFiles = checked
+                    settings.setValue("deleteMediaFiles", checked)
+                }
+            }
+
             Slider {
                 id: fontSlider
                 width: parent.width
@@ -283,6 +292,8 @@ Page {
                         offlineSwitch.checked = !checked
                         settings.setValue("alwaysOffline", !checked)
                         alwaysOffline = !checked
+                        if (checked)
+                            whatsapp.setPresenceAvailable()
                     }
                 }
 
@@ -295,7 +306,10 @@ Page {
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            onlineSwitch.clicked(mouse)
+                            if (onlineSwitch.checked)
+                                offlineSwitch.clicked(mouse)
+                            else
+                                onlineSwitch.clicked(mouse)
                         }
                     }
                 }
@@ -309,6 +323,8 @@ Page {
                         onlineSwitch.checked = !checked
                         settings.setValue("alwaysOffline", checked)
                         alwaysOffline = checked
+                        if (checked)
+                            whatsapp.setPresenceUnavailable()
                     }
                 }
             }
@@ -386,7 +402,7 @@ Page {
                     valueText: qsTr("%1 MPx").arg(parseFloat(value.toPrecision(2)))
                     onValueChanged: {
                         if (page.status == PageStatus.Active) {
-                            resizeImagesToMPix = parseFloat(value)
+                            resizeImagesToMPix = parseFloat(value.toPrecision(2))
                             settings.setValue("resizeImagesToMPix", resizeImagesToMPix)
                         }
                     }

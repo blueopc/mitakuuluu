@@ -78,7 +78,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="254"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation>Tämä toiminto poistaa tilisi WhatsApp-palvelimelta, myös kirjautumistietosi, keskustelut ja yhteystiedot poistetaan. Ladatut mediatiedostot säilyvät.</translation>
+        <translation>Tämä toiminto poistaa tilisi WhatsApp-palvelimelta, myös kirjautumistietosi, keskustelut ja yhteystiedot poistetaan. Ladatut mediatiedostot säilyvät laitteessasi.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="320"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="40"/>
         <source>Send broadcast</source>
-        <translation>Lähetä tiedoteviesti</translation>
+        <translation>Lähetä yleislähetys</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="139"/>
@@ -127,9 +127,14 @@
         <translation>Valitse mediatiedosto</translation>
     </message>
     <message>
+        <location filename="../persecute2/qml/Broadcast.qml" line="166"/>
+        <source>Select file</source>
+        <translation>Valitse tiedosto</translation>
+    </message>
+    <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Voit lisätä henkilöitä valitsemalla valikosta &amp;quot;Lisää henkilö&amp;quot;</translation>
+        <translation>Voit lisätä henkilöitä valitsemalla valikosta &quot;Lisää henkilö&quot;</translation>
     </message>
 </context>
 <context>
@@ -158,118 +163,138 @@
         <translation>Mediatiedoston lähetys alkanut</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>n/a</source>
         <translation>ei saatavilla</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="139"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="144"/>
         <source>H</source>
         <translation>T</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="153"/>
         <source>Outgoing </source>
         <translation>Lähtevä </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="150"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="155"/>
         <source>Incoming </source>
         <translation>Saapuva </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="153"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="158"/>
         <source>picture </source>
         <translation>kuva </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="154"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="159"/>
         <source>audio </source>
         <translation>ääni </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="155"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="160"/>
         <source>video </source>
         <translation>video </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="161"/>
         <source>contact </source>
         <translation>henkilö</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>location </source>
         <translation>sijainti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>LAT: %1</source>
-        <translation>Lat: %1</translation>
+        <translation>LEV: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source> LON: %1</source>
-        <translation>Lon: %1</translation>
+        <translation>PIT: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="165"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>System message.</source>
         <translation>Järjestelmäviesti.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="255"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="270"/>
         <source>Send media</source>
         <translation>Lähetä mediatiedosto</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="264"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="267"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="279"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="282"/>
         <source>Remove all messages</source>
         <translation>Poista kaikki viestit</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="278"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="293"/>
         <source>Profile</source>
         <translation>Profiili</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="287"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unmute</source>
+        <translation>Poista mykistys</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unblock</source>
+        <translation>Poista esto</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Mute</source>
+        <translation>Mykistä</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Block</source>
+        <translation>Estä</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Load old conversation</source>
         <translation>Lataa aiempi keskustelu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="458"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="484"/>
         <source>New message</source>
         <translation>Uusi viesti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="488"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="514"/>
         <source>Tap here to enter message</source>
-        <translation>Napauta tähän kirjoittaaksesi viestin</translation>
+        <translation>Napauta tähän kirjoittaaksesi</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="596"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="622"/>
         <source>Select media type</source>
         <translation>Valitse tiedostotyyppi</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="620"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="646"/>
         <source>Select video</source>
         <translation>Valitse videotiedosto</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="635"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="661"/>
         <source>Select audio</source>
         <translation>Valitse äänitiedosto</translation>
     </message>
@@ -291,41 +316,46 @@
         <source>Registration</source>
         <translation>Rekisteröityminen</translation>
     </message>
+    <message>
+        <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
+        <source>One unread message</source>
+        <translation>Yksi lukematon viesti</translation>
+    </message>
 </context>
 <context>
     <name>DefaultDelegate</name>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="132"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="134"/>
         <source>Media download started...</source>
         <translation>Mediatiedoston lataus alkanut...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="170"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="172"/>
         <source>Remove message</source>
         <translation>Poista viesti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="217"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="219"/>
         <source>Copy</source>
         <translation>Kopioi</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="221"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="223"/>
         <source>Message copied to clipboard</source>
         <translation>Viesti kopioitu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="226"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="228"/>
         <source>Forward</source>
         <translation>Lähetä eteenpäin</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="238"/>
         <source>Cancel download</source>
         <translation>Peru lataus</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="236"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="238"/>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
@@ -350,7 +380,7 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="158"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Voit lisätä henkilöitä valitsemalla valikosta &amp;quot;Lisää henkilö&amp;quot;</translation>
+        <translation>Voit lisätä henkilöitä valitsemalla valikosta &quot;Lisää henkilö&quot;</translation>
     </message>
 </context>
 <context>
@@ -558,7 +588,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="347"/>
         <source>Tap here to enter code</source>
-        <translation>Napauta tähän syöttääksesi koodin</translation>
+        <translation>Napauta tähän ja kirjoita koodi</translation>
     </message>
 </context>
 <context>
@@ -582,12 +612,12 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="73"/>
         <source>Contacts syncing finished!</source>
-        <translation>Henkilöiden synkronointi onnistui!</translation>
+        <translation>Yhteystiedot päivitetty!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="76"/>
         <source>Contacts syncing failed!</source>
-        <translation>Henkilöiden synkronointi epäonnistui!</translation>
+        <translation>Yhteystietojen päivitys epäonnistui!</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="79"/>
@@ -696,7 +726,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="189"/>
         <source>Broadcast</source>
-        <translation>Tiedoteviesti</translation>
+        <translation>Yleislähetys</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="197"/>
@@ -716,7 +746,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="370"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
-        <translation>Henkilölista on tyhjä. Synkronoi henkilöt puhelimesta tai lisää henkilöitä käsin.</translation>
+        <translation>Yhteystietoja ei ole. Synkronoi tiedot puhelimesta tai lisää yhteystietoja käsin.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="395"/>
@@ -766,7 +796,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="608"/>
         <source>Contact syncing started...</source>
-        <translation>Henkilön synkroinointi aloitettu...</translation>
+        <translation>Yhteystietojen päivitys aloitettu...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="613"/>
@@ -807,17 +837,41 @@
 <context>
     <name>SelectContact</name>
     <message>
-        <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Select contact</source>
-        <translation>Valitse henkilö</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
-        <source>Selected %1 contacts</source>
-        <translation>Valitse %1 yhteystieto(a)</translation>
+        <source>Select group</source>
+        <translation>Valitse ryhmä</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectContact.qml" line="114"/>
+        <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
+        <source>Select contacts</source>
+        <translation>Valitse henkilöt</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
+        <source>Group selected</source>
+        <translation>Ryhmä valittu</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
+        <source>One contact selected</source>
+        <translation>Yksi henkilö valittu</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="50"/>
+        <source>Selected %1 contacts</source>
+        <translation>%1 henkilöä valittu</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="50"/>
+        <source>Selected %1 groups</source>
+        <translation>%1 ryhmää valittu</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectContact.qml" line="116"/>
         <source>Group chat</source>
         <translation>Ryhmäkeskustelu</translation>
     </message>
@@ -841,7 +895,7 @@
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="54"/>
         <source>Sync all phonebook</source>
-        <translation>Synkronoi kaikki</translation>
+        <translation>Päivitä kaikki</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="63"/>
@@ -849,12 +903,17 @@
         <translation>Lisää henkilö</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="97"/>
         <source>Sync %1 contacts</source>
-        <translation>Synkronoi %1 henkilöä</translation>
+        <translation>Päivitä %1 henkilöä</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/SelectPhonebook.qml" line="96"/>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="97"/>
+        <source>Sync contact</source>
+        <translation>Päivitä henkilö</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/SelectPhonebook.qml" line="98"/>
         <source>Select contacts</source>
         <translation>Valitse henkilöt</translation>
     </message>
@@ -922,7 +981,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="155"/>
         <source>Send messages by Enter</source>
-        <translation>Lähetä viestit rivinvaihdolla</translation>
+        <translation>Lähetä viestit Enterillä</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="166"/>
@@ -975,37 +1034,37 @@
         <translation>Vaihda tila poissaolevaksi, kun ikkuna suljetaan tai minimoidaan</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always offline</source>
-        <translation>Aina poissaolevana</translation>
+        <translation>Aina poissa</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always online</source>
         <translation>Aina paikalla</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="316"/>
+        <location filename="../persecute2/qml/Settings.qml" line="323"/>
         <source>Media</source>
         <translation>Media</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="321"/>
+        <location filename="../persecute2/qml/Settings.qml" line="328"/>
         <source>Resize sending images</source>
         <translation>Muuta lähetettävien kuvien kokoa</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="353"/>
+        <location filename="../persecute2/qml/Settings.qml" line="360"/>
         <source>Maximum image size by file size</source>
         <translation>Suurin tiedostokoko</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="384"/>
+        <location filename="../persecute2/qml/Settings.qml" line="391"/>
         <source>Maximum image size by resolution</source>
         <translation>Suurin resoluutio megapikseleinä</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="386"/>
+        <location filename="../persecute2/qml/Settings.qml" line="393"/>
         <source>%1 MPx</source>
         <translation>%1 mp</translation>
     </message>
@@ -1045,7 +1104,7 @@
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="134"/>
         <source>Save to phonebook</source>
-        <translation>Lisää puhelimen henkilöluetteloon</translation>
+        <translation>Lisää yhteystietoihin</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="143"/>

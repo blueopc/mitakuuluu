@@ -129,6 +129,11 @@
         <translation>Select media</translation>
     </message>
     <message>
+        <location filename="../persecute2/qml/Broadcast.qml" line="166"/>
+        <source>Select file</source>
+        <translation type="unfinished">Select file</translation>
+    </message>
+    <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="205"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
         <translation>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</translation>
@@ -230,48 +235,68 @@
         <translation>System message.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="260"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="270"/>
         <source>Send media</source>
         <translation>Send media</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="269"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="272"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="279"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="282"/>
         <source>Remove all messages</source>
         <translation>Remove all messages</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="283"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="293"/>
         <source>Profile</source>
         <translation>Profile</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="292"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unmute</source>
+        <translation type="unfinished">Unmute</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="301"/>
+        <source>Unblock</source>
+        <translation type="unfinished">Unblock</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Mute</source>
+        <translation type="unfinished">Mute</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <source>Block</source>
+        <translation type="unfinished">Block</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Load old conversation</source>
         <translation>Load old conversation</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="463"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="484"/>
         <source>New message</source>
         <translation>New message</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="493"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="514"/>
         <source>Tap here to enter message</source>
         <translation>Tap here to enter message</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="601"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="622"/>
         <source>Select media type</source>
         <translation>Select media type</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="625"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="646"/>
         <source>Select video</source>
         <translation>Select video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="640"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="661"/>
         <source>Select audio</source>
         <translation>Select audio</translation>
     </message>
@@ -1011,37 +1036,37 @@
         <translation>Set unavailable when window closed or minimized</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always offline</source>
         <translation>Always offline</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Always online</source>
         <translation>Always online</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="316"/>
+        <location filename="../persecute2/qml/Settings.qml" line="323"/>
         <source>Media</source>
         <translation>Media</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="321"/>
+        <location filename="../persecute2/qml/Settings.qml" line="328"/>
         <source>Resize sending images</source>
         <translation>Resize sending images</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="353"/>
+        <location filename="../persecute2/qml/Settings.qml" line="360"/>
         <source>Maximum image size by file size</source>
         <translation>Maximum image size by file size</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="384"/>
+        <location filename="../persecute2/qml/Settings.qml" line="391"/>
         <source>Maximum image size by resolution</source>
         <translation>Maximum image size by resolution</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="386"/>
+        <location filename="../persecute2/qml/Settings.qml" line="393"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>

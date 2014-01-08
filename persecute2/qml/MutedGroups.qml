@@ -5,7 +5,6 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "mutedGroups"
-    allowedOrientations: Orientation.Portrait
 
     onStatusChanged: {
         if (status === PageStatus.Inactive) {

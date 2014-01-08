@@ -5,7 +5,6 @@ import "Utilities.js" as Utilities
 Dialog {
     id: page
     objectName: "forwardMessage"
-    allowedOrientations: Orientation.Portrait
 
     property variant jids: []
 
@@ -92,7 +91,7 @@ Dialog {
             }
         }
 
-        PageHeader {
+        DialogHeader {
             id: title
             title: qsTr("Forward")
         }
@@ -104,6 +103,7 @@ Dialog {
             anchors.leftMargin: Theme.paddingMedium
             width: (page.isPortrait ? page.width : (page.width / 2)) - Theme.paddingMedium
             text: msgtext
+            wrapMode: Text.WordWrap
         }
 
         Image {
@@ -150,13 +150,49 @@ Dialog {
 
         Label {
             anchors.fill: listView
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            font.pixelSize: Theme.fontSizeLarge
-            color: "gray"
+            font.pixelSize: Theme.fontSizeMedium
+            color: Theme.secondaryHighlightColor
+            font.bold: pArea.pressed
             visible: listModel.count == 0
             text: qsTr("Select &quot;Add contact&quot; menu item to select contacts")
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
             wrapMode: Text.WordWrap
+            textFormat: Text.RichText
+
+            MouseArea {
+                id: pArea
+                anchors.fill: parent
+                onClicked: menuPeek.start()
+            }
+
+            SequentialAnimation {
+                id: menuPeek
+                PropertyAction {
+                    target: flickable.pullDownMenu
+                    property: "active"
+                    value: true
+                }
+                NumberAnimation {
+                    target: flickable
+                    property: "contentY"
+                    to: 0 - 30
+                    duration: 300
+                    easing.type: Easing.OutCubic
+                }
+                NumberAnimation {
+                    target: flickable
+                    property: "contentY"
+                    to: 0
+                    duration: 80
+                    easing.type: Easing.OutCubic
+                }
+                PropertyAction {
+                    target: flickable.pullDownMenu
+                    property: "active"
+                    value: false
+                }
+            }
         }
 
         VerticalScrollDecorator {

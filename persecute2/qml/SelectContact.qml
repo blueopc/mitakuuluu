@@ -6,7 +6,6 @@ import "Utilities.js" as Utilities
 Dialog {
     id: page
     objectName: "selectContact"
-    allowedOrientations: Orientation.Portrait
     canAccept: jids.length > 0
 
     property string jid: ""

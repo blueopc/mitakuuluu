@@ -6,7 +6,6 @@ ApplicationWindow {
     id: appWindow
     objectName: "appWindow"
     cover: Qt.resolvedUrl("CoverPage.qml")
-    allowedOrientations: Orientation.Portrait
 
     property bool sendByEnter: false
     property bool showTimestamp: true
@@ -21,10 +20,11 @@ ApplicationWindow {
     property bool resizeImages: false
     property bool resizeBySize: false
     property int resizeImagesTo: 1048546
-    property int resizeImagesToMPix: 5
+    property double resizeImagesToMPix: 5.01
     property string conversationTheme: "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
     property int conversationIndex: 0
     property bool alwaysOffline: false
+    property bool deleteMediaFiles: false
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -42,8 +42,12 @@ ApplicationWindow {
             pageStack.push(groupPage)
         }
         else {
-            userProfile.jid = jid
-            pageStack.push(userProfile)
+            if (jid == roster.myJid)
+                pageStack.push(accountPage)
+            else {
+                userProfile.jid = jid
+                pageStack.push(userProfile)
+            }
         }
     }
 
@@ -100,11 +104,12 @@ ApplicationWindow {
         //softbankReplacer = settings.value("softbankReplacer", false)
         resizeImages = settings.value("resizeImages", false);
         resizeBySize = settings.value("resizeBySize", true)
-        resizeImagesTo = settings.value("resizeImagesTo", parseInt(1048576))
-        resizeImagesToMPix = settings.value("resizeImagesToMPix", parseInt(5))
+        resizeImagesTo = settings.value("resizeImagesTo", parseInt(1048546))
+        resizeImagesToMPix = settings.value("resizeImagesToMPix", parseFloat(5.01))
         conversationTheme = settings.value("conversationTheme", "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml")
         alwaysOffline = settings.value("alwaysOffline", false)
         //asynchronousDelegate = settings.value("asynchronousDelegate", true)
+        deleteMediaFiles = settings.value("deleteMediaFiles", false)
     }
 
     AddContact {
@@ -184,6 +189,10 @@ ApplicationWindow {
 
     GroupProfile {
         id: groupPage
+    }
+
+    MediaDialog {
+        id: selectMedia
     }
 
     Popup {

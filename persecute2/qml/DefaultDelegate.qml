@@ -171,7 +171,7 @@ Item {
                 removeItem.execute(item,
                                    qsTr("Remove message"),
                                    function() {
-                                       conversationModel.deleteMessage(dmsgid)
+                                       conversationModel.deleteMessage(dmsgid, deleteMediaFiles)
                                    },
                                    5000)
             }
@@ -186,7 +186,7 @@ Item {
     MenuIndicator {
         id: menuIndicator
         anchors.bottom: item.bottom
-        anchors.bottomMargin: inMenu.height - (height / 2)
+        anchors.bottomMargin: (inMenu.height || urlMenu.height) - (height / 2)
         width: item.width
         visible: inMenu.active || urlMenu.active
     }

@@ -3,7 +3,6 @@ import Sailfish.Silica 1.0
 
 Dialog {
     id: addContact
-    allowedOrientations: Orientation.Portrait
     property string jid
     function showData(ojid, oname) {
         jid = ojid

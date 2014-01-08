@@ -6,7 +6,6 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "roster"
-    allowedOrientations: Orientation.Portrait
 
     property int connectionStatus: 0
     property bool networkAvailable: false
@@ -146,6 +145,7 @@ Page {
     }
 
     SilicaFlickable {
+        id: flick
         anchors.fill: parent
         clip: true
         interactive: !listView.flicking
@@ -363,13 +363,49 @@ Page {
 
         Label {
             anchors.fill: listView
-            wrapMode: Text.WordWrap
+            font.pixelSize: Theme.fontSizeMedium
+            color: Theme.secondaryHighlightColor
+            font.bold: pArea.pressed
+            visible: listView.count == 0
+            text: qsTr("Contacts list is empty. Sync phonebook or add contacts manually.")
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            font.pixelSize: Theme.fontSizeLarge
-            text: qsTr("Contacts list is empty. Sync phonebook or add contacts manually.")
-            color: Theme.secondaryHighlightColor
-            visible: listView.count == 0
+            wrapMode: Text.WordWrap
+            textFormat: Text.RichText
+
+            MouseArea {
+                id: pArea
+                anchors.fill: parent
+                onClicked: menuPeek.start()
+            }
+
+            SequentialAnimation {
+                id: menuPeek
+                PropertyAction {
+                    target: flick.pullDownMenu
+                    property: "active"
+                    value: true
+                }
+                NumberAnimation {
+                    target: flick
+                    property: "contentY"
+                    to: 0 - 30
+                    duration: 300
+                    easing.type: Easing.OutCubic
+                }
+                NumberAnimation {
+                    target: flick
+                    property: "contentY"
+                    to: 0
+                    duration: 80
+                    easing.type: Easing.OutCubic
+                }
+                PropertyAction {
+                    target: flick.pullDownMenu
+                    property: "active"
+                    value: false
+                }
+            }
         }
 
         VerticalScrollDecorator {
@@ -380,7 +416,6 @@ Page {
 
     Dialog {
         id: renameContact
-        allowedOrientations: Orientation.Portrait
         property string jid
         function showData(ojid, oname) {
             jid = ojid
@@ -420,7 +455,6 @@ Page {
 
     Dialog {
         id: newGroup
-        allowedOrientations: Orientation.Portrait
         canAccept: groupTitle.text.trim().length > 0
 
         onStatusChanged: {

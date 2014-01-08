@@ -354,7 +354,7 @@ QString WhatsApp::transformPicture(const QString &filename, const QString &jid, 
             preimg = preimg.scaledToWidth(maxSize, Qt::SmoothTransformation);
     }
     QString path = QString("/tmp/%1-%2").arg(jid).arg(QString::number(QDateTime::currentDateTime().toTime_t()));
-    preimg.save(path, "JPG");
+    qDebug() << "Saving to:" << path << (preimg.save(path, "JPG") ? "success" : "error");
 
     return path;
 }
@@ -649,7 +649,7 @@ int WhatsApp::getExifRotation(const QString &image)
                 int rotation = 0;
 
                 QString value = QString(buf).toLower();
-                qDebug() << value << image;
+                //qDebug() << value << image;
 
                 if (value == "right-top")
                     rotation = 90;

@@ -7,7 +7,15 @@ Dialog {
     id: page
     objectName: "broadcast"
     canAccept: listModel.count > 0
-    allowedOrientations: Orientation.Portrait
+
+    onAccepted: {
+        if (messageText.checked) {
+            whatsapp.sendBroadcast(page.jids, textArea.text)
+        }
+        else if (messageMedia.checked) {
+            whatsapp.sendMedia(page.jids, mediaPath.text)
+        }
+    }
 
     property variant jids: []
 
@@ -132,7 +140,7 @@ Dialog {
             anchors.left: parent.left
             width: page.isPortrait ? page.width : (page.width / 2)
 
-            TextArea {
+            EmojiTextArea {
                 id: textArea
                 visible: messageText.checked
                 width: parent.width
@@ -155,6 +163,16 @@ Dialog {
                     selectFile.selected.disconnect(mediaPath.selectMedia)
                     selectFile.done.disconnect(mediaPath.unbindMedia)
                 }
+
+                function selectMediaImage() {
+                    selectMedia(selectPicture.selectedPath)
+                    unbindMediaImage()
+                }
+
+                function unbindMediaImage() {
+                    selectPicture.accepted.disconnect(page.selectMediaImage)
+                    selectPicture.rejected.disconnect(page.unbindMediaImage)
+                }
             }
 
             Button {
@@ -163,10 +181,7 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Select media")
                 onClicked: {
-                    selectFile.processPath("/home/nemo")
-                    selectFile.open()
-                    selectFile.selected.connect(mediaPath.selectMedia)
-                    selectFile.done.connect(mediaPath.unbindMedia)
+                    pageStack.push(selectMedia)
                 }
             }
         }
@@ -206,16 +221,105 @@ Dialog {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             wrapMode: Text.WordWrap
+            textFormat: Text.RichText
 
             MouseArea {
                 id: pArea
                 anchors.fill: parent
-                onClicked: addContacts.clicked()
+                onClicked: menuPeek.start()
+            }
+
+            SequentialAnimation {
+                id: menuPeek
+                PropertyAction {
+                    target: flickable.pullDownMenu
+                    property: "active"
+                    value: true
+                }
+                NumberAnimation {
+                    target: flickable
+                    property: "contentY"
+                    to: 0 - 30
+                    duration: 300
+                    easing.type: Easing.OutCubic
+                }
+                NumberAnimation {
+                    target: flickable
+                    property: "contentY"
+                    to: 0
+                    duration: 80
+                    easing.type: Easing.OutCubic
+                }
+                PropertyAction {
+                    target: flickable.pullDownMenu
+                    property: "active"
+                    value: false
+                }
             }
         }
 
         VerticalScrollDecorator {
             flickable: listView
+        }
+    }
+
+    Page {
+        id: selectMedia
+
+        SilicaFlickable {
+            id: mFlick
+            anchors.fill: parent
+            property int itemWidth: width / 2
+            property int itemHeight: (height / 2) - (mHeader.height / 2)
+
+            PageHeader {
+                id: mHeader
+                title: qsTr("Select media type")
+            }
+
+            SquareButton {
+                anchors.left: parent.left
+                anchors.top: mHeader.bottom
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-image"
+                onClicked: {
+                    selectPicture.accepted.connect(page.selectMediaImage)
+                    selectPicture.rejected.connect(page.unbindMediaImage)
+                    selectPicture.setProcessImages()
+                    selectPicture.open(true)
+                }
+            }
+
+            SquareButton {
+                anchors.right: parent.right
+                anchors.top: mHeader.bottom
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-video"
+                onClicked: {
+                    selectFile.processPath("/home/nemo", qsTr("Select video"))
+                    selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
+                    pageStack.replace(selectFile)
+                    selectFile.selected.connect(mediaPath.selectMedia)
+                    selectFile.done.connect(mediaPath.unbindMedia)
+                }
+            }
+
+            SquareButton {
+                anchors.left: parent.left
+                anchors.bottom: parent.bottom
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-music"
+                onClicked: {
+                    selectFile.processPath("/home/nemo", qsTr("Select audio"))
+                    selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
+                    pageStack.replace(selectFile)
+                    selectFile.selected.connect(mediaPath.selectMedia)
+                    selectFile.done.connect(mediaPath.unbindMedia)
+                }
+            }
         }
     }
 

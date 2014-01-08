@@ -6,7 +6,7 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "conversation"
-    allowedOrientations: Orientation.Portrait
+    backNavigation: !sendBox.focus
 
     onStatusChanged: {
         if (page.status === PageStatus.Inactive && pageStack.depth === 1) {
@@ -46,13 +46,14 @@ Page {
         banner.notify(qsTr("Media uploading started"))
     }
 
-    function sendMediaImage() {
-        sendMedia(selectPicture.selectedPath)
+    function sendMediaImage(path) {
+        pageStack.pop()
+        sendMedia(path)
         unbindMediaImage()
     }
 
     function unbindMediaImage() {
-        selectPicture.accepted.disconnect(page.sendMediaImage)
+        selectPicture.selected.disconnect(page.sendMediaImage)
         selectPicture.rejected.disconnect(page.unbindMediaImage)
     }
 
@@ -231,7 +232,7 @@ Page {
             }
         }
         onMessageReceived: {
-            if (data.jid == page.jid && data.author != roster.myJid && notifyActive) {
+            if (!page.blocked && data.jid == page.jid && data.author != roster.myJid && notifyActive) {
                 vibration.start()
             }
             else if (data.author == roster.myJid) {
@@ -241,6 +242,16 @@ Page {
         onNewGroupSubject: {
             if (data.jid == page.jid) {
                 page.title = data.message
+            }
+        }
+        onContactsBlocked: {
+            if (!page.isGroup && (list.indexOf(page.jid) !== -1)) {
+                page.blocked = true
+            }
+        }
+        onGroupsMuted: {
+            if (page.isGroup && (jids.indexOf(page.jid) !== -1)) {
+                page.blocked = true
             }
         }
     }
@@ -284,6 +295,17 @@ Page {
                 enabled: (roster.connectionStatus == 4) ? true : (page.jid.indexOf("-") == -1)
                 onClicked: {
                     profileAction(page.jid)
+                }
+            }
+
+            MenuItem {
+                text: page.blocked ? (page.isGroup ? qsTr("Unmute") : qsTr("Unblock"))
+                                   : (page.isGroup ? qsTr("Mute") : qsTr("Block"))
+                onClicked: {
+                    if (page.isGroup)
+                        whatsapp.muteOrUnmuteGroup(page.jid)
+                    else
+                        whatsapp.blockOrUnblockContact(page.jid)
                 }
             }
 
@@ -485,7 +507,7 @@ Page {
     EmojiTextArea {
         id: sendBox
         anchors.bottom: page.bottom
-        anchors.bottomMargin: - Theme.paddingLarge
+        anchors.bottomMargin: lineCount > 1 ? 0 : (- Theme.paddingLarge)
         anchors.left: page.left
         anchors.leftMargin: - Theme.paddingMedium
         anchors.right: page.right
@@ -608,9 +630,9 @@ Page {
                 height: mFlick.itemHeight
                 icon.source: "image://theme/icon-m-image"
                 onClicked: {
-                    selectPicture.accepted.connect(page.sendMediaImage)
-                    selectPicture.setProcessImages()
                     selectPicture.open(true)
+                    selectPicture.selected.connect(page.sendMediaImage)
+                    selectPicture.setProcessImages()
                     selectPicture.rejected.connect(page.unbindMediaImage)
                 }
             }
@@ -622,9 +644,9 @@ Page {
                 height: mFlick.itemHeight
                 icon.source: "image://theme/icon-m-video"
                 onClicked: {
+                    pageStack.replace(selectFile)
                     selectFile.processPath("/home/nemo", qsTr("Select video"))
                     selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
-                    pageStack.replace(selectFile)
                     selectFile.selected.connect(page.sendMedia)
                     selectFile.done.connect(page.unbindMediaFile)
                 }
@@ -637,9 +659,9 @@ Page {
                 height: mFlick.itemHeight
                 icon.source: "image://theme/icon-m-music"
                 onClicked: {
+                    pageStack.replace(selectFile)
                     selectFile.processPath("/home/nemo", qsTr("Select audio"))
                     selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
-                    pageStack.replace(selectFile)
                     selectFile.selected.connect(page.sendMedia)
                     selectFile.done.connect(page.unbindMediaFile)
                 }

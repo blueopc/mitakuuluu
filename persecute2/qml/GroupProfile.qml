@@ -5,7 +5,6 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "groupProfile"
-    allowedOrientations: Orientation.Portrait
 
     property string jid: ""
     property string subject: ""
@@ -385,9 +384,9 @@ Page {
             changeAvatar.opacity = 0.0
             page.backNavigation = true
         }
-        function resizeAvatar() {
+        function resizeAvatar(path) {
             selectPicture.accepted.disconnect(changeAvatar.resizeAvatar)
-            resizePicture.picture = selectPicture.selectedPath
+            resizePicture.picture = path
             resizePicture.jid = page.jid
             resizePicture.selected.connect(changeAvatar.setNewAvatar)
             resizePicture.open(true)
@@ -417,7 +416,7 @@ Page {
             anchors.horizontalCenter: avaView.horizontalCenter
             text: qsTr("Select")
             onClicked: {
-                selectPicture.accepted.connect(changeAvatar.resizeAvatar)
+                selectPicture.selected.connect(changeAvatar.resizeAvatar)
                 selectPicture.setProcessImages()
                 selectPicture.open()
             }

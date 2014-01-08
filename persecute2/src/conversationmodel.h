@@ -87,7 +87,7 @@ public:
 public slots:
     void setPropertyByMsgId(const QString &msgId, const QString &name, const QVariant &value);
     void loadOldConversation(int count = 20);
-    void deleteMessage(const QString &msgId);
+    void deleteMessage(const QString &msgId, bool deleteMediaFiles = false);
     QVariantMap get(int index);
     QVariantMap getModelByIndex(int index);
     QVariantMap getModelByMsgId(const QString &msgId);

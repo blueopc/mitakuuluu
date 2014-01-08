@@ -4,9 +4,13 @@ import org.coderus.mitakuuluu 1.0
 
 Dialog {
     id: page
-    objectName: "selectFile"
-    allowedOrientations: Orientation.Portrait
+    objectName: "selectPicture"
     canAccept: selectedPath.length > 0
+    forwardNavigation: false
+
+    function accept() {
+        console.log("dialog accepted")
+    }
 
     property string selectedPath: ""
     signal selected(string path)
@@ -14,6 +18,17 @@ Dialog {
     DialogHeader {
         id: title
         title: qsTr("Select picture")
+        dialog: Item {
+            width: page.width
+            property alias canAccept: page.canAccept
+            function accept() {
+                console.log("accept")
+                if (page.canAccept)
+                    page.selected(selectedPath)
+                else
+                    page.accept()
+            }
+        }
     }
 
     function setProcessImages() {

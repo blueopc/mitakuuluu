@@ -11,10 +11,10 @@ Item{
 	property alias source: image.source
 	property bool avatar: true
 
-	property int rectX: avatar?Math.round(bucketContainer.x):(image.rotatedSourceWidth * flickable.visibleArea.xPosition)
-	property int rectY: avatar?Math.round(bucketContainer.y):(image.rotatedSourceHeight * flickable.visibleArea.yPosition)
-	property int rectW: avatar?bucketContainer.width:(image.rotatedSourceWidth * flickable.visibleArea.widthRatio)
-	property int rectH: avatar?bucketContainer.height:(orientation==1?Math.round(rectW*1.779):Math.round(rectW*0.562))
+    property int rectX: avatar ? Math.round(bucketContainer.x) : (image.rotatedSourceWidth * flickable.visibleArea.xPosition)
+    property int rectY: avatar ? Math.round(bucketContainer.y) : (image.rotatedSourceHeight * flickable.visibleArea.yPosition)
+    property int rectW: avatar ? bucketContainer.width : (image.rotatedSourceWidth * flickable.visibleArea.widthRatio)
+    property int rectH: avatar ? bucketContainer.height : (orientation == 1 ? Math.round(rectW * 1.779) : Math.round (rectW * 0.562))
 	property int angle: image.rotation
 
 	property int bucketMinSize
@@ -26,10 +26,15 @@ Item{
         image.fitToScreen()
     }
 
-	function rotate() {
-		image.rotation = image.rotation + 90
-		if (image.rotation == 360)
-		image.rotation = 0
+    function rotate(angle) {
+        if (angle) {
+            image.rotation = angle
+        }
+        else {
+            image.rotation = image.rotation + 90
+            if (image.rotation == 360)
+                image.rotation = 0
+        }
 
 		image.fitToScreen()
 		flickable.returnToBounds()

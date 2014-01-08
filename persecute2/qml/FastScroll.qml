@@ -107,7 +107,7 @@ Item {
                     id: handle
                     opacity: !rail.dragging ? 1 : 0
                     anchors.horizontalCenter: parent.horizontalCenter
-                    y: Theme.paddingLarge + (rail.height - Theme.itemSizeSmall - height)/(1.0 - listView.visibleArea.heightRatio) * listView.visibleArea.yPosition
+                    y: Theme.paddingSmall + (rail.height - height)/(1.0 - listView.visibleArea.heightRatio) * listView.visibleArea.yPosition
                     radius: Theme.itemSizeMedium
                 }
 

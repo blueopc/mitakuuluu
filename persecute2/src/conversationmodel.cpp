@@ -123,10 +123,25 @@ void ConversationModel::loadOldConversation(int count)
     dbExecutor->queueAction(query);
 }
 
-void ConversationModel::deleteMessage(const QString &msgId)
+void ConversationModel::deleteMessage(const QString &msgId, bool deleteMediaFiles)
 {
     if (!_modelData.keys().contains(msgId))
         return;
+
+    if (deleteMediaFiles && iface) {
+        QDBusReply<QString> reply = iface->call(QDBus::AutoDetect, "getMyAccount");
+        //qDebug() << "my account:" << reply.value();
+        QString myJid = reply.value();
+        QString author = _modelData[msgId]["author"].toString();
+        QString localurl = _modelData[msgId]["localurl"].toString();
+        if (localurl.startsWith("/tmp") || (author != myJid)) {
+            QFile media(localurl);
+            if (media.exists()) {
+                media.remove();
+            }
+        }
+    }
+
     int rowIndex = getIndexByMsgId(msgId);
     beginRemoveRows(QModelIndex(), rowIndex, rowIndex);
     _modelData.remove(msgId);

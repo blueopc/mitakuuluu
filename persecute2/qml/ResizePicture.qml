@@ -4,7 +4,6 @@ import Sailfish.Silica 1.0
 Dialog {
     id: page
     objectName: "resizePicture"
-    allowedOrientations: Orientation.Portrait
     
     property string picture
     property int maximumSize
@@ -17,7 +16,11 @@ Dialog {
     signal selected(string path)
 
     forwardNavigation: !pinch.pressed
-    backNavigation: false
+    backNavigation: !pinch.pressed
+
+    onPictureChanged: {
+        pinch.rotate(whatsapp.getExifRotation(picture))
+    }
 
     onAccepted: {
         var temp = whatsapp.transformPicture(picture, jid, pinch.rectX, pinch.rectY, pinch.rectW, pinch.rectH, maximumSize, pinch.angle)

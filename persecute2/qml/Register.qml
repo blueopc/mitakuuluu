@@ -4,7 +4,6 @@ import Sailfish.Silica 1.0
 Page {
     id: page
     objectName: "registration"
-    allowedOrientations: Orientation.Portrait
 
     property string phoneNumber: ""
     property string code: ""
@@ -176,7 +175,6 @@ Page {
     Dialog {
         id: phoneDialog
         objectName: "phoneDialog"
-        allowedOrientations: Orientation.Portrait
 
         onAccepted: {
             whatsapp.regRequest(phoneField.text.trim(), reqSms.checked ? "sms" : "voice")
@@ -299,7 +297,6 @@ Page {
     Dialog {
         id: codeDialog
         objectName: "codeDialog"
-        allowedOrientations: Orientation.Portrait
 
         onAccepted: {
             whatsapp.enterCode(phoneField.text.trim(), codeArea.text.trim())

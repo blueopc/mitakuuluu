@@ -4,7 +4,6 @@ import Sailfish.Silica 1.0
 Dialog {
     id: page
     objectName: "account"
-    allowedOrientations: Orientation.Portrait
 
     property string pushname: ""
     property string presence: ""
@@ -287,12 +286,12 @@ Dialog {
             avatarView.opacity = 0.0
             page.backNavigation = true
         }
-        function resizeAvatar() {
-            selectPicture.accepted.disconnect(avatarView.resizeAvatar)
-            resizePicture.picture = selectPicture.selectedPath
+        function resizeAvatar(path) {
+            selectPicture.selected.disconnect(avatarView.resizeAvatar)
+            resizePicture.picture = path
             resizePicture.jid = roster.myJid
+            resizePicture.open(true, PageStackAction.Animated)
             resizePicture.selected.connect(avatarView.setNewAvatar)
-            resizePicture.open(true)
         }
         function setNewAvatar(path) {
             resizePicture.selected.disconnect(avatarView.setNewAvatar)
@@ -319,9 +318,9 @@ Dialog {
             anchors.horizontalCenter: avaView.horizontalCenter
             text: qsTr("Select")
             onClicked: {
-                selectPicture.accepted.connect(avatarView.resizeAvatar)
                 selectPicture.setProcessImages()
                 selectPicture.open()
+                selectPicture.selected.connect(avatarView.resizeAvatar)
             }
         }
     }

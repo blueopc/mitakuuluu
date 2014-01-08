@@ -5,7 +5,6 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "profilePage"
-    allowedOrientations: Orientation.Portrait
 
     property string jid: ""
     property string pushname: ""
