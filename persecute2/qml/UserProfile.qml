@@ -100,6 +100,7 @@ Page {
                 width: parent.width
                 text: qsTr("Status: %1").arg(Utilities.emojify(presence, emojiPath))
                 textFormat: Text.RichText
+                wrapMode: Text.WordWrap
             }
 
             Label {

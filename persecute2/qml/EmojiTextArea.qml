@@ -88,7 +88,7 @@ TextBase {
         property bool checked: false
 
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: Theme.paddingSmall
+        anchors.bottomMargin: Theme.paddingMedium
         anchors.left: parent.left
         anchors.leftMargin: - Theme.itemSizeExtraSmall
         visible: showEmoji
@@ -107,7 +107,7 @@ TextBase {
         icon.source: "image://theme/icon-m-message"
         highlighted: enabled
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: Theme.paddingSmall
+        anchors.bottomMargin: Theme.paddingMedium
         anchors.right: parent.right
         anchors.rightMargin: - Theme.itemSizeExtraSmall
         visible: showAction

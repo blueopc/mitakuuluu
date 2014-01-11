@@ -156,7 +156,9 @@ public slots:
     void addPhoneNumber(const QString &name, const QString &phone);
     QStringList getDownloads();
     void sendMedia(const QStringList &jids, const QString &path);
-    void openProfile(const QString &name, const QString &phone);
+    QString rotateImage(const QString &path, int rotation);
+    QString saveImage(const QString &path);
+    void openProfile(const QString &name, const QString &phone, const QString avatar = QString());
     void removeAccount();
     void tryGetWazappAcc();
     void tryGetWhatsupAcc();

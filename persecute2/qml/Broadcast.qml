@@ -2,11 +2,10 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "Utilities.js" as Utilities
 
-
 Dialog {
     id: page
     objectName: "broadcast"
-    canAccept: listModel.count > 0
+    canAccept: listView.count > 0
 
     onAccepted: {
         if (messageText.checked) {
@@ -15,11 +14,16 @@ Dialog {
         else if (messageMedia.checked) {
             whatsapp.sendMedia(page.jids, mediaPath.text)
         }
+        clear()
+    }
+
+    onRejected: {
+        clear()
     }
 
     property variant jids: []
 
-    onDone: {
+    function clear() {
         page.jids = []
         listModel.clear()
         textArea.text = ""

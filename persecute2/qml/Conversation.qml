@@ -46,9 +46,12 @@ Page {
         banner.notify(qsTr("Media uploading started"))
     }
 
-    function sendMediaImage(path) {
+    function sendMediaImage(path, rotation) {
         pageStack.pop()
-        sendMedia(path)
+        var fname = whatsapp.rotateImage(path, rotation)
+        if (fname.length > 0) {
+            sendMedia(fname)
+        }
         unbindMediaImage()
     }
 
@@ -597,6 +600,17 @@ Page {
             anchors.centerIn: parent
             asynchronous: true
             cache: false
+        }
+        IconButton {
+            anchors.right: parent.right
+            anchors.top: parent.top
+            icon.source: "image://theme/icon-m-cloud-download"
+            onClicked: {
+                var fname = whatsapp.saveImage(avaView.source)
+                if (fname.length > 0) {
+                    banner.notify(qsTr("Image saved as %1").arg(fname))
+                }
+            }
         }
         MouseArea {
             enabled: avatarView.opacity > 0

@@ -80,10 +80,10 @@ Page {
     }
 
     function parseConnectionStatus(value) {
-        var array = [qsTr("Unknown"),
+        var array = [qsTr("Engine crashed"),
                      qsTr("Waiting for connection"),
                      qsTr("Connecting..."),
-                     qsTr("Connected"),
+                     qsTr("Authorization..."),
                      qsTr("Logged in"),
                      qsTr("Login failure!"),
                      qsTr("Disconnected"),
@@ -106,7 +106,7 @@ Page {
     }
 
     function parseConnectionAction(value) {
-        var array = [qsTr("No action"),
+        var array = [qsTr("Restart engine"),
                      qsTr("Force connect"),
                      qsTr("Disconnect"),
                      qsTr("Disconnect"),
@@ -204,10 +204,9 @@ Page {
 
             MenuItem {
                 id: connectDisconnect
-                enabled: connectionStatus > 0
                 text: parseConnectionAction(connectionStatus)
                 onClicked: {
-                    if (connectionStatus == 1) {
+                    if (connectionStatus < 2) {
                         whatsapp.forceConnection()
                     }
                     else if (connectionStatus > 1 && connectionStatus < 5) {
@@ -464,11 +463,14 @@ Page {
             }
         }
 
+        onDone: {
+            groupTitle.focus = false
+            page.forceActiveFocus()
+        }
+
         onAccepted: {
             groupTitle.deselect()
             whatsapp.createGroup(groupTitle.text.trim())
-            groupTitle.focus = false
-            roster.forceActiveFocus()
         }
 
         DialogHeader {
@@ -528,7 +530,7 @@ Page {
                     smooth: true
                     radius: Theme.iconSizeSmall / 4
                     border.width: 1
-                    border.color: "lightgray"
+                    border.color: Theme.highlightColor
                     color: Theme.secondaryHighlightColor
                     visible: model.unread > 0
                     anchors.right: parent.right

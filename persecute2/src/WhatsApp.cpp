@@ -504,7 +504,38 @@ void WhatsApp::sendMedia(const QStringList &jids, const QString &path)
     }
 }
 
-void WhatsApp::openProfile(const QString &name, const QString &phone)
+QString WhatsApp::rotateImage(const QString &path, int rotation)
+{
+    QString fname = path.replace("file://", "");
+    if (QFile(fname).exists()) {
+        QImage img(fname);
+        QTransform rot;
+        rot.rotate(rotation);
+        img = img.transformed(rot);
+        fname = fname.split("/").last();
+        fname = QString("/tmp/%1-%2").arg(QDateTime::currentDateTime().toTime_t()).arg(fname);
+        if (img.save(fname))
+            return fname;
+        else
+            return QString();
+    }
+    return QString();
+}
+
+QString WhatsApp::saveImage(const QString &path)
+{
+    if (!path.startsWith("/home/nemo/Pictures")) {
+        QFile img(path);
+        if (img.exists()) {
+            QString name = path.split("/").last().split("@").first();
+            img.copy(path, QString("/home/nemo/Pictures/%1").arg(name));
+            return name;
+        }
+    }
+    return QString();
+}
+
+void WhatsApp::openProfile(const QString &name, const QString &phone, const QString avatar)
 {
     QFile tmp("/tmp/_persecute-"+phone);
     if (tmp.open(QFile::WriteOnly | QFile::Text)) {
@@ -514,6 +545,9 @@ void WhatsApp::openProfile(const QString &name, const QString &phone)
         out << "FN:" << name << "\n";
         out << "N:" << name << "\n";
         out << "TEL:" << phone << "\n";
+        if (!avatar.isEmpty()) {
+
+        }
         out << "END:VCARD";
         tmp.close();
 

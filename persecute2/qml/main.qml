@@ -25,6 +25,8 @@ ApplicationWindow {
     property int conversationIndex: 0
     property bool alwaysOffline: false
     property bool deleteMediaFiles: false
+    property bool importToGallery: true
+    property bool showConnectionNotifications: false
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -110,6 +112,8 @@ ApplicationWindow {
         alwaysOffline = settings.value("alwaysOffline", false)
         //asynchronousDelegate = settings.value("asynchronousDelegate", true)
         deleteMediaFiles = settings.value("deleteMediaFiles", false)
+        importToGallery = settings.value("importmediatogallery", true)
+        showConnectionNotifications = settings.value("showConnectionNotifications", false)
     }
 
     AddContact {

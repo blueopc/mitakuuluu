@@ -234,6 +234,15 @@ Item {
         }
 
         MenuItem {
+            visible: model.localurl.indexOf(".whatsapp") !== -1
+            text: qsTr("Save to Gallery")
+            onClicked: {
+                var fname = whatsapp.saveImage(model.localurl)
+                banner.notify(qsTr("File saved as %1").arg(fname))
+            }
+        }
+
+        MenuItem {
             id: removeMsg
             text: (model.mediaprogress > 0 && model.mediaprogress < 100) ? qsTr("Cancel download") : qsTr("Delete")
             onClicked: {

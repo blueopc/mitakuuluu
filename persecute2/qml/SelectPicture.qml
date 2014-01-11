@@ -13,7 +13,8 @@ Dialog {
     }
 
     property string selectedPath: ""
-    signal selected(string path)
+    property int selectedRotation: 0
+    signal selected(string path, int rotation)
 
     DialogHeader {
         id: title
@@ -24,7 +25,7 @@ Dialog {
             function accept() {
                 console.log("accept")
                 if (page.canAccept)
-                    page.selected(selectedPath)
+                    page.selected(selectedPath, selectedRotation)
                 else
                     page.accept()
             }
@@ -41,6 +42,7 @@ Dialog {
     onStatusChanged: {
         if (page.status == DialogStatus.Opened) {
             selectedPath = ""
+            selectedRotation = 0
         }
     }
 
@@ -129,10 +131,14 @@ Dialog {
                 id: mArea
                 anchors.fill: parent
                 onClicked: {
-                    if (page.selectedPath == model.path)
+                    if (page.selectedPath == model.path) {
                         page.selectedPath = ""
-                    else
+                        page.selectedRotation = 0
+                    }
+                    else {
                         page.selectedPath = model.path
+                        page.selectedRotation = image.rotation
+                    }
                 }
             }
         }

@@ -173,6 +173,16 @@ Page {
             }
 
             TextSwitch {
+                checked: importToGallery
+                text: qsTr("Download media to Gallery")
+                description: qsTr("If checked downloaded files will be shown in Gallery")
+                onClicked: {
+                    importToGallery = checked
+                    settings.setValue("importmediatogallery", checked)
+                }
+            }
+
+            TextSwitch {
                 checked: deleteMediaFiles
                 text: qsTr("Delete media files")
                 description: qsTr("Delete received media files when deleting message")
@@ -250,6 +260,15 @@ Page {
                         acceptUnknown = checked
                         settings.setValue("acceptUnknown", checked)
                     }
+                }
+            }
+
+            TextSwitch {
+                checked: showConnectionNotifications
+                text: qsTr("Show notifications when Mitakuuluu connects or disconnects")
+                onClicked: {
+                    showConnectionNotifications = checked
+                    settings.setValue("showConnectionNotifications", checked)
                 }
             }
 
