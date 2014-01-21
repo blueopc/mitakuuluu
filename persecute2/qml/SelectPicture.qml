@@ -52,6 +52,7 @@ Dialog {
 
     FilesModel {
         id: files
+        sorting: true
     }
 
     SilicaGridView {

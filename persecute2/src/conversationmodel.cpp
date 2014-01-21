@@ -212,6 +212,8 @@ void ConversationModel::forwardMessage(const QStringList &jids, const QString &m
 {
     if (iface) {
         QVariantMap model = getModelByMsgId(msgId);
+        //qDebug() << "model";
+        //qDebug() << model;
         iface->call(QDBus::NoBlock, "forwardMessage", jids, model);
     }
 }

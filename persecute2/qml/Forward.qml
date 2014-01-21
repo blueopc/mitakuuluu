@@ -15,7 +15,7 @@ Dialog {
     property string preview: ""
     property string msgdata: ""
 
-    canAccept: page.jids.length > 0
+    canAccept: listView.count > 0
 
     onAccepted: {
         conversation.forwardMsg(page.jids, page.msgid)
@@ -92,13 +92,13 @@ Dialog {
         }
 
         DialogHeader {
-            id: title
+            id: header
             title: qsTr("Forward")
         }
 
         Label {
             id: msgArea
-            anchors.top: title.bottom
+            anchors.top: header.bottom
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingMedium
             width: (page.isPortrait ? page.width : (page.width / 2)) - Theme.paddingMedium
@@ -119,7 +119,7 @@ Dialog {
 
         SilicaListView {
             id: listView
-            anchors.top: title.bottom
+            anchors.top: page.isPortrait ? msgArea.bottom : header.bottom
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             width: page.isPortrait ? page.width : (page.width / 2)

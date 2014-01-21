@@ -30,7 +30,6 @@ Dialog {
 
     onAccepted: {
         whatsapp.syncContacts(numbers, names, avatars)
-        banner.notify(qsTr("Phonebook syncing started..."))
     }
 
     Connections {
@@ -53,7 +52,6 @@ Dialog {
                 text: qsTr("Sync all phonebook")
                 onClicked: {
                     whatsapp.syncAllPhonebook()
-                    banner.notify(qsTr("Phonebook syncing started..."))
                     page.reject()
                 }
             }

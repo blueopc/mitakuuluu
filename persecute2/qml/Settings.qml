@@ -265,7 +265,7 @@ Page {
 
             TextSwitch {
                 checked: showConnectionNotifications
-                text: qsTr("Show notifications when Mitakuuluu connects or disconnects")
+                text: qsTr("Show notifications when connection changing")
                 onClicked: {
                     showConnectionNotifications = checked
                     settings.setValue("showConnectionNotifications", checked)

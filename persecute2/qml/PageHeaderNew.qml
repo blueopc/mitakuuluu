@@ -32,20 +32,35 @@
 **
 ****************************************************************************************/
 
-.pragma library
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+import "Utilities.js" as Util
 
-var autoScroller = null
+Item {
+    id: pageHeader
 
-function create(editor)
-{
-    if (editor) {
-        if (!autoScroller) {
-            var parent = editor.parent
-            while (parent.parent) {
-                parent = parent.parent
-            }
-            autoScroller = Qt.createComponent("TextAutoScroller.qml").createObject(parent)
+    property alias title: headerText.text
+    property alias _titleItem: headerText
+    property Item _page: Util.findPage(pageHeader)
+    property int _depth: _page && _page._depth ? _page._depth+1 : 0
+
+    width: parent ? parent.width : Screen.width
+    height: Theme.itemSizeLarge
+
+    Label {
+        id: headerText
+        // Don't allow the label to extend over the page stack indicator
+        width: Math.min(implicitWidth, parent.width - Theme.pageStackIndicatorWidth * _depth - 2*Theme.paddingLarge)
+        truncationMode: TruncationMode.Fade
+        color: Theme.highlightColor
+        anchors {
+            verticalCenter: parent.verticalCenter
+            right: parent.right
+            rightMargin: Theme.paddingLarge
         }
-        autoScroller.editor = editor
+        font {
+            pixelSize: Theme.fontSizeLarge
+            family: Theme.fontFamilyHeading
+        }
     }
 }

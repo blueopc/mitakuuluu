@@ -387,7 +387,10 @@ FocusScope {
     InverseMouseArea {
         anchors.fill: parent
         enabled: _editor.activeFocus && textBase.enableSoftwareInputPanel
-        onClickedOutside: focusLossTimer.start()
+        onClickedOutside: {
+            //focusLossTimer.start()
+            textBase.focus = false
+        }
     }
 
     Timer {
@@ -594,3 +597,4 @@ FocusScope {
         }
     }
 }
+ 

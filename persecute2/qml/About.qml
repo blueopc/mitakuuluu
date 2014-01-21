@@ -38,7 +38,7 @@ Page {
             }
 
             Label {
-                text: "v0.1-21"
+                text: "v0.1-22"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
@@ -67,7 +67,8 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     //Qt.openUrlExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FWRVSTXQ3JXTC")
-                    Qt.openUrlExternally("https://www.paypal.com/ru/cgi-bin/webscr?cmd=_send-money&email=ovi.coderus@gmail.com")
+                    //Qt.openUrlExternally("https://www.paypal.com/ru/cgi-bin/webscr?cmd=_send-money&email=ovi.coderus@gmail.com")
+                    Qt-openUlrExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ovi.coderus%40gmail%2ecom&lc=EN&item_name=Donation%20for%20coderus%20EUR&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest")
                 }
             }
 
@@ -93,6 +94,32 @@ Page {
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
+            }
+
+            Label {
+                text: "\n\nThanks to all translators on Transifex. You are welcome to create or edit translations."
+                font.pixelSize: Theme.fontSizeMedium
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
+            }
+
+            Button {
+                text: "Transifex"
+                width: 300
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    Qt.openUrlExternally("https://www.transifex.com/projects/p/mitakuuluu/")
+                }
+            }
+
+            Button {
+                text: "Bugtracker"
+                width: 300
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    Qt.openUrlExternally("https://github.com/CODeRUS/mitakuuluu/issues?state=open")
+                }
             }
 
             Label {

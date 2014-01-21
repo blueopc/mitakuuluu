@@ -14,7 +14,7 @@ Name:       harbour-mitakuuluu
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
 Version:    0.1
-Release:    21
+Release:    22
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
@@ -67,11 +67,13 @@ desktop-file-install --delete-original       \
 # >> pre
 
 if /sbin/pidof harbour-mitakuuluu-server > /dev/null; then
-su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu_server / org.coderus.harbour_mitakuuluu_server.exit" nemo || true
+killall harbour-mitakuuluu-server
+#su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu_server / org.coderus.harbour_mitakuuluu_server.exit" nemo || true
 fi
 
 if /sbin/pidof harbour-mitakuuluu > /dev/null; then
-su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu / org.coderus.harbour_mitakuuluu.exit" nemo || true
+killall harbour-mitakuuluu
+#su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu / org.coderus.harbour_mitakuuluu.exit" nemo || true
 fi
 # << pre
 
@@ -79,17 +81,20 @@ fi
 # >> preun
 
 if /sbin/pidof harbour-mitakuuluu-server > /dev/null; then
-su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu_server / org.coderus.harbour_mitakuuluu_server.exit" nemo || true
+killall harbour-mitakuuluu-server
+#su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu_server / org.coderus.harbour_mitakuuluu_server.exit" nemo || true
 fi
 
 if /sbin/pidof harbour-mitakuuluu > /dev/null; then
-su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu / org.coderus.harbour_mitakuuluu.exit" nemo || true
+killall harbour-mitakuuluu
+#su -l -c "dbus-send --print-reply --session --dest=org.coderus.harbour_mitakuuluu / org.coderus.harbour_mitakuuluu.exit" nemo || true
 fi
 # << preun
 
 %files
 %defattr(-,root,root,-)
 /usr/share/dbus-1/services
+#/usr/lib/nemo-transferengine/plugins
 /usr/share/lipstick/notificationcategories/
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop

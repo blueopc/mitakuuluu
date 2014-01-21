@@ -77,6 +77,7 @@ ApplicationWindow {
                 whatsapp.setPresenceUnavailable()
             }
         }
+        whatsapp.windowActive()
     }
 
     Connections {

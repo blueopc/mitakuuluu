@@ -6,7 +6,7 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "conversation"
-    backNavigation: !sendBox.focus
+    allowedOrientations: Orientation.Portrait | Orientation.Landscape
 
     onStatusChanged: {
         if (page.status === PageStatus.Inactive && pageStack.depth === 1) {
@@ -346,12 +346,6 @@ Page {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingSmall
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        avatarView.show(page.icon)
-                    }
-                }
             }
             Column {
                 id: hColumn
@@ -494,10 +488,15 @@ Page {
                 }
             }
         }
-
-        /*VerticalScrollDecorator {
-            flickable: conversationView
-        }*/
+        MouseArea {
+            anchors.top: header.top
+            anchors.right: header.right
+            height: header.height
+            width: height
+            onClicked: {
+                avatarView.show(page.icon)
+            }
+        }
     }
 
     Rectangle {
@@ -510,7 +509,7 @@ Page {
     EmojiTextArea {
         id: sendBox
         anchors.bottom: page.bottom
-        anchors.bottomMargin: lineCount > 1 ? 0 : (- Theme.paddingLarge)
+        //anchors.bottomMargin: lineCount > 1 ? 0 : (- Theme.paddingLarge)
         anchors.left: page.left
         anchors.leftMargin: - Theme.paddingMedium
         anchors.right: page.right
@@ -518,20 +517,30 @@ Page {
         placeholderText: qsTr("Tap here to enter message")
         property int lastYPos: 0
         property bool forceFocus: false
-        showEmoji: false
-        showAction: !sendByEnter
-        actionButton.enabled: roster.connectionStatus == 4 && text.trim().length > 0
-        /*onEmojiClicked: {
-            if (emojiChecked) {
-                Qt.inputMethod.hide()
+        focusOutBehavior: FocusBehavior.KeepFocus
+        textRightMargin: sendByEnter ? 0 : 64
+        property bool buttonVisible: sendByEnter
+        maxHeight: page.isPortrait ? 200 : 140
+        background: Component {
+            Item {
+                anchors.fill: parent
+
+                IconButton {
+                    id: sendButton
+                    icon.source: "image://theme/icon-m-message"
+                    highlighted: enabled
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: - Theme.paddingSmall
+                    anchors.right: parent.right
+                    anchors.rightMargin: Theme.paddingSmall
+                    visible: !sendBox.buttonVisible
+                    enabled: roster.connectionStatus == 4 && sendBox.text.trim().length > 0
+                    onClicked: {
+                        console.log("action")
+                        sendBox.send()
+                    }
+                }
             }
-            else {
-                Qt.inputMethod.show()
-            }
-            //appWindow.customInputPanel.visible = emojiChecked
-        }*/
-        onAction: {
-            send()
         }
         EnterKey.enabled: sendByEnter ? (roster.connectionStatus == 4 && text.trim().length > 0) : true
         EnterKey.highlighted: text.trim().length > 0
@@ -540,6 +549,10 @@ Page {
             if (sendByEnter) {
                 send()
             }
+            //console.log(text)
+        }
+        onSelectedTextChanged: {
+            page.backNavigation = selectedText.length == 0
         }
         onActiveFocusChanged: {
             if (activeFocus) {
@@ -548,19 +561,15 @@ Page {
             if (activeFocus && conversationView.atYEnd)
                 scrollDown.start()
         }
-        onFocusChanged: {
+        /*onFocusChanged: {
             if (!focus) {
                 if (forceFocus) {
                     Qt.inputMethod.show()
                     forceActiveFocus()
                 }
-                /*else if (appWindow.customInputPanel.visible) {
-                    appWindow.customInputPanel.visible = false
-                }*/
-                //emojiChecked = false
             }
             forceFocus = false
-        }
+        }*/
         onTextChanged: {
             if (!typingTimer.running) {
                 whatsapp.startTyping(page.jid)
@@ -573,7 +582,7 @@ Page {
             deselect()
             whatsapp.sendText(page.jid, sendBox.text.trim())
             sendBox.text = ""
-            forceTimer.start()
+            //forceTimer.start()
         }
     }
 
@@ -586,6 +595,7 @@ Page {
             FadeAnimation {}
         }
         function show(path) {
+            console.log("show: " + path)
             avaView.source = path
             avatarView.opacity = 1.0
             page.backNavigation = false
@@ -605,6 +615,8 @@ Page {
             anchors.right: parent.right
             anchors.top: parent.top
             icon.source: "image://theme/icon-m-cloud-download"
+            highlighted: pressed
+            visible: avaView.status == Image.Ready
             onClicked: {
                 var fname = whatsapp.saveImage(avaView.source)
                 if (fname.length > 0) {
@@ -764,7 +776,7 @@ Page {
 
     Timer {
         id: scrollDown
-        interval: 500
+        interval: 100
         triggeredOnStart: false
         repeat: false
         onTriggered: conversationView.positionViewAtIndex(conversationView.count - 1, conversationView.Contain)

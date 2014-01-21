@@ -506,14 +506,17 @@ void WhatsApp::sendMedia(const QStringList &jids, const QString &path)
 
 QString WhatsApp::rotateImage(const QString &path, int rotation)
 {
-    QString fname = path.replace("file://", "");
+    QString fname = path;
+    fname = fname.replace("file://", "");
     if (QFile(fname).exists()) {
+        qDebug() << "rotateImage" << fname << QString::number(rotation);
         QImage img(fname);
         QTransform rot;
         rot.rotate(rotation);
         img = img.transformed(rot);
         fname = fname.split("/").last();
         fname = QString("/tmp/%1-%2").arg(QDateTime::currentDateTime().toTime_t()).arg(fname);
+        qDebug() << "destination:" << fname;
         if (img.save(fname))
             return fname;
         else
@@ -527,8 +530,11 @@ QString WhatsApp::saveImage(const QString &path)
     if (!path.startsWith("/home/nemo/Pictures")) {
         QFile img(path);
         if (img.exists()) {
+            qDebug() << "saveImage" << path;
             QString name = path.split("/").last().split("@").first();
-            img.copy(path, QString("/home/nemo/Pictures/%1").arg(name));
+            QString destination = QString("/home/nemo/Pictures/%1").arg(name);
+            img.copy(path, destination);
+            qDebug() << "destination:" << destination;
             return name;
         }
     }
@@ -581,6 +587,7 @@ void WhatsApp::getPhonebook()
     QContactManager *manager = new QContactManager(this);
     QList<QContact> results = manager->contacts();
     QVariantList contacts;
+    QStringList phones;
     qDebug() << "Have" << QString::number(results.size()) << "contacts";
     for (int i = 0; i < results.size(); ++i) {
         QString avatar;
@@ -596,11 +603,14 @@ void WhatsApp::getPhonebook()
                 QVariantMap contact;
                 QString phone = number.number();
                 phone = phone.replace(QRegExp("/[^0-9+]/g"),"");
-                contact["avatar"] = avatar;
-                contact["nickname"] = label.isEmpty() ? phone : label;
-                contact["number"] = phone;
-                contacts.append(contact);
-                qDebug() << label << phone;
+                if (!phones.contains(phone)) {
+                    phones.append(phone);
+                    contact["avatar"] = avatar;
+                    contact["nickname"] = label.isEmpty() ? phone : label;
+                    contact["number"] = phone;
+                    contacts.append(contact);
+                    qDebug() << label << phone;
+                }
             }
         }
     }
@@ -695,4 +705,11 @@ int WhatsApp::getExifRotation(const QString &image)
         }
     }
     return 0;
+}
+
+void WhatsApp::windowActive()
+{
+    if (iface) {
+        iface->call(QDBus::NoBlock, "windowActive");
+    }
 }

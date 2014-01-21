@@ -64,15 +64,11 @@ Page {
         onNotificationOpenJid: {
             console.log("notification pressed for: " + njid)
             appWindow.activate()
-            pageStack.pop(roster, PageStackAction.Immediate)
-            conversation.loadContactModel(contactsModel.getModel(njid))
-            pageStack.push(conversation, {}, PageStackAction.Immediate)
-        }
-        onSynchronizationFinished: {
-            banner.notify(qsTr("Contacts syncing finished!"))
-        }
-        onSynchronizationFailed: {
-            banner.notify(qsTr("Contacts syncing failed!"), "#A0FF4000")
+            if (njid.length > 0) {
+                pageStack.pop(roster, PageStackAction.Immediate)
+                conversation.loadContactModel(contactsModel.getModel(njid))
+                pageStack.push(conversation, {}, PageStackAction.Immediate)
+            }
         }
         onUploadMediaFailed: {
             banner.notify(qsTr("Media uploading failed!"), "#A0FF2020")
@@ -616,12 +612,12 @@ Page {
                 target: itemDelegate
             }
 
-            MenuIndicator {
+            /*MenuIndicator {
                 anchors.bottom: itemDelegate.bottom
                 anchors.bottomMargin: inMenu.height - (height / 2)
                 width: itemDelegate.width
                 visible: inMenu.active
-            }
+            }*/
 
             ContextMenu {
                 id: inMenu
@@ -641,7 +637,6 @@ Page {
                     enabled: roster.connectionStatus == 4
                     onClicked: {
                         whatsapp.refreshContact(model.jid)
-                        banner.notify(qsTr("Contact syncing started..."))
                     }
                 }
 

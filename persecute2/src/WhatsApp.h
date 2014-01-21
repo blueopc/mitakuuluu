@@ -171,6 +171,7 @@ public slots:
     void forceConnection();
     void setLocale(const QString &localeName);
     int getExifRotation(const QString &image);
+    void windowActive();
 };
 
 #endif // WHATSAPP_H

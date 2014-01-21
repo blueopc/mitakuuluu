@@ -94,8 +94,8 @@ Item {
         id: progressIndicator
         anchors.left: parent.left
         anchors.top: parent.top
-        anchors.bottom: menuIndicator.top
-        anchors.bottomMargin: - menuIndicator.height
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: inMenu.height || urlMenu.height || 0
         fillMode: Image.Tile
         horizontalAlignment: Image.AlignLeft
         verticalAlignment: Image.AlignTop
@@ -183,14 +183,6 @@ Item {
         anchors.fill: parent
     }
 
-    MenuIndicator {
-        id: menuIndicator
-        anchors.bottom: item.bottom
-        anchors.bottomMargin: (inMenu.height || urlMenu.height) - (height / 2)
-        width: item.width
-        visible: inMenu.active || urlMenu.active
-    }
-
     ContextMenu {
         id: urlMenu
         anchors.bottom: item.bottom
@@ -203,6 +195,8 @@ Item {
             delegate: MenuItem {
                 parent: urlMenuRepeater
                 text: modelData[0]
+                elide: Text.ElideRight
+                truncationMode: TruncationMode.Fade
                 onClicked: {
                     Qt.openUrlExternally(modelData[1])
                 }

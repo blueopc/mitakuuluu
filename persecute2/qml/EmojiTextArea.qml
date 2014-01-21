@@ -36,7 +36,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Sailfish.Silica.private 1.0
 
-TextBase {
+EmojiTextBase {
     id: textArea
 
     property alias text: preeditText.text
@@ -51,70 +51,18 @@ TextBase {
     property alias selectionStart: textEdit.selectionStart
     property alias selectionEnd: textEdit.selectionEnd
     property alias lineCount: textEdit.lineCount
+    property alias textFormat: textEdit.textFormat
 
     _editor: textEdit
 
-    property int maxHeight: 300
+    property int maxHeight: 200
 
-    implicitHeight: Math.min(maxHeight, textEdit.height + _labelItem.height +
-                             (readOnly ? Theme.paddingMedium : Theme.paddingSmall) + Theme.paddingSmall + 2)
-    background: null
+    height: Math.min(maxHeight, textEdit.height + Theme.paddingLarge)
 
     _flickableDirection: Flickable.VerticalFlick
 
     anchors.left: parent.left
     anchors.right: parent.right
-
-    textLeftMargin: showEmoji ? Theme.itemSizeSmall : Theme.paddingLarge
-    textRightMargin: showAction ? Theme.itemSizeSmall: Theme.paddingLarge
-
-    property bool showEmoji: false
-    property bool showAction: false
-
-    property alias actionButton: sendButton
-
-    property alias emojiChecked: emojiButton.checked
-    signal action
-    signal emojiClicked
-
-    Rectangle {
-        id: emojiButton
-        width: Theme.itemSizeExtraSmall
-        height: width
-        radius: width / 2
-        border.width: 2
-        border.color: checked ? Theme.secondaryHighlightColor : Theme.secondaryColor
-        color: "transparent"
-        property bool checked: false
-
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: Theme.paddingMedium
-        anchors.left: parent.left
-        anchors.leftMargin: - Theme.itemSizeExtraSmall
-        visible: showEmoji
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                emojiButton.checked = !emojiButton.checked
-                textArea.emojiClicked()
-            }
-        }
-    }
-
-    IconButton {
-        id: sendButton
-        icon.source: "image://theme/icon-m-message"
-        highlighted: enabled
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: Theme.paddingMedium
-        anchors.right: parent.right
-        anchors.rightMargin: - Theme.itemSizeExtraSmall
-        visible: showAction
-        onClicked: {
-            textArea.action()
-        }
-    }
 
     TextEdit {
         id: textEdit
@@ -138,10 +86,16 @@ TextBase {
             width: 2
         }
         wrapMode: TextEdit.Wrap
+        textFormat: TextEdit.PlainText
 
         // Note: need to disable if textFormat is ever allowed to be more than TextEdit.PlainText
         PreeditText {
             id: preeditText
+        }
+
+        Keys.onReturnPressed: {
+            if (!sendByEnter)
+                event.accepted = false
         }
     }
 }
