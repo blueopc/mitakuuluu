@@ -30,7 +30,7 @@ Dialog {
         if (status == DialogStatus.Opened) {
             pushname = settings.value("pushname", "WhatsApp user")
             pushnameArea.text = pushname
-            presence = settings.value("status", "I'm using Mitakuuluu!")
+            presence = settings.value("presence", "I'm using Mitakuuluu!")
             presenceArea.text = presence
             creation = settings.value("creation", 0)
             expiration = settings.value("expiration", 0)

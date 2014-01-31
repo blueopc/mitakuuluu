@@ -142,9 +142,9 @@ Dialog {
 
             function forwardTo(pjid) {
                 selectContact.added.disconnect(listView.forwardTo)
-                page.jids = [pjid]
-                selectContact.reject()
-                page.accept()
+                conversation.forwardMsg(pjid, page.msgid)
+                pageStack.pop(page, PageStackAction.Immediate)
+                page.reject()
             }
         }
 

@@ -168,7 +168,7 @@ Page {
             }
         }
         else if (model.msgtype === 2) {
-            return Utilities.linkify(Utilities.emojify(model.message, emojiPath), Theme.highlightColor)
+            return Utilities.linkify(Utilities.emojify(model.message, emojiPath))
         }
         else {
             return qsTr("System message.")
@@ -580,6 +580,7 @@ Page {
         }
         function send() {
             deselect()
+            console.log("send: " + sendBox.text.trim())
             whatsapp.sendText(page.jid, sendBox.text.trim())
             sendBox.text = ""
             //forceTimer.start()
@@ -611,6 +612,11 @@ Page {
             asynchronous: true
             cache: false
         }
+        MouseArea {
+            enabled: avatarView.opacity > 0
+            anchors.fill: parent
+            onClicked: avatarView.hide()
+        }
         IconButton {
             anchors.right: parent.right
             anchors.top: parent.top
@@ -623,11 +629,6 @@ Page {
                     banner.notify(qsTr("Image saved as %1").arg(fname))
                 }
             }
-        }
-        MouseArea {
-            enabled: avatarView.opacity > 0
-            anchors.fill: parent
-            onClicked: avatarView.hide()
         }
     }
 
@@ -708,7 +709,7 @@ Page {
         onLastMessageToBeChanged: {
             if (mjid == page.jid && conversationView.atYEnd)
                 conversationView.shouldGotoEnd = true
-            else
+            else if (conversationView.contentHeight > conversationView.header)
                newMessageItem.opacity = 1.0
         }
     }

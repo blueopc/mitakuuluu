@@ -43,13 +43,6 @@ Dialog {
         Item {
             width: parent.width
             height: phoneField.height
-            Label {
-                text: "+"
-                anchors.top: phoneField.top
-                anchors.topMargin: Theme.paddingSmall
-                anchors.right: phoneField.left
-                anchors.rightMargin: - Theme.paddingLarge
-            }
 
             TextField {
                 id: phoneField

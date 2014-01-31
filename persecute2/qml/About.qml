@@ -18,6 +18,8 @@ Page {
         fillMode: Image.TileVertically
         anchors.bottom: parent.bottom
         opacity: 0.5
+        asynchronous: true
+        cache: true
     }
 
     SilicaFlickable {
@@ -38,7 +40,7 @@ Page {
             }
 
             Label {
-                text: "v0.1-22"
+                text: "v0.1-23"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
@@ -46,11 +48,42 @@ Page {
             }
 
             Label {
-                text: "indie WhatsApp client\nwritten by coderus in 0x7DD\nis dedicated to my beloved"
+                text: "indie WhatsApp client\nwritten by coderus in 0x7DE\nis dedicated to my beloved"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
+            }
+
+            Image {
+                source: "/usr/share/harbour-mitakuuluu/images/openrepos_ware.png"
+                asynchronous: true
+                cache: true
+                fillMode: Image.PreserveAspectFit
+                horizontalAlignment: Image.AlignHCenter
+                verticalAlignment: Image.AlignTop
+                width: sourceSize.width
+                height: sourceSize.height + Theme.paddingLarge + openDesc.height
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Label {
+                    id: openDesc
+                    width: parent.width
+                    anchors.bottom: parent.bottom
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "Get updates, comment and rate applications on OpenRepos.net"
+                    wrapMode: Text.WordWrap
+                    color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
+                    font.bold: mArea.pressed
+                }
+
+                MouseArea {
+                    id: mArea
+                    anchors.fill: parent
+                    onClicked: {
+                        Qt.openUlrExternally("https://openrepos.net/content/coderus/mitakuuluu")
+                    }
+                }
             }
 
             Label {
@@ -62,13 +95,24 @@ Page {
             }
 
             Button {
-                text: "PayPal"
+                text: "PayPal EUR"
                 width: 300
                 anchors.horizontalCenter: parent.horizontalCenter
                 onClicked: {
                     //Qt.openUrlExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FWRVSTXQ3JXTC")
                     //Qt.openUrlExternally("https://www.paypal.com/ru/cgi-bin/webscr?cmd=_send-money&email=ovi.coderus@gmail.com")
-                    Qt-openUlrExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ovi.coderus%40gmail%2ecom&lc=EN&item_name=Donation%20for%20coderus%20EUR&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest")
+                    Qt.openUlrExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ovi.coderus%40gmail%2ecom&lc=EN&item_name=Donation%20for%20coderus%20EUR&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest")
+                }
+            }
+
+            Button {
+                text: "PayPal USD"
+                width: 300
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    //Qt.openUrlExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FWRVSTXQ3JXTC")
+                    //Qt.openUrlExternally("https://www.paypal.com/ru/cgi-bin/webscr?cmd=_send-money&email=ovi.coderus@gmail.com")
+                    Qt.openUlrExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ovi.coderus%40gmail%2ecom&lc=EN&item_name=Donation%20for%20coderus%20USD&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest")
                 }
             }
 
@@ -89,7 +133,7 @@ Page {
             }
 
             Label {
-                text: "\n\nThanks:\nMy beloved, my muse. You always give me new strength to work.\nScorpius for WhatsApp protocol implementation in Qt\nCustodian for your responsiveness and developer experience\nMorpog for application launcher icon"
+                text: "\n\nThanks:\nMy beloved, my muse. You always give me new strength to work.\nScorpius for WhatsApp protocol implementation in Qt\nCustodian for your responsiveness and developer experience\nMorpog for application launcher icon\nmarco73f for Bubbles conversation skin"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
@@ -111,6 +155,14 @@ Page {
                 onClicked: {
                     Qt.openUrlExternally("https://www.transifex.com/projects/p/mitakuuluu/")
                 }
+            }
+
+            Label {
+                text: "\n\nPlease post bugs, suggestions and ideas to bugtracker"
+                font.pixelSize: Theme.fontSizeMedium
+                width: parent.width
+                horizontalAlignment: Text.AlignHCenter
+                wrapMode: Text.WordWrap
             }
 
             Button {

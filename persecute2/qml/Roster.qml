@@ -543,7 +543,7 @@ Page {
 
             Column {
                 anchors.left: ava.right
-                anchors.leftMargin: Theme.paddingLarge
+                anchors.leftMargin: Theme.paddingMedium
                 anchors.verticalCenter: ava.verticalCenter
                 anchors.right: itemDelegate.right
                 anchors.rightMargin: Theme.paddingSmall

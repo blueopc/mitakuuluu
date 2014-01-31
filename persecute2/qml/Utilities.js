@@ -194,7 +194,7 @@ function getCode(inputText) {
 
 }
 
-function linkify(inputText, color) {
+function linkify(inputText) {
     var replacedText, replacePattern1, replacePattern2, replacePattern3;
 
     //URLs starting with http://, https://, or ftp://
@@ -211,7 +211,7 @@ function linkify(inputText, color) {
     replacePattern3 = /([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}/gim
     replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$&">$&</a>');
 
-    return "<style type='text/css'>a:link{color:" + color + "}</style>" + replacedText
+    return replacedText
 }
 
 function unicodeEscape(str) {
@@ -240,7 +240,8 @@ function to_softbank(inputText) {
 }
 
 function emojify(inputText, emojiPath) {
-    var replacedText = inputText.replace(/\</g, "&lt;").replace(/\>/g, "&gt").replace(/\n/g, "<br />").replace(/\ufe0f/g, "")//.replace('\ud83c', '')
+    var replacedText = inputText.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;").replace(/\n/g, "<br />").replace(/\ufe0f/g, "")//.replace('\ud83c', '')
+    //var replacedText = inputText.replace(/\ufe0f/g, "")
     prevCode = 0
     var regb = /([\ue001-\ue537])/g
     var regc = /([\u2001-\u3030])/g

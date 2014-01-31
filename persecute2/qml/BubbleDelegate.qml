@@ -5,10 +5,73 @@ import "file:///usr/share/harbour-mitakuuluu/qml"
 Item {
     id: item
     width: parent.width
-    height: msg.height + (isGroup ? msginfo.height : 0) + (prevClip.visible ? (prev.status == Image.Ready ? prevClip.height : 0) : 0) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
-    //color:
+    height: (msg.height + (isGroup ? 0 : Theme.paddingMedium)) + (isGroup ? msginfo.height : 0) + ((msgStatusViewFirstTick.height * 2)+ (isGroup ? Theme.paddingMedium : 0)) + (prevClip.visible ? (prev.status == Image.Ready ? prevClip.height : 0) : 0) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
     opacity: mArea.pressed ? 0.5 : 1.0
     property bool showPreview: false
+    property int msgStatus: model.msgstatus
+    onMsgStatusChanged: setTickView()
+
+    function setTickView() {
+        switch(msgStatus) {
+        case 4:
+            msgStatusViewFirstTick.color = "#6000ff00";
+            msgStatusViewSecondTick.visible = false;
+            break;
+        case 5:
+            msgStatusViewFirstTick.color = "#6000ff00";
+            msgStatusViewSecondTick.color = "#6000ff00";
+            msgStatusViewSecondTick.visible = true;
+            break;
+        default:
+            msgStatusViewFirstTick.color = "#60ff0000";
+            msgStatusViewSecondTick.visible = false;
+        }
+    }
+
+    Component.onCompleted: {
+        if (model.author === roster.myJid) {
+            bubble.anchors.left = item.left;
+            bubble.anchors.leftMargin = Theme.paddingMedium;
+            msginfo.anchors.left = item.left;
+            msginfo.anchors.leftMargin = Theme.paddingLarge;
+            msg.anchors.left = item.left;
+            msg.anchors.leftMargin = Theme.paddingLarge;
+            timeStatusRow.anchors.left = item.left;
+            timeStatusRow.anchors.leftMargin = Theme.paddingLarge;
+            msginfo.horizontalAlignment = Text.AlignLeft;
+            msg.horizontalAlignment = Text.AlignLeft;
+            bubble.color = Theme.rgba("#ADD8E6", 0.4);
+            setTickView();
+        }
+        else {
+            msgStatusViewFirstTick.visible = false;
+            msgStatusViewSecondTick.visible = false;
+            msgStatusViewFirstTick.width = 0;
+            msgStatusViewSecondTick.width = 0;
+            bubble.anchors.right = item.right;
+            bubble.anchors.rightMargin = Theme.paddingMedium;
+            msginfo.anchors.right = item.right;
+            msginfo.anchors.rightMargin = Theme.paddingLarge;
+            msg.anchors.right = item.right;
+            msg.anchors.rightMargin = Theme.paddingLarge;
+            timeStatusRow.anchors.right = item.right;
+            timeStatusRow.anchors.rightMargin = Theme.paddingLarge;
+            msginfo.horizontalAlignment = Text.AlignRight;
+            msg.horizontalAlignment = Text.AlignRight;
+            bubble.color = getContactColor(model.author);
+        }
+    }
+
+    function getWidthBubble() {
+        var maxBubbleWidth = item.width - ((Theme.paddingMedium * 2) + (Theme.paddingSmall * 2));
+        var widthMessage = ((msg.paintedWidth > msginfo.width || !isGroup) ? ((msg.paintedWidth > timeStatusRow.width) ? msg.paintedWidth : timeStatusRow.width) : ((msginfo.width > timeStatusRow.width && isGroup) ?  msginfo.width : timeStatusRow.width)) + (Theme.paddingMedium * 2);
+        if (widthMessage > maxBubbleWidth) {
+            return maxBubbleWidth;
+        }
+        else {
+            return widthMessage;
+        }
+    }
 
     Connections {
         target: conversationView
@@ -18,31 +81,30 @@ Item {
         }
     }
 
-    Rectangle {
-        anchors.top: parent.top
-        width: parent.width
-        anchors.bottom: parent.bottom
-        color: getContactColor(model.author)
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            conversationView.hideAll(model.msgid)
+        }
     }
 
     Rectangle {
-        width: (model.msgstatus == 5) ? 10 : 5
-        color: msgStatusColor(model)
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
+        id: bubble
+        anchors {
+            top: parent.top; topMargin: Theme.paddingSmall
+            bottom: parent.bottom; bottomMargin: Theme.paddingSmall + (inMenu.height || 0) + (urlMenu.height || 0)
+        }
+        width: getWidthBubble()
+        radius: 8
     }
 
     Label {
         id: msginfo
         font.pixelSize: fontSize
-        text: (showTimestamp ? timestampToTime(model.timestamp) : "") + " <b>&lt;" + roster.getNicknameByJid(model.author) + "&gt;</b> "
-        //text: (showTimestamp ? ((isGroup ? "" : "[") + timestampToTime(model.timestamp) + (isGroup ? "" : "]")) : "") + (isGroup ? (" <b>&lt;" + roster.getNicknameByJid(model.author) + "&gt;</b> ") : "")
-        anchors.left: parent.left
-        anchors.leftMargin: Theme.paddingMedium
+        color: Theme.highlightColor
+        text: "<b>" + roster.getNicknameByJid(model.author) + "</b>"
         anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.paddingMedium
+        anchors.topMargin: Theme.paddingMedium
         elide: Text.ElideRight
         visible: isGroup
         textFormat: Text.RichText
@@ -51,35 +113,64 @@ Item {
     Label {
         id: msg
         wrapMode: Text.Wrap
-        anchors.left: parent.left
-        anchors.leftMargin: Theme.paddingMedium
         anchors.top: isGroup ? msginfo.bottom : parent.top
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.paddingMedium
+        anchors.topMargin: isGroup ? 0 : Theme.paddingMedium
         font.pixelSize: fontSize
-        text: isGroup ? getMessageText(model) : ((showTimestamp ? ("[" + timestampToTime(model.timestamp) + "] ") : "") + getMessageText(model))
-        textFormat: Text.RichText
-        horizontalAlignment: virtualText.horizontalAlignment
+        color: Theme.primaryColor
+        text: getMessageText(model)
+        textFormat: Text.StyledText
+        linkColor: Theme.highlightColor
+        width: parent.width - (Theme.paddingLarge * 2)
     }
 
-    Text {
-        id: virtualText
-        visible: false
-        text: getMessageText(model)
+    Row {
+        id: timeStatusRow
+        anchors.top: msg.bottom
+        spacing: 0
+
+        Label {
+            id: msgTimeStamp
+            font.pixelSize: Theme.fontSizeExtraSmall
+            color: Theme.highlightColor
+            text: timestampToTime(model.timestamp)
+            anchors.verticalCenter: parent.verticalCenter
+            visible: showTimestamp
+            width: paintedWidth + (model.author !== roster.myJid ? 0 : Theme.paddingMedium)
+        }
+
+        GlassItem {
+            id: msgStatusViewFirstTick
+            width: 20
+            height: 20
+            anchors.verticalCenter: parent.verticalCenter
+            falloffRadius: 0.3
+            radius: 0.4
+        }
+
+        GlassItem {
+            id: msgStatusViewSecondTick
+            width: 20
+            height: 20
+            anchors.verticalCenter: parent.verticalCenter
+            falloffRadius: 0.3
+            radius: 0.4
+        }
     }
 
     Item {
         id: prevClip
-        anchors.top: msg.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
+        anchors.top: showTimestamp ? timeStatusRow.bottom : msg.bottom
+        anchors.left: bubble.left
+        anchors.right: bubble.right
+        anchors.leftMargin: Theme.paddingMedium
+        anchors.rightMargin: Theme.paddingMedium
         height: showPreview ? prev.height: 100
         visible: model.msgtype == 3 && (model.mediatype == 1 || model.mediatype == 3 || model.mediatype == 5)
         clip: true
         Image {
             id: prev
             fillMode: Image.PreserveAspectFit
-            source: visible ? (model.localurl.length > 0 ? model.localurl : (model.mediathumb.length > 0 ? ("data:" + model.mediamime + ";base64," + model.mediathumb) : "")) : ""
+            source: visible ? (model.localurl.length > 0 ? model.localurl : (model.mediathumb.length > 0 ? ("data:" + (model.mediamime || "image/jpeg") + ";base64," + model.mediathumb) : "")) : ""
             width: parent.width
             sourceSize.width: parent.width
             asynchronous: true
@@ -94,6 +185,7 @@ Item {
         id: progressIndicator
         anchors.left: parent.left
         anchors.top: parent.top
+        anchors.topMargin: Theme.paddingSmall
         anchors.bottom: parent.bottom
         anchors.bottomMargin: inMenu.height || urlMenu.height || 0
         fillMode: Image.Tile
@@ -106,9 +198,9 @@ Item {
 
     MouseArea {
         id: mArea
-        anchors.fill: parent
+        anchors.fill: bubble
         onPressed: {
-            if (!inMenu.active)
+            if (!inMenu.active && !urlMenu.active)
                 conversationView.hideAll(model.msgid)
         }
         onClicked: {
@@ -158,7 +250,7 @@ Item {
             }
         }
         onPressAndHold: {
-            console.log(model.message)
+            console.log(model.mediamime)
             inMenu.show(item)
         }
     }

@@ -76,26 +76,32 @@ Page {
                 currentIndex: 0
                 menu: ContextMenu {
                     MenuItem {
-                        text: "Mitakuuluu"
-                        onClicked: {
-                            console.log("default delegate selected")
-                            conversationTheme = "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
-                            settings.setValue("conversationTheme", conversationTheme)
-                            settings.setValue("conversationIndex", parseInt(0))
-                        }
+                        text: "Oldschool"
+                    }
+                    MenuItem {
+                        text: "Bubbles"
                     }
                     Repeater {
                         width: parent.width
                         model: conversationDelegates
                         delegate: MenuItem {
                             text: modelData
-                            onClicked: {
-                                console.log("selected " + modelData + " delegate")
-                                conversationTheme = "/home/nemo/.whatsapp/delegates/" + modelData
-                                settings.setValue("conversationTheme", conversationTheme)
-                                settings.setValue("conversationIndex", parseInt(index + 1))
-                            }
                         }
+                    }
+                }
+                onCurrentItemChanged: {
+                    if (pageStack.currentPage.objectName !== "roster") {
+                        if (currentIndex == 0) {
+                            conversationTheme = "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
+                        }
+                        else if (currentIndex == 1) {
+                            conversationTheme = "/usr/share/harbour-mitakuuluu/qml/BubbleDelegate.qml"
+                        }
+                        else {
+                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex]
+                        }
+                        settings.setValue("conversationIndex", parseInt(currentIndex))
+                        settings.setValue("conversationTheme", conversationTheme)
                     }
                 }
                 Component.onCompleted: {
@@ -225,13 +231,9 @@ Page {
                 }
                 onCurrentItemChanged: {
                     if (pageStack.currentPage.objectName !== "roster") {
-                        //console.log(" index: " + currentIndex)
-                        //console.log("selected: " + localeNames[currentIndex] + " locale: " + locales[currentIndex] + " index: " + currentIndex)
                         settings.setValue("locale", locales[currentIndex])
                         whatsapp.setLocale(locales[currentIndex])
                         banner.notify(qsTr("Restart application to change language"))
-                        //pageStack.clear()
-                        //pageStack.push(roster)
                     }
                 }
                 Component.onCompleted: {
@@ -284,69 +286,58 @@ Page {
                 }
             }*/
 
+            SectionHeader {
+                text: qsTr("Presence")
+            }
+
             TextSwitch {
                 id: presence
                 checked: followPresence
-                text: qsTr("Set unavailable when window closed or minimized")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        followPresence = checked
-                        settings.setValue("followPresence", checked)
-                    }
+                text: qsTr("Display online when app is open")
+                onClicked: {
+                    if (checked)
+                        presence.hideAll()
+                    checked = true
+                    followPresence = checked
+                    settings.setValue("followPresence", checked)
+                }
+                function hideAll() {
+                    presence.checked = false
+                    onlineSwitch.checked = false
+                    offlineSwitch.checked = false
                 }
             }
 
-            Item {
-                height: onlineSwitch.height
-                width: parent.width - (Theme.paddingLarge * 2)
-                anchors.horizontalCenter: parent.horizontalCenter
-                enabled: !followPresence
-
-                Switch {
-                    id: onlineSwitch
-                    anchors.left: parent.left
-                    checked: !alwaysOffline
-                    enabled: !followPresence
-                    onClicked: {
-                        offlineSwitch.checked = !checked
-                        settings.setValue("alwaysOffline", !checked)
-                        alwaysOffline = !checked
-                        if (checked)
-                            whatsapp.setPresenceAvailable()
-                    }
-                }
-
-                Label {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    anchors.verticalCenter: onlineSwitch.verticalCenter
-                    text: alwaysOffline ? qsTr("Always offline") : qsTr("Always online")
-                    enabled: !followPresence
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            if (onlineSwitch.checked)
-                                offlineSwitch.clicked(mouse)
-                            else
-                                onlineSwitch.clicked(mouse)
-                        }
-                    }
-                }
-
-                Switch {
-                    id: offlineSwitch
-                    anchors.right: parent.right
-                    checked: alwaysOffline
-                    enabled: !followPresence
-                    onClicked: {
-                        onlineSwitch.checked = !checked
-                        settings.setValue("alwaysOffline", checked)
-                        alwaysOffline = checked
-                        if (checked)
-                            whatsapp.setPresenceUnavailable()
-                    }
+            TextSwitch {
+                id: onlineSwitch
+                checked: !alwaysOffline && !followPresence
+                text: qsTr("Always display online")
+                onClicked: {
+                    if (checked)
+                        presence.hideAll()
+                    checked = true
+                    settings.setValue("alwaysOffline", !checked)
+                    alwaysOffline = !checked
+                    if (checked)
+                        whatsapp.setPresenceAvailable()
                 }
             }
+
+            TextSwitch {
+                id: offlineSwitch
+                checked: alwaysOffline && !followPresence
+                text: qsTr("Always display offline")
+                onClicked: {
+                    if (checked)
+                        presence.hideAll()
+                    checked = true
+                    settings.setValue("alwaysOffline", checked)
+                    alwaysOffline = checked
+                    if (checked)
+                        whatsapp.setPresenceUnavailable()
+                }
+            }
+
             SectionHeader {
                 text: qsTr("Media")
             }

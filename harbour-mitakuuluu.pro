@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
-SUBDIRS = whatsapp-server persecute2
+SUBDIRS = whatsapp-server persecute2# shareui
 
 locales.files = \
     locales/af_ZA.qm \
@@ -12,7 +12,9 @@ locales.files = \
     locales/fa.qm \
     locales/fi.qm \
     locales/fr_FR.qm \
+    locales/fur.qm \
     locales/hr_HR.qm \
+    locales/hu_HU.qm \
     locales/it.qm \
     locales/nl_NL.qm \
     locales/no.qm \
@@ -23,6 +25,7 @@ locales.files = \
     locales/sl_SI.qm \
     locales/sv.qm \
     locales/tr.qm \
+    locales/zh_CN.qm \
     locales/zh_HK.qm \
     $${NULL}
 locales.path = /usr/share/harbour-mitakuuluu/locales

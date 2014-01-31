@@ -268,8 +268,12 @@ Page {
             delegate: listDelegate
 
             function contactAdded(pjid) {
-                if (pjid != roster.myJid)
-                    whatsapp.addParticipant(page.jid, pjid)
+                if (pjid != roster.myJid) {
+                    if (listView.count < 51)
+                        whatsapp.addParticipant(page.jid, pjid)
+                    else
+                        banner.notify(qsTr("Max group participants count reached"))
+                }
             }
 
             function contactRemoved(pjid) {

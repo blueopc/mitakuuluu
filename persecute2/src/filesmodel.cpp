@@ -82,7 +82,7 @@ void FilesModel::processPath(const QString &path)
 
     //qDebug() << "Processing" << path << _filter;
     QDir dir(path);
-    const QFileInfoList &list = dir.entryInfoList(_filter, QDir::AllDirs | QDir::NoDot | QDir::Files, (_sorting ? QDir::Time : QDir::Name) | QDir::DirsFirst);
+    const QFileInfoList &list = dir.entryInfoList(_filter, QDir::AllDirs | QDir::NoDot | QDir::NoSymLinks | QDir::Files, (_sorting ? QDir::Time : QDir::Name) | QDir::DirsFirst);
     foreach (const QFileInfo &info, list) {
         //qDebug() << "adding" << info.absoluteFilePath();
         if (dir.isRoot() && info.fileName() == "..")
@@ -106,7 +106,7 @@ void FilesModel::recursiveSearch(const QString &path)
 {
     //qDebug() << "Processing" << path << _filter;
     QDir dir(path);
-    const QFileInfoList &list = dir.entryInfoList(_filter, QDir::Files | QDir::AllDirs | QDir::NoDot | QDir::NoDotDot, _sorting ? QDir::Time : QDir::Name);
+    const QFileInfoList &list = dir.entryInfoList(_filter, QDir::Files | QDir::AllDirs | QDir::NoSymLinks | QDir::NoDot | QDir::NoDotDot, _sorting ? QDir::Time : QDir::Name);
     foreach (const QFileInfo &info, list) {
         if (info.isDir()) {
             //qDebug() << "Recursive search in:" << dir.absolutePath();

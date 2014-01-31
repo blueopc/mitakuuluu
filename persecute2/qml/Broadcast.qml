@@ -149,6 +149,7 @@ Dialog {
                 visible: messageText.checked
                 width: parent.width
                 placeholderText: qsTr("Enter your message here...")
+                background: null
             }
 
             Label {
@@ -204,12 +205,15 @@ Dialog {
                 listModel.clear()
                 var jids = selectContact.jids
                 page.jids = jids
-                for (var i = 0; i < jids.length; i ++) {
+                for (var i = 0; (i < jids.length && listView.count < 51); i ++) {
                     var model = roster.getContactModel(jids[i])
                     var avatar = (typeof(model.avatar) != "undefined" && model.avatar != "undefined" && model.avatar.length > 0) ? model.avatar : ""
                     listModel.append({"jid": model.jid,
                                       "name": roster.getNicknameByJid(model.jid),
                                       "avatar": avatar})
+                    if (listView.count == 50) {
+                        banner.notify(qsTr("Max broadcast recepients count reached"))
+                    }
                 }
                 selectContact.finished.disconnect(listView.selectionFinished)
             }

@@ -1,10 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_PT" version="2.0">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="zh_CN" version="2.0">
 <context>
     <name/>
     <message id="components-he-dialog_accept">
         <location filename="../persecute2/qml/DialogRowsHeader.qml" line="53"/>
         <source>Accept</source>
-        <translation>Aceitar</translation>
+        <translation>同意</translation>
     </message>
 </context>
 <context>
@@ -13,78 +13,77 @@
         <location filename="../persecute2/qml/Account.qml" line="67"/>
         <location filename="../persecute2/qml/Account.qml" line="244"/>
         <source>Delete everything</source>
-        <translation>Eliminar tudo</translation>
+        <translation>删除所有</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="74"/>
         <source>Remove account</source>
-        <translation>Remover conta</translation>
+        <translation>移除用户</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="77"/>
         <source>Remove current account</source>
-        <translation>Remover conta actual</translation>
+        <translation>移除当前用户</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="91"/>
         <source>Account</source>
-        <translation>Conta</translation>
+        <translation>账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="92"/>
         <source>Save</source>
-        <translation>Guardar</translation>
+        <translation>保存</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="97"/>
         <source>Nickname:</source>
-        <translation>Alcunha:</translation>
+        <translation>昵称：</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="129"/>
         <source>Status:</source>
-        <translation>Estado:</translation>
+        <translation>状态：</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="161"/>
         <source>Created: %1</source>
-        <translation>Criada: %1</translation>
+        <translation>创建：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="175"/>
         <source>Expiration: %1</source>
-        <translation>Expira: %1</translation>
+        <translation>超期：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="189"/>
         <source>Account is active</source>
-        <translation>Conta está activa</translation>
+        <translation>激活的账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="189"/>
         <source>Account is blocked</source>
-        <translation>Conta está bloqueada</translation>
+        <translation>锁定的账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="203"/>
         <source>Account type: %1</source>
-        <translation>Tipo de conta: %1</translation>
+        <translation>账号类型：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="245"/>
         <source>Delete!</source>
-        <translation>Eliminar!</translation>
+        <translation>删除！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="253"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation>Esta ação irá eliminar a sua conta do servidor do WhatsApp, incluindo informação de login, conversas e contactos.
-Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
+        <translation>这个操作会从WhatsApp服务器删除你的账号、登陆信息、会话和联系人，但下载的媒体文件将会保留。</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="319"/>
         <source>Select</source>
-        <translation>Selecionar</translation>
+        <translation>选择</translation>
     </message>
 </context>
 <context>
@@ -92,7 +91,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="35"/>
         <source>Add contact</source>
-        <translation>Adicionar contacto</translation>
+        <translation>添加联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="51"/>
@@ -102,7 +101,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="69"/>
         <source>Enter contact name here</source>
-        <translation>Insira aqui o nome do contacto</translation>
+        <translation>在这里输入联系人姓名</translation>
     </message>
 </context>
 <context>
@@ -110,42 +109,42 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="39"/>
         <source>Add contact</source>
-        <translation>Adicionar contacto</translation>
+        <translation>添加联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="52"/>
         <source>Send broadcast</source>
-        <translation>Difundir mensagem</translation>
+        <translation>发送广播</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="151"/>
         <source>Enter your message here...</source>
-        <translation>Escreva a sua mensagem aqui...</translation>
+        <translation>输入消息内容</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="187"/>
         <source>Select media</source>
-        <translation>Selecionar imagem/vídeo</translation>
+        <translation>选择媒体文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="215"/>
         <source>Max broadcast recepients count reached</source>
-        <translation>Máximo de recipientes atingido</translation>
+        <translation>已达到最大广播收信人数</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="285"/>
         <source>Select media type</source>
-        <translation>Escolha tipo de media</translation>
+        <translation>选择媒体文件类型</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="309"/>
         <source>Select video</source>
-        <translation>Selecione vídeo</translation>
+        <translation>选择视频</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="324"/>
         <source>Select audio</source>
-        <translation>Selecione áudio</translation>
+        <translation>选择音频</translation>
     </message>
     <message>
         <source>Select file</source>
@@ -154,7 +153,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="228"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Selecione &amp;quot;Adicionar contacto&amp;quot; no menu para selecionar contactos</translation>
+        <translation>从菜单中选择&amp;quot;添加联系人&amp;quot;来选择要添加的联系人</translation>
     </message>
 </context>
 <context>
@@ -162,27 +161,27 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="927"/>
         <source>Connected</source>
-        <translation>Ligado</translation>
+        <translation>已连接</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1732"/>
         <source>Disconnected</source>
-        <translation>Desligado</translation>
+        <translation>已断开连接</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2025"/>
         <source>Mitakuuluu share</source>
-        <translation>Partilhar</translation>
+        <translation>Mitakuuluu分享</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2025"/>
         <source>Can&apos;t share media when offline</source>
-        <translation>Não pode partilhar imagens/vídeos quando offline</translation>
+        <translation>离线时不能分享媒体文件</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2762"/>
         <source>%1 unread messages</source>
-        <translation>%1 mensagens não lidas</translation>
+        <translation>%1条未读消息</translation>
     </message>
 </context>
 <context>
@@ -190,12 +189,12 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="46"/>
         <source>Media uploading started</source>
-        <translation>Upload de imagem/vídeo começou</translation>
+        <translation>开始上传媒体文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
         <source>n/a</source>
-        <translation>n/d</translation>
+        <translation>未知</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
@@ -215,123 +214,123 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="157"/>
         <source>Outgoing </source>
-        <translation>A enviar</translation>
+        <translation>发出</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="159"/>
         <source>Incoming </source>
-        <translation>A receber</translation>
+        <translation>收取</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="162"/>
         <source>picture </source>
-        <translation>imagem</translation>
+        <translation>图片</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="163"/>
         <source>audio </source>
-        <translation>áudio</translation>
+        <translation>音频</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="164"/>
         <source>video </source>
-        <translation>vídeo</translation>
+        <translation>视频</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="165"/>
         <source>contact </source>
-        <translation>contacto</translation>
+        <translation>联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source>location </source>
-        <translation>localização</translation>
+        <translation>位置</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source>LAT: %1</source>
-        <translation>LAT: %1</translation>
+        <translation>经度：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source> LON: %1</source>
-        <translation>LON: %1</translation>
+        <translation>纬度：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="174"/>
         <source>System message.</source>
-        <translation>Mensagem de sistema.</translation>
+        <translation>系统消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="274"/>
         <source>Send media</source>
-        <translation>Enviar imagem/vídeo</translation>
+        <translation>发送媒体文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="283"/>
         <location filename="../persecute2/qml/Conversation.qml" line="286"/>
         <source>Remove all messages</source>
-        <translation>Remover todas as mensagens</translation>
+        <translation>删除所有消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="297"/>
         <source>Profile</source>
-        <translation>Perfil</translation>
+        <translation>简介</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="305"/>
         <source>Unmute</source>
-        <translation>Activar som</translation>
+        <translation>解除静音</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="305"/>
         <source>Unblock</source>
-        <translation>Desbloquear</translation>
+        <translation>解除屏蔽</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="306"/>
         <source>Mute</source>
-        <translation>Silenciar</translation>
+        <translation>静音</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="306"/>
         <source>Block</source>
-        <translation>Bloquear</translation>
+        <translation>屏蔽</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="317"/>
         <source>Load old conversation</source>
-        <translation>Carregar conversas antigas</translation>
+        <translation>查看过往会话</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="482"/>
         <source>New message</source>
-        <translation>Nova mensagem</translation>
+        <translation>新建消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="517"/>
         <source>Tap here to enter message</source>
-        <translation>Toque aqui para escrever a mensagem</translation>
+        <translation>点击输入消息内容</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="629"/>
         <source>Image saved as %1</source>
-        <translation>Imagem guardada como %1</translation>
+        <translation>图片保存为%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="650"/>
         <source>Select media type</source>
-        <translation>Escolha tipo de media</translation>
+        <translation>选择媒体文件类型</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="675"/>
         <source>Select video</source>
-        <translation>Selecione vídeo</translation>
+        <translation>选择视频</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="690"/>
         <source>Select audio</source>
-        <translation>Selecione áudio</translation>
+        <translation>选择音频</translation>
     </message>
 </context>
 <context>
@@ -339,22 +338,22 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>Unread messages: %1</source>
-        <translation>Mensagens não lidas: %1</translation>
+        <translation>未读消息：%1条</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>No unread messages</source>
-        <translation>Sem mensagens novas</translation>
+        <translation>没有未读消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>Registration</source>
-        <translation>Registo</translation>
+        <translation>注册新账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="30"/>
         <source>One unread message</source>
-        <translation>Uma mensagem nova</translation>
+        <translation>1条未读消息</translation>
     </message>
 </context>
 <context>
@@ -362,47 +361,47 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="134"/>
         <source>Media download started...</source>
-        <translation>Download de media começou...</translation>
+        <translation>开始下载媒体文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="172"/>
         <source>Remove message</source>
-        <translation>Remover mensagem</translation>
+        <translation>删除消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="213"/>
         <source>Copy</source>
-        <translation>Copiar</translation>
+        <translation>复制</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="217"/>
         <source>Message copied to clipboard</source>
-        <translation>Mensagem copiada para a área de transferência</translation>
+        <translation>消息内容已复制到剪切板</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="222"/>
         <source>Forward</source>
-        <translation>Reencaminhar</translation>
+        <translation>转发</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="232"/>
         <source>Save to Gallery</source>
-        <translation>Guardar para a Galeria</translation>
+        <translation>保存到媒体库</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="235"/>
         <source>File saved as %1</source>
-        <translation>Ficheiro guardado como %1</translation>
+        <translation>文件保存为%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="241"/>
         <source>Cancel download</source>
-        <translation>Cancelar download</translation>
+        <translation>取消下载</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="241"/>
         <source>Delete</source>
-        <translation>Eliminar</translation>
+        <translation>删除</translation>
     </message>
 </context>
 <context>
@@ -410,22 +409,22 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="73"/>
         <source>Forward to group</source>
-        <translation>Reencaminhar para grupo</translation>
+        <translation>转发到群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="84"/>
         <source>Add contact</source>
-        <translation>Adicionar contacto</translation>
+        <translation>添加联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="96"/>
         <source>Forward</source>
-        <translation>Reencaminhar</translation>
+        <translation>转发</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="157"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Selecione &amp;quot;Adicionar contacto&amp;quot; no menu para selecionar contactos</translation>
+        <translation>从菜单中选择&amp;quot;添加联系人&amp;quot;来选择要添加的联系人</translation>
     </message>
 </context>
 <context>
@@ -433,52 +432,52 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="122"/>
         <source>Add contacts</source>
-        <translation>Adicionar contactos</translation>
+        <translation>添加联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="138"/>
         <source>Group profile</source>
-        <translation>Perfil do Grupo</translation>
+        <translation>群组简介</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="149"/>
         <source>Subject: </source>
-        <translation>Assunto:</translation>
+        <translation>主题：</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="205"/>
         <source>Owner: %1</source>
-        <translation>Autor: %1</translation>
+        <translation>所属人：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="219"/>
         <source>Creation: %1</source>
-        <translation>Criado: %1</translation>
+        <translation>创建：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="233"/>
         <source>Subject by: %1</source>
-        <translation>Assunto por: %1</translation>
+        <translation>主题由：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="247"/>
         <source>Subject set: %1</source>
-        <translation>Assunto definido em: %1</translation>
+        <translation>主题组：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="275"/>
         <source>Max group participants count reached</source>
-        <translation>Numero máximo de utilizadores de grupo atingido</translation>
+        <translation>已达到最大群组收信人数</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="306"/>
         <source>Fetching participants...</source>
-        <translation>A carregar participantes...</translation>
+        <translation>查看成员名单</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="421"/>
         <source>Select</source>
-        <translation>Selecionar</translation>
+        <translation>选择</translation>
     </message>
 </context>
 <context>
@@ -486,7 +485,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/InteractionArea.qml" line="86"/>
         <source>Error loading image</source>
-        <translation>Erro ao carregar imagem</translation>
+        <translation>读取图片出错</translation>
     </message>
 </context>
 <context>
@@ -494,17 +493,17 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="43"/>
         <source>Add group</source>
-        <translation>Adicionar grupo</translation>
+        <translation>添加群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="57"/>
         <source>Muted groups</source>
-        <translation>Grupos em silêncio</translation>
+        <translation>已静音的群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="75"/>
         <source>No muted groups</source>
-        <translation>Não existem grupos em silêncio</translation>
+        <translation>没有已静音的群组</translation>
     </message>
 </context>
 <context>
@@ -512,27 +511,27 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="48"/>
         <source>Add number</source>
-        <translation>Adicionar número</translation>
+        <translation>添加号码</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="56"/>
         <source>Select contacts</source>
-        <translation>Selecionar contactos</translation>
+        <translation>选择联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="70"/>
         <source>Blacklist</source>
-        <translation>Lista negra</translation>
+        <translation>黑名单</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="96"/>
         <source>Blacklist is empty</source>
-        <translation>A lista negra está vazia</translation>
+        <translation>黑名单为空</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="124"/>
         <source>Add to blacklist</source>
-        <translation>Adicionar à lista negra</translation>
+        <translation>添加到黑名单</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="139"/>
@@ -547,98 +546,93 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
         <source>Registration failed
 
 </source>
-        <translation>Registo falhou
-
-</translation>
+        <translation>注册失败</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="32"/>
         <source>Account expired
 </source>
-        <translation>A conta expirou
-</translation>
+        <translation>账号已过期</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="39"/>
         <source>No exists information for your account.</source>
-        <translation>Não existe informação para a sua conta</translation>
+        <translation>没有你的账号的相关信息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="44"/>
         <source>Code request failed
 
 </source>
-        <translation>Pedido de código falhou
-
-</translation>
+        <translation>激活码请求失败</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="52"/>
         <source>Activation code requested. Wait for %1 soon</source>
-        <translation>Código de activação pedido. Espere por %1 em breve.</translation>
+        <translation>已请求激活码，请等待%1 </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="52"/>
         <source>sms message</source>
-        <translation>mensagem sms</translation>
+        <translation>短信消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="52"/>
         <source>voice call</source>
-        <translation>chamada de voz</translation>
+        <translation>语音电话</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="59"/>
         <location filename="../persecute2/qml/Register.qml" line="304"/>
         <source>Registering account...</source>
-        <translation>A registar conta...</translation>
+        <translation>正在注册账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="65"/>
         <source>Successfully registered in WhatsApp!</source>
-        <translation>Registado com sucesso no WhatsApp!</translation>
+        <translation>注册WhatsApp成功！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="127"/>
         <location filename="../persecute2/qml/Register.qml" line="193"/>
         <location filename="../persecute2/qml/Register.qml" line="321"/>
         <source>Registration</source>
-        <translation>Registo</translation>
+        <translation>注册</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="181"/>
         <source>Checking account...</source>
-        <translation>A verificar conta...</translation>
+        <translation>正在检查账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="221"/>
         <source>Enter phone number here</source>
-        <translation>Insira o n. de telemóvel aqui</translation>
+        <translation>输入电话号码</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="248"/>
         <source>SMS</source>
-        <translation>SMS</translation>
+        <translation>短信</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="262"/>
         <source>Voice</source>
-        <translation>Voz</translation>
+        <translation>语音</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="286"/>
         <source>I have registration code</source>
-        <translation>Já tenho um código de registo</translation>
+        <translation>我有注册码</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="331"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
-        <translation>Insira o código de registo. 6-digitos sem o hífen.</translation>
+        <translation>输入6位注册码，注意不含“-”。</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="344"/>
         <source>Tap here to enter code</source>
-        <translation>Toque aqui para inserir o código</translation>
+        <translation>点击这里输入注册码</translation>
     </message>
 </context>
 <context>
@@ -646,7 +640,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/RemovePage.qml" line="25"/>
         <source>Quit</source>
-        <translation>Sair</translation>
+        <translation>退出</translation>
     </message>
 </context>
 <context>
@@ -654,7 +648,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/ResizePicture.qml" line="32"/>
         <source>Resize picture</source>
-        <translation>Redimensionar imagem</translation>
+        <translation>缩放图片</translation>
     </message>
 </context>
 <context>
@@ -670,7 +664,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="74"/>
         <source>Media uploading failed!</source>
-        <translation>Envio de imagem falhou!</translation>
+        <translation>媒体文件上传失败！</translation>
     </message>
     <message>
         <source>Unknown</source>
@@ -679,12 +673,12 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="80"/>
         <source>Waiting for connection</source>
-        <translation>A aguardar ligação</translation>
+        <translation>等待连接</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="81"/>
         <source>Connecting...</source>
-        <translation>A ligar...</translation>
+        <translation>连接中</translation>
     </message>
     <message>
         <source>Connected</source>
@@ -693,165 +687,165 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="82"/>
         <source>Authorization...</source>
-        <translation>Autorização...</translation>
+        <translation>授权</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="83"/>
         <source>Logged in</source>
-        <translation>Sessão iniciada</translation>
+        <translation>登陆</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="84"/>
         <source>Login failure!</source>
-        <translation>Início de sessão falhou!</translation>
+        <translation>登陆失败！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="85"/>
         <source>Disconnected</source>
-        <translation>Desligado</translation>
+        <translation>断开连接</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="86"/>
         <source>Registering...</source>
-        <translation>A registar...</translation>
+        <translation>注册中</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="87"/>
         <source>Registration failed!</source>
-        <translation>Registo falhou!</translation>
+        <translation>注册失败！</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="112"/>
         <source>No action</source>
-        <translation>Nenhuma ação</translation>
+        <translation>无动作</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="106"/>
         <source>Force connect</source>
-        <translation>Forçar ligação</translation>
+        <translation>强制连接</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="79"/>
         <source>Engine crashed</source>
-        <translation>O processo Mitakuuluu falhou</translation>
+        <translation>引擎崩溃了</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="105"/>
         <source>Restart engine</source>
-        <translation>Reiniciar processo Mitakuuluu</translation>
+        <translation>重启引擎</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="107"/>
         <location filename="../persecute2/qml/Roster.qml" line="108"/>
         <location filename="../persecute2/qml/Roster.qml" line="109"/>
         <source>Disconnect</source>
-        <translation>Desligar</translation>
+        <translation>断开连接</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="110"/>
         <location filename="../persecute2/qml/Roster.qml" line="113"/>
         <source>Register</source>
-        <translation>Registar</translation>
+        <translation>注册</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="111"/>
         <source>Connect</source>
-        <translation>Ligar</translation>
+        <translation>连接</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="123"/>
         <source>You</source>
-        <translation>Eu</translation>
+        <translation>你</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="153"/>
         <source>Quit</source>
-        <translation>Sair</translation>
+        <translation>退出</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="157"/>
         <source>Quit and shutdown engine</source>
-        <translation>Sair e fechar aplicação</translation>
+        <translation>退出且停止服务引擎</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="168"/>
         <source>Settings</source>
-        <translation>Definições</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="176"/>
         <source>New group</source>
-        <translation>Novo grupo</translation>
+        <translation>新群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="185"/>
         <source>Broadcast</source>
-        <translation>Difundir mensagem</translation>
+        <translation>广播</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="193"/>
         <source>Add contacts</source>
-        <translation>Adicionar contactos</translation>
+        <translation>添加联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="209"/>
         <source>Disconnecting</source>
-        <translation>A desligar</translation>
+        <translation>正在断开连接</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="299"/>
         <source>Enter contact name to search</source>
-        <translation>Insira nome do contacto a pesquisar</translation>
+        <translation>输入要搜索的联系人姓名</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="365"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
-        <translation>A lista de contactos está vazia. Sincronize os contactos do telemóvel ou adicione contactos manualmente.</translation>
+        <translation>联系人列表为空，请同步电话簿或者手动添加联系人。</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="425"/>
         <source>Rename contact</source>
-        <translation>Renomear contacto</translation>
+        <translation>重命名联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="432"/>
         <source>Enter new name</source>
-        <translation>Insira o novo nome</translation>
+        <translation>输入新姓名</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="473"/>
         <source>Create group</source>
-        <translation>Criar grupo</translation>
+        <translation>创建群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="480"/>
         <source>Write name of new group here</source>
-        <translation>Insira o nome do novo grupo aqui</translation>
+        <translation>输入新群组的名称</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="567"/>
         <source>Group chat</source>
-        <translation>Conversa em grupo</translation>
+        <translation>群组聊天</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="594"/>
         <source>Delete </source>
-        <translation>Eliminar</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="594"/>
         <source>Leave group %1</source>
-        <translation>Sair do grupo %1</translation>
+        <translation>离开群组%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="628"/>
         <source>Profile</source>
-        <translation>Perfil</translation>
+        <translation>简介</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="636"/>
         <source>Refresh</source>
-        <translation>Actualizar</translation>
+        <translation>刷新</translation>
     </message>
     <message>
         <source>Contact syncing started...</source>
@@ -860,37 +854,37 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="644"/>
         <source>Rename</source>
-        <translation>Renomear</translation>
+        <translation>重命名</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="652"/>
         <source>Delete</source>
-        <translation>Eliminar</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="652"/>
         <source>Leave group</source>
-        <translation>Sair do grupo</translation>
+        <translation>离开群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="660"/>
         <source>Unblock</source>
-        <translation>Desbloquear</translation>
+        <translation>解除屏蔽</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="660"/>
         <source>Block</source>
-        <translation>Bloquear</translation>
+        <translation>屏蔽</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="660"/>
         <source>Unmute</source>
-        <translation>Activar som</translation>
+        <translation>解除静音</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="660"/>
         <source>Mute</source>
-        <translation>Silenciar</translation>
+        <translation>静音</translation>
     </message>
 </context>
 <context>
@@ -902,37 +896,37 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="47"/>
         <source>Select group</source>
-        <translation>Selecionar grupo</translation>
+        <translation>选择群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="47"/>
         <source>Select contacts</source>
-        <translation>Selecionar contactos</translation>
+        <translation>选择多个联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>Group selected</source>
-        <translation>Grupo selecionado</translation>
+        <translation>群组已选定</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="48"/>
         <source>One contact selected</source>
-        <translation>Um contacto selecionado</translation>
+        <translation>已选定一个联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
         <source>Selected %1 contacts</source>
-        <translation>%1 contactos selecionados</translation>
+        <translation>已选定 %1 个联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="49"/>
         <source>Selected %1 groups</source>
-        <translation>%1 grupos selecionados</translation>
+        <translation>已选定 %1 个群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectContact.qml" line="115"/>
         <source>Group chat</source>
-        <translation>Conversa em grupo</translation>
+        <translation>群组聊天</translation>
     </message>
 </context>
 <context>
@@ -940,7 +934,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/SelectFile.qml" line="40"/>
         <source>Select file</source>
-        <translation>Selecionar ficheiro</translation>
+        <translation>选择文件</translation>
     </message>
 </context>
 <context>
@@ -952,27 +946,27 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="52"/>
         <source>Sync all phonebook</source>
-        <translation>Sincronizar todos os contactos do telemóvel</translation>
+        <translation>同步所有电话簿</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="60"/>
         <source>Add number</source>
-        <translation>Adicionar número</translation>
+        <translation>添加号码</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="94"/>
         <source>Sync %1 contacts</source>
-        <translation>Sincronizar %1 contactos</translation>
+        <translation>已同步%1个联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="94"/>
         <source>Sync contact</source>
-        <translation>Sincronizar contacto</translation>
+        <translation>同步联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SelectPhonebook.qml" line="95"/>
         <source>Select contacts</source>
-        <translation>Selecionar contactos</translation>
+        <translation>选择联系人</translation>
     </message>
 </context>
 <context>
@@ -980,7 +974,7 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/SelectPicture.qml" line="21"/>
         <source>Select picture</source>
-        <translation>Selecionar  imagem</translation>
+        <translation>选择图片</translation>
     </message>
 </context>
 <context>
@@ -988,92 +982,92 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>About</source>
-        <translation>Acerca</translation>
+        <translation>关于</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="37"/>
         <source>Account</source>
-        <translation>Conta</translation>
+        <translation>账号</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="43"/>
         <source>Muted groups</source>
-        <translation>Grupos em silêncio</translation>
+        <translation>已静音的群组</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="51"/>
         <source>Blacklist</source>
-        <translation>Lista negra</translation>
+        <translation>黑名单</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="67"/>
         <source>Settings</source>
-        <translation>Definições</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="71"/>
         <source>Conversation</source>
-        <translation>Conversa</translation>
+        <translation>会话</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="75"/>
         <source>Conversation theme</source>
-        <translation>Esquema de conversa</translation>
+        <translation>会话主题</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="123"/>
         <source>Vibrate in active conversation</source>
-        <translation>Vibrar em conversas activas</translation>
+        <translation>进行中会话震动提示</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="135"/>
         <source>Show messages timestamp</source>
-        <translation>Mostrar hora/minuto das mensagens</translation>
+        <translation>显示消息时间戳</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="147"/>
         <source>Show seconds in messages timestamp</source>
-        <translation>Mostrar segundos na hora/minuto</translation>
+        <translation>消息时间戳中显示到秒</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="160"/>
         <source>Send messages by Enter</source>
-        <translation>Enviar mensagens com Enter</translation>
+        <translation>回车键发送消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="171"/>
         <source>Show keyboard automatically</source>
-        <translation>Mostrar teclado automaticamente</translation>
+        <translation>自动弹出键盘</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="172"/>
         <source>Automatically show keyboard when opening conversation</source>
-        <translation>Mostrar teclado automaticamente ao abrir uma conversa</translation>
+        <translation>开启会话时自动弹出键盘</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="183"/>
         <source>Download media to Gallery</source>
-        <translation>Guardar media para a Galeria</translation>
+        <translation>下载媒体文件到媒体库</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="184"/>
         <source>If checked downloaded files will be shown in Gallery</source>
-        <translation>Se tiver um &apos;visto&apos; os ficheiros recebidos serão mostrados na Galeria</translation>
+        <translation>如果选中下载的文件将会在媒体库显示</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="193"/>
         <source>Delete media files</source>
-        <translation>Eliminar ficheiros media</translation>
+        <translation>删除媒体文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="194"/>
         <source>Delete received media files when deleting message</source>
-        <translation>Eliminar ficheiros de media recebidos ao eliminar mensagem</translation>
+        <translation>删除消息时同时删除接收的媒体文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="206"/>
         <source>Chat font size</source>
-        <translation>Tamanho da fonte nas conversas</translation>
+        <translation>聊天字体大小</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="208"/>
@@ -1083,52 +1077,52 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="218"/>
         <source>Common</source>
-        <translation>Comum</translation>
+        <translation>常规</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="222"/>
         <source>Language</source>
-        <translation>Idioma</translation>
+        <translation>语言</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="236"/>
         <source>Restart application to change language</source>
-        <translation>Reinicie a aplicação para mudar de idioma</translation>
+        <translation>切换语言请重启本程序</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="248"/>
         <source>Show yourself in contact list, if present</source>
-        <translation>Mostrar o seu próprio contacto, se presente</translation>
+        <translation>在联系人列表中显示自己</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="259"/>
         <source>Accept messages from unknown contacts</source>
-        <translation>Aceitar mensagens de contactos desconhecidos</translation>
+        <translation>接收来自未知联系人的消息</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="270"/>
         <source>Show notifications when connection changing</source>
-        <translation>Notificar quando a ligação muda</translation>
+        <translation>当连接情况变化时显示通知</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="292"/>
         <source>Display online when app is open</source>
-        <translation>Mostrar Online quando a aplicação estiver aberta</translation>
+        <translation>启动时显示在线</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="302"/>
         <source>Presence</source>
-        <translation>Presença</translation>
+        <translation>状态</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="308"/>
         <source>Always display online</source>
-        <translation>Mostrar sempre Online</translation>
+        <translation>一直显示在线</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="321"/>
         <source>Always display offline</source>
-        <translation>Mostrar sempre Offline</translation>
+        <translation>一直显示离线</translation>
     </message>
     <message>
         <source>Set unavailable when window closed or minimized</source>
@@ -1145,22 +1139,22 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="332"/>
         <source>Media</source>
-        <translation>Media</translation>
+        <translation>媒体</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="337"/>
         <source>Resize sending images</source>
-        <translation>Redimensionar imagens ao enviar</translation>
+        <translation>缩放发送的图片</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="369"/>
         <source>Maximum image size by file size</source>
-        <translation>Tamanho máximo da imagem por tamanho</translation>
+        <translation>最大图片使用文件大小</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="400"/>
         <source>Maximum image size by resolution</source>
-        <translation>Tamanho máximo da imagem por resolução</translation>
+        <translation>最大图片使用文件分辨率</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="402"/>
@@ -1173,47 +1167,47 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="94"/>
         <source>Nickname: %1</source>
-        <translation>Alcunha: %1</translation>
+        <translation>昵称：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="101"/>
         <source>Status: %1</source>
-        <translation>Estado: %1</translation>
+        <translation>状态：%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="109"/>
         <source>Phone: +%1</source>
-        <translation>Telemóvel: +%1</translation>
+        <translation>电话：+%1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="116"/>
         <source>Contact blocked</source>
-        <translation>Contacto bloqueado</translation>
+        <translation>已屏蔽的联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="124"/>
         <source>Unblock contact</source>
-        <translation>Desbloquear contacto</translation>
+        <translation>解除屏蔽联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="124"/>
         <source>Block contact</source>
-        <translation>Bloquear contacto</translation>
+        <translation>屏蔽联系人</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="134"/>
         <source>Save to phonebook</source>
-        <translation>Guardar na lista telefónica</translation>
+        <translation>保存到电话簿</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="143"/>
         <source>Save chat history to file</source>
-        <translation>Guardar histórico em ficheiro</translation>
+        <translation>保存聊天历史到文件</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="193"/>
         <source>Image saved as %1</source>
-        <translation>Imagem guardada como %1</translation>
+        <translation>图片保存为%1</translation>
     </message>
 </context>
 <context>
@@ -1221,27 +1215,27 @@ Ficheiros de imagens e vídeos recebidos não serão apagados.</translation>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>n/a</source>
-        <translation>n/d</translation>
+        <translation>未知</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>bytes</source>
-        <translation>bytes</translation>
+        <translation>字节</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>KiB</source>
-        <translation>KiB</translation>
+        <translation>KB</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>MiB</source>
-        <translation>MiB</translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>GiB</source>
-        <translation>GiB</translation>
+        <translation>GB</translation>
     </message>
 </context>
 </TS>

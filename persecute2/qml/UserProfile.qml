@@ -181,5 +181,18 @@ Page {
             anchors.fill: parent
             onClicked: avatarView.hide()
         }
+        IconButton {
+            anchors.right: parent.right
+            anchors.top: parent.top
+            icon.source: "image://theme/icon-m-cloud-download"
+            highlighted: pressed
+            visible: avaView.status == Image.Ready
+            onClicked: {
+                var fname = whatsapp.saveImage(avaView.source)
+                if (fname.length > 0) {
+                    banner.notify(qsTr("Image saved as %1").arg(fname))
+                }
+            }
+        }
     }
 }
