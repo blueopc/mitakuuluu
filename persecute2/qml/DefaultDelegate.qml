@@ -58,7 +58,7 @@ Item {
         anchors.rightMargin: Theme.paddingMedium
         font.pixelSize: fontSize
         text: isGroup ? getMessageText(model) : ((showTimestamp ? ("[" + timestampToTime(model.timestamp) + "] ") : "") + getMessageText(model))
-        textFormat: Text.RichText
+        textFormat: Text.StyledText
         horizontalAlignment: virtualText.horizontalAlignment
         linkColor: Theme.highlightColor
     }
