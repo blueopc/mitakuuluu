@@ -146,7 +146,8 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("localeNames", localeNames);
 
     int localeIndex = 0;
-    QString currentLocale = settings->value("locale", QLocale::system().name()).toString().split(".").first();
+    QString currentLocale = settings->value("locale", QLocale::system().name()).toString();
+    qDebug() << "currentLocale:" << currentLocale;
     if (locales.contains(currentLocale)) {
         qDebug() << "loading" << currentLocale;
         localeIndex = locales.indexOf(currentLocale);
