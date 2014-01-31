@@ -98,7 +98,7 @@ Page {
                             conversationTheme = "/usr/share/harbour-mitakuuluu/qml/BubbleDelegate.qml"
                         }
                         else {
-                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex]
+                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex - 2]
                         }
                         settings.setValue("conversationIndex", parseInt(currentIndex))
                         settings.setValue("conversationTheme", conversationTheme)
