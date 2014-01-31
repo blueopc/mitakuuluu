@@ -60,6 +60,7 @@ Item {
         text: isGroup ? getMessageText(model) : ((showTimestamp ? ("[" + timestampToTime(model.timestamp) + "] ") : "") + getMessageText(model))
         textFormat: Text.RichText
         horizontalAlignment: virtualText.horizontalAlignment
+        linkColor: Theme.highlightColor
     }
 
     Text {
