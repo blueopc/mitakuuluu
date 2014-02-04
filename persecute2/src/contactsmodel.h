@@ -94,7 +94,7 @@ public slots:
     void deleteContact(const QString &jid);
     QVariantMap getModel(const QString &jid);
     QVariantMap get(int index);
-    QColor getColorForJid(const QString &jid, bool inverted = false);
+    QColor getColorForJid(const QString &jid);
     void renameContact(const QString &jid, const QString &name);
     void requestAvatar(const QString &jid);
 

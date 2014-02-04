@@ -5,6 +5,7 @@ locales.files = \
     locales/af_ZA.qm \
     locales/ar.qm \
     locales/ca.qm \
+    locales/da_DK.qm \
     locales/de.qm \
     locales/el.qm \
     locales/en_US.qm \
@@ -22,6 +23,7 @@ locales.files = \
     locales/pt_BR.qm \
     locales/pt_PT.qm \
     locales/ru_RU.qm \
+    locales/sk.qm \
     locales/sl_SI.qm \
     locales/sv.qm \
     locales/tr.qm \
@@ -33,5 +35,4 @@ locales.path = /usr/share/harbour-mitakuuluu/locales
 INSTALLS += locales
 
 OTHER_FILES = \
-    rpm/harbour-mitakuuluu.spec \
-    rpm/harbour-mitakuuluu.yaml
+    rpm/harbour-mitakuuluu.spec

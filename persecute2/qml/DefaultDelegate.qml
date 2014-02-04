@@ -80,7 +80,7 @@ Item {
         Image {
             id: prev
             fillMode: Image.PreserveAspectFit
-            source: visible ? (model.localurl.length > 0 ? model.localurl : (model.mediathumb.length > 0 ? ("data:" + model.mediamime + ";base64," + model.mediathumb) : "")) : ""
+            source: visible ? getMediaPreview(model) : ""
             width: parent.width
             sourceSize.width: parent.width
             asynchronous: true
@@ -114,14 +114,11 @@ Item {
         }
         onClicked: {
             if (model.msgtype == 2) {
-                //console.log(msg.text)
                 var links = msg.text.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/gi);
                 if (links && links.length > 0) {
-                    //console.log(JSON.stringify(links))
                     var urlmodel = []
                     links.forEach(function(link) {
                         var groups = link.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/i);
-                        //console.log(JSON.stringify(groups))
                         var urlink = [groups[2], groups[1]]
                         urlmodel[urlmodel.length] = urlink
                     });

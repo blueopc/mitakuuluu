@@ -48,16 +48,27 @@ Item {
             msgStatusViewSecondTick.visible = false;
             msgStatusViewFirstTick.width = 0;
             msgStatusViewSecondTick.width = 0;
-            bubble.anchors.right = item.right;
-            bubble.anchors.rightMargin = Theme.paddingMedium;
-            msginfo.anchors.right = item.right;
-            msginfo.anchors.rightMargin = Theme.paddingLarge;
-            msg.anchors.right = item.right;
-            msg.anchors.rightMargin = Theme.paddingLarge;
-            timeStatusRow.anchors.right = item.right;
-            timeStatusRow.anchors.rightMargin = Theme.paddingLarge;
-            msginfo.horizontalAlignment = Text.AlignRight;
-            msg.horizontalAlignment = Text.AlignRight;
+            if (model.msgtype === 100) {
+                bubble.anchors.horizontalCenter = item.horizontalCenter
+                msg.anchors.horizontalCenter = item.horizontalCenter
+                msg.horizontalAlignment = Text.AlignHCenter
+                msginfo.anchors.horizontalCenter = item.horizontalCenter;
+                msginfo.anchors.rightMargin = Theme.paddingLarge;
+                msginfo.horizontalAlignment = Text.AlignHCenter;
+                timeStatusRow.anchors.horizontalCenter = item.horizontalCenter;
+            }
+            else {
+                bubble.anchors.right = item.right;
+                bubble.anchors.rightMargin = Theme.paddingMedium;
+                msginfo.anchors.right = item.right;
+                msginfo.anchors.rightMargin = Theme.paddingLarge;
+                msginfo.horizontalAlignment = Text.AlignRight;
+                msg.anchors.right = item.right;
+                msg.anchors.rightMargin = Theme.paddingLarge;
+                msg.horizontalAlignment = Text.AlignRight;
+                timeStatusRow.anchors.right = item.right;
+                timeStatusRow.anchors.rightMargin = Theme.paddingLarge;
+            }
             bubble.color = getContactColor(model.author);
         }
     }
@@ -94,7 +105,7 @@ Item {
             top: parent.top; topMargin: Theme.paddingSmall
             bottom: parent.bottom; bottomMargin: Theme.paddingSmall + (inMenu.height || 0) + (urlMenu.height || 0)
         }
-        width: getWidthBubble()
+        width: Math.max(getWidthBubble(), Theme.itemSizeLarge * 2)
         radius: 8
     }
 
@@ -170,7 +181,7 @@ Item {
         Image {
             id: prev
             fillMode: Image.PreserveAspectFit
-            source: visible ? (model.localurl.length > 0 ? model.localurl : (model.mediathumb.length > 0 ? ("data:" + (model.mediamime || "image/jpeg") + ";base64," + model.mediathumb) : "")) : ""
+            source: visible ? getMediaPreview(model) : ""
             width: parent.width
             sourceSize.width: parent.width
             asynchronous: true
@@ -204,6 +215,8 @@ Item {
                 conversationView.hideAll(model.msgid)
         }
         onClicked: {
+            if (model.msgtype == 100)
+                return
             if (model.msgtype == 2) {
                 //console.log(msg.text)
                 var links = msg.text.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/gi);

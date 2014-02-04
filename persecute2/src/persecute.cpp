@@ -34,6 +34,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <sys/types.h>
+#include <grp.h>
+#include <pwd.h>
 
 #include <QFile>
 #include <QTextStream>
@@ -98,6 +101,8 @@ void quitHandler(int) {
 Q_DECL_EXPORT
 int main(int argc, char *argv[])
 {
+    setuid(getpwnam("nemo")->pw_uid);
+    setgid(getgrnam("privileged")->gr_gid);
     //signal(SIGUSR1, quitHandler);
     qInstallMessageHandler(messageHandler);
     qDebug() << "Starting application";
@@ -146,7 +151,7 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("localeNames", localeNames);
 
     int localeIndex = 0;
-    QString currentLocale = settings->value("locale", QLocale::system().name()).toString();
+    QString currentLocale = settings->value("locale", QString("%1.qm").arg(QLocale::system().name().split(".").first())).toString();
     qDebug() << "currentLocale:" << currentLocale;
     if (locales.contains(currentLocale)) {
         qDebug() << "loading" << currentLocale;

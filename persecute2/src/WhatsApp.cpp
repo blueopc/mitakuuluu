@@ -14,6 +14,9 @@
 
 #define OBJECT_NAME "/"
 #define SERVICE_NAME "com.whatsapp.client"
+#define AUTOSTART_DIR "/home/nemo/.config/systemd/user/post-user-session.target.wants"
+#define AUTOSTART_USER "/home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service"
+#define AUTOSTART_SERVICE "/usr/lib/systemd/user/harbour-mitakuuluu.service"
 
 bool lessThan(const QVariant &v1, const QVariant &v2) {
     return v1.toMap()["nickname"].toString().toLower() < v2.toMap()["nickname"].toString().toLower();
@@ -429,6 +432,7 @@ void WhatsApp::shutdown()
 {
     if (iface)
         iface->call(QDBus::NoBlock, "exit");
+    system("killall -9 harbour-mitakuuluu-server");
     exit();
 }
 
@@ -711,5 +715,26 @@ void WhatsApp::windowActive()
 {
     if (iface) {
         iface->call(QDBus::NoBlock, "windowActive");
+    }
+}
+
+bool WhatsApp::checkAutostart()
+{
+    QFile service(AUTOSTART_USER);
+    return service.exists();
+}
+
+void WhatsApp::setAutostart(bool enabled)
+{
+    if (enabled) {
+        QDir dir(AUTOSTART_DIR);
+        if (!dir.exists())
+            dir.mkpath(AUTOSTART_DIR);
+        QFile service(AUTOSTART_SERVICE);
+        service.link(AUTOSTART_USER);
+    }
+    else {
+        QFile service(AUTOSTART_USER);
+        service.remove();
     }
 }

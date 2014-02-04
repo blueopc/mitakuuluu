@@ -502,11 +502,12 @@ Page {
 
             Rectangle {
                 id: presence
-                width: 10
                 height: ava.height
                 anchors.left: itemDelegate.left
+                anchors.right: ava.left
                 anchors.verticalCenter: ava.verticalCenter
-                color: model.blocked ? "#60FF0000" : (page.connectionStatus == 4 ? (model.available ? "#4000FF00" : "transparent") : "transparent")
+                color: model.blocked ? Theme.rgba(Theme.highlightDimmerColor, 0.6) : (page.connectionStatus == 4 ? (model.available ? Theme.rgba(Theme.highlightColor, 0.6) : "transparent") : "transparent")
+                smooth: true
             }
 
             AvatarHolder {

@@ -159,19 +159,42 @@ Page {
             direction = qsTr("Incoming ")
         if (model.msgtype === 3) { //media
             switch (model.mediatype) {
-            case 1: return direction + qsTr("picture ") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 2: return direction + qsTr("audio ") + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 3: return direction + qsTr("video ") + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 4: return direction + qsTr("contact ") + model.medianame
-            case 5: return direction + qsTr("location ") + qsTr("LAT: %1").arg(model.medialon) + qsTr(" LON: %1").arg(model.medialat)
+            case 1: return (fromMe ? qsTr("Outgoing picture ") : qsTr("Incoming picture ")) + model.medianame + " " + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 2: return (fromMe ? qsTr("Outgoing audio ") : qsTr("Incoming audio ")) + model.medianame + " " + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 3: return (fromMe ? qsTr("Outgoing video ") : qsTr("Incoming video ")) + model.medianame + " " + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 4: return (fromMe ? qsTr("Outgoing contact ") : qsTr("Incoming contact ")) + model.medianame
+            case 5: return (fromMe ? qsTr("Outgoing location ") : qsTr("Incoming location ")) + model.medianame + " " + qsTr("LAT: %1").arg(model.medialon) + qsTr(" LON: %1").arg(model.medialat)
             default: return direction + "unknown media"
             }
         }
         else if (model.msgtype === 2) {
             return Utilities.linkify(Utilities.emojify(model.message, emojiPath))
         }
+        else if (model.msgtype === 100) {
+            switch (model.msgstatus) {
+            case 0: return qsTr("Joined group").arg(roster.getNicknameByJid(model.author))
+            case 1: return qsTr("Left group").arg(roster.getNicknameByJid(model.author))
+            case 2: return qsTr("Changed group subject to: %1").arg(model.message)
+            case 3: return qsTr("Changed group avatar").arg(roster.getNicknameByJid(model.author))
+            default: return "unknown notification"
+            }
+        }
         else {
             return qsTr("System message.")
+        }
+    }
+
+    function getMediaPreview(model) {
+        if (model.mediatype == 1) {
+            if (model.localurl.length > 0) {
+                return model.localurl
+            }
+            else {
+                return "data:" + model.mediamime + ";base64," + model.mediathumb
+            }
+        }
+        else {
+            return "data:image/jpeg;base64," + model.mediathumb
         }
     }
 
@@ -334,7 +357,7 @@ Page {
                     GradientStop { position: 0.0; color: "transparent" }
                     GradientStop {
                         position: 1.0
-                        color: page.blocked ? "#40FF0000" : (roster.connectionStatus == 4 ? (page.available ? "#4000FF00" : "transparent") : "transparent")
+                        color: page.blocked ? Theme.rgba(Theme.highlightDimmerColor, 0.6) : (roster.connectionStatus == 4 ? (page.available ? Theme.rgba(Theme.highlightColor, 0.6) : "transparent") : "transparent")
                     }
                 }
             }

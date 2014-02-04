@@ -1,10 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fur" version="2.0">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="en_GB" version="2.0">
 <context>
     <name/>
     <message id="components-he-dialog_accept">
         <location filename="../persecute2/qml/DialogRowsHeader.qml" line="53"/>
         <source>Accept</source>
-        <translation>Acetâ</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -13,47 +13,47 @@
         <location filename="../persecute2/qml/Account.qml" line="67"/>
         <location filename="../persecute2/qml/Account.qml" line="244"/>
         <source>Delete everything</source>
-        <translation>Tirâ vie dut</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="74"/>
         <source>Remove account</source>
-        <translation>Netâ vie account</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="77"/>
         <source>Remove current account</source>
-        <translation>Netâ vie chest account</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="91"/>
         <source>Account</source>
-        <translation>Account</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="92"/>
         <source>Save</source>
-        <translation>Salvâ</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="97"/>
         <source>Nickname:</source>
-        <translation>Non utent:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="129"/>
         <source>Status:</source>
-        <translation>Stât:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="161"/>
         <source>Created: %1</source>
-        <translation>Creazion: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="175"/>
         <source>Expiration: %1</source>
-        <translation>Tiermit: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="189"/>
@@ -68,22 +68,22 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="203"/>
         <source>Account type: %1</source>
-        <translation>Specie di account: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="245"/>
         <source>Delete!</source>
-        <translation>Tirâ vie!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="253"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
-        <translation>Quest&apos;azione eliminerà il tuo account dai server di WhatsApp, le informazioni di accesso, le conversazioni e i contatti. I file multimediali scaricati saranno mantenuti.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="319"/>
         <source>Select</source>
-        <translation>Cerni</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -91,17 +91,17 @@
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="35"/>
         <source>Add contact</source>
-        <translation>Ğontâ persone</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="51"/>
         <source>1234567890</source>
-        <translation>1234567890</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/AddContact.qml" line="69"/>
         <source>Enter contact name here</source>
-        <translation>Scrivi chi il non</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -109,22 +109,22 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="39"/>
         <source>Add contact</source>
-        <translation>Ğontâ persone</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="52"/>
         <source>Send broadcast</source>
-        <translation>Mandâ messağ multipli</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="151"/>
         <source>Enter your message here...</source>
-        <translation>Scrivi chi il to messağ...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="187"/>
         <source>Select media</source>
-        <translation>Cerni file multimediale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="215"/>
@@ -171,17 +171,17 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2072"/>
         <source>Mitakuuluu share</source>
-        <translation>Spartî Mitakuuluu</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2072"/>
         <source>Can&apos;t share media when offline</source>
-        <translation>Messağ no spedît: internet distacât</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="2823"/>
         <source>%1 unread messages</source>
-        <translation>%1 messaği no lèti</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -189,37 +189,37 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="46"/>
         <source>Media uploading started</source>
-        <translation>File multimediale spedît</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
         <source>n/a</source>
-        <translation>n/a</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
         <source>S</source>
-        <translation>S</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
         <source>M</source>
-        <translation>M</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="148"/>
         <source>H</source>
-        <translation>O</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="157"/>
         <source>Outgoing </source>
-        <translation>Spedît</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="159"/>
         <source>Incoming </source>
-        <translation>Ricevut</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>picture </source>
@@ -284,12 +284,12 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source>LAT: %1</source>
-        <translation>LAT: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source> LON: %1</source>
-        <translation>LON: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="166"/>
@@ -324,23 +324,23 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="183"/>
         <source>System message.</source>
-        <translation>Messağ di sistema.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="297"/>
         <source>Send media</source>
-        <translation>Mandă file multimediale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="306"/>
         <location filename="../persecute2/qml/Conversation.qml" line="309"/>
         <source>Remove all messages</source>
-        <translation>Netâ vie dut i messaği</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="320"/>
         <source>Profile</source>
-        <translation>Profilo</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="328"/>
@@ -365,17 +365,17 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="340"/>
         <source>Load old conversation</source>
-        <translation>Plui vieri...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="505"/>
         <source>New message</source>
-        <translation>Gnûv messağ</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="540"/>
         <source>Tap here to enter message</source>
-        <translation>Scrivi chi il to messağ</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="652"/>
@@ -385,17 +385,17 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="673"/>
         <source>Select media type</source>
-        <translation>Cerni file multimediale</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="698"/>
         <source>Select video</source>
-        <translation>Selezionâ film</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="713"/>
         <source>Select audio</source>
-        <translation>Selezionâ mùsiche</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -403,17 +403,17 @@
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="34"/>
         <source>Unread messages: %1</source>
-        <translation>%1 messaği no lèti</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="34"/>
         <source>No unread messages</source>
-        <translation>Niun gnûv messağ</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="34"/>
         <source>Registration</source>
-        <translation>Registrazion</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/CoverPage.qml" line="34"/>
@@ -474,17 +474,17 @@
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="73"/>
         <source>Forward to group</source>
-        <translation>Mandă a grop</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="84"/>
         <source>Add contact</source>
-        <translation>Ğontâ persone</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="96"/>
         <source>Forward</source>
-        <translation>Mandă</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Forward.qml" line="157"/>
@@ -497,37 +497,37 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="122"/>
         <source>Add contacts</source>
-        <translation>Ğontâ personis</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="138"/>
         <source>Group profile</source>
-        <translation>Profilo del grop</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="149"/>
         <source>Subject: </source>
-        <translation>Non:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="206"/>
         <source>Owner: %1</source>
-        <translation>Paron: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="220"/>
         <source>Creation: %1</source>
-        <translation>Creât il: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="234"/>
         <source>Subject by: %1</source>
-        <translation>Non butât jù da: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="248"/>
         <source>Subject set: %1</source>
-        <translation>Non impuestât: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="276"/>
@@ -537,12 +537,12 @@
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="307"/>
         <source>Fetching participants...</source>
-        <translation>Recuperâ personis...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/GroupProfile.qml" line="422"/>
         <source>Select</source>
-        <translation>Cerni</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -550,7 +550,7 @@
     <message>
         <location filename="../persecute2/qml/InteractionArea.qml" line="86"/>
         <source>Error loading image</source>
-        <translation>Erôr</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -558,17 +558,17 @@
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="43"/>
         <source>Add group</source>
-        <translation>Gnûv grop</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="57"/>
         <source>Muted groups</source>
-        <translation>Blocâ notifiche</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/MutedGroups.qml" line="75"/>
         <source>No muted groups</source>
-        <translation>Niun grop blocât</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -576,32 +576,32 @@
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="48"/>
         <source>Add number</source>
-        <translation>Ğontâ numar</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="56"/>
         <source>Select contacts</source>
-        <translation>Cerni personis</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="70"/>
         <source>Blacklist</source>
-        <translation>Liste neri</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="96"/>
         <source>Blacklist is empty</source>
-        <translation>La liste neri se vueit</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="124"/>
         <source>Add to blacklist</source>
-        <translation>Ğontâ ala liste neri</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/PrivacyList.qml" line="139"/>
         <source>1234567890</source>
-        <translation>1234567890</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -611,98 +611,93 @@
         <source>Registration failed
 
 </source>
-        <translation>Registrazio mančhât
-
-</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="32"/>
         <source>Account expired
 </source>
-        <translation>Account disčhadit
-</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="39"/>
         <source>No exists information for your account.</source>
-        <translation>No esisti informazione tal account.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="44"/>
         <source>Code request failed
 
 </source>
-        <translation>Domandâ codis no riešude
-
-</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="52"/>
         <source>Activation code requested. Wait for %1 soon</source>
-        <translation>Codis clamât, spietâ %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="52"/>
         <source>sms message</source>
-        <translation>messağ SMS</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="52"/>
         <source>voice call</source>
-        <translation>clamade al Telefon</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="59"/>
         <location filename="../persecute2/qml/Register.qml" line="304"/>
         <source>Registering account...</source>
-        <translation>Registrazion account...</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="65"/>
         <source>Successfully registered in WhatsApp!</source>
-        <translation>Registrazion WhatsApp riešude!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="127"/>
         <location filename="../persecute2/qml/Register.qml" line="193"/>
         <location filename="../persecute2/qml/Register.qml" line="321"/>
         <source>Registration</source>
-        <translation>Registrazion</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="181"/>
         <source>Checking account...</source>
-        <translation>Verificâ account</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="221"/>
         <source>Enter phone number here</source>
-        <translation>Scrivi chi il to numar</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="248"/>
         <source>SMS</source>
-        <translation>SMS</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="262"/>
         <source>Voice</source>
-        <translation>Clamade</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="286"/>
         <source>I have registration code</source>
-        <translation>O ài ğa il codis</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="331"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
-        <translation>Parâ il cordis di registrazione. 6 numars no &quot;-&quot;</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="344"/>
         <source>Tap here to enter code</source>
-        <translation>Scrivi chi il to codis</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -710,7 +705,7 @@
     <message>
         <location filename="../persecute2/qml/RemovePage.qml" line="25"/>
         <source>Quit</source>
-        <translation>Saltâ fûr</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -718,7 +713,7 @@
     <message>
         <location filename="../persecute2/qml/ResizePicture.qml" line="32"/>
         <source>Resize picture</source>
-        <translation>Ridimensiona figure</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -734,7 +729,7 @@
     <message>
         <location filename="../persecute2/qml/Roster.qml" line="74"/>
         <source>Media uploading failed!</source>
-        <translation>File multimediale mančhât!</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <source>Unknown</source>
@@ -1142,7 +1137,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="208"/>
         <source>%1 px</source>
-        <translation>%1 px</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="218"/>
@@ -1229,7 +1224,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="412"/>
         <source>%1 MPx</source>
-        <translation>%1 MPx</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1285,27 +1280,27 @@
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>n/a</source>
-        <translation>n/a</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>bytes</source>
-        <translation>byte</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>KiB</source>
-        <translation>KiB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>MiB</source>
-        <translation>MiB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="57"/>
         <source>GiB</source>
-        <translation>GiB</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 </TS>

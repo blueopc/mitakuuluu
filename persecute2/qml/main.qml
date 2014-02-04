@@ -40,8 +40,8 @@ ApplicationWindow {
 
     function profileAction(jid) {
         if (jid.indexOf("-") !== -1) {
-            groupPage.loadContact(roster.getContactModel(jid))
             pageStack.push(groupPage)
+            groupPage.loadContact(roster.getContactModel(jid))
         }
         else {
             if (jid == roster.myJid)

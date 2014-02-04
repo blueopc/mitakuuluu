@@ -114,8 +114,6 @@ Page {
     SilicaFlickable {
         id: flickable
         anchors.fill: page
-        anchors.leftMargin: Theme.paddingMedium
-        anchors.rightMargin: Theme.paddingMedium
 
         PullDownMenu {
             MenuItem {
@@ -142,7 +140,7 @@ Page {
         Label {
             id: subjectLabel
             anchors.left: parent.left
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             wrapMode: Text.NoWrap
             anchors.top: subjectArea.top
             anchors.topMargin: Theme.paddingSmall
@@ -161,6 +159,7 @@ Page {
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
             EnterKey.onClicked: {
                 whatsapp.setGroupSubject(page.jid, text.trim())
+                hsubject = text.trim()
                 subjectArea.focus = false
                 page.forceActiveFocus()
             }
@@ -182,7 +181,7 @@ Page {
             anchors.top: subjectArea.bottom
             anchors.topMargin: - Theme.paddingLarge
             anchors.left: parent.left
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             source: page.avatar
         }
 
@@ -206,9 +205,9 @@ Page {
             anchors.top: subjectArea.bottom
             anchors.topMargin: - Theme.paddingLarge
             anchors.right: page.isPortrait ? parent.right : listView.left
-            anchors.rightMargin: Theme.paddingSmall
+            anchors.rightMargin: Theme.paddingMedium
             anchors.left: ava.right
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             wrapMode: Text.NoWrap
             horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
             font.pixelSize: Theme.fontSizeExtraSmall
@@ -220,9 +219,9 @@ Page {
             anchors.top: labelOwner.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.right: page.isPortrait ? parent.right : listView.left
-            anchors.rightMargin: Theme.paddingSmall
+            anchors.rightMargin: Theme.paddingMedium
             anchors.left: ava.right
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             wrapMode: Text.NoWrap
             horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
             font.pixelSize: Theme.fontSizeExtraSmall
@@ -234,9 +233,9 @@ Page {
             anchors.top: labelCreation.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.right: page.isPortrait ? parent.right : listView.left
-            anchors.rightMargin: Theme.paddingSmall
+            anchors.rightMargin: Theme.paddingMedium
             anchors.left: ava.right
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             wrapMode: Text.NoWrap
             horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
             font.pixelSize: Theme.fontSizeExtraSmall
@@ -248,9 +247,9 @@ Page {
             anchors.top: subjectOwner.bottom
             anchors.topMargin: Theme.paddingSmall
             anchors.right: page.isPortrait ? parent.right : listView.left
-            anchors.rightMargin: Theme.paddingSmall
+            anchors.rightMargin: Theme.paddingMedium
             anchors.left: ava.right
-            anchors.leftMargin: Theme.paddingSmall
+            anchors.leftMargin: Theme.paddingMedium
             wrapMode: Text.NoWrap
             horizontalAlignment: page.isPortrait ? Text.AlignRight : Text.AlignLeft
             font.pixelSize: Theme.fontSizeExtraSmall
@@ -302,10 +301,14 @@ Page {
 
         Label {
             anchors.top: busy.bottom
-            anchors.horizontalCenter: busy.horizontalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: Theme.paddingMedium
+            anchors.right: parent.right
+            anchors.rightMargin: Theme.paddingMedium
             text: qsTr("Fetching participants...")
             font.pixelSize: Theme.fontSizeSmall
             color: Theme.secondaryHighlightColor
+            horizontalAlignment: Text.AlignHCenter
             visible: listView.count == 0
         }
     }

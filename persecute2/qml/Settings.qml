@@ -121,11 +121,9 @@ Page {
             TextSwitch {
                 checked: notifyActive
                 text: qsTr("Vibrate in active conversation")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        notifyActive = checked
-                        settings.setValue("notifyActive", checked)
-                    }
+                onClicked: {
+                    notifyActive = checked
+                    settings.setValue("notifyActive", checked)
                 }
             }
 
@@ -133,11 +131,9 @@ Page {
                 id: timestamp
                 checked: showTimestamp
                 text: qsTr("Show messages timestamp")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        showTimestamp = checked
-                        settings.setValue("showTimestamp", checked)
-                    }
+                onClicked: {
+                    showTimestamp = checked
+                    settings.setValue("showTimestamp", checked)
                 }
             }
 
@@ -146,11 +142,9 @@ Page {
                 checked: showSeconds
                 text: qsTr("Show seconds in messages timestamp")
                 enabled: showTimestamp
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        showSeconds = checked
-                        settings.setValue("showSeconds", checked)
-                    }
+                onClicked: {
+                    showSeconds = checked
+                    settings.setValue("showSeconds", checked)
                 }
             }
 
@@ -158,11 +152,9 @@ Page {
                 id: enter
                 checked: sendByEnter
                 text: qsTr("Send messages by Enter")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        sendByEnter = checked
-                        settings.setValue("sendByEnter", checked)
-                    }
+                onClicked: {
+                    sendByEnter = checked
+                    settings.setValue("sendByEnter", checked)
                 }
             }
 
@@ -170,11 +162,9 @@ Page {
                 checked: showKeyboard
                 text: qsTr("Show keyboard automatically")
                 description: qsTr("Automatically show keyboard when opening conversation")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        showKeyboard = checked
-                        settings.setValue("showKeyboard", checked)
-                    }
+                onClicked: {
+                    showKeyboard = checked
+                    settings.setValue("showKeyboard", checked)
                 }
             }
 
@@ -243,25 +233,30 @@ Page {
             }
 
             TextSwitch {
+                id: autostart
+                checked: whatsapp.checkAutostart()
+                text: qsTr("Autostart")
+                onClicked: {
+                    whatsapp.setAutostart(checked)
+                }
+            }
+
+            TextSwitch {
                 id: showMyself
                 checked: showMyJid
                 text: qsTr("Show yourself in contact list, if present")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        showMyJid = checked
-                        settings.setValue("showMyJid", checked)
-                    }
+                onClicked: {
+                    showMyJid = checked
+                    settings.setValue("showMyJid", checked)
                 }
             }
 
             TextSwitch {
                 checked: acceptUnknown
                 text: qsTr("Accept messages from unknown contacts")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        acceptUnknown = checked
-                        settings.setValue("acceptUnknown", checked)
-                    }
+                onClicked: {
+                    acceptUnknown = checked
+                    settings.setValue("acceptUnknown", checked)
                 }
             }
 
@@ -345,14 +340,12 @@ Page {
             TextSwitch {
                 checked: resizeImages
                 text: qsTr("Resize sending images")
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        resizeImages = checked
-                        settings.setValue("resizeImages", checked)
-                        if (!checked) {
-                            sizeResize.checked = false
-                            pixResize.checked = false
-                        }
+                onClicked: {
+                    resizeImages = checked
+                    settings.setValue("resizeImages", checked)
+                    if (!checked) {
+                        sizeResize.checked = false
+                        pixResize.checked = false
                     }
                 }
             }

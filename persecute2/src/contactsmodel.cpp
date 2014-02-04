@@ -106,15 +106,12 @@ QVariantMap ContactsModel::get(int index)
     return _modelData[jid];
 }
 
-QColor ContactsModel::getColorForJid(const QString &jid, bool inverted)
+QColor ContactsModel::getColorForJid(const QString &jid)
 {
     if (!_colors.keys().contains(jid))
         _colors[jid] = generateColor();
     QColor color = _colors[jid];
-    if (inverted)
-        color.setAlpha(96);
-    else
-        color.setAlpha(40);
+    color.setAlpha(96);
     return color;
 }
 
@@ -528,7 +525,7 @@ void ContactsModel::setFiltering(bool newFiltering)
 
 void ContactsModel::setUnread(const QString &jid, int count)
 {
-    if (_activeJid != jid)
+    //if (_activeJid != jid)
         setPropertyByJid(jid, "unread", count);
 }
 
