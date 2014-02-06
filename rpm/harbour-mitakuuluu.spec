@@ -9,7 +9,7 @@ Name:       harbour-mitakuuluu
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
 Version:    0.1
-Release:    25
+Release:    27
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
@@ -59,6 +59,7 @@ mkdir -p %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wa
 touch %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
 mkdir -p %{buildroot}/home/nemo/.whatsapp
 touch %{buildroot}/home/nemo/.whatsapp/whatsapp.log
+touch %{buildroot}/home/nemo/.whatsapp/whatsapp.db
 mkdir -p %{buildroot}/home/nemo/.whatsapp/logs
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log1.tar.gz
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log2.tar.gz
@@ -99,6 +100,11 @@ killall harbour-mitakuuluu
 fi
 # << preun
 
+%post
+# >> post
+chown -R nemo:privileged /home/nemo/.whatsapp
+# << post
+
 %files
 %defattr(-,root,root,-)
 %{_datadir}/dbus-1/services
@@ -108,10 +114,12 @@ fi
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/themes/base/meegotouch/icons/
 %{_datadir}/%{name}
+#/usr/lib/qt5/qml/org/harbour-mitakuuluu/filemodel/
 /etc/systemd/user/
 %{_bindir}
 %ghost /home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
 %ghost /home/nemo/.whatsapp/whatsapp.log
+%ghost /home/nemo/.whatsapp/whatsapp.db
 %ghost /home/nemo/.whatsapp/logs/whatsapp_log1.tar.gz
 %ghost /home/nemo/.whatsapp/logs/whatsapp_log2.tar.gz
 %ghost /home/nemo/.whatsapp/logs/whatsapp_log3.tar.gz

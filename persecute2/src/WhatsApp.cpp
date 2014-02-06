@@ -124,6 +124,8 @@ WhatsApp::WhatsApp(QObject *parent): QObject(parent)
                                           "groupsMuted", this, SIGNAL(groupsMuted(QStringList)));
     QDBusConnection::sessionBus().connect(SERVER_SERVICE, SERVER_PATH, SERVER_INTERFACE,
                                           "codeReceived", this, SIGNAL(codeReceived()));
+    QDBusConnection::sessionBus().connect(SERVER_SERVICE, SERVER_PATH, SERVER_INTERFACE,
+                                          "dissectError", this, SIGNAL(dissectError()));
     //QDBusReply<int> reply = iface->call(QDBus::AutoDetect, "currentStatus");
     //_online = reply.value() == 3;
 
@@ -432,8 +434,6 @@ void WhatsApp::shutdown()
 {
     if (iface)
         iface->call(QDBus::NoBlock, "exit");
-    system("killall -9 harbour-mitakuuluu-server");
-    exit();
 }
 
 bool WhatsApp::isCrashed()

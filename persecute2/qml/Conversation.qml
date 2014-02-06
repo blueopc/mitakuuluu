@@ -271,13 +271,19 @@ Page {
             }
         }
         onContactsBlocked: {
-            if (!page.isGroup && (list.indexOf(page.jid) !== -1)) {
-                page.blocked = true
+            if (!page.isGroup) {
+                if  (list.indexOf(page.jid) !== -1)
+                    page.blocked = true
+                else
+                    page.blocked = false
             }
         }
         onGroupsMuted: {
-            if (page.isGroup && (jids.indexOf(page.jid) !== -1)) {
-                page.blocked = true
+            if (page.isGroup) {
+                if  (jids.indexOf(page.jid) !== -1)
+                    page.blocked = true
+                else
+                    page.blocked = false
             }
         }
     }
@@ -292,6 +298,16 @@ Page {
         pressDelay: 0
 
         PullDownMenu {
+            MenuItem {
+                text: page.blocked ? (page.isGroup ? qsTr("Unmute") : qsTr("Unblock"))
+                                   : (page.isGroup ? qsTr("Mute") : qsTr("Block"))
+                onClicked: {
+                    if (page.isGroup)
+                        whatsapp.muteOrUnmuteGroup(page.jid)
+                    else
+                        whatsapp.blockOrUnblockContact(page.jid)
+                }
+            }
             MenuItem {
                 id: mediaSend
                 text: qsTr("Send media")
@@ -321,17 +337,6 @@ Page {
                 enabled: (roster.connectionStatus == 4) ? true : (page.jid.indexOf("-") == -1)
                 onClicked: {
                     profileAction(page.jid)
-                }
-            }
-
-            MenuItem {
-                text: page.blocked ? (page.isGroup ? qsTr("Unmute") : qsTr("Unblock"))
-                                   : (page.isGroup ? qsTr("Mute") : qsTr("Block"))
-                onClicked: {
-                    if (page.isGroup)
-                        whatsapp.muteOrUnmuteGroup(page.jid)
-                    else
-                        whatsapp.blockOrUnblockContact(page.jid)
                 }
             }
 

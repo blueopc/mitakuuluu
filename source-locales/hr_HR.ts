@@ -159,27 +159,27 @@
 <context>
     <name>Client</name>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="931"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="920"/>
         <source>Connected</source>
         <translation>Spojeno</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="1775"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1715"/>
         <source>Disconnected</source>
         <translation>Odspojeno</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2072"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2012"/>
         <source>Mitakuuluu share</source>
         <translation>Mitakuuluu dijeljenje</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2072"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2012"/>
         <source>Can&apos;t share media when offline</source>
         <translation>Ne može se dijeliti sadržaj kad nije na mreži</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2823"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2767"/>
         <source>%1 unread messages</source>
         <translation>%1 nepročitane poruke</translation>
     </message>
@@ -495,52 +495,52 @@
 <context>
     <name>GroupProfile</name>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="122"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="120"/>
         <source>Add contacts</source>
         <translation>Dodaj kontakte</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="138"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="136"/>
         <source>Group profile</source>
         <translation>Profil grupe</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="149"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="147"/>
         <source>Subject: </source>
         <translation>Naziv:</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="206"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="204"/>
         <source>Owner: %1</source>
         <translation>Vlasnik: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="220"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="218"/>
         <source>Creation: %1</source>
         <translation>Uradak: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="234"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="232"/>
         <source>Subject by: %1</source>
         <translation>Naziv od: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="248"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="246"/>
         <source>Subject set: %1</source>
         <translation>Naziv postavljen: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="276"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="274"/>
         <source>Max group participants count reached</source>
         <translation>Dosegnut maksimalan broj grupnih sudionika</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="307"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="308"/>
         <source>Fetching participants...</source>
         <translation>Prikupljam sudionike....</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/GroupProfile.qml" line="422"/>
+        <location filename="../persecute2/qml/GroupProfile.qml" line="424"/>
         <source>Select</source>
         <translation>Odaberi</translation>
     </message>
@@ -653,7 +653,7 @@
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="59"/>
-        <location filename="../persecute2/qml/Register.qml" line="304"/>
+        <location filename="../persecute2/qml/Register.qml" line="312"/>
         <source>Registering account...</source>
         <translation>Registracija računa...</translation>
     </message>
@@ -663,44 +663,49 @@
         <translation>Uspješno registriranje za WhatsApp!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="127"/>
-        <location filename="../persecute2/qml/Register.qml" line="193"/>
-        <location filename="../persecute2/qml/Register.qml" line="321"/>
+        <location filename="../persecute2/qml/Register.qml" line="72"/>
+        <source>Cannot detect your country code. You should use international number format for registration.</source>
+        <translation>Ne mogu odrediti kod države. Trebate koristiti međunarodni format za registraciju. </translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="135"/>
+        <location filename="../persecute2/qml/Register.qml" line="201"/>
+        <location filename="../persecute2/qml/Register.qml" line="329"/>
         <source>Registration</source>
         <translation>Registracija</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="181"/>
+        <location filename="../persecute2/qml/Register.qml" line="189"/>
         <source>Checking account...</source>
         <translation>Provjera računa...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="221"/>
+        <location filename="../persecute2/qml/Register.qml" line="229"/>
         <source>Enter phone number here</source>
         <translation>Upisati broja telefona</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="248"/>
+        <location filename="../persecute2/qml/Register.qml" line="256"/>
         <source>SMS</source>
         <translation>SMS</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="262"/>
+        <location filename="../persecute2/qml/Register.qml" line="270"/>
         <source>Voice</source>
         <translation>Glas</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="286"/>
+        <location filename="../persecute2/qml/Register.qml" line="294"/>
         <source>I have registration code</source>
         <translation>Imam registracijski kod</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="331"/>
+        <location filename="../persecute2/qml/Register.qml" line="339"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
         <translation>Upisati registracijski kod. 6-znamenki, bez &apos;-&apos; znaka.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="344"/>
+        <location filename="../persecute2/qml/Register.qml" line="352"/>
         <source>Tap here to enter code</source>
         <translation>Dodirnite ovdje za unos koda</translation>
     </message>
@@ -893,27 +898,27 @@
         <translation>Ovdje napisati ime nove grupe</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="567"/>
+        <location filename="../persecute2/qml/Roster.qml" line="568"/>
         <source>Group chat</source>
         <translation>Grupni razgovor</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="594"/>
+        <location filename="../persecute2/qml/Roster.qml" line="595"/>
         <source>Delete </source>
         <translation>Obriši</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="594"/>
+        <location filename="../persecute2/qml/Roster.qml" line="595"/>
         <source>Leave group %1</source>
         <translation>Napusti grupu %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="628"/>
+        <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Profile</source>
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="636"/>
+        <location filename="../persecute2/qml/Roster.qml" line="637"/>
         <source>Refresh</source>
         <translation>Osvježi</translation>
     </message>
@@ -922,37 +927,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="644"/>
+        <location filename="../persecute2/qml/Roster.qml" line="645"/>
         <source>Rename</source>
         <translation>Uredi</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="652"/>
+        <location filename="../persecute2/qml/Roster.qml" line="653"/>
         <source>Delete</source>
         <translation>Obriši</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="652"/>
+        <location filename="../persecute2/qml/Roster.qml" line="653"/>
         <source>Leave group</source>
         <translation>Napusti grupu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="660"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Unblock</source>
         <translation>Odblokiraj</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="660"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Block</source>
         <translation>Blokiraj</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="660"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Unmute</source>
         <translation>Upali zvuk</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="660"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Mute</source>
         <translation>Ugasi zvuk</translation>
     </message>
@@ -1090,107 +1095,112 @@
         <translation>Vibracija u aktivnom razgovoru</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="135"/>
+        <location filename="../persecute2/qml/Settings.qml" line="133"/>
         <source>Show messages timestamp</source>
         <translation>Prikaz vremena pristigle popruke</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="147"/>
+        <location filename="../persecute2/qml/Settings.qml" line="143"/>
         <source>Show seconds in messages timestamp</source>
         <translation>Prikaži sekunde u vremenu pristigle poruke</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="160"/>
+        <location filename="../persecute2/qml/Settings.qml" line="154"/>
         <source>Send messages by Enter</source>
         <translation>Slanje poruke pritiskom na Enter</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="171"/>
+        <location filename="../persecute2/qml/Settings.qml" line="163"/>
         <source>Show keyboard automatically</source>
         <translation>Prikaži tipkovnicu automatski</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="172"/>
+        <location filename="../persecute2/qml/Settings.qml" line="164"/>
         <source>Automatically show keyboard when opening conversation</source>
         <translation>Prikaži tipkovnicu automatski prilikom otvaranja konverzacije</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="183"/>
+        <location filename="../persecute2/qml/Settings.qml" line="173"/>
         <source>Download media to Gallery</source>
         <translation>Skini sadržaj u Galeriju</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="184"/>
+        <location filename="../persecute2/qml/Settings.qml" line="174"/>
         <source>If checked downloaded files will be shown in Gallery</source>
         <translation>Ako je označeno, skinuti sadržaj će se prikazati u Galeriji</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="193"/>
+        <location filename="../persecute2/qml/Settings.qml" line="183"/>
         <source>Delete media files</source>
         <translation>Obrisati multimedijalne datoteke</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="194"/>
+        <location filename="../persecute2/qml/Settings.qml" line="184"/>
         <source>Delete received media files when deleting message</source>
         <translation>Obrisati primljeni sadržaj prilikom brisanja poruke</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="206"/>
+        <location filename="../persecute2/qml/Settings.qml" line="196"/>
         <source>Chat font size</source>
         <translation>Veličina fonta za poruke</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="208"/>
+        <location filename="../persecute2/qml/Settings.qml" line="198"/>
         <source>%1 px</source>
         <translation>%1 px</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="218"/>
+        <location filename="../persecute2/qml/Settings.qml" line="208"/>
         <source>Common</source>
         <translation>Uobičajeno</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="222"/>
+        <location filename="../persecute2/qml/Settings.qml" line="212"/>
         <source>Language</source>
         <translation>Jezik</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="236"/>
+        <location filename="../persecute2/qml/Settings.qml" line="226"/>
         <source>Restart application to change language</source>
         <translation>Za promjenu jezika ponovo pokrenite program</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="248"/>
+        <location filename="../persecute2/qml/Settings.qml" line="238"/>
+        <source>Autostart</source>
+        <translation>Autostart</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="247"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Prikži sebe u listi kontakata, ako postoji</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="259"/>
+        <location filename="../persecute2/qml/Settings.qml" line="256"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Prihvatiti poruke od nepoznatih kontakata</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="270"/>
+        <location filename="../persecute2/qml/Settings.qml" line="265"/>
         <source>Show notifications when connection changing</source>
         <translation>Pokaži obavijest kod promjene veze</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="296"/>
+        <location filename="../persecute2/qml/Settings.qml" line="291"/>
         <source>Display online when app is open</source>
         <translation>Prikaži online kad je program otvoren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="290"/>
+        <location filename="../persecute2/qml/Settings.qml" line="285"/>
         <source>Presence</source>
         <translation>Prisutnost</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="314"/>
+        <location filename="../persecute2/qml/Settings.qml" line="309"/>
         <source>Always display online</source>
         <translation>Uvijek prikaži online</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="329"/>
+        <location filename="../persecute2/qml/Settings.qml" line="324"/>
         <source>Always display offline</source>
         <translation>Uvijek prikaži offline</translation>
     </message>
@@ -1207,27 +1217,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="342"/>
+        <location filename="../persecute2/qml/Settings.qml" line="337"/>
         <source>Media</source>
         <translation>Sadržaj</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="347"/>
+        <location filename="../persecute2/qml/Settings.qml" line="342"/>
         <source>Resize sending images</source>
         <translation>Promijeni veličinu odlaznih slika</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="379"/>
+        <location filename="../persecute2/qml/Settings.qml" line="372"/>
         <source>Maximum image size by file size</source>
         <translation>Maksimalna veličina slike prema veličini datoteke</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="410"/>
+        <location filename="../persecute2/qml/Settings.qml" line="403"/>
         <source>Maximum image size by resolution</source>
         <translation>Maksimalna veličina slike prema rezoluciji</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="412"/>
+        <location filename="../persecute2/qml/Settings.qml" line="405"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>

@@ -1,5 +1,10 @@
 TEMPLATE = subdirs
-SUBDIRS = whatsapp-server persecute2# shareui
+SUBDIRS = \
+    whatsapp-server \
+    persecute2 \
+    #shareui \
+    #filemodel \
+    $${NULL}
 
 locales.files = \
     locales/af_ZA.qm \

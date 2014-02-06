@@ -68,6 +68,14 @@ Page {
             codeArea.text = ""
             pageStack.replace(roster)
         }
+        onDissectError: {
+            banner.notify(qsTr("Cannot detect your country code. You should use international number format for registration."))
+            busyIndicator.visible = false
+            errorArea.visible = true
+            phoneField.text = ""
+            codeArea.text = ""
+            phoneDialog.open(false, PageStackAction.Immediate)
+        }
     }
 
     function parseServerReply(reply) {

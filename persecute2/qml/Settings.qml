@@ -293,8 +293,10 @@ Page {
                     if (checked)
                         presence.hideAll()
                     checked = true
-                    followPresence = checked
                     settings.setValue("followPresence", checked)
+                    followPresence = checked
+                    settings.setValue("alwaysOffline", false)
+                    alwaysOffline = false
                 }
                 function hideAll() {
                     presence.checked = false
@@ -313,6 +315,8 @@ Page {
                     checked = true
                     settings.setValue("alwaysOffline", !checked)
                     alwaysOffline = !checked
+                    settings.setValue("followPresence", false)
+                    followPresence = false
                     if (checked)
                         whatsapp.setPresenceAvailable()
                 }
@@ -328,6 +332,8 @@ Page {
                     checked = true
                     settings.setValue("alwaysOffline", checked)
                     alwaysOffline = checked
+                    settings.setValue("followPresence", false)
+                    followPresence = false
                     if (checked)
                         whatsapp.setPresenceUnavailable()
                 }

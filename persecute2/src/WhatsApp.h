@@ -104,6 +104,7 @@ signals:
     void uploadMediaFailed(QString mjid, QString msgId);
     void groupsMuted(QStringList jids);
     void codeReceived();
+    void dissectError();
 
 public slots:
     void exit();

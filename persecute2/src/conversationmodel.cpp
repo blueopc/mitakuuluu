@@ -18,6 +18,7 @@ ConversationModel::ConversationModel(QObject *parent) :
     _roles[MessagetypeRole] = "msgtype";
     _roles[MessagestatusRole] = "msgstatus";
     _roles[MediatypeRole] = "mediatype";
+    _roles[MedianameRole] = "medianame";
     _roles[MediaurlRole] = "mediaurl";
     _roles[MediaLatitudeRole] = "medialat";
     _roles[MediaLongitudeRole] = "medialon";

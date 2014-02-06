@@ -20,7 +20,6 @@ MouseArea {
     Rectangle {
         id: bg
         anchors.fill: parent
-        color: Theme.secondaryHighlightColor
     }
 
     Timer {
@@ -47,7 +46,7 @@ MouseArea {
         if (color && (typeof(color) != "undefined"))
             bg.color = color
         else
-            bg.color = Theme.secondaryHighlightColor
+            bg.color = Theme.rgba(Theme.secondaryHighlightColor, 0.8)
         show()
     }
 

@@ -103,7 +103,8 @@ int main(int argc, char *argv[])
 {
     setuid(getpwnam("nemo")->pw_uid);
     setgid(getgrnam("privileged")->gr_gid);
-    //signal(SIGUSR1, quitHandler);
+    if (!QDir("/home/nemo/.whatsapp").exists())
+        QDir().mkpath("/home/nemo/.whatsapp");
     qInstallMessageHandler(messageHandler);
     qDebug() << "Starting application";
     QGuiApplication *app = SailfishApp::application(argc, argv);
