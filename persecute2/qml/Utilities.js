@@ -408,7 +408,8 @@ var softbank_replacer = {
     '\uD83D\uDC78':'\uE51C', // Unified: 1F478
     '\uD83D\uDC82':'\uE51E', // Unified: 1F482
     '\uD83D\uDC80':'\uE11C', // Unified: 1F480
-    '\uD83D\uDC3E':'\uE536', // Unified: 1F43E
+//    '\uD83D\uDC3E':'\uE536', // Unified: 1F43E
+    '\uD83D\uDC63':'\uE536', // Unified: 1F463
     '\uD83D\uDC8B':'\uE003', // Unified: 1F48B
     '\uD83D\uDC44':'\uE41C', // Unified: 1F444
     '\uD83D\uDC42':'\uE41B', // Unified: 1F442
@@ -545,7 +546,8 @@ var softbank_replacer = {
     '\uD83C\uDC04':'\uE12D', // Unified: 1F004
     '\uD83C\uDFAC':'\uE324', // Unified: 1F3AC
     '\uD83D\uDCDD':'\uE301', // Unified: 1F4DD
-    '\uD83D\uDCD3':'\uE148', // Unified: 1F4D3
+//    '\uD83D\uDCD3':'\uE148', // Unified: 1F4D3
+    '\uD83D\uDCD6':'\uE148', // Unified: 1F4D6
     '\uD83C\uDFA8':'\uE502', // Unified: 1F3A8
     '\uD83C\uDFA4':'\uE03C', // Unified: 1F3A4
     '\uD83C\uDFA7':'\uE30A', // Unified: 1F3A7
@@ -553,7 +555,8 @@ var softbank_replacer = {
     '\uD83C\uDFB7':'\uE040', // Unified: 1F3B7
     '\uD83C\uDFB8':'\uE041', // Unified: 1F3B8
     '\u303D':'\uE12C', // Unified: 303D
-    '\uD83D\uDC5E':'\uE007', // Unified: 1F45E
+//    '\uD83D\uDC5E':'\uE007', // Unified: 1F45E
+    '\uD83D\uDC5F':'\uE007', // Unicode: 1F45F
     '\uD83D\uDC61':'\uE31A', // Unified: 1F461
     '\uD83D\uDC60':'\uE13E', // Unified: 1F460
     '\uD83D\uDC62':'\uE31B', // Unified: 1F462
@@ -634,6 +637,7 @@ var softbank_replacer = {
     '\uD83C\uDFA1':'\uE124', // Unified: 1F3A1
     '\u26F2':'\uE121', // Unified: 26F2
     '\uD83C\uDFA2':'\uE433', // Unified: 1F3A2
+    '\uD83D\uDCA6':'\uE331', // Unified: 1F4A6
     '\uD83D\uDEA2':'\uE202', // Unified: 1F6A2
     '\uD83D\uDEA4':'\uE135', // Unified: 1F6A4
     '\u26F5':'\uE01C', // Unified: 26F5
