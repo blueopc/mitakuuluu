@@ -25,9 +25,6 @@ bool lessThan(const QVariant &v1, const QVariant &v2) {
 WhatsApp::WhatsApp(QObject *parent): QObject(parent)
 {
     nam = new QNetworkAccessManager(this);
-    _active = false;
-    _online = true;
-    _network = false;
     _pendingJid = QString();
 
     qDebug() << "Connecting to DBus signals";
@@ -126,8 +123,8 @@ WhatsApp::WhatsApp(QObject *parent): QObject(parent)
                                           "codeReceived", this, SIGNAL(codeReceived()));
     QDBusConnection::sessionBus().connect(SERVER_SERVICE, SERVER_PATH, SERVER_INTERFACE,
                                           "dissectError", this, SIGNAL(dissectError()));
-    //QDBusReply<int> reply = iface->call(QDBus::AutoDetect, "currentStatus");
-    //_online = reply.value() == 3;
+    QDBusConnection::sessionBus().connect(SERVER_SERVICE, SERVER_PATH, SERVER_INTERFACE,
+                                          "logfileReady", this, SIGNAL(logfileReady(QByteArray, bool)));
 
     Q_EMIT ready();
 }
@@ -146,7 +143,6 @@ int WhatsApp::connectionStatus()
 {
     if (iface) {
         QDBusReply<int> reply = iface->call(QDBus::AutoDetect, "currentStatus");
-        //qDebug() << "connectionStatus:" << reply.value();
         return reply.value();
     }
     return 0;
@@ -209,9 +205,14 @@ QString WhatsApp::shouldOpenJid()
 QString WhatsApp::getMyAccount()
 {
     if (iface) {
-        QDBusReply<QString> reply = iface->call(QDBus::AutoDetect, "getMyAccount");
-        //qDebug() << "my account:" << reply.value();
-        return reply.value();
+        QDBusPendingCall async = iface->asyncCall("getMyAccount");
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(async, this);
+        if (watcher->isFinished()) {
+           onMyAccount(watcher);
+        }
+        else {
+            QObject::connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)),this, SLOT(onMyAccount(QDBusPendingCallWatcher*)));
+        }
     }
     return QString();
 }
@@ -226,16 +227,6 @@ void WhatsApp::endTyping(const QString &jid)
 {
     if (iface)
         iface->call(QDBus::NoBlock, "endTyping", jid);
-}
-
-bool WhatsApp::getAvailable(const QString &jid)
-{
-    if (iface) {
-        QDBusReply<bool> reply = iface->call(QDBus::AutoDetect, "getAvailable", jid);
-        //qDebug() << "Get" << jid << "available from server:" << reply.value();
-        return reply.value();
-    }
-    return false;
 }
 
 void WhatsApp::downloadMedia(const QString &msgId, const QString &jid)
@@ -434,15 +425,22 @@ void WhatsApp::shutdown()
 {
     if (iface)
         iface->call(QDBus::NoBlock, "exit");
+    system("killall -9 harbour-mitakuuluu-server");
+    system("killall -9 harbour-mitakuuluu");
 }
 
-bool WhatsApp::isCrashed()
+void WhatsApp::isCrashed()
 {
     if (iface) {
-        QDBusReply<bool> reply = iface->call(QDBus::AutoDetect, "isCrashed");
-        return reply.value();
+        QDBusPendingCall async = iface->asyncCall("isCrashed");
+        QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(async, this);
+        if (watcher->isFinished()) {
+           onReplyCrashed(watcher);
+        }
+        else {
+            QObject::connect(watcher, SIGNAL(finished(QDBusPendingCallWatcher*)),this, SLOT(onReplyCrashed(QDBusPendingCallWatcher*)));
+        }
     }
-    return false;
 }
 
 void WhatsApp::requestLastOnline(const QString &jid)
@@ -458,34 +456,30 @@ void WhatsApp::addPhoneNumber(const QString &name, const QString &phone)
     }
 }
 
-QStringList WhatsApp::getDownloads()
+void WhatsApp::onReplyCrashed(QDBusPendingCallWatcher *call)
 {
-    if (iface) {
-        QDBusReply<QStringList> reply = iface->call(QDBus::AutoDetect, "getDownloads");
-        if (reply.isValid()) {
-            return reply.value();
-        }
+    bool value = false;
+    QDBusPendingReply<bool> reply = *call;
+    if (reply.isError()) {
+        qDebug() << "error:" << reply.error().name() << reply.error().message();
+    } else {
+        value = reply.argumentAt<0>();
     }
-    return QStringList();
+    Q_EMIT replyCrashed(value);
+    call->deleteLater();
 }
 
-bool WhatsApp::isActive()
+void WhatsApp::onMyAccount(QDBusPendingCallWatcher *call)
 {
-    return _active;
-}
-
-bool WhatsApp::isOnline()
-{
-    //QDBusReply<int> reply = iface->call(QDBus::AutoDetect, "currentStatus");
-    //_online = reply.value() == 4;
-    return true;
-}
-
-bool WhatsApp::isNetwork()
-{
-    QDBusReply<bool> reply = iface->call(QDBus::AutoDetect, "isNetworkAvailable");
-    _network = reply.value();
-    return _network;
+    QString value;
+    QDBusPendingReply<QString> reply = *call;
+    if (reply.isError()) {
+        qDebug() << "error:" << reply.error().name() << reply.error().message();
+    } else {
+        value = reply.argumentAt<0>();
+    }
+    Q_EMIT myAccount(value);
+    call->deleteLater();
 }
 
 void WhatsApp::exit()

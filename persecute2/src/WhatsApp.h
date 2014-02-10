@@ -29,9 +29,6 @@ using namespace QtContacts;
 
 class WhatsApp: public QObject
 {
-    Q_PROPERTY(bool active READ isActive NOTIFY activeChanged)
-    Q_PROPERTY(bool online READ isOnline FINAL)
-    Q_PROPERTY(bool networkAvailable READ isNetwork FINAL)
     Q_OBJECT
 
 public:
@@ -41,13 +38,8 @@ public:
 
 private:
     bool isActive();
-    bool isOnline();
-    bool isNetwork();
 
     QNetworkAccessManager *nam;
-    bool _active;
-    bool _online;
-    bool _network;
     QString _pendingJid;
 
     QDBusInterface *iface;
@@ -58,53 +50,61 @@ signals:
     void ready();
     void activeChanged();
     void connectionStatusChanged(int connStatus);
-    void messageReceived(QVariantMap data);
-    void disconnected(QString reason);
-    void authFail(QString username, QString reason);
-    void authSuccess(QString username);
+    void messageReceived(const QVariantMap &data);
+    void disconnected(const QString &reason);
+    void authFail(const QString &username, const QString &reason);
+    void authSuccess(const QString &username);
     void networkChanged(bool value);
     void noAccountData();
     void registered();
     void smsTimeout(int timeout);
-    void registrationFailed(QVariantMap reason);
+    void registrationFailed(const QVariantMap &reason);
     void registrationComplete();
-    void accountExpired(QVariantMap reason);
-    void gotAccountData(QString username, QString password);
-    void codeRequested(QVariantMap method);
-    void existsRequestFailed(QVariantMap serverReply);
-    void codeRequestFailed(QVariantMap serverReply);
-    void messageStatusUpdated(QString mjid, QString msgId, int msgstatus);
-    void pictureUpdated(QString pjid, QString path);
+    void accountExpired(const QVariantMap &reason);
+    void gotAccountData(const QString &username, const QString &password);
+    void codeRequested(const QVariantMap &method);
+    void existsRequestFailed(const QVariantMap &serverReply);
+    void codeRequestFailed(const QVariantMap &serverReply);
+    void messageStatusUpdated(const QString &mjid, const QString &msgId, int msgstatus);
+    void pictureUpdated(const QString &pjid, const QString &path);
     void contactsChanged();
-    void contactChanged(QVariantMap data);
-    void contactSynced(QVariantMap data);
-    void newGroupSubject(QVariantMap data);
-    void notificationOpenJid(QString njid);
-    void setUnread(QString jid, int count);
-    void myAccount(QString account);
-    void pushnameUpdated(QString mjid, QString pushName);
-    void presenceAvailable(QString mjid);
-    void presenceUnavailable(QString mjid);
-    void presenceLastSeen(QString mjid, int seconds);
-    void mediaDownloadProgress(QString mjid, QString msgId, int progress);
-    void mediaDownloadFinished(QString mjid, QString msgId, QString path);
-    void mediaDownloadFailed(QString mjid, QString msgId);
-    void groupParticipant(QString gjid, QString pjid);
-    void groupInfo(QVariantMap group);
-    void groupCreated(QString gjid);
-    void participantAdded(QString gjid, QString pjid);
-    void participantRemoved(QString gjid, QString pjid);
-    void contactsBlocked(QStringList list);
-    void activeJidChanged(QString ajid);
-    void contactTyping(QString cjid);
-    void contactPaused(QString cjid);
+    void contactChanged(const QVariantMap &data);
+    void contactSynced(const QVariantMap &data);
+    void newGroupSubject(const QVariantMap &data);
+    void notificationOpenJid(const QString &njid);
+    void setUnread(const QString &jid, int count);
+    void pushnameUpdated(const QString &mjid, const QString &pushName);
+    void presenceAvailable(const QString &mjid);
+    void presenceUnavailable(const QString &mjid);
+    void presenceLastSeen(const QString &mjid, int seconds);
+    void mediaDownloadProgress(const QString &mjid, const QString &msgId, int progress);
+    void mediaDownloadFinished(const QString &mjid, const QString &msgId, const QString &path);
+    void mediaDownloadFailed(const QString &mjid, const QString &msgId);
+    void groupParticipant(const QString &gjid, const QString &pjid);
+    void groupInfo(const QVariantMap &group);
+    void groupCreated(const QString &gjid);
+    void participantAdded(const QString &gjid, const QString &pjid);
+    void participantRemoved(const QString &gjid, const QString &pjid);
+    void contactsBlocked(const QStringList &list);
+    void activeJidChanged(const QString &ajid);
+    void contactTyping(const QString &cjid);
+    void contactPaused(const QString &cjid);
     void synchronizationFinished();
     void synchronizationFailed();
-    void phonebookReceived(QVariantList contactsmodel);
-    void uploadMediaFailed(QString mjid, QString msgId);
-    void groupsMuted(QStringList jids);
+    void phonebookReceived(const QVariantList &contactsmodel);
+    void uploadMediaFailed(const QString &mjid, const QString &msgId);
+    void groupsMuted(const QStringList &jids);
     void codeReceived();
     void dissectError();
+
+    void replyCrashed(bool isCrashed);
+    void myAccount(const QString &account);
+
+    void logfileReady(const QByteArray &data, bool isReady);
+
+private slots:
+    void onReplyCrashed(QDBusPendingCallWatcher *call);
+    void onMyAccount(QDBusPendingCallWatcher *call);
 
 public slots:
     void exit();
@@ -123,7 +123,6 @@ public slots:
     QString getMyAccount();
     void startTyping(const QString &jid);
     void endTyping(const QString &jid);
-    bool getAvailable(const QString &jid);
     void downloadMedia(const QString &msgId, const QString &jid);
     void cancelDownload(const QString &msgId, const QString &jid);
     void abortMediaDownload(const QString &msgId, const QString &jid);
@@ -152,10 +151,9 @@ public slots:
     void setMyPresence(const QString &presence);
     void sendRecentLogs();
     void shutdown();
-    bool isCrashed();
+    void isCrashed();
     void requestLastOnline(const QString &jid);
     void addPhoneNumber(const QString &name, const QString &phone);
-    QStringList getDownloads();
     void sendMedia(const QStringList &jids, const QString &path);
     QString rotateImage(const QString &path, int rotation);
     QString saveImage(const QString &path);

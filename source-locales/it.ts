@@ -159,27 +159,27 @@
 <context>
     <name>Client</name>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="920"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="779"/>
         <source>Connected</source>
         <translation>Connesso</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="1715"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1686"/>
         <source>Disconnected</source>
         <translation>Disconnesso</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2012"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1990"/>
         <source>Mitakuuluu share</source>
         <translation>Condivisione Mitakuuluu</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2012"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1990"/>
         <source>Can&apos;t share media when offline</source>
         <translation>Impossibile condividere file senza connessione</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2767"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2766"/>
         <source>%1 unread messages</source>
         <translation>%1 messaggi non letti</translation>
     </message>
@@ -327,73 +327,73 @@
         <translation>Messaggio di sistema.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="297"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Send media</source>
         <translation>Invia media</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="306"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="309"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="322"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="325"/>
         <source>Remove all messages</source>
         <translation>Elimina tutti i messaggi</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="320"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="336"/>
         <source>Profile</source>
         <translation>Profilo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="328"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
         <source>Unmute</source>
         <translation>Attiva notifiche</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="328"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
         <source>Unblock</source>
         <translation>Sblocca</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="329"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="303"/>
         <source>Mute</source>
         <translation>Disattiva notifiche</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="329"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="303"/>
         <source>Block</source>
         <translation>Blocca</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="340"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="345"/>
         <source>Load old conversation</source>
         <translation>Carica altro</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="505"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="510"/>
         <source>New message</source>
         <translation>Nuovo messaggio</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="540"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="545"/>
         <source>Tap here to enter message</source>
         <translation>Scrivi qui il tuo messaggio</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="652"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="657"/>
         <source>Image saved as %1</source>
         <translation>Immagine salvata come %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="673"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="678"/>
         <source>Select media type</source>
         <translation>Seleziona il tipo di file</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="698"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="703"/>
         <source>Select video</source>
         <translation>Seleziona video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="713"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="718"/>
         <source>Select audio</source>
         <translation>Seleziona audio</translation>
     </message>
@@ -736,7 +736,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="74"/>
+        <location filename="../persecute2/qml/Roster.qml" line="72"/>
         <source>Media uploading failed!</source>
         <translation>Caricamento file fallito!</translation>
     </message>
@@ -745,12 +745,12 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="80"/>
+        <location filename="../persecute2/qml/Roster.qml" line="78"/>
         <source>Waiting for connection</source>
         <translation>Attesa connessione</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="81"/>
+        <location filename="../persecute2/qml/Roster.qml" line="79"/>
         <source>Connecting...</source>
         <translation>Connessione in corso...</translation>
     </message>
@@ -759,165 +759,165 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="82"/>
+        <location filename="../persecute2/qml/Roster.qml" line="80"/>
         <source>Authorization...</source>
         <translation>Accesso...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="83"/>
+        <location filename="../persecute2/qml/Roster.qml" line="81"/>
         <source>Logged in</source>
         <translation>Autenticato</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="84"/>
+        <location filename="../persecute2/qml/Roster.qml" line="82"/>
         <source>Login failure!</source>
         <translation>Autenticazione fallita!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="85"/>
+        <location filename="../persecute2/qml/Roster.qml" line="83"/>
         <source>Disconnected</source>
         <translation>Disconnesso</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="86"/>
+        <location filename="../persecute2/qml/Roster.qml" line="84"/>
         <source>Registering...</source>
         <translation>Registrazione...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="87"/>
+        <location filename="../persecute2/qml/Roster.qml" line="85"/>
         <source>Registration failed!</source>
         <translation>Registrazione fallita!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="112"/>
+        <location filename="../persecute2/qml/Roster.qml" line="110"/>
         <source>No action</source>
         <translation>Nessun&apos;azione</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="106"/>
+        <location filename="../persecute2/qml/Roster.qml" line="104"/>
         <source>Force connect</source>
         <translation>Forza connessione</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="79"/>
+        <location filename="../persecute2/qml/Roster.qml" line="77"/>
         <source>Engine crashed</source>
         <translation>Il motore è andato in crash</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="105"/>
+        <location filename="../persecute2/qml/Roster.qml" line="103"/>
         <source>Restart engine</source>
         <translation>Riavvio del motore</translation>
     </message>
     <message>
+        <location filename="../persecute2/qml/Roster.qml" line="105"/>
+        <location filename="../persecute2/qml/Roster.qml" line="106"/>
         <location filename="../persecute2/qml/Roster.qml" line="107"/>
-        <location filename="../persecute2/qml/Roster.qml" line="108"/>
-        <location filename="../persecute2/qml/Roster.qml" line="109"/>
         <source>Disconnect</source>
         <translation>Disconnetti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="110"/>
-        <location filename="../persecute2/qml/Roster.qml" line="113"/>
+        <location filename="../persecute2/qml/Roster.qml" line="108"/>
+        <location filename="../persecute2/qml/Roster.qml" line="111"/>
         <source>Register</source>
         <translation>Registra</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="111"/>
+        <location filename="../persecute2/qml/Roster.qml" line="109"/>
         <source>Connect</source>
         <translation>Connetti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="123"/>
+        <location filename="../persecute2/qml/Roster.qml" line="121"/>
         <source>You</source>
         <translation>Io</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="153"/>
+        <location filename="../persecute2/qml/Roster.qml" line="151"/>
         <source>Quit</source>
         <translation>Esci</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="157"/>
+        <location filename="../persecute2/qml/Roster.qml" line="155"/>
         <source>Quit and shutdown engine</source>
         <translation>Disconnessione e uscita</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="168"/>
+        <location filename="../persecute2/qml/Roster.qml" line="166"/>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="176"/>
+        <location filename="../persecute2/qml/Roster.qml" line="174"/>
         <source>New group</source>
         <translation>Nuovo gruppo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="185"/>
+        <location filename="../persecute2/qml/Roster.qml" line="183"/>
         <source>Broadcast</source>
         <translation>Trasmissione</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="193"/>
+        <location filename="../persecute2/qml/Roster.qml" line="191"/>
         <source>Add contacts</source>
         <translation>Aggiungi contatti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="209"/>
+        <location filename="../persecute2/qml/Roster.qml" line="207"/>
         <source>Disconnecting</source>
         <translation>Disconnessione</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="299"/>
+        <location filename="../persecute2/qml/Roster.qml" line="297"/>
         <source>Enter contact name to search</source>
         <translation>Inserisci nome da cercare</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="365"/>
+        <location filename="../persecute2/qml/Roster.qml" line="363"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
         <translation>La lista dei contatti è vuota. Sincronizza la Rubrica o aggiungi manualmente i contatti.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="425"/>
+        <location filename="../persecute2/qml/Roster.qml" line="423"/>
         <source>Rename contact</source>
         <translation>Rinomina contatto</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="432"/>
+        <location filename="../persecute2/qml/Roster.qml" line="430"/>
         <source>Enter new name</source>
         <translation>Inserisci nuovo nome</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="473"/>
+        <location filename="../persecute2/qml/Roster.qml" line="471"/>
         <source>Create group</source>
         <translation>Crea gruppo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="480"/>
+        <location filename="../persecute2/qml/Roster.qml" line="478"/>
         <source>Write name of new group here</source>
         <translation>Scrivi qui il nome del gruppo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="568"/>
+        <location filename="../persecute2/qml/Roster.qml" line="566"/>
         <source>Group chat</source>
         <translation>Conversazione di gruppo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="595"/>
+        <location filename="../persecute2/qml/Roster.qml" line="593"/>
         <source>Delete </source>
         <translation>Elimina</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="595"/>
+        <location filename="../persecute2/qml/Roster.qml" line="593"/>
         <source>Leave group %1</source>
         <translation>Lascia il gruppo %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="629"/>
+        <location filename="../persecute2/qml/Roster.qml" line="627"/>
         <source>Profile</source>
         <translation>Profilo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="637"/>
+        <location filename="../persecute2/qml/Roster.qml" line="635"/>
         <source>Refresh</source>
         <translation>Aggiorna</translation>
     </message>
@@ -926,37 +926,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="645"/>
+        <location filename="../persecute2/qml/Roster.qml" line="643"/>
         <source>Rename</source>
         <translation>Rinomina</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="653"/>
+        <location filename="../persecute2/qml/Roster.qml" line="651"/>
         <source>Delete</source>
         <translation>Elimina</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="653"/>
+        <location filename="../persecute2/qml/Roster.qml" line="651"/>
         <source>Leave group</source>
         <translation>Lascia gruppo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="661"/>
+        <location filename="../persecute2/qml/Roster.qml" line="659"/>
         <source>Unblock</source>
         <translation>Sblocca</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="661"/>
+        <location filename="../persecute2/qml/Roster.qml" line="659"/>
         <source>Block</source>
         <translation>Blocca</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="661"/>
+        <location filename="../persecute2/qml/Roster.qml" line="659"/>
         <source>Unmute</source>
         <translation>Attiva notifiche</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="661"/>
+        <location filename="../persecute2/qml/Roster.qml" line="659"/>
         <source>Mute</source>
         <translation>Disattiva notifiche</translation>
     </message>
@@ -1169,37 +1169,42 @@
         <translation>Avvio automatico</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="247"/>
+        <location filename="../persecute2/qml/Settings.qml" line="246"/>
+        <source>Lock conversation orientation in portrait</source>
+        <translation>Blocca l&apos;orientamento della conversazione in verticale</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="256"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Mostrami nella lista contatti, se presente</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="256"/>
+        <location filename="../persecute2/qml/Settings.qml" line="265"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Accetta messaggi da sconosciuti</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="265"/>
+        <location filename="../persecute2/qml/Settings.qml" line="274"/>
         <source>Show notifications when connection changing</source>
         <translation>Mostra notifiche al cambio della connessione</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="291"/>
+        <location filename="../persecute2/qml/Settings.qml" line="300"/>
         <source>Display online when app is open</source>
         <translation>Mostra come disponibile quando l&apos;app è aperta</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="285"/>
+        <location filename="../persecute2/qml/Settings.qml" line="294"/>
         <source>Presence</source>
         <translation>Disponibilità</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="309"/>
+        <location filename="../persecute2/qml/Settings.qml" line="320"/>
         <source>Always display online</source>
         <translation>Mostra sempre disponibile</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="324"/>
+        <location filename="../persecute2/qml/Settings.qml" line="337"/>
         <source>Always display offline</source>
         <translation>Mostra sempre offline</translation>
     </message>
@@ -1216,27 +1221,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="337"/>
+        <location filename="../persecute2/qml/Settings.qml" line="352"/>
         <source>Media</source>
         <translation>File multimediali</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="342"/>
+        <location filename="../persecute2/qml/Settings.qml" line="357"/>
         <source>Resize sending images</source>
         <translation>Ridimensiona immagini</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="372"/>
+        <location filename="../persecute2/qml/Settings.qml" line="387"/>
         <source>Maximum image size by file size</source>
         <translation>Dimensione massima dell&apos;immagine</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="403"/>
+        <location filename="../persecute2/qml/Settings.qml" line="418"/>
         <source>Maximum image size by resolution</source>
         <translation>Risoluzione massima dell&apos;immagine</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="405"/>
+        <location filename="../persecute2/qml/Settings.qml" line="420"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>
@@ -1292,27 +1297,27 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="57"/>
+        <location filename="../persecute2/qml/main.qml" line="58"/>
         <source>n/a</source>
         <translation>n/a</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="57"/>
+        <location filename="../persecute2/qml/main.qml" line="58"/>
         <source>bytes</source>
         <translation>byte</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="57"/>
+        <location filename="../persecute2/qml/main.qml" line="58"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="57"/>
+        <location filename="../persecute2/qml/main.qml" line="58"/>
         <source>MiB</source>
         <translation>MiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="57"/>
+        <location filename="../persecute2/qml/main.qml" line="58"/>
         <source>GiB</source>
         <translation>GiB</translation>
     </message>

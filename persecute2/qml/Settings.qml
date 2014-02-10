@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "Utilities.js" as Utilities
 
 Page {
     id: page
@@ -11,6 +12,17 @@ Page {
         }
         else if (status === PageStatus.Active) {
 
+        }
+    }
+
+    Connections {
+        target: whatsapp
+        onLogfileReady: {
+            page.backNavigation = true
+            if (isReady) {
+                sendLogfile.open()
+                sendLogfile.logfile = data
+            }
         }
     }
 
@@ -27,12 +39,13 @@ Page {
                     pageStack.push(aboutPage)
                 }
             }
-            /*MenuItem {
+            MenuItem {
                 text: qsTr("Send logfile to author")
                 onClicked: {
-                    whatsapp.sendRecentLogs() //disabled until mailto attach not working
+                    whatsapp.sendRecentLogs()
+                    page.backNavigation = false
                 }
-            }*/
+            }
             MenuItem {
                 text: qsTr("Account")
                 onClicked: {
@@ -242,6 +255,15 @@ Page {
             }
 
             TextSwitch {
+                checked: lockPortrait
+                text: qsTr("Lock conversation orientation in portrait")
+                onClicked: {
+                    lockPortrait = checked
+                    settings.setValue("lockPortrait", checked)
+                }
+            }
+
+            TextSwitch {
                 id: showMyself
                 checked: showMyJid
                 text: qsTr("Show yourself in contact list, if present")
@@ -422,5 +444,53 @@ Page {
 
     VerticalScrollDecorator {
         flickable: flick
+    }
+
+    Dialog {
+        id: sendLogfile
+        canAccept: (email.text.length > 0) && (comment.text.length > 0)
+        onAccepted: {
+            email.deselect()
+            comment.deselect()
+            Utilities.submitDebugInfo(comment, email, logfile, function(status, result) {
+                console.log("sent result: " + status + " message: " + result);
+            })
+        }
+
+        property variant logfile
+
+        SilicaFlickable {
+            id: flicka
+            anchors.fill: parent
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingLarge
+
+                DialogHeader {
+                    title: qsTr("Send logs")
+                }
+
+                TextField {
+                    id: email
+                    placeholderText: "youremail@domain.com"
+                    label: qsTr("Your email address")
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.margins: Theme.paddingLarge
+                    inputMethodHints: Qt.ImhEmailCharactersOnly | Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
+                }
+
+                TextArea {
+                    id: comment
+                    placeholderText: qsTr("Enter bug description here. As many information as  possible.")
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.margins: Theme.paddingLarge
+                    background: null
+                    height: 400
+                }
+            }
+        }
     }
 }

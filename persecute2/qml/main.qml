@@ -27,6 +27,7 @@ ApplicationWindow {
     property bool deleteMediaFiles: false
     property bool importToGallery: true
     property bool showConnectionNotifications: false
+    property bool lockPortrait: false
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -113,6 +114,7 @@ ApplicationWindow {
         deleteMediaFiles = settings.value("deleteMediaFiles", false)
         importToGallery = settings.value("importmediatogallery", true)
         showConnectionNotifications = settings.value("showConnectionNotifications", false)
+        lockPortrait = settings.value("lockPortrait", false)
     }
 
     AddContact {

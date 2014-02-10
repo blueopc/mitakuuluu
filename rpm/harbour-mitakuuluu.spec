@@ -9,7 +9,7 @@ Name:       harbour-mitakuuluu
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
 Version:    0.1
-Release:    27
+Release:    30
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
@@ -22,6 +22,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Contacts)
 BuildRequires:  pkgconfig(sailfishapp)
 BuildRequires:  desktop-file-utils
+BuildRequires:  libiphb-devel
 
 
 %description
@@ -57,10 +58,9 @@ strip -s %{buildroot}/usr/bin/harbour-mitakuuluu-server
 
 mkdir -p %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wants/
 touch %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
-mkdir -p %{buildroot}/home/nemo/.whatsapp
+mkdir -p %{buildroot}/home/nemo/.whatsapp/logs
 touch %{buildroot}/home/nemo/.whatsapp/whatsapp.log
 touch %{buildroot}/home/nemo/.whatsapp/whatsapp.db
-mkdir -p %{buildroot}/home/nemo/.whatsapp/logs
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log1.tar.gz
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log2.tar.gz
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log3.tar.gz
@@ -102,7 +102,15 @@ fi
 
 %post
 # >> post
-chown -R nemo:privileged /home/nemo/.whatsapp
+if [ -d /home/nemo/.whatsapp ]; then
+    chown -R nemo:privileged /home/nemo/.whatsapp
+fi
+if [ -d /home/nemo/.config/coderus ]; then
+    chown -R nemo:privileged /home/nemo/.config/coderus
+fi
+if [ -d /home/nemo/.config/systemd/user/post-user-session.target.wants ]; then
+    chown -R nemo:privileged /home/nemo/.config/systemd/user/post-user-session.target.wants
+fi
 # << post
 
 %files
@@ -115,7 +123,7 @@ chown -R nemo:privileged /home/nemo/.whatsapp
 %{_datadir}/themes/base/meegotouch/icons/
 %{_datadir}/%{name}
 #/usr/lib/qt5/qml/org/harbour-mitakuuluu/filemodel/
-/etc/systemd/user/
+/usr/lib/systemd/user
 %{_bindir}
 %ghost /home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
 %ghost /home/nemo/.whatsapp/whatsapp.log

@@ -8,7 +8,6 @@ Page {
     objectName: "roster"
 
     property int connectionStatus: 0
-    property bool networkAvailable: false
     property string myJid: ""
     property string pendingGroup: ""
 
@@ -36,9 +35,8 @@ Page {
     }
 
     Component.onCompleted: {
-        myJid = whatsapp.getMyAccount()
+        whatsapp.getMyAccount()
         connectionStatus = whatsapp.connectionStatus()
-        networkAvailable = whatsapp.networkAvailable
         contactsModel.contactsChanged()
     }
 
@@ -46,10 +44,10 @@ Page {
         target: whatsapp
         onConnectionStatusChanged: {
             connectionStatus = connStatus
-            myJid = whatsapp.getMyAccount()
+            whatsapp.getMyAccount()
         }
-        onNetworkChanged: {
-            networkAvailable = value
+        onMyAccount: {
+        	myJid = account
         }
         onGroupCreated: {
             pendingGroup = gjid
@@ -94,10 +92,10 @@ Page {
                      Theme.primaryColor,
                      Theme.primaryColor,
                      Theme.highlightColor,
-                     "red",
+                     Theme.rgba("red", 1.0),
                      Theme.primaryColor,
                      Theme.primaryColor,
-                     "red"]
+                     Theme.rgba("red", 1.0)]
         return array[value]
     }
 
@@ -507,6 +505,8 @@ Page {
                 anchors.right: ava.left
                 anchors.verticalCenter: ava.verticalCenter
                 color: model.blocked ? Theme.rgba(Theme.highlightDimmerColor, 0.6) : (page.connectionStatus == 4 ? (model.available ? Theme.rgba(Theme.highlightColor, 0.6) : "transparent") : "transparent")
+                border.width: model.blocked ? 1 : 0
+                border.color: (page.connectionStatus == 4 && model.blocked) ? Theme.rgba(Theme.highlightColor, 0.6) : "transparent"
                 smooth: true
             }
 

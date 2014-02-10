@@ -240,29 +240,11 @@ void ContactsModel::checkTotalUnread()
 bool ContactsModel::getAvailable(const QString &jid)
 {
     return _availableContacts.contains(jid);
-
-    /*if (iface) {
-        QDBusReply<bool> reply = iface->call(QDBus::AutoDetect, "getAvailable", jid);
-        //qDebug() << "contact" << jid << (reply.value() ? "available" : "unavailable");
-        return reply.value();
-    }
-    return false;*/
 }
 
 bool ContactsModel::getBlocked(const QString &jid)
 {
     return _blockedContacts.contains(jid);
-
-    /*if (iface) {
-        QDBusReply<bool> reply;
-        if (jid.contains("-"))
-            reply = iface->call(QDBus::AutoDetect, "getBlocked", jid);
-        else
-            reply = iface->call(QDBus::AutoDetect, "getBlocked", jid);
-        //qDebug() << "contact" << jid << (reply.value() ? "blocked" : "not blocked");
-        return reply.value();
-    }
-    return false;*/
 }
 
 bool ContactsModel::getMuted(QString jid)
@@ -272,11 +254,6 @@ bool ContactsModel::getMuted(QString jid)
 
 int ContactsModel::getIndexByJid(const QString &jid)
 {
-    /*for (int i = 0; i < _sortedJidNameList.count(); i++) {
-        const QString &ajid = _sortedJidNameList.at(i)._jid;
-        if (ajid == jid)
-            return i;
-    }*/
     if (_modelData.keys().contains(jid))
         return _modelData[jid]["modelindex"].toInt();
     return -1;

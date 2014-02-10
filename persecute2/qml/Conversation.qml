@@ -6,7 +6,7 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "conversation"
-    allowedOrientations: Orientation.Portrait | Orientation.Landscape
+    allowedOrientations: lockPortrait ? Orientation.Portrait : (Orientation.Portrait | Orientation.Landscape)
 
     onStatusChanged: {
         if (page.status === PageStatus.Inactive && pageStack.depth === 1) {

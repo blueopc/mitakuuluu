@@ -131,7 +131,6 @@ void ConversationModel::deleteMessage(const QString &msgId, bool deleteMediaFile
 
     if (deleteMediaFiles && iface) {
         QDBusReply<QString> reply = iface->call(QDBus::AutoDetect, "getMyAccount");
-        //qDebug() << "my account:" << reply.value();
         QString myJid = reply.value();
         QString author = _modelData[msgId]["author"].toString();
         QString localurl = _modelData[msgId]["localurl"].toString();

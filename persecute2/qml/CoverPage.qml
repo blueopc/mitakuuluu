@@ -19,12 +19,12 @@ CoverBackground {
         id: wastatus
         text: roster.parseConnectionStatus(roster.connectionStatus)
         color: roster.parseConnectionColor(roster.connectionStatus)
-        anchors.top: parent.top
-        anchors.topMargin: Theme.paddingLarge
         font.pixelSize: Theme.fontSizeLarge
         horizontalAlignment: Text.AlignHCenter
         anchors.left: root.left
         anchors.right: root.right
+        anchors.top: parent.top
+        anchors.margins: Theme.paddingLarge
         wrapMode: Text.WordWrap
         visible: roster.inStack
     }
@@ -32,14 +32,12 @@ CoverBackground {
     Label {
         id: wacount
         text: roster.inStack ? (roster.unreadCount > 1 ? (qsTr("Unread messages: %1").arg(roster.unreadCount)) : (roster.unreadCount == 1 ? qsTr("One unread message") : qsTr("No unread messages"))) : qsTr("Registration")
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: Theme.paddingLarge
         font.pixelSize: Theme.fontSizeMedium
         horizontalAlignment: Text.AlignHCenter
         anchors.left: root.left
         anchors.right: root.right
+        anchors.bottom: parent.bottom
+        anchors.margins: Theme.paddingSmall
         wrapMode: Text.WordWrap
     }
 }
-
-

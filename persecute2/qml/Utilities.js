@@ -4,6 +4,31 @@ var textarea = null
 
 var emojiComponent = null
 
+function submitDebugInfo(comment, replyto, data, callback) {
+    var doc = new XMLHttpRequest();
+    doc.onreadystatechange = function() {
+        if (doc.readyState == XMLHttpRequest.HEADERS_RECEIVED) {
+            var status = doc.status;
+            if(status!=200) {
+                console.log("Debug info submit " + status + " " + doc.statusText);
+                callback(false, doc.statusText);
+            }
+        } else if (doc.readyState == XMLHttpRequest.DONE && doc.status == 200) {
+            var contentType = doc.getResponseHeader("Content-Type");
+            var result = JSON.parse(doc.responseText);
+            callback(result.status,result.message);
+        }
+    }
+
+    var params = "content="+encodeURIComponent(data)+"&comment="+encodeURIComponent(comment)+"&replyto="+encodeURIComponent(replyto);
+
+    doc.open("POST", "https://coderus.openrepos.net/gebug_log.php");
+    doc.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    doc.setRequestHeader("Content-length", params.length);
+    doc.setRequestHeader("Connection", "close");
+    doc.send(params);
+}
+
 function emojiKeyboard() {
     if (!emojiComponent) {
         emojiComponent = Qt.createComponent("EmojiDialog/EmojiComponent.qml")
@@ -330,7 +355,7 @@ var softbank_replacer = {
     '\u2754':'\uE336', // Unified: 2754
     '\uD83D\uDCA4':'\uE13C', // Unified: 1F4A4
     '\uD83D\uDCA8':'\uE330', // Unified: 1F4A8
-    '\uD83D\uDE05':'\uE331', // Unified: 1F605
+//    '\uD83D\uDE05':'\uE331', // Unified: 1F605
     '\uD83C\uDFB6':'\uE326', // Unified: 1F3B6
     '\uD83C\uDFB5':'\uE03E', // Unified: 1F3B5
     '\uD83D\uDD25':'\uE11D', // Unified: 1F525
