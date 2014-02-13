@@ -898,27 +898,27 @@
         <translation>Skriv navnet på den nye gruppe her</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="566"/>
+        <location filename="../persecute2/qml/Roster.qml" line="568"/>
         <source>Group chat</source>
         <translation>Gruppe chat</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="593"/>
+        <location filename="../persecute2/qml/Roster.qml" line="595"/>
         <source>Delete </source>
         <translation>Slet</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="593"/>
+        <location filename="../persecute2/qml/Roster.qml" line="595"/>
         <source>Leave group %1</source>
         <translation>Forlad gruppen %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="627"/>
+        <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Profile</source>
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="635"/>
+        <location filename="../persecute2/qml/Roster.qml" line="637"/>
         <source>Refresh</source>
         <translation>Opdatering</translation>
     </message>
@@ -927,37 +927,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="643"/>
+        <location filename="../persecute2/qml/Roster.qml" line="645"/>
         <source>Rename</source>
         <translation>Omdøb</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="651"/>
+        <location filename="../persecute2/qml/Roster.qml" line="653"/>
         <source>Delete</source>
         <translation>Fjern</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="651"/>
+        <location filename="../persecute2/qml/Roster.qml" line="653"/>
         <source>Leave group</source>
         <translation>Forlad gruppe</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Unblock</source>
         <translation>Fjern blokering</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Block</source>
         <translation>Blokér</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Unmute</source>
         <translation>Unmute</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Mute</source>
         <translation>Mute</translation>
     </message>
@@ -1055,157 +1055,172 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="25"/>
+        <location filename="../persecute2/qml/Settings.qml" line="37"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="37"/>
+        <location filename="../persecute2/qml/Settings.qml" line="50"/>
         <source>Account</source>
         <translation>Konto</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="43"/>
+        <location filename="../persecute2/qml/Settings.qml" line="56"/>
         <source>Muted groups</source>
         <translation>Mutede grupper</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="51"/>
+        <location filename="../persecute2/qml/Settings.qml" line="64"/>
         <source>Blacklist</source>
         <translation>Sortliste</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="67"/>
+        <location filename="../persecute2/qml/Settings.qml" line="80"/>
         <source>Settings</source>
         <translation>Indstillinger</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="71"/>
+        <location filename="../persecute2/qml/Settings.qml" line="84"/>
         <source>Conversation</source>
         <translation>Samtale</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="75"/>
+        <location filename="../persecute2/qml/Settings.qml" line="88"/>
         <source>Conversation theme</source>
         <translation>Samtale tema</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="123"/>
+        <location filename="../persecute2/qml/Settings.qml" line="136"/>
         <source>Vibrate in active conversation</source>
         <translation>Vibrer i inaktiv samtale</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="133"/>
+        <location filename="../persecute2/qml/Settings.qml" line="146"/>
         <source>Show messages timestamp</source>
         <translation>Vis besked tidstempel</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="143"/>
+        <location filename="../persecute2/qml/Settings.qml" line="156"/>
         <source>Show seconds in messages timestamp</source>
         <translation>Vis sekunder i besked tidstempel</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="154"/>
+        <location filename="../persecute2/qml/Settings.qml" line="167"/>
         <source>Send messages by Enter</source>
         <translation>Send besked ved enter tryk</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="163"/>
+        <location filename="../persecute2/qml/Settings.qml" line="176"/>
         <source>Show keyboard automatically</source>
         <translation>Vis tastatuer automatisk</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="164"/>
+        <location filename="../persecute2/qml/Settings.qml" line="177"/>
         <source>Automatically show keyboard when opening conversation</source>
         <translation>Vis tastaturet automatisk når en samtale åbnes</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="173"/>
+        <location filename="../persecute2/qml/Settings.qml" line="186"/>
         <source>Download media to Gallery</source>
         <translation>Gem medie i galleriet</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="174"/>
+        <location filename="../persecute2/qml/Settings.qml" line="187"/>
         <source>If checked downloaded files will be shown in Gallery</source>
         <translation>Vælg for at vise gemte filer i galleriet</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="183"/>
+        <location filename="../persecute2/qml/Settings.qml" line="196"/>
         <source>Delete media files</source>
         <translation>Fjern medie filer</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="184"/>
+        <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Delete received media files when deleting message</source>
         <translation>Slet modtagede medie filer når beskeden slettes</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="196"/>
+        <location filename="../persecute2/qml/Settings.qml" line="209"/>
         <source>Chat font size</source>
         <translation>Chat font størrelse</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="198"/>
+        <location filename="../persecute2/qml/Settings.qml" line="211"/>
         <source>%1 px</source>
         <translation>%1 px</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="208"/>
+        <location filename="../persecute2/qml/Settings.qml" line="221"/>
         <source>Common</source>
         <translation>Fælles</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="212"/>
+        <location filename="../persecute2/qml/Settings.qml" line="225"/>
         <source>Language</source>
         <translation>Sprog</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="226"/>
+        <location filename="../persecute2/qml/Settings.qml" line="239"/>
         <source>Restart application to change language</source>
         <translation>Genstart applikationen for at skifte sproget</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="238"/>
+        <location filename="../persecute2/qml/Settings.qml" line="251"/>
         <source>Autostart</source>
         <translation>Autostart</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="246"/>
+        <location filename="../persecute2/qml/Settings.qml" line="259"/>
         <source>Lock conversation orientation in portrait</source>
         <translation>Lås samtale i portræt orientering</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="256"/>
+        <location filename="../persecute2/qml/Settings.qml" line="269"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Vis dig selv i kontakt listen, hvis online</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="265"/>
+        <location filename="../persecute2/qml/Settings.qml" line="278"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Accepter beskeder fra ukendte kontakter</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="274"/>
+        <location filename="../persecute2/qml/Settings.qml" line="287"/>
         <source>Show notifications when connection changing</source>
         <translation>Vis notifikation når forbindelses tilstanden er ændret</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="300"/>
+        <location filename="../persecute2/qml/Settings.qml" line="313"/>
         <source>Display online when app is open</source>
         <translation>Vis som online når applikationen er åben</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="294"/>
+        <location filename="../persecute2/qml/Settings.qml" line="471"/>
+        <source>Send logs</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="477"/>
+        <source>Your email address</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="486"/>
+        <source>Enter bug description here. As many information as  possible.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="307"/>
         <source>Presence</source>
         <translation>Tilstædeværelse</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="320"/>
+        <location filename="../persecute2/qml/Settings.qml" line="333"/>
         <source>Always display online</source>
         <translation>Vis altid som online</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="337"/>
+        <location filename="../persecute2/qml/Settings.qml" line="350"/>
         <source>Always display offline</source>
         <translation>Vis altid som offline</translation>
     </message>
@@ -1222,27 +1237,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="352"/>
+        <location filename="../persecute2/qml/Settings.qml" line="365"/>
         <source>Media</source>
         <translation>Medie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="357"/>
+        <location filename="../persecute2/qml/Settings.qml" line="370"/>
         <source>Resize sending images</source>
         <translation>Resize udgående bilelder</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="387"/>
+        <location filename="../persecute2/qml/Settings.qml" line="400"/>
         <source>Maximum image size by file size</source>
         <translation>Maksimal billed størrelse efter billede størrelse</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="418"/>
+        <location filename="../persecute2/qml/Settings.qml" line="431"/>
         <source>Maximum image size by resolution</source>
         <translation>Maksimal billedstørrelse udfra opløsning</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="420"/>
+        <location filename="../persecute2/qml/Settings.qml" line="433"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>
@@ -1290,7 +1305,12 @@
         <translation>Gem samtale historik i en fil</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/UserProfile.qml" line="193"/>
+        <location filename="../persecute2/qml/UserProfile.qml" line="146"/>
+        <source>History saved to Documents</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/UserProfile.qml" line="194"/>
         <source>Image saved as %1</source>
         <translation>Billedet er gemt som %1</translation>
     </message>

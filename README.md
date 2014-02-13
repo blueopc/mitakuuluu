@@ -1,7 +1,7 @@
 mitakuuluu
 ==========
 
-Mitakuuluu - indie WhatsApp client for SailfishOS
+Mitakuuluu - indie WA client for SailfishOS
 
 Public bugtracker
 

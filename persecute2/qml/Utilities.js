@@ -197,7 +197,7 @@ function getCode(inputText) {
     var replacedText,
         positions = 0,
         //regx = /<img src=\".*\/([a-fA-F0-9]+).png\" \/>/g
-        regx = /<img src=\"[^\>]+\/([a-fA-F0-9]+).png\" \/>/g
+        regx = /<img width="\d+" height="\d+" src=\"[^\>]+\/([a-fA-F0-9]+).png\" \/>/g
 
     replacedText = inputText.replace( regx, function(s, eChar){
             var tmp = s.split(' />')[0].split('/'),
@@ -274,14 +274,14 @@ function emojify(inputText, emojiPath) {
     replacedText = to_softbank(replacedText)
 
     replacedText = replacedText.replace(regb, function(s, eChar){
-        return '<img src="'+emojiPath+eChar.charCodeAt(0).toString(16).toUpperCase()+'.png">';
+        return '<img width="22" height="22" src="'+emojiPath+eChar.charCodeAt(0).toString(16).toUpperCase()+'.png">';
     });
 
     replacedText = replacedText.replace(regc, function(s, eChar){
         var res = eChar.charCodeAt(0).toString(16).toUpperCase()
         //console.log(res)
         if (emoji_code.indexOf(res) != -1)
-            return '<img src="'+emojiPath+res+'.png">';
+            return '<img width="22" height="22" src="'+emojiPath+res+'.png">';
         else
             return eChar;
     });
@@ -292,7 +292,7 @@ function emojify(inputText, emojiPath) {
                  var res = decimalToHex(p).toString().toUpperCase()
                  if (p>8252)
                  //if (emoji_code.indexOf(res) != -1)
-                     return res.replace(/^([\da-f]+)$/i,'<img src="'+emojiPath+'/$1.png">');
+                     return res.replace(/^([\da-f]+)$/i,'<img width="22" height="22" src="'+emojiPath+'/$1.png">');
                  else
                      return p1
              } else {

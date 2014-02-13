@@ -40,7 +40,7 @@ Page {
             }
 
             Label {
-                text: "v0.1-30"
+                text: "v0.1-31"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
@@ -114,14 +114,6 @@ Page {
                     //Qt.openUrlExternally("https://www.paypal.com/ru/cgi-bin/webscr?cmd=_send-money&email=ovi.coderus@gmail.com")
                     Qt.openUrlExternally("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ovi.coderus%40gmail%2ecom&lc=EN&item_name=Donation%20for%20coderus%20USD&no_note=0&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest")
                 }
-            }
-
-            Label {
-                text: "Please select payment type «to family or friends»"
-                font.pixelSize: Theme.fontSizeMedium
-                width: parent.width
-                horizontalAlignment: Text.AlignHCenter
-                wrapMode: Text.WordWrap
             }
 
             Label {

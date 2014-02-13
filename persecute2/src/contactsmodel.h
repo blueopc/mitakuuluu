@@ -148,7 +148,7 @@ private:
     QStringList _availableContacts;
 
 signals:
-    void nicknameChanged(QString pjid, QString nickname);
+    void nicknameChanged(const QString &pjid, const QString &nickname);
     void totalUnreadChanged();
     void deleteEverythingSuccessful();
 

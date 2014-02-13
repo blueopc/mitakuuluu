@@ -39,13 +39,13 @@ Page {
                     pageStack.push(aboutPage)
                 }
             }
-            MenuItem {
+            /*MenuItem {
                 text: qsTr("Send logfile to author")
                 onClicked: {
                     whatsapp.sendRecentLogs()
                     page.backNavigation = false
                 }
-            }
+            }*/
             MenuItem {
                 text: qsTr("Account")
                 onClicked: {

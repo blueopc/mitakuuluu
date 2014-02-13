@@ -142,7 +142,8 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Save chat history to file")
                 onClicked: {
-                    conversationPage.saveHistory(page.jid, page.pushname)
+                    conversation.saveHistory(page.jid, page.pushname)
+                    banner.notify(qsTr("History saved to Documents"))
                 }
             }
         }

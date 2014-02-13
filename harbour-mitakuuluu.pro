@@ -13,6 +13,7 @@ locales.files = \
     locales/da_DK.qm \
     locales/de.qm \
     locales/el.qm \
+    locales/en_GB.qm \
     locales/en_US.qm \
     locales/es.qm \
     locales/fa.qm \

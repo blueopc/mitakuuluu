@@ -126,8 +126,8 @@ private slots:
     void dbResults(const QVariant &result);
 
 signals:
-    void lastMessageToBeChanged(QString mjid);
-    void lastMessageChanged(QString mjid, bool force);
+    void lastMessageToBeChanged(const QString &mjid);
+    void lastMessageChanged(const QString &mjid, bool force);
 
 };
 

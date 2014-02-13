@@ -898,27 +898,27 @@
         <translation>Tik naam van nuwe groep hier</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="566"/>
+        <location filename="../persecute2/qml/Roster.qml" line="568"/>
         <source>Group chat</source>
         <translation>Groep klets</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="593"/>
+        <location filename="../persecute2/qml/Roster.qml" line="595"/>
         <source>Delete </source>
         <translation>Verwyder</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="593"/>
+        <location filename="../persecute2/qml/Roster.qml" line="595"/>
         <source>Leave group %1</source>
         <translation>Verlaat groep %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="627"/>
+        <location filename="../persecute2/qml/Roster.qml" line="629"/>
         <source>Profile</source>
         <translation>Profiel</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="635"/>
+        <location filename="../persecute2/qml/Roster.qml" line="637"/>
         <source>Refresh</source>
         <translation>Verfris</translation>
     </message>
@@ -927,37 +927,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="643"/>
+        <location filename="../persecute2/qml/Roster.qml" line="645"/>
         <source>Rename</source>
         <translation>Hernoem</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="651"/>
+        <location filename="../persecute2/qml/Roster.qml" line="653"/>
         <source>Delete</source>
         <translation>Vewyder</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="651"/>
+        <location filename="../persecute2/qml/Roster.qml" line="653"/>
         <source>Leave group</source>
         <translation>Verlaat groep</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Unblock</source>
         <translation>De-blokkeer</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Block</source>
         <translation>Blokkeer</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Unmute</source>
         <translation>Klank aan</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="659"/>
+        <location filename="../persecute2/qml/Roster.qml" line="661"/>
         <source>Mute</source>
         <translation>Klank af</translation>
     </message>
@@ -1055,157 +1055,172 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="25"/>
+        <location filename="../persecute2/qml/Settings.qml" line="37"/>
         <source>About</source>
         <translation>Aangaande</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="37"/>
+        <location filename="../persecute2/qml/Settings.qml" line="50"/>
         <source>Account</source>
         <translation>Rekening</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="43"/>
+        <location filename="../persecute2/qml/Settings.qml" line="56"/>
         <source>Muted groups</source>
         <translation>Onderdrukte groepe</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="51"/>
+        <location filename="../persecute2/qml/Settings.qml" line="64"/>
         <source>Blacklist</source>
         <translation>Swartlys</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="67"/>
+        <location filename="../persecute2/qml/Settings.qml" line="80"/>
         <source>Settings</source>
         <translation>Instellings</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="71"/>
+        <location filename="../persecute2/qml/Settings.qml" line="84"/>
         <source>Conversation</source>
         <translation>Gesprek</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="75"/>
+        <location filename="../persecute2/qml/Settings.qml" line="88"/>
         <source>Conversation theme</source>
         <translation>Gesperk tema</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="123"/>
+        <location filename="../persecute2/qml/Settings.qml" line="136"/>
         <source>Vibrate in active conversation</source>
         <translation>Tril tydens aktiewe gesprek</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="133"/>
+        <location filename="../persecute2/qml/Settings.qml" line="146"/>
         <source>Show messages timestamp</source>
         <translation>Wys boodskappe se tyd stempel</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="143"/>
+        <location filename="../persecute2/qml/Settings.qml" line="156"/>
         <source>Show seconds in messages timestamp</source>
         <translation>Wys sekondes in boodskappe se tydstempel</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="154"/>
+        <location filename="../persecute2/qml/Settings.qml" line="167"/>
         <source>Send messages by Enter</source>
         <translation>Verstuur boodskappe Enter</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="163"/>
+        <location filename="../persecute2/qml/Settings.qml" line="176"/>
         <source>Show keyboard automatically</source>
         <translation>Wys sleutelbord automaties</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="164"/>
+        <location filename="../persecute2/qml/Settings.qml" line="177"/>
         <source>Automatically show keyboard when opening conversation</source>
         <translation>Wys sleutelbord automaties wanneer gesprek begin</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="173"/>
+        <location filename="../persecute2/qml/Settings.qml" line="186"/>
         <source>Download media to Gallery</source>
         <translation>Laai media af na Gallery</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="174"/>
+        <location filename="../persecute2/qml/Settings.qml" line="187"/>
         <source>If checked downloaded files will be shown in Gallery</source>
         <translation>Gemarkeerde afgelaaide lêers sal in die Gallery gewys word</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="183"/>
+        <location filename="../persecute2/qml/Settings.qml" line="196"/>
         <source>Delete media files</source>
         <translation>Skrap media lêers</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="184"/>
+        <location filename="../persecute2/qml/Settings.qml" line="197"/>
         <source>Delete received media files when deleting message</source>
         <translation>Skrap ontvangde media lêers wanneer booskappe geskrap word</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="196"/>
+        <location filename="../persecute2/qml/Settings.qml" line="209"/>
         <source>Chat font size</source>
         <translation>Klets font groote</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="198"/>
+        <location filename="../persecute2/qml/Settings.qml" line="211"/>
         <source>%1 px</source>
         <translation>%1 px</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="208"/>
+        <location filename="../persecute2/qml/Settings.qml" line="221"/>
         <source>Common</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="212"/>
+        <location filename="../persecute2/qml/Settings.qml" line="225"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="226"/>
+        <location filename="../persecute2/qml/Settings.qml" line="239"/>
         <source>Restart application to change language</source>
         <translation>Herbegin toepassing om taal te verander</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="238"/>
+        <location filename="../persecute2/qml/Settings.qml" line="251"/>
         <source>Autostart</source>
         <translation>Begin automaties</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="246"/>
+        <location filename="../persecute2/qml/Settings.qml" line="259"/>
         <source>Lock conversation orientation in portrait</source>
         <translation>Sluit gesprek in portret oriëntasie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="256"/>
+        <location filename="../persecute2/qml/Settings.qml" line="269"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Laat  jouself in die kontaklys sien, indien teenwoordig</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="265"/>
+        <location filename="../persecute2/qml/Settings.qml" line="278"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Aanvaar boodskappe van onbekende kontakte</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="274"/>
+        <location filename="../persecute2/qml/Settings.qml" line="287"/>
         <source>Show notifications when connection changing</source>
         <translation>Wys kennisgewings wanneer konneksie verander</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="300"/>
+        <location filename="../persecute2/qml/Settings.qml" line="313"/>
         <source>Display online when app is open</source>
         <translation>Vertoon aanlyn wanneer toepassing oop is</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="294"/>
+        <location filename="../persecute2/qml/Settings.qml" line="471"/>
+        <source>Send logs</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="477"/>
+        <source>Your email address</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="486"/>
+        <source>Enter bug description here. As many information as  possible.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="307"/>
         <source>Presence</source>
         <translation>Teenwoordigheid</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="320"/>
+        <location filename="../persecute2/qml/Settings.qml" line="333"/>
         <source>Always display online</source>
         <translation>Vertoon altyd aanlyn</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="337"/>
+        <location filename="../persecute2/qml/Settings.qml" line="350"/>
         <source>Always display offline</source>
         <translation>Vertoon altyd van lyn af</translation>
     </message>
@@ -1222,27 +1237,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="352"/>
+        <location filename="../persecute2/qml/Settings.qml" line="365"/>
         <source>Media</source>
         <translation>Media</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="357"/>
+        <location filename="../persecute2/qml/Settings.qml" line="370"/>
         <source>Resize sending images</source>
         <translation>Verstel groote van verstuurde beelde</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="387"/>
+        <location filename="../persecute2/qml/Settings.qml" line="400"/>
         <source>Maximum image size by file size</source>
         <translation>Maksimum datalêer groote vir afbeelding</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="418"/>
+        <location filename="../persecute2/qml/Settings.qml" line="431"/>
         <source>Maximum image size by resolution</source>
         <translation>Maximum resolusie vir afbeelding</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="420"/>
+        <location filename="../persecute2/qml/Settings.qml" line="433"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>
@@ -1290,7 +1305,12 @@
         <translation>Stoor klets geskiedenis na datalêer</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/UserProfile.qml" line="193"/>
+        <location filename="../persecute2/qml/UserProfile.qml" line="146"/>
+        <source>History saved to Documents</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/UserProfile.qml" line="194"/>
         <source>Image saved as %1</source>
         <translation>Beeld gestoor as%1</translation>
     </message>

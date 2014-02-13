@@ -525,13 +525,16 @@ QString WhatsApp::rotateImage(const QString &path, int rotation)
 
 QString WhatsApp::saveImage(const QString &path)
 {
+    qDebug() << "Requested to save" << path << "to gallery";
     if (!path.startsWith("/home/nemo/Pictures")) {
-        QFile img(path);
+        QString cutpath = path;
+        cutpath = cutpath.replace("file://", "");
+        QFile img(cutpath);
         if (img.exists()) {
             qDebug() << "saveImage" << path;
             QString name = path.split("/").last().split("@").first();
             QString destination = QString("/home/nemo/Pictures/%1").arg(name);
-            img.copy(path, destination);
+            img.copy(cutpath, destination);
             qDebug() << "destination:" << destination;
             return name;
         }

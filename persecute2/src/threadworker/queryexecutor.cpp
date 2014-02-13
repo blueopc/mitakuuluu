@@ -733,7 +733,9 @@ void QueryExecutor::saveConversation(QVariantMap &query)
 {
     QString table = query["table"].toString();
     QString jid = query["jid"].toString();
-    QFile conv("/home/nemo/WhatsApp/" + query["name"].toString() + ".txt");
+    if (!QDir("/home/nemo/Documents/WhatsApp/").exists())
+        QDir::home().mkpath("/home/nemo/Documents/WhatsApp/");
+    QFile conv("/home/nemo/Documents/WhatsApp/" + query["name"].toString() + ".txt");
     if (conv.open(QFile::WriteOnly | QFile::Text)) {
         QTextStream out(&conv);
         QSqlQuery sql(QString("SELECT * FROM u%1 ORDER BY timestamp ASC;").arg(table), db);
