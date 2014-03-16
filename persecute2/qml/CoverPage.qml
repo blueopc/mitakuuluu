@@ -5,14 +5,10 @@ CoverBackground {
     id: root
 
     Image {
-        id: waimage
-        source: "image://theme/harbour-mitakuuluu"
-        anchors.centerIn: parent
-        smooth: true
-        onStatusChanged: {
-            if (status == Image.Error)
-                source = "/usr/share/icons/hicolor/86x86/apps/harbour-mitakuuluu.png"
-        }
+        source: "../images/cover.png"
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width
+        height: sourceSize.height * width / sourceSize.width
     }
 
     Label {
@@ -36,8 +32,20 @@ CoverBackground {
         horizontalAlignment: Text.AlignHCenter
         anchors.left: root.left
         anchors.right: root.right
-        anchors.bottom: parent.bottom
+        anchors.verticalCenter: parent.verticalCenter
         anchors.margins: Theme.paddingSmall
         wrapMode: Text.WordWrap
+    }
+
+    CoverActionList {
+        id: coverAction
+
+        CoverAction {
+            iconSource: "../images/icon-cover-quit.png"
+        }
+
+        CoverAction {
+            iconSource: "../images/icon-cover-availability.png"
+        }
     }
 }
