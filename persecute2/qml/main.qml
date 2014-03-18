@@ -11,6 +11,10 @@ ApplicationWindow {
     property bool showTimestamp: true
     property int fontSize: Theme.fontSizeMedium
     property bool followPresence: false
+    onFollowPresenceChanged: {
+        settings.setValue("followPresence", followPresence)
+        updateCoverActions()
+    }
     property bool showSeconds: true
     property bool showMyJid: false
     property bool showKeyboard: false
@@ -24,14 +28,112 @@ ApplicationWindow {
     property string conversationTheme: "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
     property int conversationIndex: 0
     property bool alwaysOffline: false
+    onAlwaysOfflineChanged: {
+        settings.setValue("alwaysOffline", alwaysOffline)
+        if (alwaysOffline)
+            whatsapp.setPresenceUnavailable()
+        else
+            whatsapp.setPresenceAvailable()
+        updateCoverActions()
+    }
     property bool deleteMediaFiles: false
     property bool importToGallery: true
     property bool showConnectionNotifications: false
     property bool lockPortrait: false
     property string connectionServer: "c.whatsapp.net"
 
+    property bool notificationsMuted: false
+    onNotificationsMutedChanged: {
+        settings.setValue("notificationsMuted", notificationsMuted)
+        updateCoverActions()
+    }
+
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
+
+    property string coverIconLeft: ""
+    property string coverIconRight: ""
+
+    function coverLeftClicked() {
+        console.log("coverLeftClicked")
+        coverAction(coverLeftAction)
+    }
+
+    function coverRightClicked() {
+        console.log("coverRightClicked")
+        coverAction(coverRightAction)
+    }
+
+    function coverAction(index) {
+        switch (index) {
+        case 1: //presence
+            if (followPresence) {
+                followPresence = false
+                alwaysOffline = false
+            }
+            else {
+                if (alwaysOffline) {
+                    followPresence = true
+                }
+                else {
+                    followPresence = false
+                    alwaysOffline = true
+                }
+            }
+            break
+        case 2: //global muting
+            notificationsMuted = !notificationsMuted
+            break
+        case 3: //camera
+            roster.captureAndSend()
+            break
+        case 4: //location
+            roster.locateAndSend()
+            break
+        default:
+            break
+        }
+        updateCoverActions()
+    }
+
+    property int coverLeftAction: 1
+    onCoverLeftActionChanged: {
+        updateCoverActions()
+    }
+    property int coverRightAction: 3
+    onCoverRightActionChanged: {
+        updateCoverActions()
+    }
+
+    function updateCoverActions() {
+        coverIconLeft = getNextCoverActionIcon(coverLeftAction)
+        coverIconRight = getNextCoverActionIcon(coverRightAction)
+    }
+
+    function getNextCoverActionIcon(index) {
+        switch (index) {
+        case 1: //presence
+            if (followPresence)
+                return "../images/icon-cover-available.png"
+            else {
+                if (alwaysOffline)
+                    return "../images/icon-cover-available-auto.png"
+                else
+                    return "../images/icon-cover-available-not.png"
+            }
+        case 2: //global muting
+            if (notificationsMuted)
+                return "../images/icon-cover-unmuted.png"
+            else
+                return "../images/icon-cover-muted.png"
+        case 3: //camera
+            return "../images/icon-cover-camera.png"
+        case 4: //location
+            return "../images/icon-cover-location.png"
+        default:
+            return "../images/icon-cover-quit.png"
+        }
+    }
 
     onCurrentOrientationChanged: {
         if (Qt.inputMethod.visible) {
@@ -117,6 +219,7 @@ ApplicationWindow {
         showConnectionNotifications = settings.value("showConnectionNotifications", false)
         lockPortrait = settings.value("lockPortrait", false)
         connectionServer = settings.value("connectionServer", "c.whatsapp.net")
+        updateCoverActions()
     }
 
     AddContact {

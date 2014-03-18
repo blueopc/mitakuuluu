@@ -37,8 +37,8 @@ Page {
     property string second: ""
 
     function saveHistory(sjid, sname) {
-            conversationModel.saveHistory(sjid, sname)
-        }
+        conversationModel.saveHistory(sjid, sname)
+    }
 
     function sendMedia(path) {
         console.log("send media: " + path)
@@ -670,7 +670,7 @@ Page {
         SilicaFlickable {
             id: mFlick
             anchors.fill: parent
-            property int itemWidth: width / 2
+            property int itemWidth: width / 3
             property int itemHeight: (height / 2) - (mHeader.height / 2)
 
             PageHeader {
@@ -679,6 +679,7 @@ Page {
             }
 
             SquareButton {
+                id: imgSend
                 anchors.left: parent.left
                 anchors.top: mHeader.bottom
                 width: mFlick.itemWidth
@@ -693,7 +694,8 @@ Page {
             }
 
             SquareButton {
-                anchors.right: parent.right
+                id: videoSend
+                anchors.left: imgSend.right
                 anchors.top: mHeader.bottom
                 width: mFlick.itemWidth
                 height: mFlick.itemHeight
@@ -708,8 +710,9 @@ Page {
             }
 
             SquareButton {
-                anchors.left: parent.left
-                anchors.bottom: parent.bottom
+                id: audioSend
+                anchors.right: parent.right
+                anchors.top: mHeader.bottom
                 width: mFlick.itemWidth
                 height: mFlick.itemHeight
                 icon.source: "image://theme/icon-m-music"
@@ -719,6 +722,18 @@ Page {
                     selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
                     selectFile.selected.connect(page.sendMedia)
                     selectFile.done.connect(page.unbindMediaFile)
+                }
+            }
+
+            SquareButton {
+                id: captureSend
+                anchors.top: imgSend.bottom
+                anchors.left: parent.left
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-camera-shutter-release"
+                onClicked: {
+                    pageStack.replace(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": false})
                 }
             }
         }

@@ -20,7 +20,7 @@ Page {
     Connections {
         target: pageStack
         onCurrentPageChanged: {
-            var haveRoster = pageStack.find( function(xpage) {
+            var haveRoster = pageStack.find(function(xpage) {
                 return (xpage.objectName == "roster")
             })
             inStack = (haveRoster && haveRoster.objectName == "roster")
@@ -136,6 +136,21 @@ Page {
 
     function deleteEverything() {
         contactsModel.deleteEverything()
+    }
+
+    function captureAndSend() {
+        appWindow.activate()
+        if (pageStack.currentPage.objectName !== "capture")
+            pageStack.push(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": true})
+    }
+
+    function sendImage(path) {
+        broadcast.openMedia(path)
+    }
+
+    function locateAndSend() {
+        appWindow.activate()
+        banner.notify("Function not implemented")
     }
 
     SilicaFlickable {

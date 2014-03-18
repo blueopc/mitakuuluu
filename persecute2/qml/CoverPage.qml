@@ -5,6 +5,7 @@ CoverBackground {
     id: root
 
     Image {
+        id: bgimg
         source: "../images/cover.png"
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width
@@ -31,21 +32,25 @@ CoverBackground {
         font.pixelSize: Theme.fontSizeMedium
         horizontalAlignment: Text.AlignHCenter
         anchors.left: root.left
+        anchors.leftMargin: Theme.paddingSmall
         anchors.right: root.right
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.margins: Theme.paddingSmall
+        anchors.rightMargin: Theme.paddingSmall
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: (roster.inStack ? (parent.height / 1.8) : (parent.height / 4.5)) - height
         wrapMode: Text.WordWrap
     }
 
     CoverActionList {
-        id: coverAction
+        enabled: roster.inStack
 
         CoverAction {
-            iconSource: "../images/icon-cover-quit.png"
+            iconSource: coverIconLeft
+            onTriggered: coverLeftClicked()
         }
 
         CoverAction {
-            iconSource: "../images/icon-cover-availability.png"
+            iconSource: coverIconRight
+            onTriggered: coverRightClicked()
         }
     }
 }

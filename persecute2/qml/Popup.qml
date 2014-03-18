@@ -46,7 +46,7 @@ MouseArea {
         if (color && (typeof(color) != "undefined"))
             bg.color = color
         else
-            bg.color = Theme.rgba(Theme.secondaryHighlightColor, 0.8)
+            bg.color = Theme.rgba(Theme.secondaryHighlightColor, 0.9)
         show()
     }
 

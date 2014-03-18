@@ -30,6 +30,13 @@ Dialog {
         mediaPath.text = ""
     }
 
+    function openMedia(path) {
+        messageText.checked = false
+        messageMedia.checked = true
+        mediaPath.text = path
+        page.open()
+    }
+
     SilicaFlickable {
         id: flickable
         anchors.fill: page

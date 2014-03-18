@@ -11,8 +11,18 @@ Page {
 
         }
         else if (status === PageStatus.Active) {
-
+            updatePresence()
         }
+    }
+
+    Connections {
+        target: appWindow
+        onFollowPresenceChanged: updatePresence()
+        onAlwaysOfflineChanged: updatePresence()
+    }
+
+    function updatePresence() {
+        presenceStatus.currentIndex = followPresence ? 0 : (alwaysOffline ? 2 : 1)
     }
 
     Connections {
@@ -322,59 +332,38 @@ Page {
                 }
             }
 
-            /*TextSwitch {
-                checked: softbankReplacer
-                text: "Display all emoji"
-                description: "Try to display all emoji. Can take extra time to open conversations with emoji"
-                onCheckedChanged: {
-                    if (page.status == PageStatus.Active) {
-                        softbankReplacer = checked
-                        settings.setValue("softbankReplacer", checked)
-                    }
-                }
-            }*/
-
             SectionHeader {
                 text: qsTr("Presence")
             }
 
             ComboBox {
+                id: presenceStatus
                 label: qsTr("Display presence")
                 menu: ContextMenu {
                     MenuItem {
                         text: qsTr("Display online when app is open")
                         onClicked: {
-                            settings.setValue("followPresence", true)
                             followPresence = true
-                            settings.setValue("alwaysOffline", false)
                             alwaysOffline = false
                         }
                     }
                     MenuItem {
                         text: qsTr("Always display online")
                         onClicked: {
-                            settings.setValue("alwaysOffline", false)
                             alwaysOffline = false
-                            settings.setValue("followPresence", false)
                             followPresence = false
-                            whatsapp.setPresenceAvailable()
                         }
                     }
                     MenuItem {
                         text: qsTr("Always display offline")
                         onClicked: {
-                            settings.setValue("alwaysOffline", true)
                             alwaysOffline = true
-                            settings.setValue("followPresence", false)
                             followPresence = false
-                            whatsapp.setPresenceUnavailable()
                         }
                     }
                 }
                 Component.onCompleted: {
                     currentIndex = followPresence ? 0 : (alwaysOffline ? 2 : 1)
-                    //value = (currentIndex == 0) ? qsTr("Display online when app is open") :
-                    //                              ((currentIndex == 1) ? qsTr("Always display online") : qsTr("Always display offline"))
                 }
             }
 
