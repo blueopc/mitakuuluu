@@ -66,7 +66,8 @@ Page {
             busyIndicator.visible = false
             phoneField.text = ""
             codeArea.text = ""
-            pageStack.replace(roster)
+            pageStack.clear()
+            pageStack.push(roster)
         }
         onDissectError: {
             banner.notify(qsTr("Cannot detect your country code. You should use international number format for registration."))
@@ -97,7 +98,7 @@ Page {
                 text = "too many attempts. try again tomorrow"
             else if (reply.reason == "missing") {
                 if (typeof(reply.param) == "undefined")
-                    text += "WhatsApp servers are overcapacity. Please try again later."
+                    text += "Registration code expired. You need to request a new one."
                 else
                     text += "Missing request param: " + reply.param
             }
@@ -185,7 +186,7 @@ Page {
         objectName: "phoneDialog"
 
         onAccepted: {
-            whatsapp.regRequest(phoneField.text.trim(), reqSms.checked ? "sms" : "voice")
+            whatsapp.regRequest(phoneField.text.trim(), reqSms.checked ? "sms" : "voice", password.text)
             actionLabel.text = qsTr("Checking account...")
             busyIndicator.visible = true
             codeArea.focus = false
@@ -196,16 +197,16 @@ Page {
 
         SilicaFlickable {
             anchors.fill: parent
-
-            DialogHeader {
-                title: qsTr("Registration")
-            }
+            contentHeight: phoneRow.height
 
             Column {
                 id: phoneRow
                 width: parent.width
-                anchors.verticalCenter: parent.verticalCenter
                 spacing: Theme.paddingLarge
+
+                DialogHeader {
+                    title: qsTr("Registration")
+                }
 
                 Item {
                     height: phoneField.height
@@ -236,6 +237,16 @@ Page {
                     }
                 }
 
+                TextField {
+                    id: password
+                    width: parent.width
+                    placeholderText: qsTr("Salt password")
+                    label: qsTr("Randomize your registration token")
+                    inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
+                    echoMode: TextInput.Password
+                    EnterKey.enabled: false
+                }
+
                 Item {
                     height: reqSms.height
                     width: parent.width - (Theme.paddingLarge * 2)
@@ -244,43 +255,17 @@ Page {
                     Switch {
                         id: reqSms
                         anchors.left: parent.left
+                        icon.source: "image://theme/icon-l-message"
                         checked: true
                         onClicked: {
                             reqVoice.checked = !checked
                         }
                     }
 
-                    Label {
-                        anchors.left: reqSms.right
-                        anchors.verticalCenter: reqSms.verticalCenter
-                        text: qsTr("SMS")
-                        color: reqSms.checked ? Theme.primaryColor : Theme.secondaryColor
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                reqSms.clicked(mouse)
-                            }
-                        }
-                    }
-
-                    Label {
-                        anchors.right: reqVoice.left
-                        anchors.verticalCenter: reqVoice.verticalCenter
-                        text: qsTr("Voice")
-                        color: reqVoice.checked ? Theme.primaryColor : Theme.secondaryColor
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                reqVoice.clicked(mouse)
-                            }
-                        }
-                    }
-
                     Switch {
                         id: reqVoice
                         anchors.right: parent.right
+                        icon.source: "image://theme/icon-l-answer"
                         checked: false
                         onClicked: {
                             reqSms.checked = !checked
@@ -324,16 +309,17 @@ Page {
 
         SilicaFlickable {
             anchors.fill: parent
-
-            DialogHeader {
-                title: qsTr("Registration")
-            }
+            contentHeight: regColumn.height
 
             Column {
                 id: regColumn
                 spacing: Theme.paddingLarge
                 width: parent.width - (Theme.paddingLarge * 2)
                 anchors.centerIn: parent
+
+                DialogHeader {
+                    title: qsTr("Registration")
+                }
 
                 Label {
                     text: qsTr("Enter registration code. 6-digits, no '-' sign.")

@@ -3,7 +3,7 @@ SUBDIRS = \
     whatsapp-server \
     persecute2 \
     #shareui \
-    #filemodel \
+    filemodel \
     $${NULL}
 
 locales.files = \

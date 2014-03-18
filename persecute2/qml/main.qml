@@ -28,6 +28,7 @@ ApplicationWindow {
     property bool importToGallery: true
     property bool showConnectionNotifications: false
     property bool lockPortrait: false
+    property string connectionServer: "c.whatsapp.net"
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -115,6 +116,7 @@ ApplicationWindow {
         importToGallery = settings.value("importmediatogallery", true)
         showConnectionNotifications = settings.value("showConnectionNotifications", false)
         lockPortrait = settings.value("lockPortrait", false)
+        connectionServer = settings.value("connectionServer", "c.whatsapp.net")
     }
 
     AddContact {
@@ -212,7 +214,6 @@ ApplicationWindow {
         fadeTime: 250
         attackIntensity: 0.0
         fadeIntensity: 0.0
-        //actuator: Actuator {}
     }
 }
 

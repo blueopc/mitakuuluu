@@ -12,8 +12,6 @@
 #include <QClipboard>
 #include "constants.h"
 
-#define OBJECT_NAME "/"
-#define SERVICE_NAME "com.whatsapp.client"
 #define AUTOSTART_DIR "/home/nemo/.config/systemd/user/post-user-session.target.wants"
 #define AUTOSTART_USER "/home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service"
 #define AUTOSTART_SERVICE "/usr/lib/systemd/user/harbour-mitakuuluu.service"
@@ -125,6 +123,13 @@ WhatsApp::WhatsApp(QObject *parent): QObject(parent)
                                           "dissectError", this, SIGNAL(dissectError()));
     QDBusConnection::sessionBus().connect(SERVER_SERVICE, SERVER_PATH, SERVER_INTERFACE,
                                           "logfileReady", this, SIGNAL(logfileReady(QByteArray, bool)));
+    QDBusConnection::sessionBus().connect(SERVER_SERVICE, SERVER_PATH, SERVER_INTERFACE,
+                                          "pong", this, SLOT(onServerPong()));
+    pingServer = new QTimer(this);
+    QObject::connect(pingServer, SIGNAL(timeout()), this, SLOT(doPingServer()));
+    pingServer->setInterval(30000);
+    pingServer->setSingleShot(false);
+    pingServer->start();
 
     Q_EMIT ready();
 }
@@ -272,10 +277,10 @@ void WhatsApp::getGroupInfo(const QString &jid)
         iface->call(QDBus::NoBlock, "getGroupInfo", jid);
 }
 
-void WhatsApp::regRequest(const QString &phone, const QString &method)
+void WhatsApp::regRequest(const QString &phone, const QString &method, const QString &password)
 {
     if (iface)
-        iface->call(QDBus::NoBlock, "regRequest", phone, method);
+        iface->call(QDBus::NoBlock, "regRequest", phone, method, password);
 }
 
 void WhatsApp::enterCode(const QString &phone, const QString &code)
@@ -423,6 +428,7 @@ void WhatsApp::sendRecentLogs()
 
 void WhatsApp::shutdown()
 {
+    pingServer->stop();
     if (iface)
         iface->call(QDBus::NoBlock, "exit");
     system("killall -9 harbour-mitakuuluu-server");
@@ -482,6 +488,17 @@ void WhatsApp::onMyAccount(QDBusPendingCallWatcher *call)
     call->deleteLater();
 }
 
+void WhatsApp::doPingServer()
+{
+    if (iface)
+        iface->call(QDBus::NoBlock, "ping");
+}
+
+void WhatsApp::onServerPong()
+{
+
+}
+
 void WhatsApp::exit()
 {
     qDebug() << "Remote command requested exit";
@@ -526,14 +543,21 @@ QString WhatsApp::rotateImage(const QString &path, int rotation)
 QString WhatsApp::saveImage(const QString &path)
 {
     qDebug() << "Requested to save" << path << "to gallery";
-    if (!path.startsWith("/home/nemo/Pictures")) {
+    if (!path.contains("/home/nemo/WhatsApp")) {
         QString cutpath = path;
         cutpath = cutpath.replace("file://", "");
         QFile img(cutpath);
         if (img.exists()) {
             qDebug() << "saveImage" << path;
             QString name = path.split("/").last().split("@").first();
-            QString destination = QString("/home/nemo/Pictures/%1").arg(name);
+            img.open(QFile::ReadOnly);
+            QString ext = "jpg";
+            img.seek(1);
+            QByteArray buf = img.read(3);
+            if (buf == "PNG")
+                ext = "png";
+            img.close();
+            QString destination = QString("/home/nemo/WhatsApp/%1.%2").arg(name).arg(ext);
             img.copy(cutpath, destination);
             qDebug() << "destination:" << destination;
             return name;

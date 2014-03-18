@@ -245,6 +245,37 @@ Page {
                 }
             }
 
+            ComboBox {
+                label: qsTr("Connection server")
+                menu: ContextMenu {
+                    MenuItem {
+                        text: "c.whatsapp.net"
+                        onClicked: {
+                            connectionServer = "c.whatsapp.net"
+                            settings.setValue("connectionServer", connectionServer)
+                        }
+                    }
+                    MenuItem {
+                        text: "c2.whatsapp.net"
+                        onClicked: {
+                            connectionServer = "c2.whatsapp.net"
+                            settings.setValue("connectionServer", connectionServer)
+                        }
+                    }
+                    MenuItem {
+                        text: "c3.whatsapp.net"
+                        onClicked: {
+                            connectionServer = "c3.whatsapp.net"
+                            settings.setValue("connectionServer", connectionServer)
+                        }
+                    }
+                }
+                Component.onCompleted: {
+                    currentIndex = (connectionServer == "c.whatsapp.net" ? 0 :
+                                                                         (connectionServer == "c2.whatsapp.net" ? 1 : 2))
+                }
+            }
+
             TextSwitch {
                 id: autostart
                 checked: whatsapp.checkAutostart()
@@ -307,57 +338,43 @@ Page {
                 text: qsTr("Presence")
             }
 
-            TextSwitch {
-                id: presence
-                checked: followPresence
-                text: qsTr("Display online when app is open")
-                onClicked: {
-                    if (checked)
-                        presence.hideAll()
-                    checked = true
-                    settings.setValue("followPresence", checked)
-                    followPresence = checked
-                    settings.setValue("alwaysOffline", false)
-                    alwaysOffline = false
+            ComboBox {
+                label: qsTr("Display presence")
+                menu: ContextMenu {
+                    MenuItem {
+                        text: qsTr("Display online when app is open")
+                        onClicked: {
+                            settings.setValue("followPresence", true)
+                            followPresence = true
+                            settings.setValue("alwaysOffline", false)
+                            alwaysOffline = false
+                        }
+                    }
+                    MenuItem {
+                        text: qsTr("Always display online")
+                        onClicked: {
+                            settings.setValue("alwaysOffline", false)
+                            alwaysOffline = false
+                            settings.setValue("followPresence", false)
+                            followPresence = false
+                            whatsapp.setPresenceAvailable()
+                        }
+                    }
+                    MenuItem {
+                        text: qsTr("Always display offline")
+                        onClicked: {
+                            settings.setValue("alwaysOffline", true)
+                            alwaysOffline = true
+                            settings.setValue("followPresence", false)
+                            followPresence = false
+                            whatsapp.setPresenceUnavailable()
+                        }
+                    }
                 }
-                function hideAll() {
-                    presence.checked = false
-                    onlineSwitch.checked = false
-                    offlineSwitch.checked = false
-                }
-            }
-
-            TextSwitch {
-                id: onlineSwitch
-                checked: !alwaysOffline && !followPresence
-                text: qsTr("Always display online")
-                onClicked: {
-                    if (checked)
-                        presence.hideAll()
-                    checked = true
-                    settings.setValue("alwaysOffline", !checked)
-                    alwaysOffline = !checked
-                    settings.setValue("followPresence", false)
-                    followPresence = false
-                    if (checked)
-                        whatsapp.setPresenceAvailable()
-                }
-            }
-
-            TextSwitch {
-                id: offlineSwitch
-                checked: alwaysOffline && !followPresence
-                text: qsTr("Always display offline")
-                onClicked: {
-                    if (checked)
-                        presence.hideAll()
-                    checked = true
-                    settings.setValue("alwaysOffline", checked)
-                    alwaysOffline = checked
-                    settings.setValue("followPresence", false)
-                    followPresence = false
-                    if (checked)
-                        whatsapp.setPresenceUnavailable()
+                Component.onCompleted: {
+                    currentIndex = followPresence ? 0 : (alwaysOffline ? 2 : 1)
+                    //value = (currentIndex == 0) ? qsTr("Display online when app is open") :
+                    //                              ((currentIndex == 1) ? qsTr("Always display online") : qsTr("Always display offline"))
                 }
             }
 

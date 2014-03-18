@@ -7,6 +7,7 @@
 #include <QNetworkAccessManager>
 #include <QStringList>
 #include <QtDBus/QtDBus>
+#include <QTimer>
 
 #include <QDir>
 #include <QFile>
@@ -45,6 +46,8 @@ private:
     QDBusInterface *iface;
 
     QTranslator translator;
+
+    QTimer *pingServer;
 
 signals:
     void ready();
@@ -105,6 +108,8 @@ signals:
 private slots:
     void onReplyCrashed(QDBusPendingCallWatcher *call);
     void onMyAccount(QDBusPendingCallWatcher *call);
+    void doPingServer();
+    void onServerPong();
 
 public slots:
     void exit();
@@ -129,7 +134,7 @@ public slots:
     void openVCardData(const QString &name, const QString &data);
     void getParticipants(const QString &jid);
     void getGroupInfo(const QString &jid);
-    void regRequest(const QString &phone, const QString &method);
+    void regRequest(const QString &phone, const QString &method, const QString &password);
     void enterCode(const QString &phone, const QString &code);
     void setGroupSubject(const QString &gjid, const QString &subject);
     void createGroup(const QString &subject);

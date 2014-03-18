@@ -8,8 +8,8 @@ Name:       harbour-mitakuuluu
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
-Version:    0.1
-Release:    31
+Version:    0.2
+Release:    1
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
@@ -22,6 +22,8 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Contacts)
 BuildRequires:  pkgconfig(sailfishapp)
 BuildRequires:  desktop-file-utils
+BuildRequires:  libexif-devel
+BuildRequires:  mce-headers
 BuildRequires:  libiphb-devel
 
 
@@ -53,8 +55,6 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
-strip -s %{buildroot}/usr/bin/harbour-mitakuuluu
-strip -s %{buildroot}/usr/bin/harbour-mitakuuluu-server
 
 mkdir -p %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wants/
 touch %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
@@ -118,11 +118,12 @@ fi
 %{_datadir}/dbus-1/services
 #/usr/lib/nemo-transferengine/plugins
 %{_datadir}/lipstick/notificationcategories/
+%{_datadir}/jolla-gallery/mediasources/
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/themes/base/meegotouch/icons/
 %{_datadir}/%{name}
-#/usr/lib/qt5/qml/org/harbour-mitakuuluu/filemodel/
+/usr/lib/qt5/qml/harbour/mitakuuluu/filemodel
 /usr/lib/systemd/user
 %{_bindir}
 %ghost /home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service

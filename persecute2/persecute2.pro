@@ -1,24 +1,14 @@
 TARGET = harbour-mitakuuluu
 target.path = /usr/bin
 
-QT += sql dbus core quick qml
-CONFIG += quick2 qml Qt5Contacts link_pkgconfig
-PKGCONFIG += Qt5Contacts sailfishapp mlite5 libexif
+QT += sql dbus core
+CONFIG += Qt5Contacts sailfishapp link_pkgconfig
+PKGCONFIG += sailfishapp Qt5Contacts mlite5 libexif
 
-INCLUDEPATH += /usr/include/sailfishapp
 INCLUDEPATH += /usr/include/qt5/QtContacts
 INCLUDEPATH += /usr/include/qt5/QtFeedback
 
-gui.files = qml
-gui.path = /usr/share/harbour-mitakuuluu
-
 INCLUDEPATH += /usr/include/mlite5
-
-desktop.files = harbour-mitakuuluu.desktop
-desktop.path = /usr/share/applications
-
-icon.files = harbour-mitakuuluu.png
-icon.path = /usr/share/icons/hicolor/86x86/apps
 
 images.files = images/
 images.path = /usr/share/harbour-mitakuuluu
@@ -29,7 +19,7 @@ emoji.path = /usr/share/harbour-mitakuuluu
 dbus.files = dbus/org.coderus.harbour_mitakuuluu.service
 dbus.path = /usr/share/dbus-1/services
 
-INSTALLS = target gui images desktop icon dbus emoji
+INSTALLS += images dbus emoji
 
 SOURCES += src/persecute.cpp
 
@@ -75,6 +65,8 @@ OTHER_FILES += $$files(rpm/*) \
     qml/AvatarHolder.qml \
     qml/SelectPicture.qml \
     qml/SelectFile.qml \
+    qml/DefaultDelegate.qml \
+    qml/BubbleDelegate.qml \
     qml/DialogRowsHeader.qml \
     dbus/org.coderus.harbour-mitakuuluu.service \
     harbour-mitakuuluu.desktop \
