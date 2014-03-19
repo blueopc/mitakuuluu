@@ -45,29 +45,7 @@ HEADERS += \
     src/settings.h
 
 OTHER_FILES += $$files(rpm/*) \
-    qml/About.qml \
-    qml/Account.qml \
-    qml/Broadcast.qml \
-    qml/CheckableItem.qml \
-    qml/Conversation.qml \
-    qml/Forward.qml \
-    qml/GroupProfile.qml \
-    qml/InteractionArea.qml \
-    qml/PrivacyList.qml \
-    qml/Register.qml \
-    qml/ResizePicture.qml \
-    qml/Roster.qml \
-    qml/SelectContact.qml \
-    qml/Settings.qml \
-    qml/main.qml \
-    qml/Popup.qml \
-    qml/CoverPage.qml \
-    qml/AvatarHolder.qml \
-    qml/SelectPicture.qml \
-    qml/SelectFile.qml \
-    qml/DefaultDelegate.qml \
-    qml/BubbleDelegate.qml \
-    qml/DialogRowsHeader.qml \
+    $$files(qml/*) \
     dbus/org.coderus.harbour-mitakuuluu.service \
     harbour-mitakuuluu.desktop \
     harbour-mitakuuluu.png

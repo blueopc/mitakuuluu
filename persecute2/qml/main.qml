@@ -40,13 +40,26 @@ ApplicationWindow {
     property bool importToGallery: true
     property bool showConnectionNotifications: false
     property bool lockPortrait: false
-    property string connectionServer: "c.whatsapp.net"
+    property string connectionServer: "c3.whatsapp.net"
+    onConnectionServerChanged: {
+        console.log("set connectionServer: " + connectionServer)
+        settings.setValue("connectionServer", connectionServer)
+    }
 
     property bool notificationsMuted: false
     onNotificationsMutedChanged: {
         settings.setValue("notificationsMuted", notificationsMuted)
         updateCoverActions()
     }
+
+    property bool threading: true
+    onThreadingChanged: settings.setValue("threading", threading)
+
+    property bool hideKeyboard: false
+    onHideKeyboardChanged: settings.setValue("hideKeyboard", hideKeyboard)
+
+    property bool notifyMessages: true
+    onNotifyMessagesChanged: settings.setValue("notifyMessages", notifyMessages)
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
@@ -96,7 +109,7 @@ ApplicationWindow {
         updateCoverActions()
     }
 
-    property int coverLeftAction: 1
+    property int coverLeftAction: 4
     onCoverLeftActionChanged: {
         updateCoverActions()
     }
@@ -106,20 +119,20 @@ ApplicationWindow {
     }
 
     function updateCoverActions() {
-        coverIconLeft = getNextCoverActionIcon(coverLeftAction)
-        coverIconRight = getNextCoverActionIcon(coverRightAction)
+        coverIconLeft = getCoverActionIcon(coverLeftAction)
+        coverIconRight = getCoverActionIcon(coverRightAction)
     }
 
-    function getNextCoverActionIcon(index) {
+    function getCoverActionIcon(index) {
         switch (index) {
         case 1: //presence
             if (followPresence)
-                return "../images/icon-cover-available.png"
+                return "../images/icon-cover-available-auto.png"
             else {
                 if (alwaysOffline)
-                    return "../images/icon-cover-available-auto.png"
-                else
                     return "../images/icon-cover-available-not.png"
+                else
+                    return "../images/icon-cover-available.png"
             }
         case 2: //global muting
             if (notificationsMuted)
@@ -219,6 +232,9 @@ ApplicationWindow {
         showConnectionNotifications = settings.value("showConnectionNotifications", false)
         lockPortrait = settings.value("lockPortrait", false)
         connectionServer = settings.value("connectionServer", "c.whatsapp.net")
+        threading = settings.value("threading", true)
+        hideKeyboard = settings.value("hideKeyboard", false)
+        notifyMessages = settings.value("notifyMessages", true)
         updateCoverActions()
     }
 

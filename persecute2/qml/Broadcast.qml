@@ -5,7 +5,7 @@ import "Utilities.js" as Utilities
 Dialog {
     id: page
     objectName: "broadcast"
-    canAccept: listView.count > 0
+    Component.onCompleted: page.canAccept = false
 
     onAccepted: {
         if (messageText.checked) {
@@ -14,6 +14,10 @@ Dialog {
         else if (messageMedia.checked) {
             whatsapp.sendMedia(page.jids, mediaPath.text)
         }
+        else if (messageLocation.checked) {
+            whatsapp.sendLocation(page.jids, location.longitude, location.latitude, location.zoom, location.googlemaps)
+        }
+
         clear()
     }
 
@@ -31,9 +35,20 @@ Dialog {
     }
 
     function openMedia(path) {
-        messageText.checked = false
+        mediaRow.hideAll()
         messageMedia.checked = true
         mediaPath.text = path
+        page.open()
+    }
+
+    function openLocation(latitude, longitude, zoom, googlemaps) {
+        mediaRow.hideAll()
+        messageLocation.checked = true
+        location.latitude = latitude
+        location.longitude = longitude
+        location.zoom = zoom
+        location.googlemaps = googlemaps
+        location.loadPreview()
         page.open()
     }
 
@@ -107,7 +122,6 @@ Dialog {
                     id: messageLocation
                     icon.source: "image://theme/icon-m-gps"
                     checked: false
-                    enabled: false
                     onClicked: {
                         if (checked) {
                             mediaRow.hideAll()
@@ -187,6 +201,47 @@ Dialog {
                 }
             }
 
+            Image {
+                id: location
+                width: 320
+                height: 320
+                anchors.horizontalCenter: parent.horizontalCenter
+                property bool googlemaps: false
+                property real latitude: 55.159479
+                property real longitude: 61.402796
+                property int zoom: 15
+                function loadPreview() {
+                    if (googlemaps)
+                        source = "http://maps.googleapis.com/maps/api/staticmap?zoom=" + zoom
+                                    + "&size=320x320"
+                                    +"&maptype=roadmap&sensor=false&markers=color:red|label:.|"
+                                    + latitude
+                                    + ","
+                                    + longitude
+                    else
+                        source = "http://m.nok.it/?ctr="
+                                    + latitude
+                                    + ","
+                                    + longitude
+                                    + "&w=320"
+                                    + "&h=320"
+                                    + "&poix0="
+                                    + latitude
+                                    + ","
+                                    + longitude
+                                    + ";red;white;20;.;"
+                                    + "&z=" + zoom
+                                    + "&nord&f=0&poithm=1&poilbl=0"
+                }
+
+                BusyIndicator {
+                    anchors.centerIn: location
+                    running: visible
+                    visible: location.status != Image.Ready
+                    size: BusyIndicatorSize.Large
+                }
+            }
+
             Button {
                 id: mediaSelect
                 visible: messageMedia.checked
@@ -224,6 +279,7 @@ Dialog {
                 }
                 selectContact.finished.disconnect(listView.selectionFinished)
             }
+            onCountChanged: page.canAccept = (count > 0)
         }
 
         Label {

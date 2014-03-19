@@ -19,6 +19,11 @@ Page {
         target: appWindow
         onFollowPresenceChanged: updatePresence()
         onAlwaysOfflineChanged: updatePresence()
+        onConnectionServerChanged: {
+            connServer.currentIndex = (connectionServer == "c.whatsapp.net" ? 0
+                                     :(connectionServer == "c2.whatsapp.net" ? 1
+                                                                              : 2))
+        }
     }
 
     function updatePresence() {
@@ -183,12 +188,17 @@ Page {
 
             TextSwitch {
                 checked: showKeyboard
-                text: qsTr("Show keyboard automatically")
-                description: qsTr("Automatically show keyboard when opening conversation")
+                text: qsTr("Automatically show keyboard when opening conversation")
                 onClicked: {
                     showKeyboard = checked
                     settings.setValue("showKeyboard", checked)
                 }
+            }
+
+            TextSwitch {
+                checked: hideKeyboard
+                text: qsTr("Hide keyboard after sending message")
+                onClicked: hideKeyboard = checked
             }
 
             TextSwitch {
@@ -256,33 +266,32 @@ Page {
             }
 
             ComboBox {
-                label: qsTr("Connection server")
+                id: connServer
+                label: qsTr("Connection server") + " (*)"
                 menu: ContextMenu {
                     MenuItem {
                         text: "c.whatsapp.net"
                         onClicked: {
                             connectionServer = "c.whatsapp.net"
-                            settings.setValue("connectionServer", connectionServer)
                         }
                     }
                     MenuItem {
                         text: "c2.whatsapp.net"
                         onClicked: {
                             connectionServer = "c2.whatsapp.net"
-                            settings.setValue("connectionServer", connectionServer)
                         }
                     }
                     MenuItem {
                         text: "c3.whatsapp.net"
                         onClicked: {
                             connectionServer = "c3.whatsapp.net"
-                            settings.setValue("connectionServer", connectionServer)
                         }
                     }
                 }
                 Component.onCompleted: {
-                    currentIndex = (connectionServer == "c.whatsapp.net" ? 0 :
-                                                                         (connectionServer == "c2.whatsapp.net" ? 1 : 2))
+                    currentIndex = (connectionServer == "c.whatsapp.net" ? 0
+                                  :(connectionServer == "c2.whatsapp.net" ? 1
+                                                                          : 2))
                 }
             }
 
@@ -330,6 +339,18 @@ Page {
                     showConnectionNotifications = checked
                     settings.setValue("showConnectionNotifications", checked)
                 }
+            }
+
+            TextSwitch {
+                checked: notifyMessages
+                text: qsTr("Display messages text in notifications")
+                onClicked: notifyMessages = checked
+            }
+
+            TextSwitch {
+                checked: threading
+                text: qsTr("Create server connection in separate thread (experimental) (*)")
+                onClicked: threading = value
             }
 
             SectionHeader {
@@ -384,22 +405,30 @@ Page {
                 }
             }
 
-            TextSwitch {
-                id: sizeResize
-                text: ""
+            Item {
                 width: parent.width
-                enabled: resizeImages
-                checked: resizeImages && resizeBySize
-                onClicked: {
-                    resizeBySize = checked
-                    settings.setValue("resizeBySize", checked)
-                    pixResize.checked = !checked
+                height: sizeSlider.height
+
+                TextSwitch {
+                    id: sizeResize
+                    text: ""
+                    width: Theme.itemSizeSmall
+                    enabled: resizeImages
+                    checked: resizeImages && resizeBySize
+                    onClicked: {
+                        resizeBySize = checked
+                        settings.setValue("resizeBySize", checked)
+                        pixResize.checked = !checked
+                    }
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
                 }
 
+
                 Slider {
+                    id: sizeSlider
                     enabled: resizeBySize
-                    anchors.left: parent.left
-                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.left: sizeResize.right
                     anchors.right: parent.right
                     maximumValue: 5242880
                     minimumValue: 204800
@@ -415,22 +444,29 @@ Page {
                 }
             }
 
-            TextSwitch {
-                id: pixResize
-                text: ""
+            Item {
                 width: parent.width
-                enabled: resizeImages
-                checked: resizeImages && !resizeBySize
-                onClicked: {
-                    resizeBySize = !checked
-                    settings.setValue("resizeBySize", !checked)
-                    sizeResize.checked = !checked
+                height: pixSlider.height
+
+                TextSwitch {
+                    id: pixResize
+                    text: ""
+                    width: Theme.itemSizeSmall
+                    enabled: resizeImages
+                    checked: resizeImages && !resizeBySize
+                    onClicked: {
+                        resizeBySize = !checked
+                        settings.setValue("resizeBySize", !checked)
+                        sizeResize.checked = !checked
+                    }
+                    anchors.left: parent.left
+                    anchors.verticalCenter: parent.verticalCenter
                 }
 
                 Slider {
+                    id: pixSlider
                     enabled: !resizeBySize
-                    anchors.left: parent.left
-                    anchors.leftMargin: Theme.paddingLarge
+                    anchors.left: pixResize.right
                     anchors.right: parent.right
                     maximumValue: 9.0
                     minimumValue: 0.2
@@ -444,6 +480,16 @@ Page {
                         }
                     }
                 }
+            }
+
+            Label {
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                wrapMode: Text.Wrap
+                text: qsTr("Options marked with (*) will take effect after reconnection")
             }
         }
     }

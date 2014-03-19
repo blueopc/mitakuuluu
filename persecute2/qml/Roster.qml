@@ -71,6 +71,9 @@ Page {
         onUploadMediaFailed: {
             banner.notify(qsTr("Media uploading failed!"), "#A0FF2020")
         }
+        onAccountExpired: {
+            banner.notify(qsTr("Account expired: %1").arg(reason), "#A0FF2020")
+        }
     }
 
     function parseConnectionStatus(value) {
@@ -148,9 +151,14 @@ Page {
         broadcast.openMedia(path)
     }
 
+    function sendLocation(lat, lon, zoom, gmaps) {
+        broadcast.openLocation(lat, lon, zoom, gmaps)
+    }
+
     function locateAndSend() {
         appWindow.activate()
-        banner.notify("Function not implemented")
+        if (pageStack.currentPage.objectName !== "location")
+            pageStack.push(Qt.resolvedUrl("Location.qml"), {"broadcastMode": true})
     }
 
     SilicaFlickable {

@@ -40,7 +40,7 @@ Page {
             }
 
             Label {
-                text: "v0.1-31"
+                text: "v0.2-2"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
@@ -48,7 +48,7 @@ Page {
             }
 
             Label {
-                text: "indie WhatsApp client\nwritten by coderus in 0x7DE\nis dedicated to my beloved"
+                text: "indie WhatsApp-compatible client\nwritten by coderus in 0x7DE\nis dedicated to my beloved"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
@@ -167,7 +167,7 @@ Page {
             }
 
             Label {
-                text: "\n\nApplication uses remastered WhatsApp logo and WhatsApp protocol, but it's not licensed by WhatsApp. You using application as-is, suggestions, bugs and new ideas will be accepted by email:"
+                text: "\n\nApplication not using WhatsApp licensed resources, but based on WhatsApp protocol implementation. You using application as-is, suggestions, bugs and new ideas will be accepted by email:"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter

@@ -178,6 +178,7 @@ public slots:
     void windowActive();
     bool checkAutostart();
     void setAutostart(bool enabled);
+    void sendLocation(const QStringList &jids, const QString &latitude, const QString &longitude, int zoom, bool googlemaps = false);
 };
 
 #endif // WHATSAPP_H

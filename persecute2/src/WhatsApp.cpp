@@ -759,3 +759,10 @@ void WhatsApp::setAutostart(bool enabled)
         service.remove();
     }
 }
+
+void WhatsApp::sendLocation(const QStringList &jids, const QString &latitude, const QString &longitude, int zoom, bool googlemaps)
+{
+    if (iface) {
+        iface->call(QDBus::NoBlock, "sendLocation", jids, latitude, longitude, zoom, googlemaps);
+    }
+}

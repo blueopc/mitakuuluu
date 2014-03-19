@@ -107,42 +107,42 @@
 <context>
     <name>Broadcast</name>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="46"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="61"/>
         <source>Add contact</source>
         <translation>Добавить контакт</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="59"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="74"/>
         <source>Send broadcast</source>
         <translation>Отправить</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="158"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="172"/>
         <source>Enter your message here...</source>
         <translation>Введите текст сообщения здесь...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="194"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="249"/>
         <source>Select media</source>
         <translation>Выбрать файл</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="222"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="277"/>
         <source>Max broadcast recepients count reached</source>
         <translation>Достигнуто максимальное количество получателей</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="292"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="348"/>
         <source>Select media type</source>
         <translation>Выберите тип</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="316"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="372"/>
         <source>Select video</source>
         <translation>Выберите видео</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="331"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="387"/>
         <source>Select audio</source>
         <translation>Выберите аудио</translation>
     </message>
@@ -151,7 +151,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="235"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="291"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
         <translation>Выберите &amp;quot;Добавить контакт&amp;quot; в меню, чтобы добавить контакты</translation>
     </message>
@@ -219,19 +219,24 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="1710"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1724"/>
         <source>Disconnected</source>
         <translation>Отключен</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2024"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2054"/>
         <source>Mitakuuluu share</source>
         <translation>Отправка в Mitakuuluu</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2024"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2054"/>
         <source>Can&apos;t share media when offline</source>
         <translation>Нельзя передавать файлы если вы не в сети</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../whatsapp-server/src/client.cpp" line="2851"/>
+        <source>%1 message(s) unread</source>
+        <translation><numerusform>%1 новое сообщение</numerusform><numerusform>%1 новых сообщения</numerusform><numerusform>%1 новых сообщений</numerusform></translation>
     </message>
     <message>
         <source>%1 unread messages</source>
@@ -241,37 +246,37 @@
 <context>
     <name>Conversation</name>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="46"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="50"/>
         <source>Media uploading started</source>
         <translation>Началась передача файла</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
         <source>n/a</source>
         <translation>нет данных</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
         <source>S</source>
         <translation>с.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
         <source>M</source>
         <translation>м.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="148"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
         <source>H</source>
         <translation>ч.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="157"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="161"/>
         <source>Outgoing </source>
         <translation>[Исходящее] </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="159"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="163"/>
         <source>Incoming </source>
         <translation>[Входящее] </translation>
     </message>
@@ -296,158 +301,158 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source>Outgoing picture </source>
         <translation>Исходящее изображение </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="162"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
         <source>Incoming picture </source>
         <translation>Входящее изображение </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="163"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="167"/>
         <source>Outgoing audio </source>
         <translation>Исходящая аудиозапись </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="163"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="167"/>
         <source>Incoming audio </source>
         <translation>Входящая аудиозапись </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="164"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="168"/>
         <source>Outgoing video </source>
         <translation>Исходящая видеозапись </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="164"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="168"/>
         <source>Incoming video </source>
         <translation>Входящая видеозапись </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="165"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="169"/>
         <source>Outgoing contact </source>
         <translation>Исходящий контакт </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="165"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="169"/>
         <source>Incoming contact </source>
         <translation>Входящий контакт </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>LAT: %1</source>
-        <translation>долгота: %1</translation>
+        <translation>долгота: %1 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source> LON: %1</source>
-        <translation>широта: %1</translation>
+        <translation>широта: %1 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>Outgoing location </source>
         <translation>Исходящее местоположение </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>Incoming location </source>
         <translation>Входящее местоположение </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="175"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="179"/>
         <source>Joined group</source>
         <translation>Присоединился к группе</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="176"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="180"/>
         <source>Left group</source>
         <translation>Покинул группу</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="177"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="181"/>
         <source>Changed group subject to: %1</source>
         <translation>Изменил тему группы на: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="178"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="182"/>
         <source>Changed group avatar</source>
         <translation>Изменил аватар группы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="183"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="187"/>
         <source>System message.</source>
         <translation>Системное сообщение.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="317"/>
         <source>Send media</source>
         <translation>Передать файл</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="322"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="325"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="326"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="329"/>
         <source>Remove all messages</source>
         <translation>Удалить все сообщения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="336"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="340"/>
         <source>Profile</source>
         <translation>Профиль</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="306"/>
         <source>Unmute</source>
         <translation>Уведомлять</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="302"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="306"/>
         <source>Unblock</source>
         <translation>Разблокировать</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="303"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="307"/>
         <source>Mute</source>
         <translation>Тишина</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="303"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="307"/>
         <source>Block</source>
         <translation>Заблокировать</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="345"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="348"/>
         <source>Load old conversation</source>
         <translation>Загрузить старые сообщения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="510"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="513"/>
         <source>New message</source>
         <translation>Новое сообщение</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="545"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="548"/>
         <source>Tap here to enter message</source>
         <translation>Введите текст сообщения здесь...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="657"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="660"/>
         <source>Image saved as %1</source>
         <translation>Изображение сохранено как %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="678"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="681"/>
         <source>Select media type</source>
         <translation>Тип сообщения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="705"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="708"/>
         <source>Select video</source>
         <translation>Выберите файл</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="721"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="724"/>
         <source>Select audio</source>
         <translation>Выберите файл</translation>
     </message>
@@ -605,6 +610,19 @@
         <location filename="../persecute2/qml/InteractionArea.qml" line="86"/>
         <source>Error loading image</source>
         <translation>Ошибка загрузки изображения</translation>
+    </message>
+</context>
+<context>
+    <name>Location</name>
+    <message>
+        <location filename="../persecute2/qml/Location.qml" line="180"/>
+        <source>latitude: %1</source>
+        <translation>широта: %1</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Location.qml" line="187"/>
+        <source>longitude: %1</source>
+        <translation>долгота: %1</translation>
     </message>
 </context>
 <context>
@@ -829,12 +847,12 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="78"/>
+        <location filename="../persecute2/qml/Roster.qml" line="81"/>
         <source>Waiting for connection</source>
         <translation>Ожидание соединения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="79"/>
+        <location filename="../persecute2/qml/Roster.qml" line="82"/>
         <source>Connecting...</source>
         <translation>Подключение...</translation>
     </message>
@@ -843,165 +861,170 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="80"/>
+        <location filename="../persecute2/qml/Roster.qml" line="83"/>
         <source>Authorization...</source>
         <translation>Авторизация...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="81"/>
+        <location filename="../persecute2/qml/Roster.qml" line="84"/>
         <source>Logged in</source>
         <translation>В сети</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="82"/>
+        <location filename="../persecute2/qml/Roster.qml" line="85"/>
         <source>Login failure!</source>
         <translation>Ошибка входа!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="83"/>
+        <location filename="../persecute2/qml/Roster.qml" line="86"/>
         <source>Disconnected</source>
         <translation>Отключен</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="84"/>
+        <location filename="../persecute2/qml/Roster.qml" line="87"/>
         <source>Registering...</source>
         <translation>Регистрация...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="85"/>
+        <location filename="../persecute2/qml/Roster.qml" line="88"/>
         <source>Registration failed!</source>
         <translation>Ошибка регистрации!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="110"/>
+        <location filename="../persecute2/qml/Roster.qml" line="113"/>
         <source>No action</source>
         <translation>Действия нет</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="104"/>
+        <location filename="../persecute2/qml/Roster.qml" line="107"/>
         <source>Force connect</source>
         <translation>Принудительное подключение</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="77"/>
+        <location filename="../persecute2/qml/Roster.qml" line="75"/>
+        <source>Account expired: %1</source>
+        <translation>Аккаунт истек: %1</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Roster.qml" line="80"/>
         <source>Engine crashed</source>
         <translation>Сбой в работе</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="103"/>
+        <location filename="../persecute2/qml/Roster.qml" line="106"/>
         <source>Restart engine</source>
         <translation>Перезапустить</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="105"/>
-        <location filename="../persecute2/qml/Roster.qml" line="106"/>
-        <location filename="../persecute2/qml/Roster.qml" line="107"/>
+        <location filename="../persecute2/qml/Roster.qml" line="108"/>
+        <location filename="../persecute2/qml/Roster.qml" line="109"/>
+        <location filename="../persecute2/qml/Roster.qml" line="110"/>
         <source>Disconnect</source>
         <translation>Отключить</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="108"/>
         <location filename="../persecute2/qml/Roster.qml" line="111"/>
+        <location filename="../persecute2/qml/Roster.qml" line="114"/>
         <source>Register</source>
         <translation>Регистрация</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="109"/>
+        <location filename="../persecute2/qml/Roster.qml" line="112"/>
         <source>Connect</source>
         <translation>Подключить</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="121"/>
+        <location filename="../persecute2/qml/Roster.qml" line="124"/>
         <source>You</source>
         <translation>Вы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="166"/>
+        <location filename="../persecute2/qml/Roster.qml" line="174"/>
         <source>Quit</source>
         <translation>Завершение работы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="170"/>
+        <location filename="../persecute2/qml/Roster.qml" line="178"/>
         <source>Quit and shutdown engine</source>
         <translation>Завершение работы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="181"/>
+        <location filename="../persecute2/qml/Roster.qml" line="189"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="189"/>
+        <location filename="../persecute2/qml/Roster.qml" line="197"/>
         <source>New group</source>
         <translation>Новая группа</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="198"/>
+        <location filename="../persecute2/qml/Roster.qml" line="206"/>
         <source>Broadcast</source>
         <translation>Вещание</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="206"/>
+        <location filename="../persecute2/qml/Roster.qml" line="214"/>
         <source>Add contacts</source>
         <translation>Добавить контакты</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="222"/>
+        <location filename="../persecute2/qml/Roster.qml" line="230"/>
         <source>Disconnecting</source>
         <translation>Отключение</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="312"/>
+        <location filename="../persecute2/qml/Roster.qml" line="320"/>
         <source>Enter contact name to search</source>
         <translation>Введите имя контакта для поиска</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="378"/>
+        <location filename="../persecute2/qml/Roster.qml" line="386"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
         <translation>Список контактов пуст. Синхронизируйте телефонную книгу или  добавьте контакты вручную</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="438"/>
+        <location filename="../persecute2/qml/Roster.qml" line="446"/>
         <source>Rename contact</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="445"/>
+        <location filename="../persecute2/qml/Roster.qml" line="453"/>
         <source>Enter new name</source>
         <translation>Введите новое имя</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="486"/>
+        <location filename="../persecute2/qml/Roster.qml" line="494"/>
         <source>Create group</source>
         <translation>Создать группу</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="493"/>
+        <location filename="../persecute2/qml/Roster.qml" line="501"/>
         <source>Write name of new group here</source>
         <translation>Введите тему для новой группы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="583"/>
+        <location filename="../persecute2/qml/Roster.qml" line="591"/>
         <source>Group chat</source>
         <translation>Групповой чат</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="610"/>
+        <location filename="../persecute2/qml/Roster.qml" line="618"/>
         <source>Delete </source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="610"/>
+        <location filename="../persecute2/qml/Roster.qml" line="618"/>
         <source>Leave group %1</source>
         <translation>Покинуть группу %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="644"/>
+        <location filename="../persecute2/qml/Roster.qml" line="652"/>
         <source>Profile</source>
         <translation>Профиль</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="652"/>
+        <location filename="../persecute2/qml/Roster.qml" line="660"/>
         <source>Refresh</source>
         <translation>Обновить</translation>
     </message>
@@ -1010,37 +1033,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="660"/>
+        <location filename="../persecute2/qml/Roster.qml" line="668"/>
         <source>Rename</source>
         <translation>Переименовать</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="668"/>
+        <location filename="../persecute2/qml/Roster.qml" line="676"/>
         <source>Delete</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="668"/>
+        <location filename="../persecute2/qml/Roster.qml" line="676"/>
         <source>Leave group</source>
         <translation>Покинуть группу</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="676"/>
+        <location filename="../persecute2/qml/Roster.qml" line="684"/>
         <source>Unblock</source>
         <translation>Разблокировать</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="676"/>
+        <location filename="../persecute2/qml/Roster.qml" line="684"/>
         <source>Block</source>
         <translation>Блокировать</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="676"/>
+        <location filename="../persecute2/qml/Roster.qml" line="684"/>
         <source>Unmute</source>
         <translation>Уведомлять</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="676"/>
+        <location filename="../persecute2/qml/Roster.qml" line="684"/>
         <source>Mute</source>
         <translation>Тишина</translation>
     </message>
@@ -1138,182 +1161,201 @@
 <context>
     <name>Settings</name>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="47"/>
+        <location filename="../persecute2/qml/Settings.qml" line="52"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="60"/>
+        <location filename="../persecute2/qml/Settings.qml" line="65"/>
         <source>Account</source>
         <translation>Учетная запись</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="66"/>
+        <location filename="../persecute2/qml/Settings.qml" line="71"/>
         <source>Muted groups</source>
         <translation>Тихие группы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="74"/>
+        <location filename="../persecute2/qml/Settings.qml" line="79"/>
         <source>Blacklist</source>
         <translation>Черный список</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="90"/>
+        <location filename="../persecute2/qml/Settings.qml" line="95"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="94"/>
+        <location filename="../persecute2/qml/Settings.qml" line="99"/>
         <source>Conversation</source>
         <translation>Настройки чата</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="98"/>
+        <location filename="../persecute2/qml/Settings.qml" line="103"/>
         <source>Conversation theme</source>
         <translation>Тема чата</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="146"/>
+        <location filename="../persecute2/qml/Settings.qml" line="151"/>
         <source>Vibrate in active conversation</source>
         <translation>Вибрация в активных чатах</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="156"/>
+        <location filename="../persecute2/qml/Settings.qml" line="161"/>
         <source>Show messages timestamp</source>
         <translation>Показывать дату в сообщениях</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="166"/>
+        <location filename="../persecute2/qml/Settings.qml" line="171"/>
         <source>Show seconds in messages timestamp</source>
         <translation>Показывать секунды в дате сообщения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="177"/>
+        <location filename="../persecute2/qml/Settings.qml" line="182"/>
         <source>Send messages by Enter</source>
         <translation>Отправлять сообщение по нажатию Enter</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="186"/>
         <source>Show keyboard automatically</source>
-        <translation>Показывать клавиатуру автоматически</translation>
+        <translation type="vanished">Показывать клавиатуру автоматически</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="187"/>
+        <location filename="../persecute2/qml/Settings.qml" line="191"/>
         <source>Automatically show keyboard when opening conversation</source>
         <translation>Автоматически показывать клавиатуру при открытии разговора</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="196"/>
+        <location filename="../persecute2/qml/Settings.qml" line="200"/>
+        <source>Hide keyboard after sending message</source>
+        <translation>Скрывать клавиатуру после отправки сообщения</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="206"/>
         <source>Download media to Gallery</source>
         <translation>Сохранять изображения в Галерее</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="197"/>
+        <location filename="../persecute2/qml/Settings.qml" line="207"/>
         <source>If checked downloaded files will be shown in Gallery</source>
         <translation>Загруженные изображения будут сохранены общей папке и видны в Галерее</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="206"/>
+        <location filename="../persecute2/qml/Settings.qml" line="216"/>
         <source>Delete media files</source>
         <translation>Удалять медиафайлы</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="207"/>
+        <location filename="../persecute2/qml/Settings.qml" line="217"/>
         <source>Delete received media files when deleting message</source>
         <translation>Удалять принятые медиафайлы при удалении сообщения из чата</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="219"/>
+        <location filename="../persecute2/qml/Settings.qml" line="229"/>
         <source>Chat font size</source>
         <translation>Размер шрифта в чате</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="221"/>
+        <location filename="../persecute2/qml/Settings.qml" line="231"/>
         <source>%1 px</source>
         <translation>%1 пикс.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="231"/>
+        <location filename="../persecute2/qml/Settings.qml" line="241"/>
         <source>Common</source>
         <translation>Общие настройки</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="235"/>
+        <location filename="../persecute2/qml/Settings.qml" line="245"/>
         <source>Language</source>
         <translation>Язык</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="249"/>
+        <location filename="../persecute2/qml/Settings.qml" line="259"/>
         <source>Restart application to change language</source>
         <translation>Перезапустите приложение для смены языка</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="259"/>
+        <location filename="../persecute2/qml/Settings.qml" line="270"/>
         <source>Connection server</source>
         <translation>Сервер подключения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="292"/>
+        <location filename="../persecute2/qml/Settings.qml" line="301"/>
         <source>Autostart</source>
         <translation>Автозапуск приложения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="300"/>
+        <location filename="../persecute2/qml/Settings.qml" line="309"/>
         <source>Lock conversation orientation in portrait</source>
         <translation>Заблокировать чат в портретной ориентации</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="310"/>
+        <location filename="../persecute2/qml/Settings.qml" line="319"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Показать себя в списке контактов</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="319"/>
+        <location filename="../persecute2/qml/Settings.qml" line="328"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Принимать сообщения от неизвестных</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="328"/>
+        <location filename="../persecute2/qml/Settings.qml" line="337"/>
         <source>Show notifications when connection changing</source>
         <translation>Показывать уведомления при подключении</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="341"/>
+        <location filename="../persecute2/qml/Settings.qml" line="346"/>
+        <source>Display messages text in notifications</source>
+        <translation>Показывать текст сообщения в уведомлениях</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="352"/>
+        <source>Create server connection in separate thread (experimental) (*)</source>
+        <translation>Подключаться к серверу в отдельном потоке (экспериментально) (*)</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="362"/>
         <source>Display presence</source>
         <translation>Сетевой статус</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="344"/>
+        <location filename="../persecute2/qml/Settings.qml" line="365"/>
         <source>Display online when app is open</source>
         <translation>Отображать &quot;онлайн&quot; когда приложение открыто</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="477"/>
+        <location filename="../persecute2/qml/Settings.qml" line="492"/>
+        <source>Options marked with (*) will take effect after reconnection</source>
+        <translation>Настройки помеченные (*) будут применены после нового подключения</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="523"/>
         <source>Send logs</source>
         <translation>Передать логи</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="483"/>
+        <location filename="../persecute2/qml/Settings.qml" line="529"/>
         <source>Your email address</source>
         <translation>Ваш e-mail адрес для ответа</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="492"/>
+        <location filename="../persecute2/qml/Settings.qml" line="538"/>
         <source>Enter bug description here. As many information as  possible.</source>
         <translation>Введите описание ошибки как можно подробнее</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="336"/>
+        <location filename="../persecute2/qml/Settings.qml" line="357"/>
         <source>Presence</source>
         <translation>Сетевой статус</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="351"/>
+        <location filename="../persecute2/qml/Settings.qml" line="372"/>
         <source>Always display online</source>
         <translation>Всегда отображать &quot;онлайн&quot;</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="358"/>
+        <location filename="../persecute2/qml/Settings.qml" line="379"/>
         <source>Always display offline</source>
         <translation>Всегда отображать &quot;оффлайн&quot;</translation>
     </message>
@@ -1330,27 +1372,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="371"/>
+        <location filename="../persecute2/qml/Settings.qml" line="392"/>
         <source>Media</source>
         <translation>Настройки медиа</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="376"/>
+        <location filename="../persecute2/qml/Settings.qml" line="397"/>
         <source>Resize sending images</source>
         <translation>Уменьшать картинку при отправке</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="406"/>
+        <location filename="../persecute2/qml/Settings.qml" line="435"/>
         <source>Maximum image size by file size</source>
         <translation>Максимальный размер изображения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="437"/>
+        <location filename="../persecute2/qml/Settings.qml" line="473"/>
         <source>Maximum image size by resolution</source>
         <translation>Максимальное разрешение изображения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="439"/>
+        <location filename="../persecute2/qml/Settings.qml" line="475"/>
         <source>%1 MPx</source>
         <translation>%1 МПикс</translation>
     </message>
@@ -1419,27 +1461,27 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="161"/>
+        <location filename="../persecute2/qml/main.qml" line="174"/>
         <source>n/a</source>
         <translation>нет данных</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="161"/>
+        <location filename="../persecute2/qml/main.qml" line="174"/>
         <source>bytes</source>
         <translation>байт</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="161"/>
+        <location filename="../persecute2/qml/main.qml" line="174"/>
         <source>KiB</source>
         <translation>Кб</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="161"/>
+        <location filename="../persecute2/qml/main.qml" line="174"/>
         <source>MiB</source>
         <translation>Мб</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="161"/>
+        <location filename="../persecute2/qml/main.qml" line="174"/>
         <source>GiB</source>
         <translation>Гб</translation>
     </message>

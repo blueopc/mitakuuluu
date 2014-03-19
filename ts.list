@@ -17,6 +17,7 @@
 ./persecute2/qml/Forward.qml
 ./persecute2/qml/GroupProfile.qml
 ./persecute2/qml/InteractionArea.qml
+./persecute2/qml/Location.qml
 ./persecute2/qml/MediaDialog.qml
 ./persecute2/qml/MenuIndicator.qml
 ./persecute2/qml/MutedGroups.qml

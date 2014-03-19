@@ -40,6 +40,10 @@ Page {
         conversationModel.saveHistory(sjid, sname)
     }
 
+    function sendLocation(lat, lon, zoom, gmaps) {
+        whatsapp.sendLocation([page.jid], lat, lon, zoom, gmaps)
+    }
+
     function sendMedia(path) {
         console.log("send media: " + path)
         whatsapp.sendMedia([page.jid], path)
@@ -341,7 +345,6 @@ Page {
             }
 
             MenuItem {
-                id: locationSend
                 text: qsTr("Load old conversation")
                 visible: conversationView.count > 19
                 onClicked: {
@@ -544,8 +547,8 @@ Page {
         anchors.rightMargin: - Theme.paddingMedium
         placeholderText: qsTr("Tap here to enter message")
         property int lastYPos: 0
-        property bool forceFocus: false
-        focusOutBehavior: FocusBehavior.KeepFocus
+        //property bool forceFocus: false
+        focusOutBehavior: hideKeyboard ? FocusBehavior.ClearItemFocus : FocusBehavior.KeepFocus
         textRightMargin: sendByEnter ? 0 : 64
         property bool buttonVisible: sendByEnter
         maxHeight: page.isPortrait ? 200 : 140
@@ -611,6 +614,8 @@ Page {
             console.log("send: " + sendBox.text.trim())
             whatsapp.sendText(page.jid, sendBox.text.trim())
             sendBox.text = ""
+            if (hideKeyboard)
+                focus = false
             //forceTimer.start()
         }
     }
@@ -734,6 +739,18 @@ Page {
                 icon.source: "image://theme/icon-camera-shutter-release"
                 onClicked: {
                     pageStack.replace(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": false})
+                }
+            }
+
+            SquareButton {
+                id: locationSend
+                anchors.top: videoSend.bottom
+                anchors.left: captureSend.right
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-m-gps"
+                onClicked: {
+                    pageStack.replace(Qt.resolvedUrl("Location.qml"), {"broadcastMode": false})
                 }
             }
         }
