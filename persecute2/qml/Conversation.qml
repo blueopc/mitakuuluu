@@ -649,6 +649,7 @@ Page {
         width: parent.width
         height: Theme.itemSizeMedium
         dock: Dock.Bottom
+        visible: open
         onOpenChanged: {
             if (sendBox.focus) {
                 sendBox.focus = false
