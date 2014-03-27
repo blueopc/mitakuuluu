@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "file:///usr/share/harbour-mitakuuluu/qml"
+import QtMultimedia 5.0
+//import "file:///usr/share/harbour-mitakuuluu/qml"
 
 Item {
     id: item
@@ -9,12 +10,16 @@ Item {
     //color:
     opacity: mArea.pressed ? 0.5 : 1.0
     property bool showPreview: false
+    property Item playerObject
 
     Connections {
         target: conversationView
         onHideAll: {
-            if (imsgid != model.msgid)
+            if (imsgid != model.msgid) {
                 showPreview = false
+                if (playerObject)
+                    playerObject.destroy()
+            }
         }
     }
 
@@ -133,6 +138,11 @@ Item {
                 }
                 else {
                     showPreview = true
+                    if (model.mediatype == 2 && model.localurl.length > 0) {
+                        playerObject = audioPlayer.createObject(playerPlaceholder)
+                        playerObject.x = playerPlaceholder.x
+                        playerObject.y = playerPlaceholder.y
+                    }
                     scrollTimer.position(model.index)
                 }
             }
@@ -150,7 +160,7 @@ Item {
                         whatsapp.openVCardData(model.medianame, model.message)
                     }
                     else if (model.mediatype == 5) {
-                        Qt.openUrlExternally("geo:" + model.medialon + "," + model.medialat + "?action=showOnMap")
+                        Qt.openUrlExternally("geo:" + model.medialat + "," + model.medialon)
                     }
                 }
             }
@@ -158,6 +168,47 @@ Item {
         onPressAndHold: {
             console.log(model.message)
             inMenu.show(item)
+        }
+    }
+
+    Item {
+        id: playerPlaceholder
+        anchors.left: item.left
+        anchors.top: item.top
+        anchors.margins: Theme.paddingSmall
+        width: 32
+        height: 32
+    }
+
+    Component {
+        id: audioPlayer
+        Item {
+            width: parent.width
+            height: Theme.itemSizeSmall
+
+            Audio {
+                id: player
+            }
+
+            IconButton {
+                id: playButton
+                anchors {
+                    left: parent.left
+                }
+                icon.source: player.playbackState == Audio.PlayingState ? "image://theme/icon-m-pause"
+                                                                        : "image://theme/icon-m-play"
+                onClicked: {
+                    console.log("play button clicked")
+                    if (player.playbackState == Audio.PlayingState)
+                        player.pause()
+                    else
+                        player.play()
+                }
+            }
+
+            Component.onCompleted: {
+                player.source = model.localurl
+            }
         }
     }
 

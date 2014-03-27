@@ -44,6 +44,10 @@ Page {
         whatsapp.sendLocation([page.jid], lat, lon, zoom, gmaps)
     }
 
+    function sendAudioNote(path) {
+        sendMedia(path)
+    }
+
     function sendMedia(path) {
         console.log("send media: " + path)
         whatsapp.sendMedia([page.jid], path)
@@ -163,16 +167,16 @@ Page {
             direction = qsTr("Incoming ")
         if (model.msgtype === 3) { //media
             switch (model.mediatype) {
-            case 1: return (fromMe ? qsTr("Outgoing picture ") : qsTr("Incoming picture ")) + model.medianame + " " + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 2: return (fromMe ? qsTr("Outgoing audio ") : qsTr("Incoming audio ")) + model.medianame + " " + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
-            case 3: return (fromMe ? qsTr("Outgoing video ") : qsTr("Incoming video ")) + model.medianame + " " + (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 1: return (fromMe ? qsTr("Outgoing picture ") : qsTr("Incoming picture ")) + /*model.medianame + " " +*/ bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 2: return (fromMe ? qsTr("Outgoing audio ") : qsTr("Incoming audio ")) + /*model.medianame + " " +*/ (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
+            case 3: return (fromMe ? qsTr("Outgoing video ") : qsTr("Incoming video ")) + /*model.medianame + " " +*/ (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
             case 4: return (fromMe ? qsTr("Outgoing contact ") : qsTr("Incoming contact ")) + model.medianame
-            case 5: return (fromMe ? qsTr("Outgoing location ") : qsTr("Incoming location ")) + model.medianame + " " + qsTr("LAT: %1").arg(model.medialon) + qsTr(" LON: %1").arg(model.medialat)
+            case 5: return (fromMe ? qsTr("Outgoing location ") : qsTr("Incoming location ")) + model.medianame + " " + qsTr("LAT: %1").arg(model.medialat) + qsTr(" LON: %1").arg(model.medialon)
             default: return direction + "unknown media"
             }
         }
         else if (model.msgtype === 2) {
-            return Utilities.linkify(Utilities.emojify(model.message, emojiPath))
+            return Utilities.linkify(Utilities.emojify(model.message, emojiPath), Theme.highlightColor)
         }
         else if (model.msgtype === 100) {
             switch (model.msgstatus) {
@@ -293,10 +297,11 @@ Page {
     }
 
     SilicaFlickable {
-        anchors.top: page.top
+        /*anchors.top: page.top
         anchors.bottom: sendBox.top
         anchors.bottomMargin: Theme.paddingMedium
-        width: page.width
+        width: page.width*/
+        anchors.fill: parent
         clip: true
         interactive: !conversationView.flicking
         pressDelay: 0
@@ -312,14 +317,14 @@ Page {
                         whatsapp.blockOrUnblockContact(page.jid)
                 }
             }
-            MenuItem {
+            /*MenuItem {
                 id: mediaSend
                 text: qsTr("Send media")
                 enabled: roster.connectionStatus == 4
                 onClicked: {
                     pageStack.push(selectMedia)
                 }
-            }
+            }*/
 
             MenuItem {
                 id: removeAll
@@ -405,7 +410,7 @@ Page {
                     color: Theme.primaryColor
                     font.pixelSize: Theme.fontSizeExtraSmall
                     font.family: Theme.fontFamily
-                    text: "Last seen: " + page.second
+                    text: qsTr("Last seen: %1").arg(page.second)
                     visible: !available && page.jid.indexOf("-") == -1 && text.length > 0
                 }
             }
@@ -428,7 +433,8 @@ Page {
             model: conversationModel
             anchors.top: header.bottom
             width: parent.width
-            anchors.bottom: parent.bottom
+            anchors.bottom: sendBox.top
+            anchors.bottomMargin: Theme.paddingMedium
             clip: true
             cacheBuffer: 1600
             pressDelay: 0
@@ -519,6 +525,99 @@ Page {
                 }
             }
         }
+
+        Rectangle {
+            width: parent.width
+            anchors.bottom: sendBox.top
+            height: 2
+            color: Theme.secondaryColor
+            visible: sendBox.visible
+        }
+
+        EmojiTextArea {
+            id: sendBox
+            anchors.bottom: parent.bottom
+            //anchors.bottomMargin: lineCount > 1 ? 0 : (- Theme.paddingLarge)
+            anchors.left: parent.left
+            anchors.leftMargin: - Theme.paddingMedium
+            anchors.right: parent.right
+            anchors.rightMargin: - Theme.paddingMedium
+            placeholderText: qsTr("Tap here to enter message")
+            property int lastYPos: 0
+            //property bool forceFocus: false
+            focusOutBehavior: hideKeyboard ? FocusBehavior.ClearItemFocus : FocusBehavior.KeepFocus
+            textRightMargin: sendByEnter ? 0 : 64
+            property bool buttonVisible: sendByEnter
+            maxHeight: page.isPortrait ? 200 : 140
+            visible: !dock.open
+            background: Component {
+                Item {
+                    anchors.fill: parent
+
+                    IconButton {
+                        id: sendButton
+                        icon.source: "image://theme/icon-m-message"
+                        highlighted: enabled
+                        anchors.bottom: parent.bottom
+                        anchors.bottomMargin: - Theme.paddingSmall
+                        anchors.right: parent.right
+                        anchors.rightMargin: Theme.paddingSmall
+                        visible: !sendBox.buttonVisible
+                        enabled: roster.connectionStatus == 4 && sendBox.text.trim().length > 0
+                        onClicked: {
+                            console.log("action")
+                            sendBox.send()
+                        }
+                    }
+                }
+            }
+            EnterKey.enabled: sendByEnter ? (roster.connectionStatus == 4 && text.trim().length > 0) : true
+            EnterKey.highlighted: text.trim().length > 0
+            EnterKey.iconSource: sendByEnter ? "image://theme/icon-m-message" : "image://theme/icon-m-enter"
+            EnterKey.onClicked: {
+                if (sendByEnter) {
+                    send()
+                }
+                //console.log(text)
+            }
+            onSelectedTextChanged: {
+                page.backNavigation = selectedText.length == 0
+            }
+            onActiveFocusChanged: {
+                if (activeFocus) {
+                    lastYPos = conversationView.contentY
+                }
+                if (activeFocus && conversationView.atYEnd)
+                    scrollDown.start()
+            }
+            /*onFocusChanged: {
+                if (!focus) {
+                    if (forceFocus) {
+                        Qt.inputMethod.show()
+                        forceActiveFocus()
+                    }
+                }
+                forceFocus = false
+            }*/
+            onTextChanged: {
+                if (!typingTimer.running) {
+                    whatsapp.startTyping(page.jid)
+                    typingTimer.start()
+                }
+                else
+                    typingTimer.restart()
+            }
+            function send() {
+                deselect()
+                console.log("send: " + sendBox.text.trim())
+                whatsapp.sendText(page.jid, sendBox.text.trim())
+                sendBox.text = ""
+                if (hideKeyboard)
+                    focus = false
+                //forceTimer.start()
+            }
+        }
+
         MouseArea {
             anchors.top: header.top
             anchors.right: header.right
@@ -528,95 +627,100 @@ Page {
                 avatarView.show(page.icon)
             }
         }
+        PushUpMenu {
+            id: pushMedia
+            MenuItem {
+                text: qsTr("Send media")
+                onClicked: dock.show()
+            }
+        }
     }
 
-    Rectangle {
-        width: page.width
-        anchors.bottom: sendBox.top
-        height: 2
-        color: Theme.secondaryColor
+    MouseArea {
+        anchors.fill: parent
+        enabled: dock.open
+        onClicked: dock.hide()
     }
 
-    EmojiTextArea {
-        id: sendBox
-        anchors.bottom: page.bottom
-        //anchors.bottomMargin: lineCount > 1 ? 0 : (- Theme.paddingLarge)
-        anchors.left: page.left
-        anchors.leftMargin: - Theme.paddingMedium
-        anchors.right: page.right
-        anchors.rightMargin: - Theme.paddingMedium
-        placeholderText: qsTr("Tap here to enter message")
-        property int lastYPos: 0
-        //property bool forceFocus: false
-        focusOutBehavior: hideKeyboard ? FocusBehavior.ClearItemFocus : FocusBehavior.KeepFocus
-        textRightMargin: sendByEnter ? 0 : 64
-        property bool buttonVisible: sendByEnter
-        maxHeight: page.isPortrait ? 200 : 140
-        background: Component {
-            Item {
-                anchors.fill: parent
+    DockedPanel {
+        id: dock
+        width: parent.width
+        height: Theme.itemSizeMedium
+        dock: Dock.Bottom
+        onOpenChanged: {
+            if (sendBox.focus) {
+                sendBox.focus = false
+                page.forceActiveFocus()
+            }
 
-                IconButton {
-                    id: sendButton
-                    icon.source: "image://theme/icon-m-message"
-                    highlighted: enabled
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: - Theme.paddingSmall
-                    anchors.right: parent.right
-                    anchors.rightMargin: Theme.paddingSmall
-                    visible: !sendBox.buttonVisible
-                    enabled: roster.connectionStatus == 4 && sendBox.text.trim().length > 0
-                    onClicked: {
-                        console.log("action")
-                        sendBox.send()
-                    }
+            pushMedia.visible = !open
+        }
+
+        Row {
+            height: parent.height
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: Theme.paddingSmall
+
+            IconButton {
+                icon.source: "image://theme/icon-m-image"
+                onClicked: {
+                    dock.hide()
+                    selectPicture.open(true)
+                    selectPicture.selected.connect(page.sendMediaImage)
+                    selectPicture.setProcessImages()
+                    selectPicture.rejected.connect(page.unbindMediaImage)
                 }
             }
-        }
-        EnterKey.enabled: sendByEnter ? (roster.connectionStatus == 4 && text.trim().length > 0) : true
-        EnterKey.highlighted: text.trim().length > 0
-        EnterKey.iconSource: sendByEnter ? "image://theme/icon-m-message" : "image://theme/icon-m-enter"
-        EnterKey.onClicked: {
-            if (sendByEnter) {
-                send()
-            }
-            //console.log(text)
-        }
-        onSelectedTextChanged: {
-            page.backNavigation = selectedText.length == 0
-        }
-        onActiveFocusChanged: {
-            if (activeFocus) {
-                lastYPos = conversationView.contentY
-            }
-            if (activeFocus && conversationView.atYEnd)
-                scrollDown.start()
-        }
-        /*onFocusChanged: {
-            if (!focus) {
-                if (forceFocus) {
-                    Qt.inputMethod.show()
-                    forceActiveFocus()
+
+            IconButton {
+                icon.source: "image://theme/icon-m-video"
+                onClicked: {
+                    dock.hide()
+                    pageStack.push(selectFile)
+                    selectFile.processPath("/home/nemo", qsTr("Select video"))
+                    selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
+                    selectFile.selected.connect(page.sendMedia)
+                    selectFile.done.connect(page.unbindMediaFile)
                 }
             }
-            forceFocus = false
-        }*/
-        onTextChanged: {
-            if (!typingTimer.running) {
-                whatsapp.startTyping(page.jid)
-                typingTimer.start()
+
+            IconButton {
+                icon.source: "image://theme/icon-m-music"
+                onClicked: {
+                    dock.hide()
+                    pageStack.push(selectFile)
+                    selectFile.processPath("/home/nemo", qsTr("Select audio"))
+                    selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
+                    selectFile.selected.connect(page.sendMedia)
+                    selectFile.done.connect(page.unbindMediaFile)
+                }
             }
-            else
-                typingTimer.restart()
-        }
-        function send() {
-            deselect()
-            console.log("send: " + sendBox.text.trim())
-            whatsapp.sendText(page.jid, sendBox.text.trim())
-            sendBox.text = ""
-            if (hideKeyboard)
-                focus = false
-            //forceTimer.start()
+
+            IconButton {
+                icon.source: "image://theme/icon-camera-shutter-release"
+                onClicked: {
+                    dock.hide()
+                    pageStack.push(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": false})
+                }
+            }
+
+            IconButton {
+                icon.source: "image://theme/icon-m-gps"
+                onClicked: {
+                    dock.hide()
+                    pageStack.push(Qt.resolvedUrl("Location.qml"), {"broadcastMode": false})
+                }
+            }
+
+            IconButton {
+                icon.source: "image://theme/icon-cover-unmute"
+                icon.width: 64
+                icon.height: 64
+                onClicked: {
+                    dock.hide()
+                    pageStack.push(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": false})
+                }
+            }
         }
     }
 
@@ -751,6 +855,17 @@ Page {
                 icon.source: "image://theme/icon-m-gps"
                 onClicked: {
                     pageStack.replace(Qt.resolvedUrl("Location.qml"), {"broadcastMode": false})
+                }
+            }
+
+            SquareButton {
+                anchors.top: audioSend.bottom
+                anchors.right: parent.right
+                width: mFlick.itemWidth
+                height: mFlick.itemHeight
+                icon.source: "image://theme/icon-cover-unmute"
+                onClicked: {
+                    pageStack.replace(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": false})
                 }
             }
         }

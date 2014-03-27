@@ -33,7 +33,8 @@ Page {
             busyIndicator.visible = false
             errorArea.visible = true
             phoneField.text = ""
-            codeArea.text = ""
+            codeArea.text = ""            
+            renewDialog.open()
         }
         onExistsRequestFailed: {
             banner.notify(qsTr("No exists information for your account."))
@@ -241,10 +242,16 @@ Page {
                     id: password
                     width: parent.width
                     placeholderText: qsTr("Salt password")
-                    label: qsTr("Randomize your registration token")
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhNoPredictiveText
                     echoMode: TextInput.Password
                     EnterKey.enabled: false
+                }
+
+                Label {
+                    width: parent.width
+                    wrapMode: Text.WordWrap
+                    text: qsTr("Randomize your registration token")
+                    horizontalAlignment: Text.AlignHCenter
                 }
 
                 Item {

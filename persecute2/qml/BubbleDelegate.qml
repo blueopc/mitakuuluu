@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "file:///usr/share/harbour-mitakuuluu/qml"
+import QtMultimedia 5.0
+//import "file:///usr/share/harbour-mitakuuluu/qml"
 
 Item {
     id: item
@@ -10,6 +11,7 @@ Item {
     property bool showPreview: false
     property int msgStatus: model.msgstatus
     onMsgStatusChanged: setTickView()
+    property Item playerObject
 
     function setTickView() {
         switch(msgStatus) {
@@ -87,8 +89,11 @@ Item {
     Connections {
         target: conversationView
         onHideAll: {
-            if (imsgid != model.msgid)
+            if (imsgid != model.msgid) {
                 showPreview = false
+                if (playerObject)
+                    playerObject.destroy()
+            }
         }
     }
 
@@ -129,9 +134,11 @@ Item {
         font.pixelSize: fontSize
         color: Theme.primaryColor
         text: getMessageText(model)
-        textFormat: Text.StyledText
-        linkColor: Theme.highlightColor
-        width: parent.width - (Theme.paddingLarge * 2)
+        textFormat: Text.RichText
+        onWidthChanged: {
+            if (width > parent.width)
+                width = parent.width - (Theme.paddingLarge * 2)
+        }
     }
 
     Row {
@@ -240,6 +247,11 @@ Item {
                 }
                 else {
                     showPreview = true
+                    if (model.mediatype == 2 && model.localurl.length > 0) {
+                        playerObject = audioPlayer.createObject(playerPlaceholder)
+                        playerObject.x = playerPlaceholder.x
+                        playerObject.y = playerPlaceholder.y
+                    }
                     scrollTimer.position(model.index)
                 }
             }
@@ -257,7 +269,7 @@ Item {
                         whatsapp.openVCardData(model.medianame, model.message)
                     }
                     else if (model.mediatype == 5) {
-                        Qt.openUrlExternally("geo:" + model.medialon + "," + model.medialat + "?action=showOnMap")
+                        Qt.openUrlExternally("geo:" + model.medialat + "," + model.medialon)
                     }
                 }
             }
@@ -265,6 +277,43 @@ Item {
         onPressAndHold: {
             console.log(model.mediamime)
             inMenu.show(item)
+        }
+    }
+
+    Item {
+        id: playerPlaceholder
+        anchors.left: bubble.left
+        anchors.top: bubble.top
+        anchors.margins: Theme.paddingSmall
+        width: 32
+        height: 32
+    }
+
+    Component {
+        id: audioPlayer
+        Item {
+            width: parent.width
+            height: Theme.itemSizeSmall
+
+            Audio {
+                id: player
+                source: model.localurl
+            }
+
+            IconButton {
+                id: playButton
+                anchors {
+                    right: parent.right
+                }
+                icon.source: player.playbackState == Audio.PlayingState ? "image://theme/icon-m-pause"
+                                                                        : "image://theme/icon-m-play"
+                onClicked: {
+                    if (player.playbackState == Audio.PlayingState)
+                        player.pause()
+                    else
+                        player.play()
+                }
+            }
         }
     }
 

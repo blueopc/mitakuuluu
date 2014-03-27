@@ -84,6 +84,11 @@ Dialog {
                                            5000)
                 }
             }
+            MenuItem {
+                text: qsTr("Renew subscription")
+                visible: ((page.expiration * 1000) - (new Date().getTime())) < 259200000
+                onClicked: whatsapp.renewAccount()
+            }
         }
 
         DialogHeader {

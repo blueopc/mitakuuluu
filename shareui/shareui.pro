@@ -9,10 +9,14 @@ PKGCONFIG += nemotransferengine-qt5
 
 HEADERS += \
     whatsapptransferiface.h \
-    whatsappplugininfo.h
+    whatsappplugininfo.h \
+    whatsappmediatransfer.h
 
 SOURCES += \
     whatsapptransferiface.cpp \
-    whatsappplugininfo.cpp
+    whatsappplugininfo.cpp \
+    whatsappmediatransfer.cpp
 
 INSTALLS += target
+
+OTHER_FILES += transferplugin.json

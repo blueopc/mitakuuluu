@@ -115,7 +115,7 @@ Page {
             	roster.sendImage(image)
             }
             else {
-            	pageStack.pop(conversation, PageStackAction.Immediate)
+                pageStack.pop(page, PageStackAction.Immediate)
             	conversation.sendMedia(image)
             }
     	}

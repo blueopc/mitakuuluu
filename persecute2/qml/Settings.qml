@@ -350,7 +350,7 @@ Page {
             TextSwitch {
                 checked: threading
                 text: qsTr("Create server connection in separate thread (experimental) (*)")
-                onClicked: threading = value
+                onClicked: threading = checked
             }
 
             SectionHeader {

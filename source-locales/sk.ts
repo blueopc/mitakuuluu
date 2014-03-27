@@ -11,7 +11,7 @@
     <name>Account</name>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="67"/>
-        <location filename="../persecute2/qml/Account.qml" line="244"/>
+        <location filename="../persecute2/qml/Account.qml" line="249"/>
         <source>Delete everything</source>
         <translation>Vymazať všetko</translation>
     </message>
@@ -26,62 +26,67 @@
         <translation>Odstrániť aktuálny účet</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="91"/>
+        <location filename="../persecute2/qml/Account.qml" line="88"/>
+        <source>Renew subscription</source>
+        <translation>Predĺžiť predplatné</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Account.qml" line="96"/>
         <source>Account</source>
         <translation>Účet</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="92"/>
+        <location filename="../persecute2/qml/Account.qml" line="97"/>
         <source>Save</source>
         <translation>Uložiť</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="97"/>
+        <location filename="../persecute2/qml/Account.qml" line="102"/>
         <source>Nickname:</source>
         <translation>Prezývka:</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="129"/>
+        <location filename="../persecute2/qml/Account.qml" line="134"/>
         <source>Status:</source>
         <translation>Status:</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="161"/>
+        <location filename="../persecute2/qml/Account.qml" line="166"/>
         <source>Created: %1</source>
         <translation>Vytvorené: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="175"/>
+        <location filename="../persecute2/qml/Account.qml" line="180"/>
         <source>Expiration: %1</source>
         <translation>Vypršanie: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="189"/>
+        <location filename="../persecute2/qml/Account.qml" line="194"/>
         <source>Account is active</source>
         <translation>Účet je aktívny</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="189"/>
+        <location filename="../persecute2/qml/Account.qml" line="194"/>
         <source>Account is blocked</source>
         <translation>Účet je zablokovaný</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="203"/>
+        <location filename="../persecute2/qml/Account.qml" line="208"/>
         <source>Account type: %1</source>
         <translation>Typ účtu: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="245"/>
+        <location filename="../persecute2/qml/Account.qml" line="250"/>
         <source>Delete!</source>
         <translation>Vymazať!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="253"/>
+        <location filename="../persecute2/qml/Account.qml" line="258"/>
         <source>This action will delete your account from WhatsApp server, login information, conversations and contacts. Downloaded media files will remain.</source>
         <translation>Táto akcia vymaže váš účet z WhatsApp servera, prihlasovacie údaje, konverzácie a kontakty. Stiahnuté multimediálne súbory budú zachované.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Account.qml" line="319"/>
+        <location filename="../persecute2/qml/Account.qml" line="324"/>
         <source>Select</source>
         <translation>Vybrať</translation>
     </message>
@@ -107,42 +112,52 @@
 <context>
     <name>Broadcast</name>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="61"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="68"/>
         <source>Add contact</source>
         <translation>Pridať kontakt</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="74"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="81"/>
         <source>Send broadcast</source>
         <translation>Odoslať signál</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="172"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="181"/>
         <source>Enter your message here...</source>
         <translation>Sem vložte vašu správu...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="249"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="257"/>
+        <source>press to locate</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Broadcast.qml" line="284"/>
         <source>Select media</source>
         <translation>Vybrať súbor</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="277"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="294"/>
+        <source>Record</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Broadcast.qml" line="322"/>
         <source>Max broadcast recepients count reached</source>
         <translation>Dosiahnutý max. počet príjemcov</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="348"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="393"/>
         <source>Select media type</source>
         <translation>Vybrať typ súboru</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="372"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="417"/>
         <source>Select video</source>
         <translation>Vybrať video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="387"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="432"/>
         <source>Select audio</source>
         <translation>Vybrať audio</translation>
     </message>
@@ -151,7 +166,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Broadcast.qml" line="291"/>
+        <location filename="../persecute2/qml/Broadcast.qml" line="336"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
         <translation>Vybrať &amp;quot;Add contact&amp;quot; položku menu pre voľbu kontaktov</translation>
     </message>
@@ -159,47 +174,47 @@
 <context>
     <name>BubbleDelegate</name>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="239"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="246"/>
         <source>Media download started...</source>
         <translation>Súbory sa sťahujú...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="277"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="326"/>
         <source>Remove message</source>
         <translation>Odstrániť správu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="318"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="367"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="322"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="371"/>
         <source>Message copied to clipboard</source>
         <translation>Správa bola skopírovaná do schránky</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="327"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="376"/>
         <source>Forward</source>
         <translation>Postúpiť</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="337"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="386"/>
         <source>Save to Gallery</source>
         <translation>Uložiť do galérie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="340"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="389"/>
         <source>File saved as %1</source>
         <translation>Súbor bol uložený ako %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="346"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="395"/>
         <source>Cancel download</source>
         <translation>Stornovať sťahovanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="346"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="395"/>
         <source>Delete</source>
         <translation>Zmazať</translation>
     </message>
@@ -219,23 +234,23 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="1724"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1727"/>
         <source>Disconnected</source>
         <translation>Odpojený</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2054"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2067"/>
         <source>Mitakuuluu share</source>
         <translation>Mitakuuluu zdieľanie</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2054"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2067"/>
         <source>Can&apos;t share media when offline</source>
         <translation>Súbor nemožno zdielať pri offline</translation>
     </message>
     <message numerus="yes">
-        <location filename="../whatsapp-server/src/client.cpp" line="2851"/>
-        <source>%1 message(s) unread</source>
+        <location filename="../whatsapp-server/src/client.cpp" line="2850"/>
+        <source>%n messages unread</source>
         <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform><numerusform></numerusform></translation>
     </message>
     <message>
@@ -246,37 +261,37 @@
 <context>
     <name>Conversation</name>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="50"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="54"/>
         <source>Media uploading started</source>
         <translation>Odosielanie súboru spustené</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
         <source>n/a</source>
         <translation>n/a</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
         <source>S</source>
         <translation>S</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
         <source>M</source>
         <translation>M</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="152"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="156"/>
         <source>H</source>
         <translation>H</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="161"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="165"/>
         <source>Outgoing </source>
         <translation>Odchádzajúci</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="163"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="167"/>
         <source>Incoming </source>
         <translation>Prichádzajúci</translation>
     </message>
@@ -301,158 +316,165 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>Outgoing picture </source>
         <translation>Odchádzajúci obrázok</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="166"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
         <source>Incoming picture </source>
         <translation>Prichádzajúci obrázok</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="167"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="171"/>
         <source>Outgoing audio </source>
         <translation>Odchádzajúce audio</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="167"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="171"/>
         <source>Incoming audio </source>
         <translation>Prichádzajúce audio</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="168"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="172"/>
         <source>Outgoing video </source>
         <translation>Odchádzajúce video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="168"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="172"/>
         <source>Incoming video </source>
         <translation>Prichádzajúce video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="169"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="173"/>
         <source>Outgoing contact </source>
         <translation>Odchádzajúci kontakt</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="169"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="173"/>
         <source>Incoming contact </source>
         <translation>Prichádzajúci kontakt</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="174"/>
         <source>LAT: %1</source>
         <translation>LAT: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="174"/>
         <source> LON: %1</source>
         <translation>LON: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="174"/>
         <source>Outgoing location </source>
         <translation>Odchádzajúca poloha</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="170"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="174"/>
         <source>Incoming location </source>
         <translation>Prichádzajúca poloha</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="179"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="183"/>
         <source>Joined group</source>
         <translation>Pridaný do skupiny</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="180"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="184"/>
         <source>Left group</source>
         <translation>Opustil skupinu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="181"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="185"/>
         <source>Changed group subject to: %1</source>
         <translation>Predmet skupiny zmenený na: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="182"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="186"/>
         <source>Changed group avatar</source>
         <translation>Avatar skupiny zmenený</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="187"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="191"/>
         <source>System message.</source>
         <translation>Systémová správa</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="317"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="633"/>
         <source>Send media</source>
         <translation>Odoslať súbor</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="326"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="329"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="331"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="334"/>
         <source>Remove all messages</source>
         <translation>Odstrániť všetky správy</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="340"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="345"/>
         <source>Profile</source>
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="306"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="311"/>
         <source>Unmute</source>
         <translation>Zrušiť umlčanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="306"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="311"/>
         <source>Unblock</source>
         <translation>Odblokovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="307"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="312"/>
         <source>Mute</source>
         <translation>Umlčať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="307"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="312"/>
         <source>Block</source>
         <translation>Zablokovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="348"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="353"/>
         <source>Load old conversation</source>
         <translation>Načítať staré konverzácie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="513"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="413"/>
+        <source>Last seen: %1</source>
+        <translation>Naposledy videný: %1</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Conversation.qml" line="519"/>
         <source>New message</source>
         <translation>Nová správa</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="548"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="545"/>
         <source>Tap here to enter message</source>
         <translation>Ťuknúť sem pre vloženie správy</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="660"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="766"/>
         <source>Image saved as %1</source>
         <translation>Obrázok uložený ako %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="681"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="787"/>
         <source>Select media type</source>
         <translation>Vybrať typ súboru</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="708"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="680"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="814"/>
         <source>Select video</source>
         <translation>Vybrať video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="724"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="692"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="830"/>
         <source>Select audio</source>
         <translation>Vybrať audio</translation>
     </message>
@@ -483,47 +505,47 @@
 <context>
     <name>DefaultDelegate</name>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="132"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="137"/>
         <source>Media download started...</source>
         <translation>Sťahovanie súboru spustené...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="170"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="221"/>
         <source>Remove message</source>
         <translation>Odstrániť správu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="211"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="262"/>
         <source>Copy</source>
         <translation>Kopírovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="215"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="266"/>
         <source>Message copied to clipboard</source>
         <translation>Správa je skopírovaná do schránky</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="220"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="271"/>
         <source>Forward</source>
         <translation>Poslať ďalej</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="230"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="281"/>
         <source>Save to Gallery</source>
         <translation>Uložiť do Galérie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="233"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="284"/>
         <source>File saved as %1</source>
         <translation>Súbor uložený ako %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="239"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="290"/>
         <source>Cancel download</source>
         <translation>Zrušiť sťahovanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/DefaultDelegate.qml" line="239"/>
+        <location filename="../persecute2/qml/DefaultDelegate.qml" line="290"/>
         <source>Delete</source>
         <translation>Vymazať</translation>
     </message>
@@ -617,12 +639,12 @@
     <message>
         <location filename="../persecute2/qml/Location.qml" line="180"/>
         <source>latitude: %1</source>
-        <translation type="unfinished"/>
+        <translation>zem. dĺžka %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Location.qml" line="187"/>
         <source>longitude: %1</source>
-        <translation type="unfinished"/>
+        <translation>zem. šírka %1</translation>
     </message>
 </context>
 <context>
@@ -695,6 +717,46 @@
     </message>
 </context>
 <context>
+    <name>Recorder</name>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="120"/>
+        <source>Voice note</source>
+        <translation>Hlasová poznámka</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="152"/>
+        <source>Recorder</source>
+        <translation>Záznamník</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="160"/>
+        <location filename="../persecute2/qml/Recorder.qml" line="194"/>
+        <source>Pause</source>
+        <translation>Prestávka</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="160"/>
+        <source>Record</source>
+        <translation>Zaznamenať</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="176"/>
+        <location filename="../persecute2/qml/Recorder.qml" line="212"/>
+        <source>Stop</source>
+        <translation>Zastaviť</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="186"/>
+        <source>Playback</source>
+        <translation>Prehrať</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Recorder.qml" line="194"/>
+        <source>Play</source>
+        <translation>Hrať</translation>
+    </message>
+</context>
+<context>
     <name>Register</name>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="25"/>
@@ -713,12 +775,12 @@
 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="39"/>
+        <location filename="../persecute2/qml/Register.qml" line="40"/>
         <source>No exists information for your account.</source>
         <translation>Neexistujú žiadne informácie pre váš účet.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="44"/>
+        <location filename="../persecute2/qml/Register.qml" line="45"/>
         <source>Code request failed
 
 </source>
@@ -727,60 +789,60 @@
 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="52"/>
+        <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>Activation code requested. Wait for %1 soon</source>
         <translation>Aktivačný kód bol vyžiadaný. Očakávajte o %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="52"/>
+        <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>sms message</source>
         <translation>SMS správa</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="52"/>
+        <location filename="../persecute2/qml/Register.qml" line="53"/>
         <source>voice call</source>
         <translation>hlasové volanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="59"/>
-        <location filename="../persecute2/qml/Register.qml" line="297"/>
+        <location filename="../persecute2/qml/Register.qml" line="60"/>
+        <location filename="../persecute2/qml/Register.qml" line="304"/>
         <source>Registering account...</source>
         <translation>Registrovanie účtu...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="65"/>
+        <location filename="../persecute2/qml/Register.qml" line="66"/>
         <source>Successfully registered in WhatsApp!</source>
         <translation>Úspešne registrovaný vo WhatsApp!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="73"/>
+        <location filename="../persecute2/qml/Register.qml" line="74"/>
         <source>Cannot detect your country code. You should use international number format for registration.</source>
         <translation>Nemožno zistiť predvoľbu vašej krajiny. Pre registráciu použite číslo v medzinárodnom formáte. </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="136"/>
-        <location filename="../persecute2/qml/Register.qml" line="208"/>
-        <location filename="../persecute2/qml/Register.qml" line="321"/>
+        <location filename="../persecute2/qml/Register.qml" line="137"/>
+        <location filename="../persecute2/qml/Register.qml" line="209"/>
+        <location filename="../persecute2/qml/Register.qml" line="328"/>
         <source>Registration</source>
         <translation>Registrácia</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="190"/>
+        <location filename="../persecute2/qml/Register.qml" line="191"/>
         <source>Checking account...</source>
         <translation>Kontrola účtu...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="230"/>
+        <location filename="../persecute2/qml/Register.qml" line="231"/>
         <source>Enter phone number here</source>
         <translation>Sem vložte telefónne číslo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="243"/>
+        <location filename="../persecute2/qml/Register.qml" line="244"/>
         <source>Salt password</source>
         <translation>Osolené heslo</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="244"/>
+        <location filename="../persecute2/qml/Register.qml" line="253"/>
         <source>Randomize your registration token</source>
         <translation>Zamiešaj registračný symbol</translation>
     </message>
@@ -793,17 +855,17 @@
         <translation type="vanished">Hlas</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="279"/>
+        <location filename="../persecute2/qml/Register.qml" line="286"/>
         <source>I have registration code</source>
         <translation>Mám registračný kód</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="325"/>
+        <location filename="../persecute2/qml/Register.qml" line="332"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
         <translation>Vložte registračný kód. 6 číslic, bez znamienka &apos;-&apos;</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="338"/>
+        <location filename="../persecute2/qml/Register.qml" line="345"/>
         <source>Tap here to enter code</source>
         <translation>Ťuknúť sem pre vloženie kódu</translation>
     </message>
@@ -835,7 +897,7 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="72"/>
+        <location filename="../persecute2/qml/Roster.qml" line="78"/>
         <source>Media uploading failed!</source>
         <translation>Odoslanie súboru zlyhalo!</translation>
     </message>
@@ -844,12 +906,12 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="81"/>
+        <location filename="../persecute2/qml/Roster.qml" line="87"/>
         <source>Waiting for connection</source>
         <translation>Čakajte na pripojenie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="82"/>
+        <location filename="../persecute2/qml/Roster.qml" line="88"/>
         <source>Connecting...</source>
         <translation>Pripájanie...</translation>
     </message>
@@ -858,170 +920,170 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="83"/>
+        <location filename="../persecute2/qml/Roster.qml" line="89"/>
         <source>Authorization...</source>
         <translation>Autorizácia...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="84"/>
+        <location filename="../persecute2/qml/Roster.qml" line="90"/>
         <source>Logged in</source>
         <translation>Prihlásený</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="85"/>
+        <location filename="../persecute2/qml/Roster.qml" line="91"/>
         <source>Login failure!</source>
         <translation>Prihlásenie zlyhalo!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="86"/>
+        <location filename="../persecute2/qml/Roster.qml" line="92"/>
         <source>Disconnected</source>
         <translation>Odpojený</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="87"/>
+        <location filename="../persecute2/qml/Roster.qml" line="93"/>
         <source>Registering...</source>
         <translation>Registrovanie...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="88"/>
+        <location filename="../persecute2/qml/Roster.qml" line="94"/>
         <source>Registration failed!</source>
         <translation>Registrovanie zlyhalo!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="113"/>
+        <location filename="../persecute2/qml/Roster.qml" line="119"/>
         <source>No action</source>
         <translation>Žiadna akcia</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="107"/>
+        <location filename="../persecute2/qml/Roster.qml" line="113"/>
         <source>Force connect</source>
         <translation>Vynútenie pripojenia</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="75"/>
+        <location filename="../persecute2/qml/Roster.qml" line="81"/>
         <source>Account expired: %1</source>
-        <translation type="unfinished"/>
+        <translation>Platnosť účtu skončí: %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="80"/>
+        <location filename="../persecute2/qml/Roster.qml" line="86"/>
         <source>Engine crashed</source>
         <translation>Program prestal fungovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="106"/>
+        <location filename="../persecute2/qml/Roster.qml" line="112"/>
         <source>Restart engine</source>
         <translation>Reštartovať program</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="108"/>
-        <location filename="../persecute2/qml/Roster.qml" line="109"/>
-        <location filename="../persecute2/qml/Roster.qml" line="110"/>
+        <location filename="../persecute2/qml/Roster.qml" line="114"/>
+        <location filename="../persecute2/qml/Roster.qml" line="115"/>
+        <location filename="../persecute2/qml/Roster.qml" line="116"/>
         <source>Disconnect</source>
         <translation>Odpojiť</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="111"/>
-        <location filename="../persecute2/qml/Roster.qml" line="114"/>
+        <location filename="../persecute2/qml/Roster.qml" line="117"/>
+        <location filename="../persecute2/qml/Roster.qml" line="120"/>
         <source>Register</source>
         <translation>Registrovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="112"/>
+        <location filename="../persecute2/qml/Roster.qml" line="118"/>
         <source>Connect</source>
         <translation>Pripojiť</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="124"/>
+        <location filename="../persecute2/qml/Roster.qml" line="130"/>
         <source>You</source>
         <translation>Vy</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="174"/>
+        <location filename="../persecute2/qml/Roster.qml" line="190"/>
         <source>Quit</source>
         <translation>Ukončiť</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="178"/>
+        <location filename="../persecute2/qml/Roster.qml" line="194"/>
         <source>Quit and shutdown engine</source>
         <translation>Ukončiť a vypnúť program</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="189"/>
+        <location filename="../persecute2/qml/Roster.qml" line="205"/>
         <source>Settings</source>
         <translation>Nastavenia</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="197"/>
+        <location filename="../persecute2/qml/Roster.qml" line="213"/>
         <source>New group</source>
         <translation>Nová skupina</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="206"/>
+        <location filename="../persecute2/qml/Roster.qml" line="222"/>
         <source>Broadcast</source>
         <translation>Vysielanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="214"/>
+        <location filename="../persecute2/qml/Roster.qml" line="230"/>
         <source>Add contacts</source>
         <translation>Pridať kontakty</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="230"/>
+        <location filename="../persecute2/qml/Roster.qml" line="246"/>
         <source>Disconnecting</source>
         <translation>Odpájanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="320"/>
+        <location filename="../persecute2/qml/Roster.qml" line="336"/>
         <source>Enter contact name to search</source>
         <translation>Vložiť meno kontaktu pre vyhľadanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="386"/>
+        <location filename="../persecute2/qml/Roster.qml" line="402"/>
         <source>Contacts list is empty. Sync phonebook or add contacts manually.</source>
         <translation>Zoznam kontaktov je prázdny. Synchronizujte adresár alebo pridajte kontakty ručne.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="446"/>
+        <location filename="../persecute2/qml/Roster.qml" line="462"/>
         <source>Rename contact</source>
         <translation>Premenovať kontakt</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="453"/>
+        <location filename="../persecute2/qml/Roster.qml" line="469"/>
         <source>Enter new name</source>
         <translation>Vložiť nové meno</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="494"/>
+        <location filename="../persecute2/qml/Roster.qml" line="510"/>
         <source>Create group</source>
         <translation>Vytvoriť skupinu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="501"/>
+        <location filename="../persecute2/qml/Roster.qml" line="517"/>
         <source>Write name of new group here</source>
         <translation>Sem napísať meno novej skupiny</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="591"/>
+        <location filename="../persecute2/qml/Roster.qml" line="607"/>
         <source>Group chat</source>
         <translation>Skupinový chat</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="618"/>
+        <location filename="../persecute2/qml/Roster.qml" line="634"/>
         <source>Delete </source>
         <translation>Vymazať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="618"/>
+        <location filename="../persecute2/qml/Roster.qml" line="634"/>
         <source>Leave group %1</source>
         <translation>Opustiť skupinu %1</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="652"/>
+        <location filename="../persecute2/qml/Roster.qml" line="668"/>
         <source>Profile</source>
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="660"/>
+        <location filename="../persecute2/qml/Roster.qml" line="676"/>
         <source>Refresh</source>
         <translation>Obnoviť</translation>
     </message>
@@ -1030,37 +1092,37 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="668"/>
+        <location filename="../persecute2/qml/Roster.qml" line="684"/>
         <source>Rename</source>
         <translation>Premenovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="676"/>
+        <location filename="../persecute2/qml/Roster.qml" line="692"/>
         <source>Delete</source>
         <translation>Vymazať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="676"/>
+        <location filename="../persecute2/qml/Roster.qml" line="692"/>
         <source>Leave group</source>
         <translation>Opustiť skupinu</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="684"/>
+        <location filename="../persecute2/qml/Roster.qml" line="700"/>
         <source>Unblock</source>
         <translation>Odblokovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="684"/>
+        <location filename="../persecute2/qml/Roster.qml" line="700"/>
         <source>Block</source>
         <translation>Zablokovať</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="684"/>
+        <location filename="../persecute2/qml/Roster.qml" line="700"/>
         <source>Unmute</source>
         <translation>Zrušiť umlčanie</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Roster.qml" line="684"/>
+        <location filename="../persecute2/qml/Roster.qml" line="700"/>
         <source>Mute</source>
         <translation>Umlčať</translation>
     </message>
@@ -1224,7 +1286,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="200"/>
         <source>Hide keyboard after sending message</source>
-        <translation type="unfinished"/>
+        <translation>Skryť klávesnicu po odoslaní správy</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="206"/>
@@ -1304,12 +1366,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="346"/>
         <source>Display messages text in notifications</source>
-        <translation type="unfinished"/>
+        <translation>Zobraziť text správy pri upozornení</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="352"/>
         <source>Create server connection in separate thread (experimental) (*)</source>
-        <translation type="unfinished"/>
+        <translation>Vytvoriť spojenie so sreverom v samostatnom vlákne (skúšobné) (*)</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="362"/>
@@ -1324,7 +1386,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="492"/>
         <source>Options marked with (*) will take effect after reconnection</source>
-        <translation type="unfinished"/>
+        <translation>Možnosti označené (*) budú aktivované po znovuobnovení spojenia</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="523"/>
@@ -1458,29 +1520,41 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="174"/>
+        <location filename="../persecute2/qml/main.qml" line="177"/>
         <source>n/a</source>
         <translation>n/a</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="174"/>
+        <location filename="../persecute2/qml/main.qml" line="177"/>
         <source>bytes</source>
         <translation>bajty</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="174"/>
+        <location filename="../persecute2/qml/main.qml" line="177"/>
         <source>KiB</source>
         <translation>kB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="174"/>
+        <location filename="../persecute2/qml/main.qml" line="177"/>
         <source>MiB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="174"/>
+        <location filename="../persecute2/qml/main.qml" line="177"/>
         <source>GiB</source>
         <translation>GB</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/main.qml" line="358"/>
+        <source>Renew</source>
+        <translation>Predĺžiť</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/main.qml" line="364"/>
+        <source>Your WhatsApp subscription expired.
+Click Renew to purchase one year of WhatsApp service.</source>
+        <translation>Vaše predplatné WhatsApp vypršal.
+Stlačte Predĺžiť pre kúpu ročného predplatného WhatsApp.</translation>
     </message>
 </context>
 </TS>

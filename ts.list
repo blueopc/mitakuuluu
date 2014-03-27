@@ -24,6 +24,7 @@
 ./persecute2/qml/PageHeaderNew.qml
 ./persecute2/qml/Popup.qml
 ./persecute2/qml/PrivacyList.qml
+./persecute2/qml/Recorder.qml
 ./persecute2/qml/Register.qml
 ./persecute2/qml/RemovePage.qml
 ./persecute2/qml/ResizePicture.qml

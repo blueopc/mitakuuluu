@@ -30,8 +30,6 @@ MediaSourcePage {
                                      : 0
 
         anchors.fill: parent
-        columnCount: 3
-        interactive: false
         model: gridPage.model
         unfocusHighlightEnabled: true
         forceUnfocusHighlight: expandHeight > 0

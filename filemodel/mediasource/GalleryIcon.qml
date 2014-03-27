@@ -21,17 +21,16 @@ MediaSourceIcon {
 
         model: root.model
 
-        delegate: Image {
+        delegate: GalleryImage {
             source: path
-            width: slideShow.width
-            height: slideShow.height
+            size: slideShow.width
+            //height: slideShow.height
             //sourceSize.width: slideShow.width
             //sourceSize.height: slideShow.width
-            cache: true
-            asynchronous: true
-            smooth: true
-            fillMode: Image.PreserveAspectCrop
+            //cache: true
+            //asynchronous: true
+            //smooth: true
+            //fillMode: Image.PreserveAspectCrop
         }
     }
-
 }

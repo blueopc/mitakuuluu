@@ -103,6 +103,9 @@ ApplicationWindow {
         case 4: //location
             roster.locateAndSend()
             break
+        case 5: //voice
+            roster.recordAndSend()
+            break
         default:
             break
         }
@@ -333,6 +336,35 @@ ApplicationWindow {
         fadeTime: 250
         attackIntensity: 0.0
         fadeIntensity: 0.0
+    }
+
+    Dialog {
+        id: renewDialog
+
+        onAccepted: whatsapp.renewAccount()
+
+        Flickable {
+            anchors.fill: parent
+            contentHeight: cnt.height
+            Column {
+                id: cnt
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
+                spacing: Theme.paddingLarge
+                DialogHeader {
+                    acceptText: qsTr("Renew")
+                }
+                Label {
+                    width: parent.width
+                    horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignVCenter
+                    text: qsTr("Your WhatsApp subscription expired.\nClick Renew to purchase one year of WhatsApp service.")
+                }
+            }
+        }
     }
 }
 

@@ -8,6 +8,12 @@ Page {
     objectName: "roster"
 
     property int connectionStatus: 0
+    onConnectionStatusChanged: {
+        if (connectionStatus == 9) {
+            renewDialog.open()
+        }
+    }
+
     property string myJid: ""
     property string pendingGroup: ""
 
@@ -155,10 +161,20 @@ Page {
         broadcast.openLocation(lat, lon, zoom, gmaps)
     }
 
+    function sendAudioNote(path) {
+        broadcast.openRecording(path)
+    }
+
     function locateAndSend() {
         appWindow.activate()
         if (pageStack.currentPage.objectName !== "location")
             pageStack.push(Qt.resolvedUrl("Location.qml"), {"broadcastMode": true})
+    }
+
+    function recordAndSend() {
+        appWindow.activate()
+        if (pageStack.currentPage.objectName !== "recorder")
+            pageStack.push(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": true})
     }
 
     SilicaFlickable {

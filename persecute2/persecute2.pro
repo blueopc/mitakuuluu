@@ -1,7 +1,7 @@
 TARGET = harbour-mitakuuluu
 target.path = /usr/bin
 
-QT += sql dbus core
+QT += sql dbus core multimedia
 CONFIG += Qt5Contacts sailfishapp link_pkgconfig
 PKGCONFIG += sailfishapp Qt5Contacts mlite5 libexif
 
@@ -21,7 +21,8 @@ dbus.path = /usr/share/dbus-1/services
 
 INSTALLS += images dbus emoji
 
-SOURCES += src/persecute.cpp
+SOURCES += src/persecute.cpp \
+    src/audiorecorder.cpp
 
 SOURCES += \
     src/threadworker/threadworker.cpp \
@@ -42,10 +43,12 @@ HEADERS += \
     src/conversationmodel.h \
     src/WhatsApp.h \
     src/filesmodel.h \
-    src/settings.h
+    src/settings.h \
+    src/audiorecorder.h
 
 OTHER_FILES += $$files(rpm/*) \
     $$files(qml/*) \
     dbus/org.coderus.harbour-mitakuuluu.service \
     harbour-mitakuuluu.desktop \
-    harbour-mitakuuluu.png
+    harbour-mitakuuluu.png \
+    qml/Recorder.qml

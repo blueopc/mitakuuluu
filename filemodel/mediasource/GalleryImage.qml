@@ -2,16 +2,17 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 ImageBase {
+    id: base
 
     Image {
         id: thumbnail
         property bool gridMoving: grid.moving
 
         source: parent.source
-        width:  size
-        height: size
-        sourceSize.width: width
-        sourceSize.height: height
+        width:  base.size
+        height: base.size
+        //sourceSize.width: base.size
+        //sourceSize.height: base.size
         y: contentYOffset
         x: contentXOffset
 
@@ -19,10 +20,20 @@ ImageBase {
         asynchronous: true
         smooth: true
         fillMode: Image.PreserveAspectCrop
+        clip: true
+
+        horizontalAlignment: Image.AlignHCenter
+        verticalAlignment: Image.AlignVCenter
 
         onStatusChanged: {
             if (status == Image.Error) {
                 errorLabelComponent.createObject(thumbnail)
+            }
+            else if (status == Image.Ready) {
+                if (sourceSize.width > sourceSize.height)
+                    sourceSize.height = base.size
+                else
+                    sourceSize.width = base.size
             }
         }
     }

@@ -57,7 +57,7 @@ EmojiTextBase {
 
     property int maxHeight: 200
 
-    height: Math.min(maxHeight, textEdit.height + Theme.paddingLarge)
+    height: visible ? Math.min(maxHeight, textEdit.height + Theme.paddingLarge) : 0
 
     _flickableDirection: Flickable.VerticalFlick
 

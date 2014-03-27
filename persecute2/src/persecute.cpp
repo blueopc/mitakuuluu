@@ -51,6 +51,7 @@
 #include "WhatsApp.h"
 //#include "GConf.h"
 #include "settings.h"
+#include "audiorecorder.h"
 
 #include <QDebug>
 
@@ -105,7 +106,13 @@ int main(int argc, char *argv[])
     setgid(getgrnam("privileged")->gr_gid);
     if (!QDir("/home/nemo/.whatsapp").exists())
         QDir().mkpath("/home/nemo/.whatsapp");
-    qInstallMessageHandler(messageHandler);
+    QDir tempnotes("/home/nemo/.whatsapp/tempnotes");
+    if (tempnotes.exists()) {
+        system("rm -rf /home/nemo/.whatsapp/tempnotes/*");
+    }
+    Settings *settings = new Settings(0);
+    if (settings->value("keepLogs", true).toBool())
+        qInstallMessageHandler(messageHandler);
     qDebug() << "Starting application";
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
@@ -113,7 +120,6 @@ int main(int argc, char *argv[])
     view->rootContext()->setContextProperty("app", app);
 
     qDebug() << "Creating Settings object";
-    Settings *settings = new Settings(view);
     view->rootContext()->setContextProperty("settings", settings);
 
     qDebug() << "Checking if directories exists";
@@ -128,6 +134,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<ContactsModel>("org.coderus.mitakuuluu", 1, 0, "ContactsModel");
     qmlRegisterType<ConversationModel>("org.coderus.mitakuuluu", 1, 0, "ConversationModel");
     qmlRegisterType<FilesModel>("org.coderus.mitakuuluu", 1, 0, "FilesModel");
+    qmlRegisterType<AudioRecorder>("org.coderus.mitakuuluu", 1, 0, "AudioRecorder");
+
+    view->engine()->addImportPath("/usr/share/harbour-mitakuuluu/qml");
 
 //    GConf *gconf = new GConf(view);
 //    view->rootContext()->setContextProperty("gconf", gconf);

@@ -1,5 +1,7 @@
 #include "whatsapptransferiface.h"
 #include "whatsappplugininfo.h"
+#include "whatsappmediatransfer.h"
+
 #include <QtPlugin>
 
 QString WhatsappTransferIface::pluginId()
@@ -17,4 +19,7 @@ TransferPluginInfo *WhatsappTransferIface::infoObject()
     return new WhatsappPluginInfo;
 }
 
-Q_PLUGIN_METADATA(IID "org.coderus.mitakuuluu.share")
+MediaTransferInterface *WhatsappTransferIface::transferObject()
+{
+    return new WhatsappMediaTransfer;
+}

@@ -219,7 +219,7 @@ function getCode(inputText) {
 
 }
 
-function linkify(inputText) {
+function linkify(inputText, color) {
     var replacedText, replacePattern1, replacePattern2, replacePattern3;
 
     //URLs starting with http://, https://, or ftp://
@@ -236,7 +236,7 @@ function linkify(inputText) {
     replacePattern3 = /([0-9a-zA-Z]+[-._+&])*[0-9a-zA-Z]+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}/gim
     replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$&">$&</a>');
 
-    return replacedText
+    return '<style type="text/css">a:link {color:'+color+';}</style>' + replacedText
 }
 
 function unicodeEscape(str) {
@@ -264,6 +264,11 @@ function to_softbank(inputText) {
     return replacedText
 }
 
+function makeEmoji(path) {
+    return '<font style="opacity:0;">l</font>&nbsp;<img src="'+path+'.png">&nbsp;<font style="opacity:0;">l</font>';
+    //return '<img src="'+path+'.png">'
+}
+
 function emojify(inputText, emojiPath) {
     var replacedText = inputText.replace(/\&/g, "&amp;").replace(/\</g, "&lt;").replace(/\>/g, "&gt;").replace(/\n/g, "<br />").replace(/\ufe0f/g, "")//.replace('\ud83c', '')
     //var replacedText = inputText.replace(/\ufe0f/g, "")
@@ -274,31 +279,33 @@ function emojify(inputText, emojiPath) {
     replacedText = to_softbank(replacedText)
 
     replacedText = replacedText.replace(regb, function(s, eChar){
-        return '<img width="22" height="22" src="'+emojiPath+eChar.charCodeAt(0).toString(16).toUpperCase()+'.png">';
+        return makeEmoji(emojiPath+eChar.charCodeAt(0).toString(16).toUpperCase())
     });
 
     replacedText = replacedText.replace(regc, function(s, eChar){
         var res = eChar.charCodeAt(0).toString(16).toUpperCase()
         //console.log(res)
         if (emoji_code.indexOf(res) != -1)
-            return '<img width="22" height="22" src="'+emojiPath+res+'.png">';
+            return makeEmoji(emojiPath+res)
         else
             return eChar;
     });
 
-    return replacedText.replace(multiByteEmojiRegex, function(str, p1) {
+    replacedText = replacedText.replace(multiByteEmojiRegex, function(str, p1) {
              var p = ord(p1.toString(16))
              if (p>0) {
                  var res = decimalToHex(p).toString().toUpperCase()
                  if (p>8252)
                  //if (emoji_code.indexOf(res) != -1)
-                     return res.replace(/^([\da-f]+)$/i,'<img width="22" height="22" src="'+emojiPath+'/$1.png">');
+                     return makeEmoji(emojiPath+res.replace(/^([\da-f]+)$/i,'$1'))
                  else
                      return p1
              } else {
                  return ''
              }
         });
+
+    return replacedText;//.replace(/<br \/>/gim, "<br \/>&nbsp;").replace(/\n/gim, "\n&nbsp;");
 }
 
 var softbank_replacer = {

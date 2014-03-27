@@ -766,3 +766,10 @@ void WhatsApp::sendLocation(const QStringList &jids, const QString &latitude, co
         iface->call(QDBus::NoBlock, "sendLocation", jids, latitude, longitude, zoom, googlemaps);
     }
 }
+
+void WhatsApp::renewAccount()
+{
+    if (iface) {
+        iface->call(QDBus::NoBlock, "renewAccount");
+    }
+}

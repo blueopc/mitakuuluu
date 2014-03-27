@@ -41,6 +41,13 @@ Dialog {
         page.open()
     }
 
+    function openRecording(path) {
+        mediaRow.hideAll()
+        messageVoice.checked = true
+        mediaPath.text = path
+        page.open()
+    }
+
     function openLocation(latitude, longitude, zoom, googlemaps) {
         mediaRow.hideAll()
         messageLocation.checked = true
@@ -127,6 +134,7 @@ Dialog {
                             mediaRow.hideAll()
                         }
                         checked = true
+                        positionSource = positionSourceComponent.createObject(null)
                     }
                 }
 
@@ -134,12 +142,13 @@ Dialog {
                     id: messageVoice
                     icon.source: "image://theme/icon-m-mic"
                     checked: false
-                    enabled: false
                     onClicked: {
                         if (checked) {
                             mediaRow.hideAll()
                         }
                         checked = true
+                        recorder = recorderComponent.createObject(null)
+                        player = playerComponent.createObject(null)
                     }
                 }
 
@@ -175,9 +184,13 @@ Dialog {
 
             Label {
                 id: mediaPath
-                visible: messageMedia.checked
+                visible: messageMedia.checked || messageVoice.checked
                 font.pixelSize: Theme.fontSizeSmall
-                width: parent.width
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                    margins: Theme.paddingLarge
+                }
                 wrapMode: Text.NoWrap
                 elide: Text.ElideLeft
 
@@ -210,6 +223,7 @@ Dialog {
                 property real latitude: 55.159479
                 property real longitude: 61.402796
                 property int zoom: 15
+                visible: messageLocation.checked
                 function loadPreview() {
                     if (googlemaps)
                         source = "http://maps.googleapis.com/maps/api/staticmap?zoom=" + zoom
@@ -234,6 +248,27 @@ Dialog {
                                     + "&nord&f=0&poithm=1&poilbl=0"
                 }
 
+                Rectangle {
+                    anchors.fill: parent
+                    color: Theme.secondaryHighlightColor
+                    visible: location.status != Image.Ready
+
+                    Label {
+                        text: qsTr("press to locate")
+                        horizontalAlignment: Text.AlignHCenter
+                        verticalAlignment: Text.AlignVCenter
+                        anchors.fill: parent
+                    }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    enabled: parent.visible
+                    onClicked: {
+                        roster.locateAndSend()
+                    }
+                }
+
                 BusyIndicator {
                     anchors.centerIn: location
                     running: visible
@@ -249,6 +284,16 @@ Dialog {
                 text: qsTr("Select media")
                 onClicked: {
                     pageStack.push(selectMedia)
+                }
+            }
+
+            Button {
+                id: voiceSelect
+                visible: messageVoice.checked
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Record")
+                onClicked: {
+                    roster.recordAndSend()
                 }
             }
         }
