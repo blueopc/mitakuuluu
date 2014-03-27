@@ -305,6 +305,12 @@ Page {
             }
 
             TextSwitch {
+                checked: keepLogs
+                text: qsTr("Allow saving application logs")
+                onClicked: keepLogs = checked
+            }
+
+            TextSwitch {
                 checked: lockPortrait
                 text: qsTr("Lock conversation orientation in portrait")
                 onClicked: {

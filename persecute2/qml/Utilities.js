@@ -197,7 +197,7 @@ function getCode(inputText) {
     var replacedText,
         positions = 0,
         //regx = /<img src=\".*\/([a-fA-F0-9]+).png\" \/>/g
-        regx = /<img width="\d+" height="\d+" src=\"[^\>]+\/([a-fA-F0-9]+).png\" \/>/g
+        regx = /<img src=\"[^\>]+\/([a-fA-F0-9]+).png\" \/>/g
 
     replacedText = inputText.replace( regx, function(s, eChar){
             var tmp = s.split(' />')[0].split('/'),
@@ -265,8 +265,7 @@ function to_softbank(inputText) {
 }
 
 function makeEmoji(path) {
-    return '<font style="opacity:0;">l</font>&nbsp;<img src="'+path+'.png">&nbsp;<font style="opacity:0;">l</font>';
-    //return '<img src="'+path+'.png">'
+    return '<img src="'+path+'.png">';
 }
 
 function emojify(inputText, emojiPath) {

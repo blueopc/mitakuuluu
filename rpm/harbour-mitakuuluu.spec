@@ -9,7 +9,7 @@ Name:       harbour-mitakuuluu
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
 Version:    0.2
-Release:    4
+Release:    5
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
@@ -59,7 +59,6 @@ mkdir -p %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wa
 touch %{buildroot}/home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
 mkdir -p %{buildroot}/home/nemo/.whatsapp/logs
 touch %{buildroot}/home/nemo/.whatsapp/whatsapp.log
-touch %{buildroot}/home/nemo/.whatsapp/whatsapp.db
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log1.tar.gz
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log2.tar.gz
 touch %{buildroot}/home/nemo/.whatsapp/logs/whatsapp_log3.tar.gz
@@ -127,7 +126,6 @@ fi
 %{_bindir}
 %ghost /home/nemo/.config/systemd/user/post-user-session.target.wants/harbour-mitakuuluu.service
 %ghost /home/nemo/.whatsapp/whatsapp.log
-%ghost /home/nemo/.whatsapp/whatsapp.db
 %ghost /home/nemo/.whatsapp/logs/whatsapp_log1.tar.gz
 %ghost /home/nemo/.whatsapp/logs/whatsapp_log2.tar.gz
 %ghost /home/nemo/.whatsapp/logs/whatsapp_log3.tar.gz

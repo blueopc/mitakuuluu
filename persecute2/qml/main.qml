@@ -61,6 +61,9 @@ ApplicationWindow {
     property bool notifyMessages: true
     onNotifyMessagesChanged: settings.setValue("notifyMessages", notifyMessages)
 
+    property bool keepLogs: true
+    onKeepLogsChanged: settings.setValue("keepLogs", keepLogs)
+
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
 
@@ -238,6 +241,7 @@ ApplicationWindow {
         threading = settings.value("threading", true)
         hideKeyboard = settings.value("hideKeyboard", false)
         notifyMessages = settings.value("notifyMessages", true)
+        keepLogs = settings.value("keepLogs", true)
         updateCoverActions()
     }
 

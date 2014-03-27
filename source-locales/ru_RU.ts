@@ -1348,76 +1348,81 @@
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="309"/>
+        <source>Allow saving application logs</source>
+        <translation>Сохранять лог приложения</translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="315"/>
         <source>Lock conversation orientation in portrait</source>
         <translation>Заблокировать чат в портретной ориентации</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="319"/>
+        <location filename="../persecute2/qml/Settings.qml" line="325"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Показать себя в списке контактов</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="328"/>
+        <location filename="../persecute2/qml/Settings.qml" line="334"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Принимать сообщения от неизвестных</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="337"/>
+        <location filename="../persecute2/qml/Settings.qml" line="343"/>
         <source>Show notifications when connection changing</source>
         <translation>Показывать уведомления при подключении</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="346"/>
+        <location filename="../persecute2/qml/Settings.qml" line="352"/>
         <source>Display messages text in notifications</source>
         <translation>Показывать текст сообщения в уведомлениях</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="352"/>
+        <location filename="../persecute2/qml/Settings.qml" line="358"/>
         <source>Create server connection in separate thread (experimental) (*)</source>
         <translation>Подключаться к серверу в отдельном потоке (экспериментально) (*)</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="362"/>
+        <location filename="../persecute2/qml/Settings.qml" line="368"/>
         <source>Display presence</source>
         <translation>Сетевой статус</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="365"/>
+        <location filename="../persecute2/qml/Settings.qml" line="371"/>
         <source>Display online when app is open</source>
         <translation>Отображать &quot;онлайн&quot; когда приложение открыто</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="492"/>
+        <location filename="../persecute2/qml/Settings.qml" line="498"/>
         <source>Options marked with (*) will take effect after reconnection</source>
         <translation>Настройки помеченные (*) будут применены после нового подключения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="523"/>
+        <location filename="../persecute2/qml/Settings.qml" line="529"/>
         <source>Send logs</source>
         <translation>Передать логи</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="529"/>
+        <location filename="../persecute2/qml/Settings.qml" line="535"/>
         <source>Your email address</source>
         <translation>Ваш e-mail адрес для ответа</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="538"/>
+        <location filename="../persecute2/qml/Settings.qml" line="544"/>
         <source>Enter bug description here. As many information as  possible.</source>
         <translation>Введите описание ошибки как можно подробнее</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="357"/>
+        <location filename="../persecute2/qml/Settings.qml" line="363"/>
         <source>Presence</source>
         <translation>Сетевой статус</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="372"/>
+        <location filename="../persecute2/qml/Settings.qml" line="378"/>
         <source>Always display online</source>
         <translation>Всегда отображать &quot;онлайн&quot;</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="379"/>
+        <location filename="../persecute2/qml/Settings.qml" line="385"/>
         <source>Always display offline</source>
         <translation>Всегда отображать &quot;оффлайн&quot;</translation>
     </message>
@@ -1434,27 +1439,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="392"/>
+        <location filename="../persecute2/qml/Settings.qml" line="398"/>
         <source>Media</source>
         <translation>Настройки медиа</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="397"/>
+        <location filename="../persecute2/qml/Settings.qml" line="403"/>
         <source>Resize sending images</source>
         <translation>Уменьшать картинку при отправке</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="435"/>
+        <location filename="../persecute2/qml/Settings.qml" line="441"/>
         <source>Maximum image size by file size</source>
         <translation>Максимальный размер изображения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="473"/>
+        <location filename="../persecute2/qml/Settings.qml" line="479"/>
         <source>Maximum image size by resolution</source>
         <translation>Максимальное разрешение изображения</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="475"/>
+        <location filename="../persecute2/qml/Settings.qml" line="481"/>
         <source>%1 MPx</source>
         <translation>%1 МПикс</translation>
     </message>
@@ -1523,37 +1528,37 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>n/a</source>
         <translation>нет данных</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>bytes</source>
         <translation>байт</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>KiB</source>
         <translation>Кб</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>MiB</source>
         <translation>Мб</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>GiB</source>
         <translation>Гб</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="358"/>
+        <location filename="../persecute2/qml/main.qml" line="362"/>
         <source>Renew</source>
         <translation>Обновить подписку</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="364"/>
+        <location filename="../persecute2/qml/main.qml" line="368"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
         <translation>Срок действия аккаунта истек.

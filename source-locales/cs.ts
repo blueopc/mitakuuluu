@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="257"/>
         <source>press to locate</source>
-        <translation type="unfinished"/>
+        <translation>stiskněte pro lokalizaci</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="284"/>
@@ -139,7 +139,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="294"/>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Nahrát</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="322"/>
@@ -1345,76 +1345,81 @@
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="309"/>
+        <source>Allow saving application logs</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="315"/>
         <source>Lock conversation orientation in portrait</source>
         <translation>Uzamknout obrazovku konverzace na výšku</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="319"/>
+        <location filename="../persecute2/qml/Settings.qml" line="325"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Ukázat se v seznamu kontaktů, pokud je k dispozici</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="328"/>
+        <location filename="../persecute2/qml/Settings.qml" line="334"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Přijímat zprávy od neznámých kontaktů</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="337"/>
+        <location filename="../persecute2/qml/Settings.qml" line="343"/>
         <source>Show notifications when connection changing</source>
         <translation>Zobrazit upozornění při změně připojení</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="346"/>
+        <location filename="../persecute2/qml/Settings.qml" line="352"/>
         <source>Display messages text in notifications</source>
         <translation>Zobrazovat text zpráv v upozorněních</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="352"/>
+        <location filename="../persecute2/qml/Settings.qml" line="358"/>
         <source>Create server connection in separate thread (experimental) (*)</source>
         <translation>Vytvořit připojení ve zvláštním vlákně (experimentální) (*)</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="362"/>
+        <location filename="../persecute2/qml/Settings.qml" line="368"/>
         <source>Display presence</source>
         <translation>Zobrazit přítomnost</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="365"/>
+        <location filename="../persecute2/qml/Settings.qml" line="371"/>
         <source>Display online when app is open</source>
         <translation>Zpbrazovat připojený, když je aplikace otevřená</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="492"/>
+        <location filename="../persecute2/qml/Settings.qml" line="498"/>
         <source>Options marked with (*) will take effect after reconnection</source>
         <translation>Volby s (*) se uplatní až po odpojit-připojit</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="523"/>
+        <location filename="../persecute2/qml/Settings.qml" line="529"/>
         <source>Send logs</source>
         <translation>Odeslat logy</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="529"/>
+        <location filename="../persecute2/qml/Settings.qml" line="535"/>
         <source>Your email address</source>
         <translation>Vaše email adresa</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="538"/>
+        <location filename="../persecute2/qml/Settings.qml" line="544"/>
         <source>Enter bug description here. As many information as  possible.</source>
         <translation>Zde zadejte popis chyby. Co nejvíce informací je možné.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="357"/>
+        <location filename="../persecute2/qml/Settings.qml" line="363"/>
         <source>Presence</source>
         <translation>Přítomnost</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="372"/>
+        <location filename="../persecute2/qml/Settings.qml" line="378"/>
         <source>Always display online</source>
         <translation>Vždy zobrazovat připojený</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="379"/>
+        <location filename="../persecute2/qml/Settings.qml" line="385"/>
         <source>Always display offline</source>
         <translation>Vždy zobrazovat odpojený</translation>
     </message>
@@ -1431,27 +1436,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="392"/>
+        <location filename="../persecute2/qml/Settings.qml" line="398"/>
         <source>Media</source>
         <translation>Média</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="397"/>
+        <location filename="../persecute2/qml/Settings.qml" line="403"/>
         <source>Resize sending images</source>
         <translation>Změnit velikost odesílaných obrázků</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="435"/>
+        <location filename="../persecute2/qml/Settings.qml" line="441"/>
         <source>Maximum image size by file size</source>
         <translation>Maximální velikost obrázku podle velikosti souboru</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="473"/>
+        <location filename="../persecute2/qml/Settings.qml" line="479"/>
         <source>Maximum image size by resolution</source>
         <translation>Maximální velikost obrázku podle rozlišení</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="475"/>
+        <location filename="../persecute2/qml/Settings.qml" line="481"/>
         <source>%1 MPx</source>
         <translation>%1 MPx</translation>
     </message>
@@ -1520,37 +1525,37 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>n/a</source>
         <translation>nemá význam</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>bytes</source>
         <translation>bajtů</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>MiB</source>
         <translation>MiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>GiB</source>
         <translation>GiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="358"/>
+        <location filename="../persecute2/qml/main.qml" line="362"/>
         <source>Renew</source>
         <translation>Obnovit</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="364"/>
+        <location filename="../persecute2/qml/main.qml" line="368"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
         <translation>Předplatné aplikace WhatsApp vypršelo.

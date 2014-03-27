@@ -1356,76 +1356,81 @@
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="309"/>
+        <source>Allow saving application logs</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Settings.qml" line="315"/>
         <source>Lock conversation orientation in portrait</source>
         <translation>Landscape deaktivieren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="319"/>
+        <location filename="../persecute2/qml/Settings.qml" line="325"/>
         <source>Show yourself in contact list, if present</source>
         <translation>Eigenen Kontakt anzeigen, sofern vorhanden</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="328"/>
+        <location filename="../persecute2/qml/Settings.qml" line="334"/>
         <source>Accept messages from unknown contacts</source>
         <translation>Nachrichten von unbekannten Kontakten akzeptieren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="337"/>
+        <location filename="../persecute2/qml/Settings.qml" line="343"/>
         <source>Show notifications when connection changing</source>
         <translation>Benachrichtigen, wenn sich der Verbindungsstatus ändert</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="346"/>
+        <location filename="../persecute2/qml/Settings.qml" line="352"/>
         <source>Display messages text in notifications</source>
         <translation>Nachrichtentext in Benachrichtigungen anzeigen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="352"/>
+        <location filename="../persecute2/qml/Settings.qml" line="358"/>
         <source>Create server connection in separate thread (experimental) (*)</source>
         <translation>Erstelle Serververbindung in einem separaten Thread (experimentell) (*)</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="362"/>
+        <location filename="../persecute2/qml/Settings.qml" line="368"/>
         <source>Display presence</source>
         <translation>Onlinestatus</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="365"/>
+        <location filename="../persecute2/qml/Settings.qml" line="371"/>
         <source>Display online when app is open</source>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="492"/>
+        <location filename="../persecute2/qml/Settings.qml" line="498"/>
         <source>Options marked with (*) will take effect after reconnection</source>
         <translation>Optionen mit (*) werden nach erneutem Verbindungsaufbau aktiv</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="523"/>
+        <location filename="../persecute2/qml/Settings.qml" line="529"/>
         <source>Send logs</source>
         <translation>Log senden</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="529"/>
+        <location filename="../persecute2/qml/Settings.qml" line="535"/>
         <source>Your email address</source>
         <translation>Ihre Email Adresse</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="538"/>
+        <location filename="../persecute2/qml/Settings.qml" line="544"/>
         <source>Enter bug description here. As many information as  possible.</source>
         <translation>genaue Fehlerbeschreibung</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="357"/>
+        <location filename="../persecute2/qml/Settings.qml" line="363"/>
         <source>Presence</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="372"/>
+        <location filename="../persecute2/qml/Settings.qml" line="378"/>
         <source>Always display online</source>
         <translation>Immer als online anzeigen</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="379"/>
+        <location filename="../persecute2/qml/Settings.qml" line="385"/>
         <source>Always display offline</source>
         <translation>Immer als offline anzeigen</translation>
     </message>
@@ -1442,27 +1447,27 @@
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="392"/>
+        <location filename="../persecute2/qml/Settings.qml" line="398"/>
         <source>Media</source>
         <translation>Medien</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="397"/>
+        <location filename="../persecute2/qml/Settings.qml" line="403"/>
         <source>Resize sending images</source>
         <translation>Bilder vor dem Senden skalieren</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="435"/>
+        <location filename="../persecute2/qml/Settings.qml" line="441"/>
         <source>Maximum image size by file size</source>
         <translation>Maximale Dateigröße</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="473"/>
+        <location filename="../persecute2/qml/Settings.qml" line="479"/>
         <source>Maximum image size by resolution</source>
         <translation>Maximale Auflösung</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Settings.qml" line="475"/>
+        <location filename="../persecute2/qml/Settings.qml" line="481"/>
         <source>%1 MPx</source>
         <translation>%1 MP</translation>
     </message>
@@ -1531,37 +1536,37 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>n/a</source>
         <translation>n/a</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>bytes</source>
         <translation>bytes</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>KiB</source>
         <translation>KiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>MiB</source>
         <translation>MiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="177"/>
+        <location filename="../persecute2/qml/main.qml" line="180"/>
         <source>GiB</source>
         <translation>GiB</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="358"/>
+        <location filename="../persecute2/qml/main.qml" line="362"/>
         <source>Renew</source>
         <translation>Verlängern</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/main.qml" line="364"/>
+        <location filename="../persecute2/qml/main.qml" line="368"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
         <translation>Dein WhatsApp-Abo ist abgelaufen.
