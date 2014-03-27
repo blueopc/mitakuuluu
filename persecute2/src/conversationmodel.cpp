@@ -222,7 +222,7 @@ void ConversationModel::removeConversation(const QString &rjid)
 {
     if (jid == rjid) {
         beginResetModel();
-        Q_EMIT lastMessageToBeChanged(rjid);
+        //Q_EMIT lastMessageToBeChanged(rjid);
         _modelData.clear();
         _sortedTimestampMsgidList.clear();
         endResetModel();
@@ -347,7 +347,7 @@ void ConversationModel::dbResults(const QVariant &result)
         _sortedTimestampMsgidList.clear();
         //endResetModel();
 
-        Q_EMIT lastMessageToBeChanged(jid);
+        //Q_EMIT lastMessageToBeChanged(jid);
         QVariantList records = reply["messages"].toList();
         if (records.size() > 0) {
             //beginInsertRows(QModelIndex(), 0, records.size() - 1);
