@@ -25,6 +25,7 @@ Page {
             errorLabel.text = qsTr("Registration failed\n\n") + parseServerReply(reason)
             errorArea.visible = true
             phoneField.text = ""
+            password.text = ""
             codeArea.text = ""
             busyIndicator.visible = false
         }
@@ -33,6 +34,7 @@ Page {
             busyIndicator.visible = false
             errorArea.visible = true
             phoneField.text = ""
+            password.text = ""
             codeArea.text = ""            
             renewDialog.open()
         }
@@ -46,6 +48,7 @@ Page {
             busyIndicator.visible = false
             errorArea.visible = true
             phoneField.text = ""
+            password.text = ""
             codeArea.text = ""
             phoneDialog.open(false, PageStackAction.Immediate)
         }
@@ -83,48 +86,53 @@ Page {
     function parseServerReply(reply) {
         var text = ""
         if (reply.status == "sent") {
-            text += "Code successfully requested.\n"
+            text += qsTr("Code successfully requested.")
         }
         else {
-            text += "Reason: "
+            var reason = reply.reason
+            var param = reply.param
+            if (reply.param == 'in')
+                param = "phone number"
+            if (reply.param == 'token')
+                param = "secure token"
+
             if (reply.reason == "too_recent")
-                text += "too frequent attempts to request the code"
+                reason = qsTr("Too frequent attempts to request the code.")
             else if (reply.reason == "too_many_guesses")
-                text += "too many wrong code guesses"
+                reason = qsTr("Too many wrong code guesses.")
             else if (reply.reason == "too_many")
-                text += "too many attempts. try again tomorrow"
+                reason = qsTr("Too many attempts. Try again tomorrow.")
             else if (reply.reason == 'old_version' || reply.reason == 'bad_token')
-                text += "Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus"
+                reason = qsTr("Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus")
             else if (reply.reason == "stale")
-                text = "too many attempts. try again tomorrow"
+                reason = qsTr("Registration code expired. You need to request a new one.")
             else if (reply.reason == "missing") {
                 if (typeof(reply.param) == "undefined")
-                    text += "Registration code expired. You need to request a new one."
+                    reason = qsTr("Registration code expired. You need to request a new one.")
                 else
-                    text += "Missing request param: " + reply.param
+                    reason = qsTr("Missing request param: %1").arg(param)
             }
             else if (reply.reason == "bad_param") {
-                text += "bad parameters passed to code request: "
-                if (reply.param == 'in')
-                    text += "phone number"
-                if (reply.param == 'token')
-                    text += "secure token"
-                else
-                    text += reply.param
+                reason = qsTr("Bad parameters passed to code request: %1").arg(param)
             }
             else if (reply.reason == "no_routes")
-                text += "no cell routes to " + (reply.method == 'voice' ? "make call" : 'send sms') + " for your operator. Please try other method [sms/voice]"
-            else if (reply.reason != "undefined")
-                text += reply.reason
+                reason = qsTr("No cell routes for %1 caused by your operator. Please try other method [sms/voice]").arg(reply.method == 'voice' ? qsTr("making call") : qsTr("sending sms"))
+            //else if (reply.reason != "undefined")
+            //    text += reply.reason
+            text += qsTr("Reason: %1").arg(reason)
         }
         if (reply.retry_after > 0) {
             var retry = reply.retry_after / 60
-            var hours = retry / 60
-            var mins = retry % 60
-            text += "You can retry requesting code after "
-            if (hours > 0)
-                text += hours + " hour(s) "
-            text += mins + "minute(s)."
+            var hours = Math.abs(retry / 60)
+            var mins = Math.abs(retry % 60)
+            var after = ""
+            if (hours > 0) {
+                after += qsTr("%n hours", "", hours)
+                after += " "
+            }
+            after += qsTr("%n minutes", "", mins)
+            text += "\n"
+            text += qsTr("You can retry requesting code after %1").arg(after)
         }
         return text
     }
@@ -153,32 +161,6 @@ Page {
             horizontalAlignment: Text.AlignHCenter
             visible: busyIndicator.visible
             wrapMode: Text.WordWrap
-        }
-
-        Rectangle {
-            id: errorArea
-            anchors.fill: parent
-            anchors.margins: Theme.paddingLarge
-            color: "#C0FF0000"
-            visible: false
-
-            Label {
-                id: errorLabel
-                anchors.fill: parent
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                wrapMode: Text.Wrap
-            }
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            enabled: errorArea.visible
-            onClicked: {
-                errorArea.visible = false
-                errorLabel.text = ""
-                phoneDialog.open(false, PageStackAction.Immediate)
-            }
         }
     }
 
@@ -290,6 +272,32 @@ Page {
                         codeArea.forceActiveFocus()
                     }
                 }
+            }
+        }
+
+        Rectangle {
+            id: errorArea
+            anchors.fill: parent
+            color: "#C0FF0000"
+            visible: false
+
+            Label {
+                id: errorLabel
+                anchors.fill: parent
+                anchors.margins: Theme.paddingLarge
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.Wrap
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            enabled: errorArea.visible
+            onClicked: {
+                errorArea.visible = false
+                errorLabel.text = ""
+                phoneDialog.open(false, PageStackAction.Immediate)
             }
         }
     }
