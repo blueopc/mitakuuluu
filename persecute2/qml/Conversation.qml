@@ -302,9 +302,10 @@ Page {
         anchors.bottomMargin: Theme.paddingMedium
         width: page.width*/
         anchors.fill: parent
-        clip: true
-        interactive: !conversationView.flicking
+        //clip: true
+        //interactive: !conversationView.flicking
         pressDelay: 0
+        contentHeight: height
 
         PullDownMenu {
             MenuItem {
@@ -355,6 +356,14 @@ Page {
                 onClicked: {
                     conversationModel.loadOldConversation(20)
                 }
+            }
+        }
+
+        PushUpMenu {
+            id: pushMedia
+            MenuItem {
+                text: qsTr("Send media")
+                onClicked: dock.show()
             }
         }
 
@@ -625,13 +634,6 @@ Page {
             width: height
             onClicked: {
                 avatarView.show(page.icon)
-            }
-        }
-        PushUpMenu {
-            id: pushMedia
-            MenuItem {
-                text: qsTr("Send media")
-                onClicked: dock.show()
             }
         }
     }
