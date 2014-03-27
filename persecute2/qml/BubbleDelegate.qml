@@ -136,8 +136,10 @@ Item {
         text: getMessageText(model)
         textFormat: Text.RichText
         onPaintedWidthChanged: {
-            if (width > parent.width)
+            if (width > (parent.width - (Theme.paddingLarge * 2)) * 2)
                 width = parent.width - (Theme.paddingLarge * 2)
+            else if (width > parent.width - (Theme.paddingLarge * 2))
+                width = width / 3 * 2
         }
     }
 
