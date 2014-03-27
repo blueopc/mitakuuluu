@@ -6,7 +6,7 @@ import QtMultimedia 5.0
 Item {
     id: item
     width: parent.width
-    height: (msg.height + (isGroup ? 0 : Theme.paddingMedium)) + (isGroup ? msginfo.height : 0) + ((msgStatusViewFirstTick.height * 2)+ (isGroup ? Theme.paddingMedium : 0)) + (prevClip.visible ? (prev.status == Image.Ready ? prevClip.height : 0) : 0) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
+    height: (msg.paintedHeight + (isGroup ? 0 : Theme.paddingMedium)) + (isGroup ? msginfo.height : 0) + ((msgStatusViewFirstTick.height * 2)+ (isGroup ? Theme.paddingMedium : 0)) + (prevClip.visible ? (prev.status == Image.Ready ? prevClip.height : 0) : 0) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
     opacity: mArea.pressed ? 0.5 : 1.0
     property bool showPreview: false
     property int msgStatus: model.msgstatus
@@ -135,7 +135,7 @@ Item {
         color: Theme.primaryColor
         text: getMessageText(model)
         textFormat: Text.RichText
-        onWidthChanged: {
+        onPaintedWidthChanged: {
             if (width > parent.width)
                 width = parent.width - (Theme.paddingLarge * 2)
         }
