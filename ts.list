@@ -33,6 +33,7 @@
 ./persecute2/qml/SelectFile.qml
 ./persecute2/qml/SelectPhonebook.qml
 ./persecute2/qml/SelectPicture.qml
+./persecute2/qml/SendContactCard.qml
 ./persecute2/qml/Settings.qml
 ./persecute2/qml/ShareUI.qml
 ./persecute2/qml/SquareButton.qml

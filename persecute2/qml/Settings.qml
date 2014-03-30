@@ -5,6 +5,7 @@ import "Utilities.js" as Utilities
 Page {
     id: page
     objectName: "settings"
+    property variant coverNames: []
 
     onStatusChanged: {
         if (status === PageStatus.Inactive) {
@@ -13,6 +14,20 @@ Page {
         else if (status === PageStatus.Active) {
             updatePresence()
         }
+    }
+
+    function coverActionName(index) {
+        if (typeof(coverNames[index]) == "undefined") {
+            coverNames = [
+                        qsTr("Quit"),
+                        qsTr("Change presence"),
+                        qsTr("Mute/unmute"),
+                        qsTr("Take picture"),
+                        qsTr("Send location"),
+                        qsTr("Send voice note")
+                    ]
+        }
+        return coverNames[index]
     }
 
     Connections {
@@ -79,8 +94,8 @@ Page {
                 text: qsTr("Blacklist")
                 enabled: roster.connectionStatus == 4
                 onClicked: {
-                    whatsapp.getPrivacyList()
                     pageStack.push(privacyList)
+                    whatsapp.getPrivacyList()
                 }
             }
         }
@@ -128,8 +143,7 @@ Page {
                         else {
                             conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex - 2]
                         }
-                        settings.setValue("conversationIndex", parseInt(currentIndex))
-                        settings.setValue("conversationTheme", conversationTheme)
+                        conversationIndex = parseInt(currentIndex)
                     }
                 }
                 Component.onCompleted: {
@@ -149,20 +163,14 @@ Page {
             TextSwitch {
                 checked: notifyActive
                 text: qsTr("Vibrate in active conversation")
-                onClicked: {
-                    notifyActive = checked
-                    settings.setValue("notifyActive", checked)
-                }
+                onClicked: notifyActive = checked
             }
 
             TextSwitch {
                 id: timestamp
                 checked: showTimestamp
                 text: qsTr("Show messages timestamp")
-                onClicked: {
-                    showTimestamp = checked
-                    settings.setValue("showTimestamp", checked)
-                }
+                onClicked: showTimestamp = checked
             }
 
             TextSwitch {
@@ -170,29 +178,20 @@ Page {
                 checked: showSeconds
                 text: qsTr("Show seconds in messages timestamp")
                 enabled: showTimestamp
-                onClicked: {
-                    showSeconds = checked
-                    settings.setValue("showSeconds", checked)
-                }
+                onClicked: showSeconds = checked
             }
 
             TextSwitch {
                 id: enter
                 checked: sendByEnter
                 text: qsTr("Send messages by Enter")
-                onClicked: {
-                    sendByEnter = checked
-                    settings.setValue("sendByEnter", checked)
-                }
+                onClicked: sendByEnter = checked
             }
 
             TextSwitch {
                 checked: showKeyboard
                 text: qsTr("Automatically show keyboard when opening conversation")
-                onClicked: {
-                    showKeyboard = checked
-                    settings.setValue("showKeyboard", checked)
-                }
+                onClicked: showKeyboard = checked
             }
 
             TextSwitch {
@@ -205,20 +204,14 @@ Page {
                 checked: importToGallery
                 text: qsTr("Download media to Gallery")
                 description: qsTr("If checked downloaded files will be shown in Gallery")
-                onClicked: {
-                    importToGallery = checked
-                    settings.setValue("importmediatogallery", checked)
-                }
+                onClicked: importToGallery = checked
             }
 
             TextSwitch {
                 checked: deleteMediaFiles
                 text: qsTr("Delete media files")
                 description: qsTr("Delete received media files when deleting message")
-                onClicked: {
-                    deleteMediaFiles = checked
-                    settings.setValue("deleteMediaFiles", checked)
-                }
+                onClicked: deleteMediaFiles = checked
             }
 
             Slider {
@@ -232,7 +225,6 @@ Page {
                 onValueChanged: {
                     if (page.status == PageStatus.Active) {
                         fontSize = parseInt(value)
-                        settings.setValue("fontSize", fontSize)
                     }
                 }
             }
@@ -313,42 +305,51 @@ Page {
             TextSwitch {
                 checked: lockPortrait
                 text: qsTr("Lock conversation orientation in portrait")
-                onClicked: {
-                    lockPortrait = checked
-                    settings.setValue("lockPortrait", checked)
-                }
+                onClicked: lockPortrait = checked
             }
 
             TextSwitch {
                 id: showMyself
                 checked: showMyJid
                 text: qsTr("Show yourself in contact list, if present")
-                onClicked: {
-                    showMyJid = checked
-                    settings.setValue("showMyJid", checked)
-                }
+                onClicked: showMyJid = checked
             }
 
             TextSwitch {
                 checked: acceptUnknown
                 text: qsTr("Accept messages from unknown contacts")
-                onClicked: {
-                    acceptUnknown = checked
-                    settings.setValue("acceptUnknown", checked)
-                }
+                onClicked: acceptUnknown = checked
             }
 
             TextSwitch {
                 checked: showConnectionNotifications
                 text: qsTr("Show notifications when connection changing")
-                onClicked: {
-                    showConnectionNotifications = checked
-                    settings.setValue("showConnectionNotifications", checked)
-                }
+                onClicked: showConnectionNotifications = checked
+            }
+
+            Binding {
+                target: muteSwitch
+                property: "checked"
+                value: !notificationsMuted
             }
 
             TextSwitch {
+                id: muteSwitch
+                checked: !notificationsMuted
+                text: qsTr("Show new messages notifications")
+                onClicked: notificationsMuted = !checked
+            }
+
+            Binding {
+                target: notifySwitch
+                property: "checked"
+                value: notifyMessages
+            }
+
+            TextSwitch {
+                id: notifySwitch
                 checked: notifyMessages
+                enabled: !notificationsMuted
                 text: qsTr("Display messages text in notifications")
                 onClicked: notifyMessages = checked
             }
@@ -395,6 +396,44 @@ Page {
             }
 
             SectionHeader {
+                text: qsTr("Cover")
+            }
+
+            ComboBox {
+                id: leftCoverAction
+                label: qsTr("Left cover action")
+                menu: ContextMenu {
+                    Repeater {
+                        width: parent.width
+                        model: 6
+                        delegate: MenuItem { text: coverActionName(index) }
+                        Component.onCompleted: leftCoverAction.currentIndex = coverLeftAction
+                    }
+                }
+                onCurrentIndexChanged: {
+                    if (page.status == PageStatus.Active)
+                        coverLeftAction = currentIndex
+                }
+            }
+
+            ComboBox {
+                id: rightCoverAction
+                label: qsTr("Right cover action")
+                menu: ContextMenu {
+                    Repeater {
+                        width: parent.width
+                        model: 6
+                        delegate: MenuItem { text: coverActionName(index) }
+                        Component.onCompleted: rightCoverAction.currentIndex = coverRightAction
+                    }
+                }
+                onCurrentIndexChanged: {
+                    if (page.status == PageStatus.Active)
+                        coverRightAction = currentIndex
+                }
+            }
+
+            SectionHeader {
                 text: qsTr("Media")
             }
 
@@ -403,7 +442,6 @@ Page {
                 text: qsTr("Resize sending images")
                 onClicked: {
                     resizeImages = checked
-                    settings.setValue("resizeImages", checked)
                     if (!checked) {
                         sizeResize.checked = false
                         pixResize.checked = false
@@ -423,7 +461,6 @@ Page {
                     checked: resizeImages && resizeBySize
                     onClicked: {
                         resizeBySize = checked
-                        settings.setValue("resizeBySize", checked)
                         pixResize.checked = !checked
                     }
                     anchors.left: parent.left
@@ -444,7 +481,6 @@ Page {
                     onValueChanged: {
                         if (page.status == PageStatus.Active) {
                             resizeImagesTo = parseInt(value)
-                            settings.setValue("resizeImagesTo", resizeImagesTo)
                         }
                     }
                 }
@@ -462,7 +498,6 @@ Page {
                     checked: resizeImages && !resizeBySize
                     onClicked: {
                         resizeBySize = !checked
-                        settings.setValue("resizeBySize", !checked)
                         sizeResize.checked = !checked
                     }
                     anchors.left: parent.left
@@ -482,7 +517,6 @@ Page {
                     onValueChanged: {
                         if (page.status == PageStatus.Active) {
                             resizeImagesToMPix = parseFloat(value.toPrecision(2))
-                            settings.setValue("resizeImagesToMPix", resizeImagesToMPix)
                         }
                     }
                 }

@@ -9,25 +9,53 @@ ApplicationWindow {
     cover: Qt.resolvedUrl("CoverPage.qml")
 
     property bool sendByEnter: false
+    onSendByEnterChanged: settings.setValue("sendByEnter", sendByEnter)
+
     property bool showTimestamp: true
+    onShowTimestampChanged: settings.setValue("showTimestamp", showTimestamp)
+
     property int fontSize: Theme.fontSizeMedium
+    onFontSizeChanged: settings.setValue("fontSize", fontSize)
+
     property bool followPresence: false
     onFollowPresenceChanged: {
         settings.setValue("followPresence", followPresence)
         updateCoverActions()
     }
+
     property bool showSeconds: true
+    onShowSecondsChanged: settings.setValue("showSeconds", showSeconds)
+
     property bool showMyJid: false
+    onShowMyJidChanged: settings.setValue("showMyJid", showMyJid)
+
     property bool showKeyboard: false
+    onShowKeyboardChanged: settings.setValue("showKeyboard", showKeyboard)
+
     property bool acceptUnknown: true
+    onAcceptUnknownChanged: settings.setValue("acceptUnknown", acceptUnknown)
+
     property bool notifyActive: true
-    //property bool softbankReplacer: false
+    onNotifyActiveChanged: settings.setValue("notifyActive", notifyActive)
+
     property bool resizeImages: false
+    onResizeImagesChanged: settings.setValue("resizeImages", resizeImages)
+
     property bool resizeBySize: false
+    onResizeBySizeChanged: settings.setValue("resizeBySize", resizeBySize)
+
     property int resizeImagesTo: 1048546
+    onResizeImagesToChanged: settings.setValue("resizeImagesTo", resizeImagesTo)
+
     property double resizeImagesToMPix: 5.01
+    onResizeImagesToMPixChanged: settings.setValue("resizeImagesToMPix", resizeImagesToMPix)
+
     property string conversationTheme: "/usr/share/harbour-mitakuuluu/qml/DefaultDelegate.qml"
+    onConversationThemeChanged: settings.setValue("conversationTheme", conversationTheme)
+
     property int conversationIndex: 0
+    onConversationIndexChanged: settings.setValue("conversationIndex", conversationIndex)
+
     property bool alwaysOffline: false
     onAlwaysOfflineChanged: {
         settings.setValue("alwaysOffline", alwaysOffline)
@@ -38,9 +66,17 @@ ApplicationWindow {
         updateCoverActions()
     }
     property bool deleteMediaFiles: false
+    onDeleteMediaFilesChanged: settings.setValue("deleteMediaFiles", deleteMediaFiles)
+
     property bool importToGallery: true
+    onImportToGalleryChanged: settings.setValue("importToGallery", importToGallery)
+
     property bool showConnectionNotifications: false
+    onShowConnectionNotificationsChanged: settings.setValue("showConnectionNotifications", showConnectionNotifications)
+
     property bool lockPortrait: false
+    onLockPortraitChanged: settings.setValue("lockPortrait", lockPortrait)
+
     property string connectionServer: "c3.whatsapp.net"
     onConnectionServerChanged: {
         console.log("set connectionServer: " + connectionServer)
@@ -73,8 +109,8 @@ ApplicationWindow {
         requiredProperty: PeopleModel.PhoneNumberRequired
     }
 
-    property string coverIconLeft: ""
-    property string coverIconRight: ""
+    property string coverIconLeft: "../images/icon-cover-location-left.png"
+    property string coverIconRight: "../images/icon-cover-camera-right.png"
 
     function coverLeftClicked() {
         console.log("coverLeftClicked")
@@ -88,6 +124,9 @@ ApplicationWindow {
 
     function coverAction(index) {
         switch (index) {
+        case 0: //exit
+            shutdownEngine()
+            break
         case 1: //presence
             if (followPresence) {
                 followPresence = false
@@ -123,41 +162,52 @@ ApplicationWindow {
 
     property int coverLeftAction: 4
     onCoverLeftActionChanged: {
+        settings.setValue("coverLeftAction", coverLeftAction)
         updateCoverActions()
     }
     property int coverRightAction: 3
     onCoverRightActionChanged: {
+        settings.setValue("coverRightAction", coverRightAction)
         updateCoverActions()
     }
 
     function updateCoverActions() {
-        coverIconLeft = getCoverActionIcon(coverLeftAction)
-        coverIconRight = getCoverActionIcon(coverRightAction)
+        coverIconLeft = getCoverActionIcon(coverLeftAction, true)
+        coverIconRight = getCoverActionIcon(coverRightAction, false)
     }
 
-    function getCoverActionIcon(index) {
+    function getCoverActionIcon(index, left) {
         switch (index) {
+        case 0: //quit
+            return "../images/icon-cover-quit-" + (left ? "left" : "right") + ".png"
         case 1: //presence
             if (followPresence)
-                return "../images/icon-cover-available-auto.png"
+                return "../images/icon-cover-autoavailable-" + (left ? "left" : "right") + ".png"
             else {
                 if (alwaysOffline)
-                    return "../images/icon-cover-available-not.png"
+                    return "../images/icon-cover-unavailable-" + (left ? "left" : "right") + ".png"
                 else
-                    return "../images/icon-cover-available.png"
+                    return "../images/icon-cover-available-" + (left ? "left" : "right") + ".png"
             }
         case 2: //global muting
             if (notificationsMuted)
-                return "../images/icon-cover-unmuted.png"
+                return "../images/icon-cover-muted-" + (left ? "left" : "right") + ".png"
             else
-                return "../images/icon-cover-muted.png"
+                return "../images/icon-cover-unmuted-" + (left ? "left" : "right") + ".png"
         case 3: //camera
-            return "../images/icon-cover-camera.png"
+            return "../images/icon-cover-camera-" + (left ? "left" : "right") + ".png"
         case 4: //location
-            return "../images/icon-cover-location.png"
+            return "../images/icon-cover-location-" + (left ? "left" : "right") + ".png"
+        case 5: //recorder
+            return "../images/icon-cover-recorder-" + (left ? "left" : "right") + ".png"
         default:
-            return "../images/icon-cover-quit.png"
+            return ""
         }
+    }
+
+    function shutdownEngine() {
+        whatsapp.shutdown()
+        Qt.quit()
     }
 
     onCurrentOrientationChanged: {
@@ -248,6 +298,10 @@ ApplicationWindow {
         hideKeyboard = settings.value("hideKeyboard", false)
         notifyMessages = settings.value("notifyMessages", false)
         keepLogs = settings.value("keepLogs", true)
+        notificationsMuted = settings.value("notificationsMuted", false)
+        coverLeftAction = settings.value("coverLeftAction", 4)
+        coverRightAction = settings.value("coverRightAction", 3)
+
         updateCoverActions()
     }
 

@@ -203,8 +203,7 @@ Page {
                 onClicked: {
                     remorseDisconnect.execute(qsTr("Quit and shutdown engine"),
                                                function() {
-                                                   whatsapp.shutdown()
-                                                   Qt.quit()
+                                                   shutdownEngine()
                                                },
                                                5000)
                 }
