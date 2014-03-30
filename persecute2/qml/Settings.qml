@@ -399,6 +399,12 @@ Page {
                 text: qsTr("Cover")
             }
 
+            Binding {
+                target: leftCoverAction
+                property: "currentIndex"
+                value: coverLeftAction
+            }
+
             ComboBox {
                 id: leftCoverAction
                 label: qsTr("Left cover action")
@@ -406,14 +412,18 @@ Page {
                     Repeater {
                         width: parent.width
                         model: 6
-                        delegate: MenuItem { text: coverActionName(index) }
-                        Component.onCompleted: leftCoverAction.currentIndex = coverLeftAction
+                        delegate: MenuItem {
+                            text: coverActionName(index)
+                            onClicked: coverLeftAction = index
+                        }
                     }
                 }
-                onCurrentIndexChanged: {
-                    if (page.status == PageStatus.Active)
-                        coverLeftAction = currentIndex
-                }
+            }
+
+            Binding {
+                target: rightCoverAction
+                property: "currentIndex"
+                value: coverRightAction
             }
 
             ComboBox {
@@ -423,13 +433,11 @@ Page {
                     Repeater {
                         width: parent.width
                         model: 6
-                        delegate: MenuItem { text: coverActionName(index) }
-                        Component.onCompleted: rightCoverAction.currentIndex = coverRightAction
+                        delegate: MenuItem {
+                            text: coverActionName(index)
+                            onClicked: coverRightAction = index
+                        }
                     }
-                }
-                onCurrentIndexChanged: {
-                    if (page.status == PageStatus.Active)
-                        coverRightAction = currentIndex
                 }
             }
 
