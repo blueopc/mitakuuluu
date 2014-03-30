@@ -365,9 +365,112 @@ Page {
 
         PushUpMenu {
             id: pushMedia
-            MenuItem {
-                text: qsTr("Send media")
-                onClicked: dock.show()
+
+            function hide() {
+                flickable.contentY = 0
+            }
+
+            property int contentY: flickable.contentY
+            property int lastY: 0
+            property bool isOpening: false
+            property bool moving: flickable.moving
+
+            _activeHeight: mediaSendRow.height
+
+            onMovingChanged: {
+                if (contentY > 0 && !moving) {
+                    _bounceBackEnabled = !isOpening
+                    if (isOpening)
+                        flickable.contentY = mediaSendRow.height
+                }
+            }
+
+            onContentYChanged: {
+                isOpening = contentY >= lastY
+                lastY = contentY
+            }
+
+            Flickable {
+                width: parent.width
+                height: Theme.itemSizeMedium
+                contentWidth: mediaSendRow.width
+
+                Row {
+                    id: mediaSendRow
+                    height: parent.height
+                    spacing: Theme.paddingSmall
+
+                    IconButton {
+                        icon.source: "image://theme/icon-m-image"
+                        onClicked: {
+                            pushMedia.hide()
+                            selectPicture.open()
+                            selectPicture.selected.connect(page.sendMediaImage)
+                            selectPicture.setProcessImages()
+                            selectPicture.rejected.connect(page.unbindMediaImage)
+                        }
+                    }
+
+                    IconButton {
+                        icon.source: "image://theme/icon-m-video"
+                        onClicked: {
+                            pushMedia.hide()
+                            pageStack.push(selectFile)
+                            selectFile.processPath("/home/nemo", qsTr("Select video"))
+                            selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
+                            selectFile.selected.connect(page.sendMedia)
+                            selectFile.done.connect(page.unbindMediaFile)
+                        }
+                    }
+
+                    IconButton {
+                        icon.source: "image://theme/icon-m-music"
+                        onClicked: {
+                            pushMedia.hide()
+                            pageStack.push(selectFile)
+                            selectFile.processPath("/home/nemo", qsTr("Select audio"))
+                            selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
+                            selectFile.selected.connect(page.sendMedia)
+                            selectFile.done.connect(page.unbindMediaFile)
+                        }
+                    }
+
+                    IconButton {
+                        icon.source: "image://theme/icon-camera-shutter-release"
+                        onClicked: {
+                            pushMedia.hide()
+                            pageStack.push(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": false})
+                        }
+                    }
+
+                    IconButton {
+                        icon.source: "image://theme/icon-m-gps"
+                        onClicked: {
+                            pushMedia.hide()
+                            pageStack.push(Qt.resolvedUrl("Location.qml"), {"broadcastMode": false})
+                        }
+                    }
+
+                    IconButton {
+                        icon.source: "image://theme/icon-cover-unmute"
+                        icon.width: 64
+                        icon.height: 64
+                        onClicked: {
+                            pushMedia.hide()
+                            pageStack.push(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": false})
+                        }
+                    }
+
+                    IconButton {
+                        icon.source: "image://theme/icon-m-people"
+                        onClicked: {
+                            pushMedia.hide()
+                            pageStack.push(Qt.resolvedUrl("SendContactCard.qml"), {"broadcastMode": false})
+                        }
+                    }
+                }
+
+                HorizontalScrollDecorator {}
             }
         }
 
@@ -644,100 +747,9 @@ Page {
 
     MouseArea {
         anchors.fill: parent
-        enabled: dock.open
-        onClicked: dock.hide()
-    }
-
-    DockedPanel {
-        id: dock
-        width: parent.width
-        height: Theme.itemSizeMedium
-        dock: Dock.Bottom
-        visible: open
-        onOpenChanged: {
-            if (sendBox.focus) {
-                sendBox.focus = false
-                page.forceActiveFocus()
-            }
-
-            pushMedia.visible = !open
-        }
-
-
-        Row {
-            height: parent.height
-            anchors.horizontalCenter: parent.horizontalCenter
-            spacing: page.isPortrait ? (Theme.paddingSmall / 8) : Theme.paddingSmall
-
-            IconButton {
-                icon.source: "image://theme/icon-m-image"
-                onClicked: {
-                    dock.hide()
-                    selectPicture.open(true)
-                    selectPicture.selected.connect(page.sendMediaImage)
-                    selectPicture.setProcessImages()
-                    selectPicture.rejected.connect(page.unbindMediaImage)
-                }
-            }
-
-            IconButton {
-                icon.source: "image://theme/icon-m-video"
-                onClicked: {
-                    dock.hide()
-                    pageStack.push(selectFile)
-                    selectFile.processPath("/home/nemo", qsTr("Select video"))
-                    selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
-                    selectFile.selected.connect(page.sendMedia)
-                    selectFile.done.connect(page.unbindMediaFile)
-                }
-            }
-
-            IconButton {
-                icon.source: "image://theme/icon-m-music"
-                onClicked: {
-                    dock.hide()
-                    pageStack.push(selectFile)
-                    selectFile.processPath("/home/nemo", qsTr("Select audio"))
-                    selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
-                    selectFile.selected.connect(page.sendMedia)
-                    selectFile.done.connect(page.unbindMediaFile)
-                }
-            }
-
-            IconButton {
-                icon.source: "image://theme/icon-camera-shutter-release"
-                onClicked: {
-                    dock.hide()
-                    pageStack.push(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": false})
-                }
-            }
-
-            IconButton {
-                icon.source: "image://theme/icon-m-gps"
-                onClicked: {
-                    dock.hide()
-                    pageStack.push(Qt.resolvedUrl("Location.qml"), {"broadcastMode": false})
-                }
-            }
-
-            IconButton {
-                icon.source: "image://theme/icon-cover-unmute"
-                icon.width: 64
-                icon.height: 64
-                onClicked: {
-                    dock.hide()
-                    pageStack.push(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": false})
-                }
-            }
-
-            IconButton {
-                icon.source: "image://theme/icon-m-people"
-                onClicked: {
-                    dock.hide()
-                    pageStack.push(Qt.resolvedUrl("SendContactCard.qml"), {"broadcastMode": false})
-                }
-            }
-        }
+        anchors.bottomMargin: pushMedia.contentY
+        enabled: pushMedia.contentY > 0
+        onClicked: pushMedia.flickable.contentY = 0
     }
 
     Rectangle {
@@ -787,104 +799,6 @@ Page {
 
     RemorsePopup {
         id: remorseAll
-    }
-
-    Page {
-        id: selectMedia
-
-        SilicaFlickable {
-            id: mFlick
-            anchors.fill: parent
-            property int itemWidth: width / 3
-            property int itemHeight: (height / 2) - (mHeader.height / 2)
-
-            PageHeader {
-                id: mHeader
-                title: qsTr("Select media type")
-            }
-
-            SquareButton {
-                id: imgSend
-                anchors.left: parent.left
-                anchors.top: mHeader.bottom
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
-                icon.source: "image://theme/icon-m-image"
-                onClicked: {
-                    selectPicture.open(true)
-                    selectPicture.selected.connect(page.sendMediaImage)
-                    selectPicture.setProcessImages()
-                    selectPicture.rejected.connect(page.unbindMediaImage)
-                }
-            }
-
-            SquareButton {
-                id: videoSend
-                anchors.left: imgSend.right
-                anchors.top: mHeader.bottom
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
-                icon.source: "image://theme/icon-m-video"
-                onClicked: {
-                    pageStack.replace(selectFile)
-                    selectFile.processPath("/home/nemo", qsTr("Select video"))
-                    selectFile.setFilter(["*.mp4", "*.avi", "*.mov"])
-                    selectFile.selected.connect(page.sendMedia)
-                    selectFile.done.connect(page.unbindMediaFile)
-                }
-            }
-
-            SquareButton {
-                id: audioSend
-                anchors.right: parent.right
-                anchors.top: mHeader.bottom
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
-                icon.source: "image://theme/icon-m-music"
-                onClicked: {
-                    pageStack.replace(selectFile)
-                    selectFile.processPath("/home/nemo", qsTr("Select audio"))
-                    selectFile.setFilter(["*.mp3", "*.aac", "*.flac", "*.wav"])
-                    selectFile.selected.connect(page.sendMedia)
-                    selectFile.done.connect(page.unbindMediaFile)
-                }
-            }
-
-            SquareButton {
-                id: captureSend
-                anchors.top: imgSend.bottom
-                anchors.left: parent.left
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
-                icon.source: "image://theme/icon-camera-shutter-release"
-                onClicked: {
-                    pageStack.replace(Qt.resolvedUrl("Capture.qml"), {"broadcastMode": false})
-                }
-            }
-
-            SquareButton {
-                id: locationSend
-                anchors.top: videoSend.bottom
-                anchors.left: captureSend.right
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
-                icon.source: "image://theme/icon-m-gps"
-                onClicked: {
-                    pageStack.replace(Qt.resolvedUrl("Location.qml"), {"broadcastMode": false})
-                }
-            }
-
-            SquareButton {
-                anchors.top: audioSend.bottom
-                anchors.right: parent.right
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
-                icon.source: "image://theme/icon-cover-unmute"
-                onClicked: {
-                    pageStack.replace(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": false})
-                }
-            }
-        }
     }
 
     ConversationModel {
