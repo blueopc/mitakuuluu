@@ -16,9 +16,9 @@ Page {
     		camera.cameraState = Camera.UnloadedState
     	}
     	else if (status == PageStatus.Active) {
-    		console.log("activating camera")
-    		camera.cameraState = Camera.ActiveState
-    	}
+            console.log("activating camera")
+            camera.cameraState = Camera.ActiveState
+        }
     }
 
     Component.onDestruction: {
@@ -49,7 +49,7 @@ Page {
             captureMode: Camera.CaptureStillImage
 
             focus.focusMode: Camera.FocusAuto
-            flash.mode: Camera.FlashOn
+            flash.mode: Camera.FlashAuto
 
             imageCapture {
                 resolution: "1280x720"
@@ -82,74 +82,90 @@ Page {
         }
     }
 
-    Image {
-        id: flashMode
-        source: flashModeIcon(camera.flash.mode)
+    Rectangle {
+        width: Theme.itemSizeMedium
+        height: width
+        radius: width / 2
+        color: flashModeArea.pressed ? Theme.highlightColor : Theme.secondaryHighlightColor
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.margins: Theme.paddingLarge
-        property bool flash: true
-        rotation: 90
+        anchors.margins: Theme.paddingSmall
 
-        function flashModeIcon(mode) {
-            switch (mode) {
-            case Camera.FlashAuto:
-                return "image://theme/icon-camera-flash-automatic"
-            case Camera.FlashOff:
-                return "image://theme/icon-camera-flash-off"
-            case Camera.FlashRedEyeReduction:
-                return "image://theme/icon-camera-flash-redeye"
-            default:
-                return "image://theme/icon-camera-flash-on"
+        Image {
+            id: flashMode
+            source: flashModeIcon(camera.flash.mode)
+            anchors.centerIn: parent
+            property bool flash: true
+            rotation: 90
+
+            function flashModeIcon(mode) {
+                switch (mode) {
+                case Camera.FlashAuto:
+                    return "image://theme/icon-camera-flash-automatic"
+                case Camera.FlashOff:
+                    return "image://theme/icon-camera-flash-off"
+                default:
+                    return "image://theme/icon-camera-flash-on"
+                }
             }
-        }
 
-        function nextFlashMode(mode) {
-            switch (mode) {
-            case Camera.FlashAuto:
-                return Camera.FlashRedEyeReduction
-            case Camera.FlashOff:
-                return Camera.FlashOn
-            case Camera.FlashRedEyeReduction:
-                return Camera.FlashOff
-            default:
-                return Camera.FlashAuto
+            function nextFlashMode(mode) {
+                switch (mode) {
+                case Camera.FlashAuto:
+                    return Camera.FlashOff
+                case Camera.FlashOff:
+                    return Camera.FlashOn
+                case Camera.FlashOn:
+                    return Camera.FlashAuto
+                default:
+                    return Camera.FlashOff
+                }
             }
         }
 
         MouseArea {
+            id: flashModeArea
             anchors.fill: parent
             onClicked: camera.flash.mode = flashMode.nextFlashMode(camera.flash.mode)
         }
     }
 
-    Image {
-    	id: shutter
-    	source: "image://theme/icon-camera-shutter-release"
-    	anchors.left: parent.left
-    	anchors.bottom: parent.bottom
-    	anchors.margins: Theme.paddingLarge
-    	property bool autoMode: false
-        rotation: 90
+    Rectangle {
+        width: Theme.itemSizeMedium
+        height: width
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        anchors.margins: Theme.paddingSmall
+        radius: width / 2
+        color: shutterArea.pressed ? Theme.highlightColor : Theme.secondaryHighlightColor
+
+        Image {
+            id: shutter
+            source: "image://theme/icon-camera-shutter-release"
+            anchors.centerIn: parent
+            property bool autoMode: false
+            rotation: 90
+        }
 
         MouseArea {
+            id: shutterArea
             anchors.fill: parent
             onPressed: {
-            	console.log("shutter pressed")
-            	shutter.autoMode = false
-            	camera.searchAndLock()
+                console.log("shutter pressed")
+                shutter.autoMode = false
+                camera.searchAndLock()
             }
             onReleased: {
-            	console.log("shutter released")
-            	shutter.autoMode = false
-            	if (camera.lockStatus == Camera.Locked) { 
+                console.log("shutter released")
+                shutter.autoMode = false
+                if (camera.lockStatus == Camera.Locked) {
                     camera.imageCapture.capture()
                 }
             }
             /*onClicked: {
-            	console.log("shutter clicked")
-            	shutter.autoMode = true
-            	camera.searchAndLock()
+                console.log("shutter clicked")
+                shutter.autoMode = true
+                camera.searchAndLock()
             }*/
         }
     }
