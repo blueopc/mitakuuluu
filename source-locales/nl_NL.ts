@@ -144,7 +144,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Contacten</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Afbeelding</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Geluid</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Beeld</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Contact</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Locatie</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Geluid</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Systeem</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -1338,12 +1338,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Verzend contact</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Selecteer contact</translation>
     </message>
 </context>
 <context>
@@ -1500,7 +1500,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Toon nieuwe berichten notificaties</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1525,17 +1525,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Omslag</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Omslag links actie</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Omslag rechts actie</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1565,32 +1565,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Verander aanwezigheid</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Geluid aan/uit</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Neem foto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Verstuur locatie</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Verstuur geluidsopname</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>

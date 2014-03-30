@@ -144,7 +144,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Yhteystiedot</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Kuva</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Ääni</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Video</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Henkilö</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Sijainti</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Ääni</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Järjestelmä</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -923,12 +923,12 @@
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="130"/>
         <source>%n hours</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n tunti</numerusform><numerusform>%n tuntia</numerusform></translation>
     </message>
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="133"/>
         <source>%n minutes</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n minuutti</numerusform><numerusform>%n minuuttia</numerusform></translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
@@ -1338,12 +1338,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Lähetä yhteystieto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Valitse yhteystieto</translation>
     </message>
 </context>
 <context>
@@ -1500,7 +1500,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Näytä viestit ilmoituksissa</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1525,17 +1525,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Kansi</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Vasen pikavalinta</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Oikea pikavalinta</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1565,32 +1565,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Poistu</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Muuta läsnäolo</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Mykistä/palauta äänet</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Ota kuva</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Lähetä sijainti</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Lähetä ääniviesti</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>

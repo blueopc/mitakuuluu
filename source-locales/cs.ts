@@ -144,7 +144,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Kontakty</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Obrázek</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Zvuk</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Video</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Kontakt</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Poloha</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Hlas</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Systém</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -1338,12 +1338,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Odeslat kontakt</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Vybrat kontakt</translation>
     </message>
 </context>
 <context>
@@ -1396,12 +1396,12 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="179"/>
         <source>Show seconds in messages timestamp</source>
-        <translation>Ukazovat časy zpráv včetně sekund</translation>
+        <translation>Časy zpráv včetně sekund</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="187"/>
         <source>Send messages by Enter</source>
-        <translation>Zprávy odeslat klávesou Enter</translation>
+        <translation>Zprávy odesílat klávesou Enter</translation>
     </message>
     <message>
         <source>Show keyboard automatically</source>
@@ -1430,7 +1430,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="212"/>
         <source>Delete media files</source>
-        <translation>Smazat soubory médií</translation>
+        <translation>Mazat soubory médií</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
@@ -1440,7 +1440,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="222"/>
         <source>Chat font size</source>
-        <translation>Velikost písma v chatu</translation>
+        <translation>Velikost písma v konverzaci</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="224"/>
@@ -1500,7 +1500,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Ukazovat upozornění na nové zprávy</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1565,32 +1565,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Ukončit</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Změnit stav</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Ztlumit/Nahlas</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Vyfotit</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Odeslat pozici</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Odeslat hlasovou zprávu</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>
@@ -1688,7 +1688,7 @@
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="143"/>
         <source>Save chat history to file</source>
-        <translation>Uložit historii chatu do souboru</translation>
+        <translation>Uložit historii konverzace do souboru</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/UserProfile.qml" line="146"/>

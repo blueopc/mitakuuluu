@@ -144,7 +144,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Contatti</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -154,7 +154,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="424"/>
         <source>Select media type</source>
-        <translation>Scegli tipo di file</translation>
+        <translation>Seleziona il tipo di file</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="448"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Immagine</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Audio</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Video</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Contatto</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Posizione</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Voce</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Sistema</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -428,7 +428,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="189"/>
         <source>Changed group subject to: %1</source>
-        <translation>Oggetto gruppo cambiato in: %1</translation>
+        <translation>Nome gruppo cambiato in: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="190"/>
@@ -443,7 +443,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="369"/>
         <source>Send media</source>
-        <translation>Invia media</translation>
+        <translation>Invia file multimediale</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="336"/>
@@ -582,7 +582,7 @@
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="290"/>
         <source>Cancel download</source>
-        <translation>Annulla il download</translation>
+        <translation>Annulla download</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/DefaultDelegate.qml" line="290"/>
@@ -692,7 +692,7 @@
     <message>
         <location filename="../persecute2/qml/MediaDialog.qml" line="32"/>
         <source>Select media type</source>
-        <translation>Invia media</translation>
+        <translation>Seleziona il tipo di file</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/MediaDialog.qml" line="56"/>
@@ -861,12 +861,12 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="89"/>
         <source>Code successfully requested.</source>
-        <translation>Codice richiesto.</translation>
+        <translation>Codice richiesto con successo.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="100"/>
         <source>Too frequent attempts to request the code.</source>
-        <translation>Troppi tentativi di richiedere il codice.</translation>
+        <translation>Troppi tentativi di richiesta del codice.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="102"/>
@@ -932,7 +932,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
         <source>You can retry requesting code after %1</source>
-        <translation>Puoi riprovare a richiedere il codice tra %1</translation>
+        <translation>Puoi riprovare a chiedere il codice tra %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="145"/>
@@ -1337,12 +1337,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Invia contatto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Seleziona contatto</translation>
     </message>
 </context>
 <context>
@@ -1429,7 +1429,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="212"/>
         <source>Delete media files</source>
-        <translation>Elimina media</translation>
+        <translation>Elimina file multimediali</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="213"/>
@@ -1499,7 +1499,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Mostra notifica di nuovo messaggio</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1524,17 +1524,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Cover</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Azione sinistra</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Azione destra</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1564,32 +1564,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Esci</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Modifica disponibilità</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Silenzia/desilenzia</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Scatta immagine</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Invia posizione</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Invia nota vocale</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>
@@ -1736,7 +1736,7 @@
         <location filename="../persecute2/qml/main.qml" line="428"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
-        <translation>Il tuo account Whatsapp è scaduto.
+        <translation>Il tuo account WhatsApp è scaduto.
 Seleziona &apos;Rinnova&apos; per acquistare un anno di servizio.</translation>
     </message>
 </context>

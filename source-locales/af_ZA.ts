@@ -144,7 +144,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Kontakte</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Beeld</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Oudio</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Video</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Kontak</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Plek</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Spraak</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Stelsel</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -761,7 +761,7 @@
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="120"/>
         <source>Voice note</source>
-        <translation>Spraak nota</translation>
+        <translation>Stem noot</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="152"/>
@@ -862,7 +862,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="89"/>
         <source>Code successfully requested.</source>
-        <translation type="unfinished"/>
+        <translation>Kode suksesvol aangevra.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="100"/>
@@ -872,7 +872,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="102"/>
         <source>Too many wrong code guesses.</source>
-        <translation type="unfinished"/>
+        <translation>Te veel verkeerde  kodes geraai.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="104"/>
@@ -888,7 +888,7 @@
         <location filename="../persecute2/qml/Register.qml" line="108"/>
         <location filename="../persecute2/qml/Register.qml" line="111"/>
         <source>Registration code expired. You need to request a new one.</source>
-        <translation type="unfinished"/>
+        <translation>Registrasie kode het verval. Jy moet &apos;n nuwe kode aanvra.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="113"/>
@@ -933,7 +933,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
         <source>You can retry requesting code after %1</source>
-        <translation type="unfinished"/>
+        <translation>Jy kan na %1 weer probeer om &apos;n kode aan te vra</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="145"/>
@@ -1338,12 +1338,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Stuur kontak</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Kies kontak</translation>
     </message>
 </context>
 <context>
@@ -1500,7 +1500,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Toon nuwe boodskap kennisgewings</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1565,32 +1565,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Ophou</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Verander teenwoordigheid</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Klank aan/klank af</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Neem foto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Stuur plek</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Stuur stem noot</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>

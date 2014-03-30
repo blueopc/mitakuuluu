@@ -144,7 +144,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Contactos</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Imagen</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Audio</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Vídeo</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Contacto</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Ubicación</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Voz</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Sistema</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -1339,12 +1339,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Enviar contacto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Seleccionar contacto</translation>
     </message>
 </context>
 <context>
@@ -1501,7 +1501,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Mostrar notificación de nuevo mensaje</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1521,22 +1521,22 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="372"/>
         <source>Display online when app is open</source>
-        <translation>Mostrar &quot;en línea&quot; cuando la aplicación está abierta</translation>
+        <translation>&quot;En línea&quot; si la aplicación está abierta</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Cubierta</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Acción izquierda</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Acción derecha</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1566,42 +1566,42 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Salir</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Cambiar presencia</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Sí/No sonido</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Hacer foto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Enviar ubicación</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Enviar nota de voz</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>
         <source>Always display online</source>
-        <translation>Mostrar siempre &quot;en línea&quot;</translation>
+        <translation>Siempre &quot;en línea&quot;</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="386"/>
         <source>Always display offline</source>
-        <translation>Mostrar siempre desconectado</translation>
+        <translation>Siempre desconectado</translation>
     </message>
     <message>
         <source>Set unavailable when window closed or minimized</source>

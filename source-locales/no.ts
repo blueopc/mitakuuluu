@@ -28,7 +28,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="88"/>
         <source>Renew subscription</source>
-        <translation type="unfinished"/>
+        <translation>Forny abonnement</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="96"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="278"/>
         <source>press to locate</source>
-        <translation type="unfinished"/>
+        <translation>trykk for å finne</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="305"/>
@@ -139,12 +139,12 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="315"/>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Ta opp</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Kontakter</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Bilde</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Lyd</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Video</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Kontakt</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Lokasjon</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Lyd</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>System</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -291,7 +291,7 @@
     <message numerus="yes">
         <location filename="../whatsapp-server/src/client.cpp" line="2890"/>
         <source>%n messages unread</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n uleste meldinger</numerusform><numerusform>%n uleste meldinger</numerusform></translation>
     </message>
     <message>
         <source>%1 unread messages</source>
@@ -484,7 +484,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="426"/>
         <source>Last seen: %1</source>
-        <translation type="unfinished"/>
+        <translation>Siste sett: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="532"/>
@@ -761,39 +761,39 @@
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="120"/>
         <source>Voice note</source>
-        <translation type="unfinished"/>
+        <translation>Talenotat</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="152"/>
         <source>Recorder</source>
-        <translation type="unfinished"/>
+        <translation>Opptaker</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="160"/>
         <location filename="../persecute2/qml/Recorder.qml" line="194"/>
         <source>Pause</source>
-        <translation type="unfinished"/>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="160"/>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Ta opp</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="176"/>
         <location filename="../persecute2/qml/Recorder.qml" line="212"/>
         <source>Stop</source>
-        <translation type="unfinished"/>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="186"/>
         <source>Playback</source>
-        <translation type="unfinished"/>
+        <translation>Avspilling</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="194"/>
         <source>Play</source>
-        <translation type="unfinished"/>
+        <translation>Avspill</translation>
     </message>
 </context>
 <context>
@@ -857,78 +857,78 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="89"/>
         <source>Code successfully requested.</source>
-        <translation type="unfinished"/>
+        <translation>Kode forespurt</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="100"/>
         <source>Too frequent attempts to request the code.</source>
-        <translation type="unfinished"/>
+        <translation>For mange hyppige forsøk på å forspørr kode</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="102"/>
         <source>Too many wrong code guesses.</source>
-        <translation type="unfinished"/>
+        <translation>For mange forsøk på å gjette kode.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="104"/>
         <source>Too many attempts. Try again tomorrow.</source>
-        <translation type="unfinished"/>
+        <translation>For mange forsøk. Prøv igjen i morgen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="106"/>
         <source>Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus</source>
-        <translation type="unfinished"/>
+        <translation>Protocolversjon er utdatert, beklager. Vennligst kontakt meg på coderusinbox@gmail.com eller via twitter: @icoderus</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="108"/>
         <location filename="../persecute2/qml/Register.qml" line="111"/>
         <source>Registration code expired. You need to request a new one.</source>
-        <translation type="unfinished"/>
+        <translation>Registreringkode er utløpt. Du må be om en ny.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="113"/>
         <source>Missing request param: %1</source>
-        <translation type="unfinished"/>
+        <translation>Mangler forespørsel param:% 1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="116"/>
         <source>Bad parameters passed to code request: %1</source>
-        <translation type="unfinished"/>
+        <translation>Feil parametere sendt ved kodeforespørsel: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>No cell routes for %1 caused by your operator. Please try other method [sms/voice]</source>
-        <translation type="unfinished"/>
+        <translation>Ingen celle ruteing for % 1 forårsaket av din operatør. Vennligst prøv andre metoder [sms / lyd]</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>making call</source>
-        <translation type="unfinished"/>
+        <translation>gjør samtale</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>sending sms</source>
-        <translation type="unfinished"/>
+        <translation>sender sms</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="122"/>
         <source>Reason: %1</source>
-        <translation type="unfinished"/>
+        <translation>Årsak: %1</translation>
     </message>
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="130"/>
         <source>%n hours</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n timer</numerusform><numerusform>%n timer</numerusform></translation>
     </message>
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="133"/>
         <source>%n minutes</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n minutter</numerusform><numerusform>%n minutter</numerusform></translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
         <source>You can retry requesting code after %1</source>
-        <translation type="unfinished"/>
+        <translation>Du kan be om ny kode etter %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="145"/>
@@ -1333,12 +1333,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Send kontakt</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Velg kontakt</translation>
     </message>
 </context>
 <context>
@@ -1470,7 +1470,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="301"/>
         <source>Allow saving application logs</source>
-        <translation type="unfinished"/>
+        <translation>Tillat lagring av applikasjonslogger</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="307"/>
@@ -1495,7 +1495,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Vis nye meldings varslinger</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1520,17 +1520,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Cover</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Venstre cover handling</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Høre cover handling</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1560,32 +1560,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Avslutt</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Endre tilstedeværelse</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Mute/unmute</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Ta bilde</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Send lokasjon</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Send talenotat</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>
@@ -1726,13 +1726,14 @@
     <message>
         <location filename="../persecute2/qml/main.qml" line="422"/>
         <source>Renew</source>
-        <translation type="unfinished"/>
+        <translation>Forny</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="428"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
-        <translation type="unfinished"/>
+        <translation>Ditt WhatsApp abonnement utløpt.
+Klikk på Forny å kjøpe ett års WhatsApp tjeneste.</translation>
     </message>
 </context>
 </TS>
