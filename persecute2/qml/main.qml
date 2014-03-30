@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtFeedback 5.0
+import org.nemomobile.contacts 1.0
 
 ApplicationWindow {
     id: appWindow
@@ -58,7 +59,7 @@ ApplicationWindow {
     property bool hideKeyboard: false
     onHideKeyboardChanged: settings.setValue("hideKeyboard", hideKeyboard)
 
-    property bool notifyMessages: true
+    property bool notifyMessages: false
     onNotifyMessagesChanged: settings.setValue("notifyMessages", notifyMessages)
 
     property bool keepLogs: true
@@ -66,6 +67,11 @@ ApplicationWindow {
 
     property bool applicationCrashed: false
     property int currentOrientation: pageStack._currentOrientation
+
+    property PeopleModel allContactsModel: PeopleModel {
+        filterType: PeopleModel.FilterAll
+        requiredProperty: PeopleModel.PhoneNumberRequired
+    }
 
     property string coverIconLeft: ""
     property string coverIconRight: ""
@@ -240,7 +246,7 @@ ApplicationWindow {
         connectionServer = settings.value("connectionServer", "c.whatsapp.net")
         threading = settings.value("threading", true)
         hideKeyboard = settings.value("hideKeyboard", false)
-        notifyMessages = settings.value("notifyMessages", true)
+        notifyMessages = settings.value("notifyMessages", false)
         keepLogs = settings.value("keepLogs", true)
         updateCoverActions()
     }

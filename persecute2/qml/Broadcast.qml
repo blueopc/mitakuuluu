@@ -5,7 +5,11 @@ import "Utilities.js" as Utilities
 Dialog {
     id: page
     objectName: "broadcast"
-    Component.onCompleted: page.canAccept = false
+    onStatusChanged: {
+        if (page.status == DialogStatus.Open) {
+            page.canAccept = false
+        }
+    }
 
     onAccepted: {
         if (messageText.checked) {
@@ -16,6 +20,9 @@ Dialog {
         }
         else if (messageLocation.checked) {
             whatsapp.sendLocation(page.jids, location.longitude, location.latitude, location.zoom, location.googlemaps)
+        }
+        else if (messageContact.checked) {
+            whatsapp.sendVCard(page.jids, mediaPath.text, avatarContact.data)
         }
 
         clear()
@@ -28,10 +35,17 @@ Dialog {
     property variant jids: []
 
     function clear() {
+        mediaRow.hideAll()
         page.jids = []
         listModel.clear()
         textArea.text = ""
         mediaPath.text = ""
+        mediaPath.data = ""
+        location.latitude = 55.159479
+        location.longitude = 61.402796
+        location.zoom = 15
+        location.googlemaps = false
+        location.source = ""
     }
 
     function openMedia(path) {
@@ -57,6 +71,13 @@ Dialog {
         location.googlemaps = googlemaps
         location.loadPreview()
         page.open()
+    }
+
+    function openVCard(name, data) {
+        mediaRow.hideAll()
+        messageContact.checked = true
+        mediaPath.text = name
+        mediaPath.data = data
     }
 
     SilicaFlickable {
@@ -156,7 +177,6 @@ Dialog {
                     id: messageContact
                     icon.source: "image://theme/icon-m-people"
                     checked: false
-                    enabled: false
                     onClicked: {
                         if (checked) {
                             mediaRow.hideAll()
@@ -184,7 +204,7 @@ Dialog {
 
             Label {
                 id: mediaPath
-                visible: messageMedia.checked || messageVoice.checked
+                visible: messageMedia.checked || messageVoice.checked || messageContact.checked
                 font.pixelSize: Theme.fontSizeSmall
                 anchors {
                     left: parent.left
@@ -193,6 +213,7 @@ Dialog {
                 }
                 wrapMode: Text.NoWrap
                 elide: Text.ElideLeft
+                property string data
 
                 function selectMedia(path) {
                     text = path
@@ -294,6 +315,16 @@ Dialog {
                 text: qsTr("Record")
                 onClicked: {
                     roster.recordAndSend()
+                }
+            }
+
+            Button {
+                id: contactSelect
+                visible: messageContact.checked
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Contacts")
+                onClicked: {
+                    roster.selectSendContact()
                 }
             }
         }

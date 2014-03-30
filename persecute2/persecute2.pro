@@ -22,9 +22,7 @@ dbus.path = /usr/share/dbus-1/services
 INSTALLS += images dbus emoji
 
 SOURCES += src/persecute.cpp \
-    src/audiorecorder.cpp
-
-SOURCES += \
+    src/audiorecorder.cpp \
     src/threadworker/threadworker.cpp \
     src/threadworker/queryexecutor.cpp \
     src/dbusobject.cpp \
@@ -44,11 +42,13 @@ HEADERS += \
     src/WhatsApp.h \
     src/filesmodel.h \
     src/settings.h \
-    src/audiorecorder.h
+    src/audiorecorder.h \
+    ../logging/logging.h
 
 OTHER_FILES += $$files(rpm/*) \
     $$files(qml/*) \
     dbus/org.coderus.harbour-mitakuuluu.service \
     harbour-mitakuuluu.desktop \
     harbour-mitakuuluu.png \
-    qml/Recorder.qml
+    qml/Recorder.qml \
+    qml/SendContactCard.qml

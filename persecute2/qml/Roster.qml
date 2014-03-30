@@ -177,6 +177,16 @@ Page {
             pageStack.push(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": true})
     }
 
+    function selectSendContact() {
+        appWindow.activate()
+        if (pageStack.currentPage.objectName !== "selectContactCard")
+            pageStack.push(Qt.resolvedUrl("SendContactCard.qml"), {"broadcastMode": true})
+    }
+
+    function sendVCard(name, vcarddata) {
+        broadcast.openVCard(name, avatardata)
+    }
+
     SilicaFlickable {
         id: flick
         anchors.fill: parent

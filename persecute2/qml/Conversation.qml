@@ -63,6 +63,10 @@ Page {
         unbindMediaImage()
     }
 
+    function sendVCard(name, vcarddata) {
+        whatsapp.sendVCard([page.jid], name, vcarddata)
+    }
+
     function unbindMediaImage() {
         selectPicture.selected.disconnect(page.sendMediaImage)
         selectPicture.rejected.disconnect(page.unbindMediaImage)
@@ -659,10 +663,11 @@ Page {
             pushMedia.visible = !open
         }
 
+
         Row {
             height: parent.height
             anchors.horizontalCenter: parent.horizontalCenter
-            spacing: Theme.paddingSmall
+            spacing: page.isPortrait ? (Theme.paddingSmall / 8) : Theme.paddingSmall
 
             IconButton {
                 icon.source: "image://theme/icon-m-image"
@@ -722,6 +727,14 @@ Page {
                 onClicked: {
                     dock.hide()
                     pageStack.push(Qt.resolvedUrl("Recorder.qml"), {"broadcastMode": false})
+                }
+            }
+
+            IconButton {
+                icon.source: "image://theme/icon-m-people"
+                onClicked: {
+                    dock.hide()
+                    pageStack.push(Qt.resolvedUrl("SendContactCard.qml"), {"broadcastMode": false})
                 }
             }
         }

@@ -519,6 +519,13 @@ void WhatsApp::sendMedia(const QStringList &jids, const QString &path)
     }
 }
 
+void WhatsApp::sendVCard(const QStringList &jids, const QString &name, const QString &data)
+{
+    if (iface) {
+        iface->call(QDBus::NoBlock, "sendVCard", jids, name, data);
+    }
+}
+
 QString WhatsApp::rotateImage(const QString &path, int rotation)
 {
     QString fname = path;

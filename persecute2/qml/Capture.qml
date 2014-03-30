@@ -21,6 +21,11 @@ Page {
     	}
     }
 
+    Component.onDestruction: {
+        console.log("camera destruction")
+        camera.cameraState = Camera.UnloadedState
+    }
+
     property bool broadcastMode: true
 
     PageHeader {
@@ -47,7 +52,7 @@ Page {
             flash.mode: Camera.FlashOn
 
             imageCapture {
-                resolution: "3264x2448"
+                resolution: "1280x720"
 
                 onImageCaptured:{
                 }
@@ -78,12 +83,54 @@ Page {
     }
 
     Image {
+        id: flashMode
+        source: flashModeIcon(camera.flash.mode)
+        anchors.right: parent.right
+        anchors.bottom: parent.bottom
+        anchors.margins: Theme.paddingLarge
+        property bool flash: true
+        rotation: 90
+
+        function flashModeIcon(mode) {
+            switch (mode) {
+            case Camera.FlashAuto:
+                return "image://theme/icon-camera-flash-automatic"
+            case Camera.FlashOff:
+                return "image://theme/icon-camera-flash-off"
+            case Camera.FlashRedEyeReduction:
+                return "image://theme/icon-camera-flash-redeye"
+            default:
+                return "image://theme/icon-camera-flash-on"
+            }
+        }
+
+        function nextFlashMode(mode) {
+            switch (mode) {
+            case Camera.FlashAuto:
+                return Camera.FlashRedEyeReduction
+            case Camera.FlashOff:
+                return Camera.FlashOn
+            case Camera.FlashRedEyeReduction:
+                return Camera.FlashOff
+            default:
+                return Camera.FlashAuto
+            }
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: camera.flash.mode = flashMode.nextFlashMode(camera.flash.mode)
+        }
+    }
+
+    Image {
     	id: shutter
     	source: "image://theme/icon-camera-shutter-release"
     	anchors.left: parent.left
     	anchors.bottom: parent.bottom
     	anchors.margins: Theme.paddingLarge
     	property bool autoMode: false
+        rotation: 90
 
         MouseArea {
             anchors.fill: parent

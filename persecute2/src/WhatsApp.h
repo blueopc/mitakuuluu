@@ -160,6 +160,7 @@ public slots:
     void requestLastOnline(const QString &jid);
     void addPhoneNumber(const QString &name, const QString &phone);
     void sendMedia(const QStringList &jids, const QString &path);
+    void sendVCard(const QStringList &jids, const QString &name, const QString& data);
     QString rotateImage(const QString &path, int rotation);
     QString saveImage(const QString &path);
     void openProfile(const QString &name, const QString &phone, const QString avatar = QString());

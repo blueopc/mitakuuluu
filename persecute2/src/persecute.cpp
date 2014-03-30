@@ -60,44 +60,7 @@
 
 //WhatsApp *whatsapp = NULL;
 
-void writeLog(const QString &type, const QMessageLogContext &context, const QString &message)
-{
-    QString time = QDateTime::currentDateTime().toString("hh:mm:ss");
-    QFile file("/home/nemo/.whatsapp/whatsapp.log");
-    if (file.open(QIODevice::Append | QIODevice::Text))
-    {
-        QTextStream out(&file);
-        out << type << time << " CLIENT] ";
-        out << context.file << ":" << context.line << " " << context.function << ": ";
-        out << message << '\n';
-        file.close();
-    }
-    //QTextStream(stdout) << context.file << ":" << context.line << " " << context.function << "\n";
-    QTextStream(stdout) << type << time <<  " CLIENT] " << message << '\n';
-}
-
-void messageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
-{
-    switch (type) {
-    case QtDebugMsg:
-        writeLog("[D ", context, msg);
-        break;
-    case QtWarningMsg:
-        writeLog("[W ", context, msg);
-        break;
-    case QtCriticalMsg:
-        writeLog("[C ", context, msg);
-        break;
-    case QtFatalMsg:
-        writeLog("[F ", context, msg);
-        abort();
-    }
-}
-
-void quitHandler(int) {
-    //if (whatsapp)
-    //    whatsapp->exit();
-}
+#include "../logging/logging.h"
 
 Q_DECL_EXPORT
 int main(int argc, char *argv[])
@@ -112,7 +75,9 @@ int main(int argc, char *argv[])
     }
     Settings *settings = new Settings(0);
     if (settings->value("keepLogs", true).toBool())
-        qInstallMessageHandler(messageHandler);
+        qInstallMessageHandler(fileHandler);
+    else
+        qInstallMessageHandler(stdoutHandler);
     qDebug() << "Starting application";
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();

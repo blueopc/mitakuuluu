@@ -176,47 +176,47 @@
 <context>
     <name>BubbleDelegate</name>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="246"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="248"/>
         <source>Media download started...</source>
         <translation type="unfinished">Media download started...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="326"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="328"/>
         <source>Remove message</source>
         <translation type="unfinished">Remove message</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="367"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="369"/>
         <source>Copy</source>
         <translation type="unfinished">Copy</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="371"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="373"/>
         <source>Message copied to clipboard</source>
         <translation type="unfinished">Message copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="376"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="378"/>
         <source>Forward</source>
         <translation type="unfinished">Forward</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="386"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="388"/>
         <source>Save to Gallery</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="389"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="391"/>
         <source>File saved as %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="395"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="397"/>
         <source>Cancel download</source>
         <translation type="unfinished">Cancel download</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/BubbleDelegate.qml" line="395"/>
+        <location filename="../persecute2/qml/BubbleDelegate.qml" line="397"/>
         <source>Delete</source>
         <translation type="unfinished">Delete</translation>
     </message>
@@ -236,22 +236,22 @@
         <translation type="obsolete">Connected</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="1727"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="1736"/>
         <source>Disconnected</source>
         <translation type="unfinished">Disconnected</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2067"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2076"/>
         <source>Mitakuuluu share</source>
         <translation>Mitakuuluu share</translation>
     </message>
     <message>
-        <location filename="../whatsapp-server/src/client.cpp" line="2067"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2076"/>
         <source>Can&apos;t share media when offline</source>
         <translation>Can&apos;t share media when offline</translation>
     </message>
     <message numerus="yes">
-        <location filename="../whatsapp-server/src/client.cpp" line="2850"/>
+        <location filename="../whatsapp-server/src/client.cpp" line="2867"/>
         <source>%n messages unread</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -406,80 +406,80 @@
         <translation>System message.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="633"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="365"/>
         <source>Send media</source>
         <translation>Send media</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="331"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="334"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="332"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="335"/>
         <source>Remove all messages</source>
         <translation>Remove all messages</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="345"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="346"/>
         <source>Profile</source>
         <translation>Profile</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="311"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="312"/>
         <source>Unmute</source>
         <translation type="unfinished">Unmute</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="311"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="312"/>
         <source>Unblock</source>
         <translation type="unfinished">Unblock</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="312"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Mute</source>
         <translation type="unfinished">Mute</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="312"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="313"/>
         <source>Block</source>
         <translation type="unfinished">Block</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="353"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="354"/>
         <source>Load old conversation</source>
         <translation>Load old conversation</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="413"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="422"/>
         <source>Last seen: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="519"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="528"/>
         <source>New message</source>
         <translation>New message</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="545"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="554"/>
         <source>Tap here to enter message</source>
         <translation>Tap here to enter message</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="766"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="769"/>
         <source>Image saved as %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="787"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="790"/>
         <source>Select media type</source>
         <translation>Select media type</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="680"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="814"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="683"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="817"/>
         <source>Select video</source>
         <translation>Select video</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Conversation.qml" line="692"/>
-        <location filename="../persecute2/qml/Conversation.qml" line="830"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="695"/>
+        <location filename="../persecute2/qml/Conversation.qml" line="833"/>
         <source>Select audio</source>
         <translation>Select audio</translation>
     </message>
@@ -773,19 +773,19 @@
 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="32"/>
+        <location filename="../persecute2/qml/Register.qml" line="33"/>
         <source>Account expired
 </source>
         <translation>Account expired
 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="40"/>
+        <location filename="../persecute2/qml/Register.qml" line="42"/>
         <source>No exists information for your account.</source>
         <translation>No exists information for your account.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="45"/>
+        <location filename="../persecute2/qml/Register.qml" line="47"/>
         <source>Code request failed
 
 </source>
@@ -794,60 +794,142 @@
 </translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="53"/>
+        <location filename="../persecute2/qml/Register.qml" line="56"/>
         <source>Activation code requested. Wait for %1 soon</source>
         <translation>Activation code requested. Wait for %1 soon</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="53"/>
+        <location filename="../persecute2/qml/Register.qml" line="56"/>
         <source>sms message</source>
         <translation>sms message</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="53"/>
+        <location filename="../persecute2/qml/Register.qml" line="56"/>
         <source>voice call</source>
         <translation>voice call</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="60"/>
-        <location filename="../persecute2/qml/Register.qml" line="304"/>
+        <location filename="../persecute2/qml/Register.qml" line="63"/>
+        <location filename="../persecute2/qml/Register.qml" line="312"/>
         <source>Registering account...</source>
         <translation>Registering account...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="66"/>
+        <location filename="../persecute2/qml/Register.qml" line="69"/>
         <source>Successfully registered in WhatsApp!</source>
         <translation>Successfully registered in WhatsApp!</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="74"/>
+        <location filename="../persecute2/qml/Register.qml" line="77"/>
         <source>Cannot detect your country code. You should use international number format for registration.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="137"/>
-        <location filename="../persecute2/qml/Register.qml" line="209"/>
-        <location filename="../persecute2/qml/Register.qml" line="328"/>
+        <location filename="../persecute2/qml/Register.qml" line="89"/>
+        <source>Code successfully requested.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="100"/>
+        <source>Too frequent attempts to request the code.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="102"/>
+        <source>Too many wrong code guesses.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="104"/>
+        <source>Too many attempts. Try again tomorrow.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="106"/>
+        <source>Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="108"/>
+        <location filename="../persecute2/qml/Register.qml" line="111"/>
+        <source>Registration code expired. You need to request a new one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="113"/>
+        <source>Missing request param: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="116"/>
+        <source>Bad parameters passed to code request: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="119"/>
+        <source>No cell routes for %1 caused by your operator. Please try other method [sms/voice]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="119"/>
+        <source>making call</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="119"/>
+        <source>sending sms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="122"/>
+        <source>Reason: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../persecute2/qml/Register.qml" line="130"/>
+        <source>%n hours</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../persecute2/qml/Register.qml" line="133"/>
+        <source>%n minutes</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="135"/>
+        <source>You can retry requesting code after %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../persecute2/qml/Register.qml" line="145"/>
+        <location filename="../persecute2/qml/Register.qml" line="191"/>
+        <location filename="../persecute2/qml/Register.qml" line="336"/>
         <source>Registration</source>
         <translation>Registration</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="191"/>
+        <location filename="../persecute2/qml/Register.qml" line="173"/>
         <source>Checking account...</source>
         <translation>Checking account...</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="231"/>
+        <location filename="../persecute2/qml/Register.qml" line="213"/>
         <source>Enter phone number here</source>
         <translation>Enter phone number here</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="244"/>
+        <location filename="../persecute2/qml/Register.qml" line="226"/>
         <source>Salt password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="253"/>
+        <location filename="../persecute2/qml/Register.qml" line="235"/>
         <source>Randomize your registration token</source>
         <translation type="unfinished"></translation>
     </message>
@@ -860,17 +942,17 @@
         <translation type="vanished">Voice</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="286"/>
+        <location filename="../persecute2/qml/Register.qml" line="268"/>
         <source>I have registration code</source>
         <translation>I have registration code</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="332"/>
+        <location filename="../persecute2/qml/Register.qml" line="340"/>
         <source>Enter registration code. 6-digits, no &apos;-&apos; sign.</source>
         <translation>Enter registration code. 6-digits, no &apos;-&apos; sign.</translation>
     </message>
     <message>
-        <location filename="../persecute2/qml/Register.qml" line="345"/>
+        <location filename="../persecute2/qml/Register.qml" line="353"/>
         <source>Tap here to enter code</source>
         <translation>Tap here to enter code</translation>
     </message>

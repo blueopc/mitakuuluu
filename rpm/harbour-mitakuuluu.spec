@@ -9,7 +9,7 @@ Name:       harbour-mitakuuluu
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
 Version:    0.2
-Release:    6
+Release:    7
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
@@ -25,6 +25,7 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  libexif-devel
 BuildRequires:  mce-headers
 BuildRequires:  libiphb-devel
+#BuildRequires:  systemd-devel
 #BuildRequires:  libnemotransferengine-qt5-devel
 
 %description
