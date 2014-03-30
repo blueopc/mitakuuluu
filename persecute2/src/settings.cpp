@@ -8,13 +8,6 @@ Settings::Settings(QObject *parent) :
     settings = new QSettings("coderus", "whatsapp", this);
 }
 
-Settings::~Settings()
-{
-    if (settings) {
-        delete settings;
-    }
-}
-
 void Settings::setValue(const QString &key, const QVariant &value)
 {
     if (settings) {
@@ -44,4 +37,10 @@ QVariant Settings::value(const QString &key, const QVariant &defaultValue)
         }
     }
     return QVariant();
+}
+
+void Settings::sync()
+{
+    if (settings)
+        settings->sync();
 }

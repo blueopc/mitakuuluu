@@ -222,10 +222,8 @@ Page {
                 label: qsTr("Chat font size")
                 value: fontSize
                 valueText: qsTr("%1 px").arg(parseInt(value))
-                onValueChanged: {
-                    if (page.status == PageStatus.Active) {
-                        fontSize = parseInt(value)
-                    }
+                onReleased: {
+                    fontSize = parseInt(value)
                 }
             }
 
@@ -486,10 +484,8 @@ Page {
                     label: qsTr("Maximum image size by file size")
                     value: resizeImagesTo
                     valueText: bytesToSize(parseInt(value))
-                    onValueChanged: {
-                        if (page.status == PageStatus.Active) {
-                            resizeImagesTo = parseInt(value)
-                        }
+                    onReleased: {
+                        resizeImagesTo = parseInt(value)
                     }
                 }
             }
@@ -522,10 +518,8 @@ Page {
                     label: qsTr("Maximum image size by resolution")
                     value: resizeImagesToMPix
                     valueText: qsTr("%1 MPx").arg(parseFloat(value.toPrecision(2)))
-                    onValueChanged: {
-                        if (page.status == PageStatus.Active) {
-                            resizeImagesToMPix = parseFloat(value.toPrecision(2))
-                        }
+                    onReleased: {
+                        resizeImagesToMPix = parseFloat(value.toPrecision(2))
                     }
                 }
             }

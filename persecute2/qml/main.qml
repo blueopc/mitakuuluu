@@ -14,8 +14,11 @@ ApplicationWindow {
     property bool showTimestamp: true
     onShowTimestampChanged: settings.setValue("showTimestamp", showTimestamp)
 
-    property int fontSize: Theme.fontSizeMedium
-    onFontSizeChanged: settings.setValue("fontSize", fontSize)
+    property int fontSize: 32
+    onFontSizeChanged: {
+        console.log("fontSize: " + fontSize)
+        settings.setValue("fontSize", fontSize)
+    }
 
     property bool followPresence: false
     onFollowPresenceChanged: {
@@ -268,6 +271,7 @@ ApplicationWindow {
 
 
     Component.onCompleted: {
+        settings.sync()
         var connectionStatus = whatsapp.connectionStatus()
         if (connectionStatus === 5 || connectionStatus === 8)
             pageStack.replace(register)
@@ -276,7 +280,7 @@ ApplicationWindow {
         applicationCrashed = !settings.value("selfkill", true)
         sendByEnter = settings.value("sendByEnter", false)
         showTimestamp = settings.value("showTimestamp", true)
-        fontSize = settings.value("fontSize", Theme.fontSizeMedium)
+        fontSize = settings.value("fontSize", 32)
         followPresence = settings.value("followPresence", false)
         showSeconds = settings.value("showSeconds", true)
         showMyJid = settings.value("showMyJid", false)

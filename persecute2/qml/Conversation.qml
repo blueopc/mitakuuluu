@@ -20,7 +20,6 @@ Page {
             sendBox.text = ""
         }
         else if (page.status === PageStatus.Active) {
-            fontSize = settings.value("fontSize", Theme.fontSizeMedium)
             scrollDown.start()
             if (showKeyboard)
                 forceTimer.start()
@@ -665,7 +664,6 @@ Page {
             textRightMargin: sendByEnter ? 0 : 64
             property bool buttonVisible: sendByEnter
             maxHeight: page.isPortrait ? 200 : 140
-            visible: !dock.open
             background: Component {
                 Item {
                     anchors.fill: parent
