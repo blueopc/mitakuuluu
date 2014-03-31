@@ -301,9 +301,9 @@ Page {
                 BusyIndicator {
                     id: searchIndicator
                     anchors.top: parent.top
-                    anchors.topMargin: 13
+                    anchors.topMargin: 17
                     anchors.left: parent.left
-                    anchors.leftMargin: 13
+                    anchors.leftMargin: 17
                     size: BusyIndicatorSize.Medium
                     smooth: true
                     width: 37
