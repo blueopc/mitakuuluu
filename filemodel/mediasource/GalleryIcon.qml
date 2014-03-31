@@ -24,13 +24,7 @@ MediaSourceIcon {
         delegate: GalleryImage {
             source: path
             size: slideShow.width
-            //height: slideShow.height
-            //sourceSize.width: slideShow.width
-            //sourceSize.height: slideShow.width
-            //cache: true
-            //asynchronous: true
-            //smooth: true
-            //fillMode: Image.PreserveAspectCrop
+            enabled: false
         }
     }
 }
