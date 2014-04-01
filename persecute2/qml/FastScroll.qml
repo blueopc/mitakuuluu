@@ -81,7 +81,7 @@ Item {
             anchors.right: parent.right
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-            width: Theme.itemSizeLarge
+            width: Theme.itemSizeMedium
             drag.target: magnifier
             drag.axis: Drag.YAxis
             drag.minimumY: 0 // listView.y
