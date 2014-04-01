@@ -6,12 +6,15 @@ import QtMultimedia 5.0
 Item {
     id: item
     width: parent.width
-    height: (msg.paintedHeight + (isGroup ? 0 : Theme.paddingMedium)) + (isGroup ? msginfo.height : 0) + ((msgStatusViewFirstTick.height * 2)+ (isGroup ? Theme.paddingMedium : 0)) + (prevClip.visible ? (prev.status == Image.Ready ? prevClip.height : 0) : 0) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
+    height: (msg.paintedHeight + (isGroup ? 0 : Theme.paddingMedium)) + (isGroup ? msginfo.height : 0) + ((msgStatusViewFirstTick.height * 2)+ (isGroup ? Theme.paddingMedium : 0)) + (previewObject == null ? 0 : previewObject.height) + (inMenu.visible ? inMenu.height : 0) + (urlMenu.visible ? urlMenu.height : 0)
     opacity: mArea.pressed ? 0.5 : 1.0
     property bool showPreview: false
+
     property int msgStatus: model.msgstatus
+    property int previewHeight: 0
     onMsgStatusChanged: setTickView()
-    property Item playerObject
+    property Item playerObject: null
+    property Item previewObject: null
 
     function setTickView() {
         switch(msgStatus) {
@@ -32,7 +35,7 @@ Item {
 
     Component.onCompleted: {
         if (model.author === roster.myJid) {
-            bubble.anchors.left = item.left;
+            bubble.anchors.right = bubble.left;
             bubble.anchors.leftMargin = Theme.paddingMedium;
             msginfo.anchors.left = item.left;
             msginfo.anchors.leftMargin = Theme.paddingLarge;
@@ -42,7 +45,9 @@ Item {
             timeStatusRow.anchors.leftMargin = Theme.paddingLarge;
             msginfo.horizontalAlignment = Text.AlignLeft;
             msg.horizontalAlignment = Text.AlignLeft;
-            bubble.color = Theme.rgba("#ADD8E6", 0.4);
+            //bubble.color = Theme.rgba("#ADD8E6", 0.4);
+            playerPlaceholder.anchors.right = item.right
+            playerPlaceholder.anchors.leftMargin = Theme.paddingSmall
             setTickView();
         }
         else {
@@ -71,7 +76,34 @@ Item {
                 timeStatusRow.anchors.right = item.right;
                 timeStatusRow.anchors.rightMargin = Theme.paddingLarge;
             }
-            bubble.color = getContactColor(model.author);
+            playerPlaceholder.anchors.right = bubble.left
+            playerPlaceholder.anchors.leftMargin = Theme.paddingSmall
+        }
+        bubble.color = Theme.rgba(getContactColor(model.author), Theme.highlightBackgroundOpacity);
+
+        if (model.msgtype == 3) {
+            if (model.mediatype == 1 || model.mediatype == 3 || model.mediatype == 5) {
+                previewObject = previewComponent.createObject(item)
+                previewObject.anchors.top = showTimestamp ? timeStatusRow.bottom : msg.bottom
+                previewObject.anchors.left = bubble.left
+                previewObject.anchors.right = bubble.right
+                previewObject.anchors.leftMargin = Theme.paddingMedium
+                previewObject.anchors.rightMargin = Theme.paddingMedium
+            }
+            else if (model.mediatype == 2) {
+                playerObject = componentAudioPlayer.createObject(playerPlaceholder)
+                playerObject.anchors.centerIn = playerPlaceholder
+            }
+        }
+    }
+
+
+    Component.onDestruction: {
+        if (playerObject != null) {
+            playerObject.parent = null
+        }
+        if (previewObject != null) {
+            previewObject.parent = null
         }
     }
 
@@ -91,8 +123,6 @@ Item {
         onHideAll: {
             if (imsgid != model.msgid) {
                 showPreview = false
-                if (playerObject)
-                    playerObject.destroy()
             }
         }
     }
@@ -136,10 +166,14 @@ Item {
         text: getMessageText(model)
         textFormat: Text.RichText
         onPaintedWidthChanged: {
-            if (width > (parent.width - (Theme.paddingLarge * 2)) * 2)
+            if (width > (parent.width - (Theme.paddingLarge * 2)) * 2) {
                 width = parent.width - (Theme.paddingLarge * 2)
-            else if (width > parent.width - (Theme.paddingLarge * 2))
+            }
+            else if (width > parent.width - (Theme.paddingLarge * 2)) {
                 width = width / 3 * 2
+            }
+            else if (model.mediatype == 2)
+                width = parent.width - (Theme.paddingLarge * 2) - Theme.itemSizeMedium
         }
     }
 
@@ -177,30 +211,6 @@ Item {
         }
     }
 
-    Item {
-        id: prevClip
-        anchors.top: showTimestamp ? timeStatusRow.bottom : msg.bottom
-        anchors.left: bubble.left
-        anchors.right: bubble.right
-        anchors.leftMargin: Theme.paddingMedium
-        anchors.rightMargin: Theme.paddingMedium
-        height: showPreview ? prev.height: 100
-        visible: model.msgtype == 3 && (model.mediatype == 1 || model.mediatype == 3 || model.mediatype == 5)
-        clip: true
-        Image {
-            id: prev
-            fillMode: Image.PreserveAspectFit
-            source: visible ? getMediaPreview(model) : ""
-            width: parent.width
-            sourceSize.width: parent.width
-            asynchronous: true
-            cache: true
-            clip: true
-            smooth: true
-            rotation: (model.localurl.length > 0) ? whatsapp.getExifRotation(model.localurl) : 0
-        }
-    }
-
     Image {
         id: progressIndicator
         anchors.left: parent.left
@@ -216,6 +226,28 @@ Item {
         source: "/usr/share/harbour-mitakuuluu/images/progress-pattern-black.png"
     }
 
+    Component {
+        id: previewComponent
+        Item {
+            id: prevClip
+            height: showPreview ? prev.height: 100
+            clip: true
+            Image {
+                id: prev
+                fillMode: Image.PreserveAspectFit
+                source: visible ? getMediaPreview(model) : ""
+                width: parent.width
+                sourceSize.width: parent.width
+                asynchronous: true
+                cache: true
+                clip: true
+                smooth: true
+                rotation: (model.localurl.length > 0) ? whatsapp.getExifRotation(model.localurl) : 0
+                onStatusChanged: previewHeight = prevClip.height
+            }
+        }
+    }
+
     MouseArea {
         id: mArea
         anchors.fill: bubble
@@ -224,7 +256,55 @@ Item {
                 conversationView.hideAll(model.msgid)
         }
         onClicked: {
-            if (model.msgtype == 100)
+            if (model.msgtype == 2) {
+                var links = msg.text.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/gi);
+                if (links && links.length > 0) {
+                    var urlmodel = []
+                    links.forEach(function(link) {
+                        var groups = link.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/i);
+                        var urlink = [groups[2], groups[1]]
+                        urlmodel[urlmodel.length] = urlink
+                    });
+                    urlMenu.model = urlmodel
+                    urlMenu.show(item)
+                }
+            }
+            else if (!showPreview) {
+                if (model.msgtype == 3 && model.mediatype > 0 && model.mediatype < 4) {
+                    if (model.localurl.length == 0) {
+                        //progressObject = progressComponent.createObject(progressPlaceholder)
+                        whatsapp.downloadMedia(model.msgid, page.jid)
+                        banner.notify(qsTr("Media download started..."))
+                    }
+                    else if (model.mediatype == 1) {
+                        showPreview = true
+                        scrollTimer.position(model.index)
+                    }
+                    else {
+                        Qt.openUrlExternally(model.localurl)
+                    }
+                }
+                else if (model.mediatype == 4) {
+                    whatsapp.openVCardData(model.medianame, model.message)
+                }
+                else if (model.mediatype == 5) {
+                    Qt.openUrlExternally("geo:" + model.medialat + "," + model.medialon)
+                }
+            }
+            else {
+                if (model.msgtype == 3) {
+                    if (model.mediatype > 0 && model.mediatype < 4) {
+                        if (model.localurl.length > 0) {
+                            Qt.openUrlExternally(model.localurl)
+                        }
+                        else {
+                            //progressObject = progressComponent.createObject(progressPlaceholder)
+                            whatsapp.downloadMedia(model.msgid, page.jid)
+                        }
+                    }
+                }
+            }
+            /*if (model.msgtype == 100)
                 return
             if (model.msgtype == 2) {
                 //console.log(msg.text)
@@ -274,7 +354,7 @@ Item {
                         Qt.openUrlExternally("geo:" + model.medialat + "," + model.medialon)
                     }
                 }
-            }
+            }*/
         }
         onPressAndHold: {
             console.log(model.mediamime)
@@ -284,15 +364,15 @@ Item {
 
     Item {
         id: playerPlaceholder
-        anchors.left: bubble.left
-        anchors.top: bubble.top
-        anchors.margins: Theme.paddingSmall
-        width: 32
-        height: 32
+        anchors {
+            verticalCenter: parent.verticalCenter
+        }
+        width: item.width - bubble.width - Theme.paddingSmall
+        height: bubble.height
     }
 
     Component {
-        id: audioPlayer
+        id: componentAudioPlayer
         Item {
             width: parent.width
             height: Theme.itemSizeSmall
