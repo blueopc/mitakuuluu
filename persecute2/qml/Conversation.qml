@@ -101,7 +101,7 @@ Page {
     function getContactColor(jid) {
         if (isGroup) {
             if (jid == roster.myJid) {
-                return "transparent"
+                return Theme.highlightColor
             }
             else {
                 return roster.getContactColor(jid)
@@ -109,7 +109,7 @@ Page {
         }
         else {
             if (jid == roster.myJid) {
-                return "transparent"
+                return Theme.highlightColor
             }
             else {
                 return "#FFFFFF"

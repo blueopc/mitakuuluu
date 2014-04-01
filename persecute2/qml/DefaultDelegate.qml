@@ -20,9 +20,6 @@ ListItem {
     property Item _urlmenuItem: null
     property bool urlmenuOpen: _urlmenuItem != null && _urlmenuItem._open
 
-    property string testValue: model.localurl
-    onTestValueChanged: console.log("id: " + model.msgid + " url: " + testValue)
-
     onUrlmenuOpenChanged: {
         if (ListView.view && ('__silica_contextmenu_instance' in ListView.view)) {
             ListView.view.__silica_contextmenu_instance = urlmenuOpen ? _urlmenuItem : null
@@ -79,16 +76,13 @@ ListItem {
             _urlmenuItem._parentDestroyed()
         }
         if (playerObject != null) {
-            playerObject.hide()
-            playerObject._parentDestroyed()
+            playerObject.parent = null
         }
         if (previewObject != null) {
-            previewObject.hide()
-            previewObject._parentDestroyed()
+            previewObject.parent = null
         }
         if (progressObject != null) {
-            progressObject.hide()
-            progressObject._parentDestroyed()
+            progressObject.parent = null
         }
     }
 
