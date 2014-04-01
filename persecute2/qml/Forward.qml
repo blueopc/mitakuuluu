@@ -202,12 +202,10 @@ Dialog {
 
     Component {
         id: listDelegate
-        Rectangle {
+        BackgroundItem {
             id: item
-            width: parent.width - Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
             height: Theme.itemSizeMedium
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
 
             AvatarHolder {
                 id: contactava
@@ -215,7 +213,7 @@ Dialog {
                 width: Theme.iconSizeLarge
                 source: model.avatar
                 anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
+                anchors.leftMargin: Theme.paddingLarge
                 anchors.verticalCenter: parent.verticalCenter
             }
 
@@ -228,12 +226,7 @@ Dialog {
                 anchors.rightMargin: Theme.paddingMedium
                 font.pixelSize: Theme.fontSizeLarge
                 text: Utilities.emojify(model.name, emojiPath)
-                color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
-            }
-
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
 
             IconButton {

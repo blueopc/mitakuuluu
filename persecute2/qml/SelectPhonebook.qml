@@ -132,12 +132,12 @@ Dialog {
     Component {
         id: contactsDelegate
 
-        Rectangle {
+        BackgroundItem {
             id: item
             width: parent.width
             height: Theme.itemSizeMedium
             visible: height > 0
-            color: checked ? Theme.secondaryHighlightColor : (mArea.pressed ? Theme.secondaryHighlightColor : "transparent")
+            highlighted: down || checked
             property bool checked: page.numbers.indexOf(modelData.number) != -1
 
             AvatarHolder {
@@ -161,7 +161,7 @@ Dialog {
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingMedium
                 wrapMode: Text.NoWrap
-                color: (mArea.pressed || checked) ? Theme.highlightColor : Theme.primaryColor
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
                 truncationMode: TruncationMode.Fade
             }
 
@@ -177,31 +177,27 @@ Dialog {
                 anchors.rightMargin: Theme.paddingMedium
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
-                color: (mArea.pressed || checked) ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
             }
 
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
-                onClicked: {
-                    var vnumbers = page.numbers
-                    var vnames = page.names
-                    var vavatars = page.avatars
-                    var exists = vnumbers.indexOf(modelData.number)
-                    if (exists != -1) {
-                        vnumbers.splice(exists, 1)
-                        vnames.splice(exists, 1)
-                        vavatars.splice(exists, 1)
-                    }
-                    else {
-                        vnumbers.splice(0, 0, modelData.number)
-                        vnames.splice(0, 0, modelData.nickname)
-                        vavatars.splice(0, 0, modelData.avatar)
-                    }
-                    page.numbers = vnumbers
-                    page.names = vnames
-                    page.avatars = vavatars
+            onClicked: {
+                var vnumbers = page.numbers
+                var vnames = page.names
+                var vavatars = page.avatars
+                var exists = vnumbers.indexOf(modelData.number)
+                if (exists != -1) {
+                    vnumbers.splice(exists, 1)
+                    vnames.splice(exists, 1)
+                    vavatars.splice(exists, 1)
                 }
+                else {
+                    vnumbers.splice(0, 0, modelData.number)
+                    vnames.splice(0, 0, modelData.nickname)
+                    vavatars.splice(0, 0, modelData.avatar)
+                }
+                page.numbers = vnumbers
+                page.names = vnames
+                page.avatars = vavatars
             }
         }
     }

@@ -377,16 +377,8 @@ Page {
             boundsBehavior: Flickable.StopAtBounds
             section.property: "nickname"
             section.criteria: ViewSection.FirstCharacter
-            signal remove(string rmjid)
-            /*header: SearchField {
-                id: searchField
-                width: parent.width
-                placeholderText: "Search"
-
-                onTextChanged: {
-                    contactsModel.search(searchField.text)
-                }
-            }*/
+            property Item selectedItem: null
+            property int selectedIndex: -1
 
             FastScroll {
                 id: fastScroll
@@ -539,17 +531,28 @@ Page {
 
     Component {
         id: listDelegate
-        Rectangle {
-            id: itemDelegate
+        ListItem {
+            id: item
             width: ListView.view.width
-            height: visible ? (Theme.itemSizeMedium + (inMenu.visible ? inMenu.height : 0)) : 0
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
+            contentHeight: item.visible ? Theme.itemSizeMedium : 0
             visible: model.visible ? (model.jid !== myJid || showMyJid) : false
+            ListView.onRemove: animateRemoval(item)
+            menu: contextMenu
+
+            function remove() {
+                remorseAction(model.jid.indexOf("-") > 0 ? qsTr("Leave group %1").arg(model.nickname) : qsTr("Delete "),
+                              function() {
+                                  if (model.jid.indexOf("-") > 0) {
+                                      whatsapp.groupLeave(model.jid)
+                                  }
+                                  contactsModel.deleteContact(model.jid)
+                              })
+            }
 
             Rectangle {
                 id: presence
                 height: ava.height
-                anchors.left: itemDelegate.left
+                anchors.left: parent.left
                 anchors.right: ava.left
                 anchors.verticalCenter: ava.verticalCenter
                 color: model.blocked ? Theme.rgba(Theme.highlightDimmerColor, 0.6) : (page.connectionStatus == 4 ? (model.available ? Theme.rgba(Theme.highlightColor, 0.6) : "transparent") : "transparent")
@@ -561,9 +564,9 @@ Page {
             AvatarHolder {
                 id: ava
                 source: model.avatar == "undefined" ? "" : (model.avatar)
-                anchors.left: itemDelegate.left
+                anchors.left: parent.left
                 anchors.leftMargin: Theme.paddingLarge
-                anchors.top: itemDelegate.top
+                anchors.top: parent.top
                 anchors.topMargin: Theme.paddingSmall / 2
                 width: Theme.iconSizeLarge
                 height: Theme.iconSizeLarge
@@ -594,7 +597,7 @@ Page {
                 anchors.left: ava.right
                 anchors.leftMargin: Theme.paddingMedium
                 anchors.verticalCenter: ava.verticalCenter
-                anchors.right: itemDelegate.right
+                anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingSmall
                 clip: true
                 spacing: Theme.paddingSmall
@@ -606,7 +609,8 @@ Page {
                     text: Utilities.emojify(model.nickname, emojiPath)
                     wrapMode: Text.NoWrap
                     elide: Text.ElideRight
-                    color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
+                    color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    textFormat: Text.RichText
                 }
 
                 Label {
@@ -616,103 +620,60 @@ Page {
                     text: model.contacttype == 0 ? Utilities.emojify(model.message, emojiPath) : qsTr("Group chat")
                     wrapMode: Text.NoWrap
                     elide: Text.ElideRight
-                    color: mArea.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                    textFormat: Text.RichText
                 }
             }
 
-            MouseArea {
-                id: mArea
-                anchors.fill: itemDelegate
-                onClicked: {
-                    conversation.loadContactModel(model)
-                    pageStack.push(conversation)
-                }
-                onPressAndHold: {
-                    console.log("last message: " + model.lastmessage)
-                    inMenu.show(itemDelegate)
-                }
+            onClicked: {
+                conversation.loadContactModel(model)
+                pageStack.push(conversation)
             }
 
-            Connections {
-                target: listView
-                onRemove: {
-                    var rjid = rmjid
-                    if (rmjid === model.jid) {
-                        console.log("should remove " + rjid)
-                        removeItem.execute(itemDelegate,
-                                           (rjid.indexOf("-") == -1 ? qsTr("Delete ") : qsTr("Leave group %1").arg(model.nickname)),
-                                           function () {
-                                               contactsModel.deleteContact(rjid)
-                                               if (rjid.indexOf("-") != -1) {
-                                                   whatsapp.groupLeave(rjid)
-                                               }
-                                           },
-                                           5000)
+            Component {
+                id: contextMenu
+                ContextMenu {
+                    MenuItem {
+                        text: qsTr("Profile")
+                        enabled: (roster.connectionStatus == 4) ? true : (model.jid.indexOf("-") == -1)
+                        onClicked: {
+                            profileAction(model.jid)
+                        }
                     }
-                }
-            }
 
-            RemorseItem {
-                id: removeItem
-                anchors.fill: itemDelegate
-            }
-
-            ListView.onRemove: RemoveAnimation {
-                target: itemDelegate
-            }
-
-            /*MenuIndicator {
-                anchors.bottom: itemDelegate.bottom
-                anchors.bottomMargin: inMenu.height - (height / 2)
-                width: itemDelegate.width
-                visible: inMenu.active
-            }*/
-
-            ContextMenu {
-                id: inMenu
-                anchors.bottom: itemDelegate.bottom
-                width: itemDelegate.width
-
-                MenuItem {
-                    text: qsTr("Profile")
-                    enabled: (roster.connectionStatus == 4) ? true : (model.jid.indexOf("-") == -1)
-                    onClicked: {
-                        profileAction(model.jid)
+                    MenuItem {
+                        text: qsTr("Refresh")
+                        enabled: roster.connectionStatus == 4
+                        onClicked: {
+                            whatsapp.refreshContact(model.jid)
+                        }
                     }
-                }
 
-                MenuItem {
-                    text: qsTr("Refresh")
-                    enabled: roster.connectionStatus == 4
-                    onClicked: {
-                        whatsapp.refreshContact(model.jid)
+                    MenuItem {
+                        text: qsTr("Rename")
+                        visible: model.jid.indexOf("-") == -1
+                        onClicked: {
+                            renameContact.showData(model.jid, model.nickname)
+                        }
                     }
-                }
 
-                MenuItem {
-                    text: qsTr("Rename")
-                    visible: model.jid.indexOf("-") == -1
-                    onClicked: {
-                        renameContact.showData(model.jid, model.nickname)
+                    MenuItem {
+                        text: model.jid.indexOf("-") == -1 ? qsTr("Delete") : qsTr("Leave group")
+                        enabled: (roster.connectionStatus == 4) ? true : (model.jid.indexOf("-") == -1)
+                        onClicked: {
+                            remove()
+                        }
                     }
-                }
 
-                MenuItem {
-                    text: model.jid.indexOf("-") == -1 ? qsTr("Delete") : qsTr("Leave group")
-                    enabled: (roster.connectionStatus == 4) ? true : (model.jid.indexOf("-") == -1)
-                    onClicked: {
-                        listView.remove(model.jid)
-                    }
-                }
-
-                MenuItem {
-                    text: model.jid.indexOf("-") == -1 ? (model.blocked ? qsTr("Unblock") : qsTr("Block")) : (model.blocked ? qsTr("Unmute") : qsTr("Mute"))
-                    enabled: roster.connectionStatus == 4
-                    onClicked: {
-                        if (model.jid.indexOf("-") == -1)
-                            whatsapp.blockOrUnblockContact(model.jid)
-                        else
-                            whatsapp.muteOrUnmuteGroup(model.jid)
+                    MenuItem {
+                        text: model.jid.indexOf("-") == -1 ? (model.blocked ? qsTr("Unblock") : qsTr("Block")) : (model.blocked ? qsTr("Unmute") : qsTr("Mute"))
+                        enabled: roster.connectionStatus == 4
+                        onClicked: {
+                            if (model.jid.indexOf("-") == -1)
+                                whatsapp.blockOrUnblockContact(model.jid)
+                            else
+                                whatsapp.muteOrUnmuteGroup(model.jid)
+                        }
                     }
                 }
             }

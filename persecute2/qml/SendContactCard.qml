@@ -39,6 +39,7 @@ Dialog {
     Component {
         id: listDelegate
         BackgroundItem {
+            id: item
             width: parent.width
             height: Theme.itemSizeMedium
             highlighted: down || (page.selectedIndex == index)
@@ -90,6 +91,7 @@ Dialog {
                 wrapMode: Text.NoWrap
                 elide: Text.ElideRight
                 text: model.person.displayLabel
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
 
             Label {
@@ -105,6 +107,7 @@ Dialog {
                 elide: Text.ElideRight
                 font.pixelSize: Theme.fontSizeSmall
                 text: model.person.phoneDetails[0].normalizedNumber
+                color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
             }
         }
     }

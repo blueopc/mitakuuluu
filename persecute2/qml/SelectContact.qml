@@ -76,12 +76,13 @@ Dialog {
     Component {
         id: contactsDelegate
 
-        Rectangle {
+        BackgroundItem {
             id: item
             width: parent.width
             height: model.jid.indexOf("-") != -1 ? (hideGroups ? 0 : Theme.itemSizeMedium) : ((model.jid == roster.myJid || hideContacts) ? 0 : Theme.itemSizeMedium)
             visible: height > 0
-            color: checked ? Theme.secondaryHighlightColor : (mArea.pressed ? Theme.secondaryHighlightColor : "transparent")
+            //color: checked ? Theme.secondaryHighlightColor : (mArea.pressed ? Theme.secondaryHighlightColor : "transparent")
+            highlighted: down || checked
             property bool checked: page.jids.indexOf(model.jid) != -1
 
             AvatarHolder {
@@ -105,7 +106,7 @@ Dialog {
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingMedium
                 wrapMode: Text.NoWrap
-                color: (mArea.pressed || checked) ? Theme.highlightColor : Theme.primaryColor
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
                 truncationMode: TruncationMode.Fade
             }
 
@@ -120,26 +121,22 @@ Dialog {
                 anchors.right: parent.right
                 anchors.rightMargin: Theme.paddingMedium
                 wrapMode: Text.NoWrap
-                color: (mArea.pressed || checked) ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
                 truncationMode: TruncationMode.Fade
             }
 
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
-                onClicked: {
-                    var value = page.jids
-                    var exists = value.indexOf(model.jid)
-                    if (exists != -1) {
-                        value.splice(exists, 1)
-                        page.removed(model.jid)
-                    }
-                    else {
-                        value.splice(0, 0, model.jid)
-                        page.added(model.jid)
-                    }
-                    page.jids = value
+            onClicked: {
+                var value = page.jids
+                var exists = value.indexOf(model.jid)
+                if (exists != -1) {
+                    value.splice(exists, 1)
+                    page.removed(model.jid)
                 }
+                else {
+                    value.splice(0, 0, model.jid)
+                    page.added(model.jid)
+                }
+                page.jids = value
             }
         }
     }

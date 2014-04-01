@@ -83,10 +83,8 @@ Page {
             whatsapp.sendBlockedJids(jids)
             selectContact.finished.disconnect(listView.selectionFinished)
         }
-    }
 
-    VerticalScrollDecorator {
-        flickable: listView
+        VerticalScrollDecorator {}
     }
 
     Label {
@@ -98,6 +96,39 @@ Page {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         wrapMode: Text.WordWrap
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: menuPeek.start()
+        }
+
+        SequentialAnimation {
+            id: menuPeek
+            PropertyAction {
+                target: listView.pullDownMenu
+                property: "active"
+                value: true
+            }
+            NumberAnimation {
+                target: listView
+                property: "contentY"
+                to: 0 - 30
+                duration: 300
+                easing.type: Easing.OutCubic
+            }
+            NumberAnimation {
+                target: listView
+                property: "contentY"
+                to: 0
+                duration: 80
+                easing.type: Easing.OutCubic
+            }
+            PropertyAction {
+                target: listView.pullDownMenu
+                property: "active"
+                value: false
+            }
+        }
     }
 
     Dialog {
@@ -149,12 +180,10 @@ Page {
 
     Component {
         id: listDelegate
-        Rectangle {
+        BackgroundItem {
             id: item
-            width: parent.width - Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
             height: Theme.itemSizeMedium
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
 
             AvatarHolder {
                 id: contactava
@@ -162,7 +191,7 @@ Page {
                 width: Theme.iconSizeLarge
                 source: model.avatar
                 anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
+                anchors.leftMargin: Theme.paddingLarge
                 anchors.verticalCenter: parent.verticalCenter
             }
 
@@ -176,11 +205,7 @@ Page {
                 font.pixelSize: Theme.fontSizeMedium
                 text: Utilities.emojify(model.name, emojiPath)
                 truncationMode: TruncationMode.Fade
-            }
-
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
 
             IconButton {

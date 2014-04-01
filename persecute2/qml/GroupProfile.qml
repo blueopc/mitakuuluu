@@ -154,6 +154,7 @@ Page {
             anchors.left: subjectLabel.right
             anchors.right: parent.right
             text: page.subject
+
             EnterKey.enabled: text.trim().length > 0
             EnterKey.highlighted: EnterKey.enabled
             EnterKey.iconSource: "image://theme/icon-m-enter-next"
@@ -319,12 +320,10 @@ Page {
 
     Component {
         id: listDelegate
-        Rectangle {
+        BackgroundItem {
             id: item
-            width: parent.width - Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
             height: Theme.itemSizeMedium
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
 
             AvatarHolder {
                 id: contactava
@@ -345,13 +344,8 @@ Page {
                 anchors.rightMargin: Theme.paddingSmall
                 font.pixelSize: Theme.fontSizeMedium
                 text: Utilities.emojify(model.name, emojiPath)
-                color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
                 truncationMode: TruncationMode.Fade
-            }
-
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
             }
 
             IconButton {

@@ -85,12 +85,10 @@ Page {
 
     Component {
         id: listDelegate
-        Rectangle {
+        BackgroundItem {
             id: item
-            width: parent.width - Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
             height: Theme.itemSizeMedium
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
 
             AvatarHolder {
                 id: contactava
@@ -98,7 +96,7 @@ Page {
                 width: Theme.iconSizeLarge
                 source: model.avatar
                 anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingMedium
+                anchors.leftMargin: Theme.paddingLarge
                 anchors.verticalCenter: parent.verticalCenter
             }
 
@@ -112,11 +110,7 @@ Page {
                 font.pixelSize: Theme.fontSizeMedium
                 text: Utilities.emojify(model.name, emojiPath)
                 truncationMode: TruncationMode.Fade
-            }
-
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
 
             IconButton {

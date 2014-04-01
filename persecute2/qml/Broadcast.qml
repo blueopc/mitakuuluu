@@ -15,7 +15,7 @@ Dialog {
         if (messageText.checked) {
             whatsapp.sendBroadcast(page.jids, textArea.text)
         }
-        else if (messageMedia.checked) {
+        else if (messageMedia.checked || messageVoice.checked) {
             whatsapp.sendMedia(page.jids, mediaPath.text)
         }
         else if (messageLocation.checked) {
@@ -472,12 +472,10 @@ Dialog {
 
     Component {
         id: listDelegate
-        Rectangle {
+        BackgroundItem {
             id: item
-            width: parent.width - (Theme.paddingSmall * 2)
-            anchors.horizontalCenter: parent.horizontalCenter
+            width: parent.width
             height: Theme.itemSizeMedium
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
 
             AvatarHolder {
                 id: contactava
@@ -485,7 +483,7 @@ Dialog {
                 width: Theme.iconSizeLarge
                 source: model.avatar
                 anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingSmall
+                anchors.leftMargin: Theme.paddingLarge
                 anchors.verticalCenter: parent.verticalCenter
             }
 
@@ -498,12 +496,7 @@ Dialog {
                 anchors.rightMargin: Theme.paddingSmall
                 font.pixelSize: Theme.fontSizeMedium
                 text: Utilities.emojify(model.name, emojiPath)
-                color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
-            }
-
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
 
             IconButton {

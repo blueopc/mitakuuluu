@@ -80,11 +80,11 @@ Page {
 
     Component {
         id: filesDelegate
-        Rectangle {
+        BackgroundItem {
             id: item
             width: ListView.view.width
             height: Theme.itemSizeSmall
-            color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
+            //color: mArea.pressed ? Theme.secondaryHighlightColor : "transparent"
 
             Image {
                 id: icon
@@ -105,20 +105,17 @@ Page {
                 anchors.rightMargin: Theme.paddingSmall
                 anchors.verticalCenter: parent.verticalCenter
                 font.pixelSize: Theme.fontSizeSmall
+                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
             }
 
-            MouseArea {
-                id: mArea
-                anchors.fill: parent
-                onClicked: {
-                    if (model.dir) {
-                        header.subtitle = model.path
-                        filesModel.path = model.path
-                    }
-                    else {
-                        page.selected(model.path)
-                        pageStack.pop()
-                    }
+            onClicked: {
+                if (model.dir) {
+                    header.subtitle = model.path
+                    filesModel.path = model.path
+                }
+                else {
+                    page.selected(model.path)
+                    pageStack.pop()
                 }
             }
         }
