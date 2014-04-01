@@ -44,7 +44,7 @@ ApplicationWindow {
     property bool resizeImages: false
     onResizeImagesChanged: settings.setValue("resizeImages", resizeImages)
 
-    property bool resizeBySize: false
+    property bool resizeBySize: true
     onResizeBySizeChanged: settings.setValue("resizeBySize", resizeBySize)
 
     property int resizeImagesTo: 1048546
