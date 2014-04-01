@@ -111,7 +111,7 @@ QColor ContactsModel::getColorForJid(const QString &jid)
     if (!_colors.keys().contains(jid))
         _colors[jid] = generateColor();
     QColor color = _colors[jid];
-    color.setAlpha(96);
+    //color.setAlpha(96);
     return color;
 }
 

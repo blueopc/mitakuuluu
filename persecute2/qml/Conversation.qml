@@ -112,7 +112,7 @@ Page {
                 return "transparent"
             }
             else {
-                return "#20FFFFFF"
+                return "#FFFFFF"
             }
         }
     }
