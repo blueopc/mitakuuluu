@@ -16,24 +16,76 @@ Dialog {
     onAccepted: {
         console.log("accepting contact: " + selectedContact.displayLabel)
         if (broadcastMode) {
-            pageStack.pop(roster, PageStackAction.Immediate)
             roster.sendVCard(selectedContact.displayLabel, selectedContact.vCard())
+            //pageStack.pop(roster, PageStackAction.Immediate)
         }
         else {
-            pageStack.pop(conversation, PageStackAction.Immediate)
             conversation.sendVCard(selectedContact.displayLabel, selectedContact.vCard())
+            //pageStack.pop(conversation, PageStackAction.Immediate)
+        }
+    }
+
+    onStatusChanged: {
+        if (status == DialogStatus.Opened) {
+            allContactsModel.search("")
+            fastScroll.init()
+        }
+        else if (status == DialogStatus.Closed) {
+            searchField.text = ""
+        }
+    }
+
+    DialogHeader {
+        id: header
+        title: selectedIndex > -1 ? qsTr("Send contact") : qsTr("Select contact")
+    }
+
+    SearchField {
+        id: searchField
+        anchors {
+            left: parent.left
+            right: parent.right
+            top: header.bottom
+        }
+        onTextChanged: {
+            if (page.status == DialogStatus.Opened) {
+                allContactsModel.search(text)
+            }
         }
     }
 
     SilicaListView {
-        anchors.fill: parent
-        spacing: Theme.paddingLarge
+        id: listView
+        anchors {
+            top: searchField.bottom
+            left: page.left
+            right: page.right
+            bottom: page.bottom
+        }
         model: allContactsModel
         delegate: listDelegate
+        section {
+            property: "displayLabel"
+            delegate: sectionDelegate
+            criteria: ViewSection.FirstCharacter
+        }
 
-        header: DialogHeader { title: selectedIndex > -1 ? qsTr("Send contact") : qsTr("Select contact") }
+        onCountChanged: {
+            fastScroll.init()
+        }
 
-        VerticalScrollDecorator {}
+        FastScroll {
+            id: fastScroll
+            __hasPageHeight: false
+            listView: listView
+        }
+    }
+
+    Component {
+        id: sectionDelegate
+        SectionHeader {
+            text: section
+        }
     }
 
     Component {
@@ -79,35 +131,32 @@ Dialog {
                 }
             }
 
-            Label {
+            Column {
+                id: content
                 anchors {
-                    top: avaplaceholder.top
                     left: avaplaceholder.right
                     right: parent.right
-                    leftMargin: Theme.paddingLarge
-                    rightMargin: Theme.paddingLarge
+                    margins: Theme.paddingLarge
+                    verticalCenter: parent.verticalCenter
+                }
+                spacing: Theme.paddingMedium
+
+                Label {
+                    width: parent.width
+                    wrapMode: Text.NoWrap
+                    elide: Text.ElideRight
+                    text: model.displayLabel
+                    color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
                 }
 
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-                text: model.person.displayLabel
-                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
-            }
-
-            Label {
-                anchors {
-                    bottom: avaplaceholder.bottom
-                    left: avaplaceholder.right
-                    right: parent.right
-                    leftMargin: Theme.paddingLarge
-                    rightMargin: Theme.paddingLarge
+                Label {
+                    width: parent.width
+                    wrapMode: Text.NoWrap
+                    elide: Text.ElideRight
+                    font.pixelSize: Theme.fontSizeSmall
+                    text: model.person.phoneDetails[0].normalizedNumber
+                    color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
                 }
-
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-                font.pixelSize: Theme.fontSizeSmall
-                text: model.person.phoneDetails[0].normalizedNumber
-                color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
             }
         }
     }

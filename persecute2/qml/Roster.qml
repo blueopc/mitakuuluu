@@ -184,7 +184,7 @@ Page {
     }
 
     function sendVCard(name, vcarddata) {
-        broadcast.openVCard(name, avatardata)
+        broadcast.openVCard(name, vcarddata)
     }
 
     SilicaFlickable {
@@ -199,7 +199,6 @@ Page {
                 id: shutdown
                 text: qsTr("Quit")
                 font.bold: true
-                //color: enabled ? (down || highlighted ? "#FF0000" : "#E0FF2020") : "#C00000"
                 onClicked: {
                     remorseDisconnect.execute(qsTr("Quit and shutdown engine"),
                                                function() {

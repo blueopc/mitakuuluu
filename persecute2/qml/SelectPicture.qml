@@ -8,10 +8,6 @@ Dialog {
     canAccept: selectedPath.length > 0
     forwardNavigation: false
 
-    function accept() {
-        console.log("dialog accepted")
-    }
-
     property string selectedPath: ""
     property int selectedRotation: 0
     signal selected(string path, int rotation)
@@ -23,7 +19,6 @@ Dialog {
             width: page.width
             property alias canAccept: page.canAccept
             function accept() {
-                console.log("accept")
                 if (page.canAccept)
                     page.selected(selectedPath, selectedRotation)
                 else

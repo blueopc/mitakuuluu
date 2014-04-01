@@ -18,11 +18,11 @@ Dialog {
         console.log("accepting: " + recorder.path)
         if (broadcastMode) {
             pageStack.pop(roster, PageStackAction.Immediate)
-            roster.sendAudioNote(recorder.path)
+            //roster.sendAudioNote(recorder.path)
         }
         else {
             pageStack.pop(conversation, PageStackAction.Immediate)
-            conversation.sendAudioNote(recorder.path)
+            //conversation.sendAudioNote(recorder.path)
         }
         destroyComponents()
     }

@@ -19,12 +19,12 @@ Dialog {
     onAccepted: {
         console.log("accepting lat: " + latitude + " lon: " + longitude)
         if (broadcastMode) {
-            pageStack.pop(roster, PageStackAction.Immediate)
             roster.sendLocation(latitude, longitude, zoom, googlemaps)
+            //pageStack.pop(roster, PageStackAction.Immediate)
         }
         else {
-            pageStack.pop(conversation, PageStackAction.Immediate)
             conversation.sendLocation(latitude, longitude, zoom, googlemaps)
+            //pageStack.pop(conversation, PageStackAction.Immediate)
         }
     }
 

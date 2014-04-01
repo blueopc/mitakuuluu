@@ -22,7 +22,7 @@ Dialog {
             whatsapp.sendLocation(page.jids, location.longitude, location.latitude, location.zoom, location.googlemaps)
         }
         else if (messageContact.checked) {
-            whatsapp.sendVCard(page.jids, mediaPath.text, avatarContact.data)
+            whatsapp.sendVCard(page.jids, mediaPath.text, mediaPath.data)
         }
 
         clear()
@@ -53,13 +53,16 @@ Dialog {
         messageMedia.checked = true
         mediaPath.text = path
         page.open()
+        if (pageStack.currentPage.objectName != "broadcast")
+            page.open()
     }
 
     function openRecording(path) {
         mediaRow.hideAll()
         messageVoice.checked = true
         mediaPath.text = path
-        page.open()
+        if (pageStack.currentPage.objectName != "broadcast")
+            page.open()
     }
 
     function openLocation(latitude, longitude, zoom, googlemaps) {
@@ -70,7 +73,8 @@ Dialog {
         location.zoom = zoom
         location.googlemaps = googlemaps
         location.loadPreview()
-        page.open()
+        if (pageStack.currentPage.objectName != "broadcast")
+            page.open()
     }
 
     function openVCard(name, data) {
@@ -78,6 +82,8 @@ Dialog {
         messageContact.checked = true
         mediaPath.text = name
         mediaPath.data = data
+        if (pageStack.currentPage.objectName != "broadcast")
+            page.open()
     }
 
     SilicaFlickable {
@@ -213,10 +219,11 @@ Dialog {
                 }
                 wrapMode: Text.NoWrap
                 elide: Text.ElideLeft
-                property string data
+                property variant data
 
                 function selectMedia(path) {
                     text = path
+                    pageStack.pop()
                 }
 
                 function unbindMedia() {
@@ -230,8 +237,8 @@ Dialog {
                 }
 
                 function unbindMediaImage() {
-                    selectPicture.accepted.disconnect(page.selectMediaImage)
-                    selectPicture.rejected.disconnect(page.unbindMediaImage)
+                    selectPicture.accepted.disconnect(mediaPath.selectMediaImage)
+                    selectPicture.rejected.disconnect(mediaPath.unbindMediaImage)
                 }
             }
 
@@ -304,7 +311,7 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: qsTr("Select media")
                 onClicked: {
-                    pageStack.push(selectMedia)
+                    pageStack.push(selectMediaPage)
                 }
             }
 
@@ -411,13 +418,11 @@ Dialog {
     }
 
     Page {
-        id: selectMedia
+        id: selectMediaPage
 
         SilicaFlickable {
             id: mFlick
             anchors.fill: parent
-            property int itemWidth: width / 2
-            property int itemHeight: (height / 2) - (mHeader.height / 2)
 
             PageHeader {
                 id: mHeader
@@ -425,24 +430,26 @@ Dialog {
             }
 
             SquareButton {
+                id: mImage
                 anchors.left: parent.left
                 anchors.top: mHeader.bottom
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
+                width: parent.width
+                height: (parent.height - mHeader.height) / 3
                 icon.source: "image://theme/icon-m-image"
                 onClicked: {
-                    selectPicture.accepted.connect(page.selectMediaImage)
-                    selectPicture.rejected.connect(page.unbindMediaImage)
+                    selectPicture.selected.connect(mediaPath.selectMediaImage)
+                    selectPicture.rejected.connect(mediaPath.unbindMediaImage)
                     selectPicture.setProcessImages()
                     selectPicture.open(true)
                 }
             }
 
             SquareButton {
-                anchors.right: parent.right
-                anchors.top: mHeader.bottom
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
+                id: mVideo
+                anchors.left: parent.left
+                anchors.top: mImage.bottom
+                width: parent.width
+                height: (parent.height - mHeader.height) / 3
                 icon.source: "image://theme/icon-m-video"
                 onClicked: {
                     selectFile.processPath("/home/nemo", qsTr("Select video"))
@@ -454,10 +461,11 @@ Dialog {
             }
 
             SquareButton {
+                id: mAudio
                 anchors.left: parent.left
-                anchors.bottom: parent.bottom
-                width: mFlick.itemWidth
-                height: mFlick.itemHeight
+                anchors.top: mVideo.bottom
+                width: parent.width
+                height: (parent.height - mHeader.height) / 3
                 icon.source: "image://theme/icon-m-music"
                 onClicked: {
                     selectFile.processPath("/home/nemo", qsTr("Select audio"))

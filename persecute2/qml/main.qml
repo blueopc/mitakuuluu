@@ -388,10 +388,6 @@ ApplicationWindow {
         id: groupPage
     }
 
-    MediaDialog {
-        id: selectMedia
-    }
-
     Popup {
         id: banner
     }

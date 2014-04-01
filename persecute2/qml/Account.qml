@@ -295,7 +295,7 @@ Dialog {
             selectPicture.selected.disconnect(avatarView.resizeAvatar)
             resizePicture.picture = path
             resizePicture.jid = roster.myJid
-            resizePicture.open(true, PageStackAction.Animated)
+            resizePicture.open(true, PageStackAction.Immediate)
             resizePicture.selected.connect(avatarView.setNewAvatar)
         }
         function setNewAvatar(path) {

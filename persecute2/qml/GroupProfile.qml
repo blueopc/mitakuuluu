@@ -386,11 +386,11 @@ Page {
             page.backNavigation = true
         }
         function resizeAvatar(path) {
-            selectPicture.accepted.disconnect(changeAvatar.resizeAvatar)
+            selectPicture.selected.disconnect(changeAvatar.resizeAvatar)
             resizePicture.picture = path
             resizePicture.jid = page.jid
             resizePicture.selected.connect(changeAvatar.setNewAvatar)
-            resizePicture.open(true)
+            resizePicture.open(true, PageStackAction.Immediate)
         }
         function setNewAvatar(path) {
             resizePicture.selected.disconnect(changeAvatar.setNewAvatar)
