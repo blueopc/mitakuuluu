@@ -40,7 +40,7 @@ Page {
             }
 
             Label {
-                text: "v0.2-8"
+                text: "v0.2-9"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter

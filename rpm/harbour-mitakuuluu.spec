@@ -9,11 +9,11 @@ Name:       harbour-mitakuuluu
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Mitäkuuluu
 Version:    0.2
-Release:    8
+Release:    9
 Group:      Qt/Qt
 License:    LICENSE
 Source0:    %{name}-%{version}.tar.bz2
-Requires:   sailfishsilica-qt5 libexif nemo-transferengine-qt5
+Requires:   sailfishsilica-qt5 libexif nemo-transferengine-qt5 qtcontacts-sqlite-qt5 >= 0.1.37
 Obsoletes:  mitakuuluukiller mitakuuluu-autostart killme
 Conflicts:  mitakuuluukiller mitakuuluu-autostart killme
 BuildRequires:  pkgconfig(Qt5Core)
@@ -21,6 +21,9 @@ BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Contacts)
 BuildRequires:  pkgconfig(sailfishapp)
+BuildRequires:  pkgconfig(contactcache-qt5) >= 0.0.61
+BuildRequires:  pkgconfig(qtcontacts-sqlite-qt5-extensions) >= 0.1.41
+BuildRequires:  pkgconfig(mlite5)
 BuildRequires:  desktop-file-utils
 BuildRequires:  libexif-devel
 BuildRequires:  mce-headers

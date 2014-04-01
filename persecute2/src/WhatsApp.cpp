@@ -10,6 +10,7 @@
 #include <QTransform>
 #include <QGuiApplication>
 #include <QClipboard>
+#include <seasidecache.h>
 #include "constants.h"
 
 #define AUTOSTART_DIR "/home/nemo/.config/systemd/user/post-user-session.target.wants"
@@ -630,12 +631,13 @@ void WhatsApp::getPhonebook()
             label = labels.first().label();
         if (avatars.length() > 0 && !avatars.first().isEmpty())
             avatar = avatars.first().imageUrl().toString();
-        foreach (QContactPhoneNumber number, results.at(i).details<QContactPhoneNumber>()) {
-            if (!number.isEmpty()) {
+        foreach (const QContactPhoneNumber &detail, results.at(i).details<QContactPhoneNumber>()) {
+            if (!detail.isEmpty()) {
                 QVariantMap contact;
-                QString phone = number.number();
-                phone = phone.replace(QRegExp("/[^0-9+]/g"),"");
-                if (!phones.contains(phone)) {
+                QString phone(detail.value(QContactPhoneNumber::FieldNumber).toString());
+                //phone = phone.replace(QRegExp("/[^0-9+]/g"),"");
+                phone = SeasideCache::normalizePhoneNumber(phone);
+                if (!phone.isEmpty() && !phones.contains(phone)) {
                     phones.append(phone);
                     contact["avatar"] = avatar;
                     contact["nickname"] = label.isEmpty() ? phone : label;
