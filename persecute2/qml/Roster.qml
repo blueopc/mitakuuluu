@@ -210,10 +210,32 @@ Page {
             }
 
             MenuItem {
-                id: goSettings
-                text: qsTr("Settings")
+                id: connectDisconnect
+                text: parseConnectionAction(connectionStatus)
                 onClicked: {
-                    pageStack.push(settingsPage)
+                    if (connectionStatus < 2) {
+                        whatsapp.forceConnection()
+                    }
+                    else if (connectionStatus > 1 && connectionStatus < 5) {
+                        remorseDisconnect.execute(qsTr("Disconnecting"),
+                                                   function() {
+                                                       whatsapp.disconnect()
+                                                   },
+                                                   5000)
+                    }
+                    else if (connectionStatus == 6)
+                        whatsapp.authenticate()
+                    else
+                        pageStack.replace(register)
+                }
+            }
+
+            MenuItem {
+                text: qsTr("Add contacts")
+                enabled: connectionStatus == 4
+                onClicked: {
+                    //whatsapp.syncContactList()
+                    selectPhonebook.open()
                 }
             }
 
@@ -236,32 +258,10 @@ Page {
             }
 
             MenuItem {
-                text: qsTr("Add contacts")
-                enabled: connectionStatus == 4
+                id: goSettings
+                text: qsTr("Settings")
                 onClicked: {
-                    //whatsapp.syncContactList()
-                    selectPhonebook.open()
-                }
-            }
-
-            MenuItem {
-                id: connectDisconnect
-                text: parseConnectionAction(connectionStatus)
-                onClicked: {
-                    if (connectionStatus < 2) {
-                        whatsapp.forceConnection()
-                    }
-                    else if (connectionStatus > 1 && connectionStatus < 5) {
-                        remorseDisconnect.execute(qsTr("Disconnecting"),
-                                                   function() {
-                                                       whatsapp.disconnect()
-                                                   },
-                                                   5000)
-                    }
-                    else if (connectionStatus == 6)
-                        whatsapp.authenticate()
-                    else
-                        pageStack.replace(register)
+                    pageStack.push(settingsPage)
                 }
             }
 
