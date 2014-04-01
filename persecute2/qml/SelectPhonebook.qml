@@ -36,7 +36,7 @@ Dialog {
         target: whatsapp
         onPhonebookReceived: {
             phonebookmodel = contactsmodel
-            //fastScroll.init()
+            fastScroll.init()
         }
     }
 

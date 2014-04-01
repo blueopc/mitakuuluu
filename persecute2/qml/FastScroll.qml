@@ -72,8 +72,8 @@ Item {
         anchors.fill: parent
         anchors.leftMargin: __hasPageWidth ? -__leftPageMargin : 0
         anchors.rightMargin: __hasPageWidth ? -__rightPageMargin : 0
-        anchors.topMargin: __hasPageWidth ? -__topPageMargin : 0
-        anchors.bottomMargin: __hasPageWidth ? -__bottomPageMargin : 0
+        anchors.topMargin: __hasPageHeight ? -__topPageMargin : 0
+        anchors.bottomMargin: __hasPageHeight ? -__bottomPageMargin : 0
 
         MouseArea {
             id: dragArea
