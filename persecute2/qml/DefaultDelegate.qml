@@ -14,7 +14,6 @@ ListItem {
     property bool showPreview: false
     property Item playerObject: null
     property Item previewObject: null
-    property Item progressObject: null
 
     property variant urlmenu: componentUrlMenu
     property Item _urlmenuItem: null
@@ -81,9 +80,6 @@ ListItem {
         if (previewObject != null) {
             previewObject.parent = null
         }
-        if (progressObject != null) {
-            progressObject.parent = null
-        }
     }
 
     onPressed: {
@@ -106,7 +102,6 @@ ListItem {
         else if (!showPreview) {
             if (model.msgtype == 3 && model.mediatype > 0 && model.mediatype < 4) {
                 if (model.localurl.length == 0) {
-                    progressObject = progressComponent.createObject(progressPlaceholder)
                     whatsapp.downloadMedia(model.msgid, page.jid)
                     banner.notify(qsTr("Media download started..."))
                 }
@@ -132,7 +127,6 @@ ListItem {
                         Qt.openUrlExternally(model.localurl)
                     }
                     else {
-                        progressObject = progressComponent.createObject(progressPlaceholder)
                         whatsapp.downloadMedia(model.msgid, page.jid)
                     }
                 }
@@ -193,9 +187,19 @@ ListItem {
         }
     }
 
-    Item {
-        id: progressPlaceholder
-        anchors.fill: msgcolumn
+    Image {
+        id: progressIndicator
+        anchors {
+            top: msgcolumn.top
+            left:msgcolumn.left
+            bottom: msgcolumn.bottom
+        }
+        fillMode: Image.Tile
+        horizontalAlignment: Image.AlignLeft
+        verticalAlignment: Image.AlignTop
+        width: parent.width / 100 * model.mediaprogress
+        visible: model.mediaprogress > 0 && model.mediaprogress < 100
+        source: "/usr/share/harbour-mitakuuluu/images/progress-pattern-black.png"
     }
 
     Text {
@@ -224,24 +228,6 @@ ListItem {
                 smooth: true
                 rotation: (model.localurl.length > 0) ? whatsapp.getExifRotation(model.localurl) : 0
             }
-        }
-    }
-
-    Component {
-        id: progressComponent
-        Image {
-            id: progressIndicator
-            anchors {
-                top: parent.top
-                left:parent.left
-                bottom: parent.bottom
-            }
-            fillMode: Image.Tile
-            horizontalAlignment: Image.AlignLeft
-            verticalAlignment: Image.AlignTop
-            width: parent.width / 100 * model.mediaprogress
-            visible: model.mediaprogress > 0 && model.mediaprogress < 100
-            source: "/usr/share/harbour-mitakuuluu/images/progress-pattern-black.png"
         }
     }
 
