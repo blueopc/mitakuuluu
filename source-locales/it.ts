@@ -28,7 +28,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="88"/>
         <source>Renew subscription</source>
-        <translation>Rinnova account</translation>
+        <translation>Rinnova abbonamento</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="96"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="278"/>
         <source>press to locate</source>
-        <translation>premi per posizione</translation>
+        <translation>premi per rilevare posizione</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="305"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../persecute2/qml/BubbleDelegate.qml" line="328"/>
         <source>Remove message</source>
-        <translation>Rimuovi messaggio</translation>
+        <translation>Elimina messaggio</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/BubbleDelegate.qml" line="369"/>
@@ -484,7 +484,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="426"/>
         <source>Last seen: %1</source>
-        <translation>ultimo accesso %1</translation>
+        <translation>Ultimo accesso: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="532"/>
@@ -761,7 +761,7 @@
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="120"/>
         <source>Voice note</source>
-        <translation>Nota vocale</translation>
+        <translation>Messaggio vocale</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="152"/>
@@ -866,12 +866,12 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="100"/>
         <source>Too frequent attempts to request the code.</source>
-        <translation>Troppi tentativi di richiesta del codice.</translation>
+        <translation>Richieste del codice troppo frequenti.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="102"/>
         <source>Too many wrong code guesses.</source>
-        <translation>Inserito un codice errato troppe volte.</translation>
+        <translation>Inserito troppe volte un codice errato.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="104"/>
@@ -881,7 +881,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="106"/>
         <source>Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus</source>
-        <translation>Versione del protocollo obsoleta. Contattami a coderusinbox@gmail.com o via twitter @icoderus</translation>
+        <translation>Versione del protocollo obsoleta. Contattami a coderusinbox@gmail.com o via twitter: @icoderus</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="108"/>
@@ -932,7 +932,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
         <source>You can retry requesting code after %1</source>
-        <translation>Puoi riprovare a chiedere il codice tra %1</translation>
+        <translation>Potrai riprovare a chiedere il codice tra %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="145"/>
@@ -1474,7 +1474,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="301"/>
         <source>Allow saving application logs</source>
-        <translation>Salva log dell&apos;app</translation>
+        <translation>Consenti salvataggio log</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="307"/>
@@ -1499,7 +1499,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation>Mostra notifica di nuovo messaggio</translation>
+        <translation>Mostra notifiche per i nuovi messaggi</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1509,7 +1509,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="359"/>
         <source>Create server connection in separate thread (experimental) (*)</source>
-        <translation>Crea connessione del server in un processo separato (sperimentale) (*)</translation>
+        <translation>Crea connessione al server in un processo separato (sperimentale) (*)</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="369"/>
@@ -1519,7 +1519,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="372"/>
         <source>Display online when app is open</source>
-        <translation>Disponibile se l&apos;app è aperta</translation>
+        <translation>Disponibile quando l&apos;app è aperta</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
@@ -1579,7 +1579,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation>Scatta immagine</translation>
+        <translation>Scatta fotografia</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
@@ -1589,7 +1589,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation>Invia nota vocale</translation>
+        <translation>Invia messaggio vocale</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>
@@ -1736,8 +1736,8 @@
         <location filename="../persecute2/qml/main.qml" line="428"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
-        <translation>Il tuo account WhatsApp è scaduto.
-Seleziona &apos;Rinnova&apos; per acquistare un anno di servizio.</translation>
+        <translation>Il tuo abbonamento a WhatsApp è scaduto.
+Tocca &apos;Rinnova&apos; per acquistare un anno di servizio.</translation>
     </message>
 </context>
 </TS>

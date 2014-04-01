@@ -882,7 +882,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="106"/>
         <source>Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus</source>
-        <translation>Protocolversie verlopen, sorry. Neem a.j.b. contact met me op via: coderusinbox@gmail.com of via twitter: @icoderus</translation>
+        <translation>Protocolversie verlopen, sorry. Neem contact met me op via: coderusinbox@gmail.com of via twitter: @icoderus</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="108"/>
@@ -903,7 +903,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>No cell routes for %1 caused by your operator. Please try other method [sms/voice]</source>
-        <translation>Geen &apos;çell route&apos; geregeld door operator voor %1. Probeer a.j.b. een andere methode [sms/voice]</translation>
+        <translation>Geen &apos;cell route&apos; geregeld door operator voor %1. Probeer een andere methode [sms/voice]</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
@@ -923,7 +923,7 @@
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="130"/>
         <source>%n hours</source>
-        <translation><numerusform>%n uur</numerusform><numerusform>%n uren</numerusform></translation>
+        <translation><numerusform>%n uur</numerusform><numerusform>%n uur</numerusform></translation>
     </message>
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="133"/>
@@ -933,7 +933,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
         <source>You can retry requesting code after %1</source>
-        <translation>Je kan opnieuw code aanvragen over %1</translation>
+        <translation>Je kunt opnieuw een code aanvragen over %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="145"/>
@@ -1500,7 +1500,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation>Toon nieuwe berichten notificaties</translation>
+        <translation>Toon nieuw bericht meldingen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>

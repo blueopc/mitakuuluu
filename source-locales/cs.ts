@@ -124,7 +124,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="201"/>
         <source>Enter your message here...</source>
-        <translation>Zde vložte vaši zprávu...</translation>
+        <translation>Zde napište vaši zprávu...</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="278"/>
@@ -173,7 +173,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="367"/>
         <source>Select &amp;quot;Add contact&amp;quot; menu item to select contacts</source>
-        <translation>Vybrat &amp;quot;Přidat kontakt&amp;quot; položku menu pro vybrání kontaktů</translation>
+        <translation>Zvolte v menu položku &amp;quot;Přidat kontakt&amp;quot; výběr kontaktů</translation>
     </message>
 </context>
 <context>
@@ -1485,7 +1485,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="314"/>
         <source>Show yourself in contact list, if present</source>
-        <translation>Ukázat se v seznamu kontaktů, pokud je k dispozici</translation>
+        <translation>Ukázat mě v seznamu kontaktů, pokud jsem přítomen</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="320"/>
@@ -1515,7 +1515,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="369"/>
         <source>Display presence</source>
-        <translation>Zobrazit přítomnost</translation>
+        <translation>Zobrazit stav</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="372"/>
@@ -1525,17 +1525,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Náhled</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Akce levé strany</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Akce pravé strany </translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1560,7 +1560,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="364"/>
         <source>Presence</source>
-        <translation>Přítomnost</translation>
+        <translation>Stav</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>

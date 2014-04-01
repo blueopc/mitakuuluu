@@ -28,7 +28,7 @@
     <message>
         <location filename="../persecute2/qml/Account.qml" line="88"/>
         <source>Renew subscription</source>
-        <translation type="unfinished"/>
+        <translation>Renoveu la subscripció</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Account.qml" line="96"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="278"/>
         <source>press to locate</source>
-        <translation type="unfinished"/>
+        <translation>premeu per localitzar</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="305"/>
@@ -139,12 +139,12 @@
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="315"/>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Enregistra</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="325"/>
         <source>Contacts</source>
-        <translation type="unfinished"/>
+        <translation>Contactes</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Broadcast.qml" line="353"/>
@@ -241,37 +241,37 @@
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="515"/>
         <source>Image</source>
-        <translation type="unfinished"/>
+        <translation>Imatge</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="516"/>
         <source>Audio</source>
-        <translation type="unfinished"/>
+        <translation>Àudio</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="517"/>
         <source>Video</source>
-        <translation type="unfinished"/>
+        <translation>Vídeo</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="518"/>
         <source>Contact</source>
-        <translation type="unfinished"/>
+        <translation>Contacte</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="519"/>
         <source>Location</source>
-        <translation type="unfinished"/>
+        <translation>Ubicació</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="520"/>
         <source>Voice</source>
-        <translation type="unfinished"/>
+        <translation>Trucada</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="521"/>
         <source>System</source>
-        <translation type="unfinished"/>
+        <translation>Sistema</translation>
     </message>
     <message>
         <location filename="../whatsapp-server/src/client.cpp" line="1748"/>
@@ -291,7 +291,7 @@
     <message numerus="yes">
         <location filename="../whatsapp-server/src/client.cpp" line="2890"/>
         <source>%n messages unread</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n missatge sense llegir</numerusform><numerusform>%n missatges sense llegir</numerusform></translation>
     </message>
     <message>
         <source>%1 unread messages</source>
@@ -484,7 +484,7 @@
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="426"/>
         <source>Last seen: %1</source>
-        <translation type="unfinished"/>
+        <translation>Vist per última vegada: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Conversation.qml" line="532"/>
@@ -761,39 +761,39 @@
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="120"/>
         <source>Voice note</source>
-        <translation type="unfinished"/>
+        <translation>Missatge de veu</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="152"/>
         <source>Recorder</source>
-        <translation type="unfinished"/>
+        <translation>Gravadora</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="160"/>
         <location filename="../persecute2/qml/Recorder.qml" line="194"/>
         <source>Pause</source>
-        <translation type="unfinished"/>
+        <translation>Pausa</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="160"/>
         <source>Record</source>
-        <translation type="unfinished"/>
+        <translation>Enregistra</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="176"/>
         <location filename="../persecute2/qml/Recorder.qml" line="212"/>
         <source>Stop</source>
-        <translation type="unfinished"/>
+        <translation>Atura</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="186"/>
         <source>Playback</source>
-        <translation type="unfinished"/>
+        <translation>Reproducció</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Recorder.qml" line="194"/>
         <source>Play</source>
-        <translation type="unfinished"/>
+        <translation>Reprodueix</translation>
     </message>
 </context>
 <context>
@@ -864,78 +864,78 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="89"/>
         <source>Code successfully requested.</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha sol·licitat el codi correctament</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="100"/>
         <source>Too frequent attempts to request the code.</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha excedit la freqüència d&apos;intents de sol·licitud de codi</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="102"/>
         <source>Too many wrong code guesses.</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha excedit el número d&apos;intents d&apos;introducció del codi</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="104"/>
         <source>Too many attempts. Try again tomorrow.</source>
-        <translation type="unfinished"/>
+        <translation>S&apos;ha excedit el número d&apos;intents. Proveu-ho un altre cop demà.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="106"/>
         <source>Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus</source>
-        <translation type="unfinished"/>
+        <translation>La versió del protocol és obsoleta. Podeu contactar el desenvolupador a coderusinbox@gmail.com o via twitter: @icoderus</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="108"/>
         <location filename="../persecute2/qml/Register.qml" line="111"/>
         <source>Registration code expired. You need to request a new one.</source>
-        <translation type="unfinished"/>
+        <translation>El codi de registre ha expirat. Cal sol·licitar-ne un de nou.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="113"/>
         <source>Missing request param: %1</source>
-        <translation type="unfinished"/>
+        <translation>Manca el paràmetre de sol·licitud: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="116"/>
         <source>Bad parameters passed to code request: %1</source>
-        <translation type="unfinished"/>
+        <translation>Hi ha paràmetres incorrectes a sol·licitud de codi: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>No cell routes for %1 caused by your operator. Please try other method [sms/voice]</source>
-        <translation type="unfinished"/>
+        <translation>No hi ha rutes de cel·la per %1 causat pel vostre operador. Proveu un altre mètode [sms/veu]</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>making call</source>
-        <translation type="unfinished"/>
+        <translation>s&apos;està trucant</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>sending sms</source>
-        <translation type="unfinished"/>
+        <translation>s&apos;està enviant un sms</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="122"/>
         <source>Reason: %1</source>
-        <translation type="unfinished"/>
+        <translation>Causa: %1</translation>
     </message>
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="130"/>
         <source>%n hours</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n hora</numerusform><numerusform>%n hores</numerusform></translation>
     </message>
     <message numerus="yes">
         <location filename="../persecute2/qml/Register.qml" line="133"/>
         <source>%n minutes</source>
-        <translation type="unfinished"><numerusform></numerusform><numerusform></numerusform></translation>
+        <translation><numerusform>%n minut</numerusform><numerusform>%n minuts</numerusform></translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="135"/>
         <source>You can retry requesting code after %1</source>
-        <translation type="unfinished"/>
+        <translation>Podeu reintentar la sol·licitud de codi després de %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="145"/>
@@ -1340,12 +1340,12 @@
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Send contact</source>
-        <translation type="unfinished"/>
+        <translation>Envia el contacte</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/SendContactCard.qml" line="34"/>
         <source>Select contact</source>
-        <translation type="unfinished"/>
+        <translation>Seleccioneu contacte</translation>
     </message>
 </context>
 <context>
@@ -1477,7 +1477,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="301"/>
         <source>Allow saving application logs</source>
-        <translation type="unfinished"/>
+        <translation>Permet desar el registre del programa</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="307"/>
@@ -1502,7 +1502,7 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="339"/>
         <source>Show new messages notifications</source>
-        <translation type="unfinished"/>
+        <translation>Mostra els missatges nous a les notificacions</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="353"/>
@@ -1527,17 +1527,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Portada</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Acció de portada esquerra</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Acció de portada dreta</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
@@ -1567,32 +1567,32 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="22"/>
         <source>Quit</source>
-        <translation type="unfinished"/>
+        <translation>Surt</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="23"/>
         <source>Change presence</source>
-        <translation type="unfinished"/>
+        <translation>Canvia l&apos;estat de presència</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="24"/>
         <source>Mute/unmute</source>
-        <translation type="unfinished"/>
+        <translation>Silencia/de-silencia</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="25"/>
         <source>Take picture</source>
-        <translation type="unfinished"/>
+        <translation>Fés una foto</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="26"/>
         <source>Send location</source>
-        <translation type="unfinished"/>
+        <translation>Envia la ubicació</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="27"/>
         <source>Send voice note</source>
-        <translation type="unfinished"/>
+        <translation>Envia un missatge de veu</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="379"/>
@@ -1733,13 +1733,14 @@
     <message>
         <location filename="../persecute2/qml/main.qml" line="422"/>
         <source>Renew</source>
-        <translation type="unfinished"/>
+        <translation>Renova</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/main.qml" line="428"/>
         <source>Your WhatsApp subscription expired.
 Click Renew to purchase one year of WhatsApp service.</source>
-        <translation type="unfinished"/>
+        <translation>La vostra subscripció a WhatsApp ha expirat.
+Cliqueu &quot;Renova&quot; per adquirir un any de servei de WhatsApp.</translation>
     </message>
 </context>
 </TS>

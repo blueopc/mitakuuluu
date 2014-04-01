@@ -867,7 +867,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="100"/>
         <source>Too frequent attempts to request the code.</source>
-        <translation type="unfinished"/>
+        <translation>Té gereelde podings om kode aan te vra.</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="102"/>
@@ -882,7 +882,7 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="106"/>
         <source>Protocol version outdated, sorry. Please contact me at coderusinbox@gmail.com or via twitter: @icoderus</source>
-        <translation type="unfinished"/>
+        <translation>Jammer, verouderde protokol uitgawe. Kontak my asseblief by coderusinbox@gmail.com of via twitter: @icoderus</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="108"/>
@@ -898,12 +898,12 @@
     <message>
         <location filename="../persecute2/qml/Register.qml" line="116"/>
         <source>Bad parameters passed to code request: %1</source>
-        <translation type="unfinished"/>
+        <translation>Verkeerde parameters deur gegee aan kode aanvraag: %1</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
         <source>No cell routes for %1 caused by your operator. Please try other method [sms/voice]</source>
-        <translation type="unfinished"/>
+        <translation>Geen sel routes vir %1 veroorsaak deur jou selfoon maatskappy. Probeer asseblief &apos;n ander metode [sms/voice]</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Register.qml" line="119"/>
@@ -1525,17 +1525,17 @@
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="399"/>
         <source>Cover</source>
-        <translation type="unfinished"/>
+        <translation>Omslag</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="404"/>
         <source>Left cover action</source>
-        <translation type="unfinished"/>
+        <translation>Links omslag aksie</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="421"/>
         <source>Right cover action</source>
-        <translation type="unfinished"/>
+        <translation>Regs omslag aksie</translation>
     </message>
     <message>
         <location filename="../persecute2/qml/Settings.qml" line="532"/>
