@@ -174,7 +174,7 @@ Page {
             case 2: return (fromMe ? qsTr("Outgoing audio ") : qsTr("Incoming audio ")) + /*model.medianame + " " +*/ (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
             case 3: return (fromMe ? qsTr("Outgoing video ") : qsTr("Incoming video ")) + /*model.medianame + " " +*/ (model.mediaduration > 0 ? (intToTime(model.mediaduration) + " ") : "") + bytesToSize(parseInt(model.mediasize)) + (model.localurl.length > 0 && !fromMe ? " 100%" : (model.mediaprogress > 0 ? (" " + model.mediaprogress + "%") : ""))
             case 4: return (fromMe ? qsTr("Outgoing contact ") : qsTr("Incoming contact ")) + model.medianame
-            case 5: return (fromMe ? qsTr("Outgoing location ") : qsTr("Incoming location ")) + model.medianame + " " + qsTr("LAT: %1").arg(model.medialat) + qsTr(" LON: %1").arg(model.medialon)
+            case 5: return (fromMe ? qsTr("Outgoing location ") : qsTr("Incoming location ")) + model.medianame + " " + qsTr("latitude: %1").arg(model.medialat) + " " + qsTr("longitude: %1").arg(model.medialon)
             default: return direction + "unknown media"
             }
         }
