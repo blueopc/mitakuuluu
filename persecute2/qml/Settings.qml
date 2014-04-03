@@ -143,11 +143,8 @@ Page {
                         else if (currentIndex == 1) {
                             conversationTheme = "/usr/share/harbour-mitakuuluu/qml/BubbleDelegate.qml"
                         }
-                        else if (currentIndex == 2) {
-                            conversationTheme = "/usr/share/harbour-mitakuuluu/qml/ModernDelegate.qml"
-                        }
                         else {
-                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex - 3]
+                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex - 2]
                         }
                         conversationIndex = parseInt(currentIndex)
                     }

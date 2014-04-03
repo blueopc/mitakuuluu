@@ -1,13 +1,14 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
+import "Utilities.js" as Utilities
 
 Item {
     id: item
     width: parent.width
     height: content.height + Theme.paddingLarge + (menuOpen ? (_menuItem.height + Theme.paddingMedium) : 0) + (urlmenuOpen ? (_urlmenuItem.height + Theme.paddingMedium) : 0)
     ListView.onRemove: animateRemoval(item)
-    property bool __silica_item_removed
+    property bool __silica_item_removed: false
     Binding on opacity {
         when: __silica_item_removed
         value: 0.0
@@ -33,6 +34,13 @@ Item {
         if (model.msgtype == 3) {
             if (model.mediatype == 1) {
                 imageLoader.active = true
+                if (model.medianame.indexOf("geometry:") == 0) {
+                    var geometry = model.medianame.split(":")
+                    var width = geometry[1]
+                    var height = geometry[2]
+                    imageLoader.width = Math.min(parseInt(width), maxWidth)
+                    imageLoader.height = parseInt(height) / (parseInt(width) / imageLoader.width)
+                }
             }
             else if (model.mediatype == 2) {
                 playerLoader.active = true
@@ -158,13 +166,6 @@ Item {
         }
     }
 
-    function changeMessageWidth() {
-        message.width = undefined
-        if (message.paintedWidth > maxWidth) {
-            message.width = maxWidth
-        }
-    }
-
     function downloadMedia() {
         banner.notify(qsTr("Media download started..."))
         whatsapp.downloadMedia(model.msgid, page.jid)
@@ -187,6 +188,13 @@ Item {
             else if (model.mediatype == 5) {
                 Qt.openUrlExternally("geo:" + model.medialat + "," + model.medialon)
             }
+        }
+    }
+
+    function changeMessageWidth() {
+        message.width = undefined
+        if (message.paintedWidth > maxWidth) {
+            message.width = maxWidth
         }
     }
 
@@ -284,6 +292,7 @@ Item {
         Loader {
             id: playerLoader
             active: false
+            asynchronous: true
             sourceComponent: playerComponent
         }
         Loader {
@@ -304,7 +313,7 @@ Item {
         Label {
             id: message
             visible: model.msgtype == 2
-            text: visible ? getModernText(model) : ""
+            text: visible ? Utilities.linkify(Utilities.emojify(model.message, emojiPath), Theme.highlightColor) : ""
             textFormat: Text.RichText
             wrapMode: Text.WrapAtWordBoundaryOrAnywhere
             font.pixelSize: fontSize
@@ -375,10 +384,9 @@ Item {
 
             Image {
                 id: prev
-                anchors {
-                    left: parent.left
-                    top: parent.top
-                }
+                anchors.centerIn: parent
+                horizontalAlignment: Image.AlignHCenter
+                verticalAlignment: Image.AlignVCenter
                 fillMode: Image.PreserveAspectFit
                 source: getMediaPreview(model)
                 sourceSize.width: maxWidth
@@ -521,11 +529,11 @@ Item {
             id: playerItem
             width: maxWidth
             height: visible ? Theme.itemSizeMedium : 0
-            property string source: model.localurl
-            onSourceChanged: player.source = whatsapp.checkIfExists(source)
-            Component.onCompleted: player.source = whatsapp.checkIfExists(source)
+            property string source: whatsapp.checkIfExists(model.localurl)
+            //onSourceChanged: player.source = whatsapp.checkIfExists(source)
+            //Component.onCompleted: player.source = whatsapp.checkIfExists(source)
 
-            Audio {
+            MediaPlayer {
                 id: player
                 onDurationChanged: {
                     playerSeek.maximumValue = duration
@@ -548,12 +556,14 @@ Item {
                 onClicked: {
                     if (source.length > 0)
                     {
+                        if (player.source !== source)
+                            player.source = source
                         if (player.playbackState == Audio.PlayingState)
                             player.pause()
                         else
                             player.play()
                     }
-                    else {
+                    else if (model.author !== roster.myJid) {
                         if (model.mediaprogress > 0 && model.mediaprogress < 100)
                             cancelMedia()
                         else
@@ -634,8 +644,6 @@ Item {
         id: componentUrlMenu
         ContextMenu {
             id: urlMenu
-            //anchors.bottom: item.bottom
-            //width: item.width
             property alias model: urlMenuRepeater.model
             Repeater {
                 id: urlMenuRepeater
