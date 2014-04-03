@@ -35,7 +35,7 @@ Item {
 
     Component.onCompleted: {
         if (model.author === roster.myJid) {
-            bubble.anchors.right = bubble.left;
+            bubble.anchors.right = item.left;
             bubble.anchors.leftMargin = Theme.paddingMedium;
             msginfo.anchors.left = item.left;
             msginfo.anchors.leftMargin = Theme.paddingLarge;
