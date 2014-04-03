@@ -31,7 +31,7 @@ Dialog {
             fastScroll.init()
         }
         else if (status == DialogStatus.Closed) {
-            searchField.text = ""
+            listView.header.text = ""
         }
     }
 
@@ -40,16 +40,15 @@ Dialog {
         title: selectedIndex > -1 ? qsTr("Send contact") : qsTr("Select contact")
     }
 
-    SearchField {
-        id: searchField
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: header.bottom
-        }
-        onTextChanged: {
-            if (page.status == DialogStatus.Opened) {
-                allContactsModel.search(text)
+    Component {
+        id: searchComponent
+        SearchField {
+            width: parent.width
+            placeholderText: qsTr("Search contacts")
+            onTextChanged: {
+                if (page.status == DialogStatus.Opened) {
+                    allContactsModel.search(text)
+                }
             }
         }
     }
@@ -57,7 +56,7 @@ Dialog {
     SilicaListView {
         id: listView
         anchors {
-            top: searchField.bottom
+            top: header.bottom
             left: page.left
             right: page.right
             bottom: page.bottom
@@ -69,6 +68,8 @@ Dialog {
             delegate: sectionDelegate
             criteria: ViewSection.FirstCharacter
         }
+        currentIndex: -1
+        header: searchComponent
 
         onCountChanged: {
             fastScroll.init()
