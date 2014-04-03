@@ -17,12 +17,12 @@ Dialog {
     onAccepted: {
         console.log("accepting: " + recorder.path)
         if (broadcastMode) {
-            pageStack.pop(roster, PageStackAction.Immediate)
-            //roster.sendAudioNote(recorder.path)
+            //pageStack.pop(roster, PageStackAction.Immediate)
+            roster.sendAudioNote(recorder.path)
         }
         else {
-            pageStack.pop(conversation, PageStackAction.Immediate)
-            //conversation.sendAudioNote(recorder.path)
+            //pageStack.pop(conversation, PageStackAction.Immediate)
+            conversation.sendAudioNote(recorder.path)
         }
         destroyComponents()
     }
