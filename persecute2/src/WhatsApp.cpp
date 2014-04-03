@@ -529,6 +529,8 @@ void WhatsApp::sendVCard(const QStringList &jids, const QString &name, const QSt
 
 QString WhatsApp::rotateImage(const QString &path, int rotation)
 {
+    if (rotation == 0)
+        return path;
     QString fname = path;
     fname = fname.replace("file://", "");
     if (QFile(fname).exists()) {
@@ -781,4 +783,11 @@ void WhatsApp::renewAccount()
     if (iface) {
         iface->call(QDBus::NoBlock, "renewAccount");
     }
+}
+
+QString WhatsApp::checkIfExists(const QString &path)
+{
+    if (QFile(path).exists())
+        return path;
+    return QString();
 }
