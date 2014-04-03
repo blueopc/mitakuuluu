@@ -1,6 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import org.coderus.mitakuuluu 1.0
+import org.nemomobile.contacts 1.0
 
 Dialog {
     id: page
@@ -12,8 +12,6 @@ Dialog {
 
     signal finished
 
-    property variant phonebookmodel
-
     onStatusChanged: {
         if (status == DialogStatus.Closed) {
             page.finished()
@@ -22,7 +20,10 @@ Dialog {
             avatars = []
         }
         else if (status == DialogStatus.Opening) {
-            whatsapp.getPhonebook()
+            allContactsModel.search("")
+        }
+        else if (status == DialogStatus.Opened) {
+            fastScroll.init()
         }
     }
 
@@ -32,19 +33,10 @@ Dialog {
         whatsapp.syncContacts(numbers, names, avatars)
     }
 
-    Connections {
-        target: whatsapp
-        onPhonebookReceived: {
-            phonebookmodel = contactsmodel
-            fastScroll.init()
-        }
-    }
-
     SilicaFlickable {
         id: flick
         anchors.fill: parent
         clip: true
-        interactive: !listView.flicking
         pressDelay: 0
 
         PullDownMenu {
@@ -97,29 +89,31 @@ Dialog {
 
         SilicaListView {
             id: listView
-            anchors.top: header.bottom
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-            anchors.right: parent.right
-            model: phonebookmodel
+            anchors {
+                top: header.bottom
+                bottom: parent.bottom
+                left: parent.left
+                right: parent.right
+            }
+            currentIndex: -1
+            header: searchComponent
+            model: allContactsModel
             delegate: contactsDelegate
             clip: true
             cacheBuffer: page.height * 2
             pressDelay: 0
-            interactive: true
-            boundsBehavior: Flickable.StopAtBounds
-            section.property: "nickname"
-            section.criteria: ViewSection.FirstCharacter
+            section {
+                property: "displayLabel"
+                criteria: ViewSection.FirstCharacter
+                delegate: sectionDelegate
+            }
 
             FastScroll {
                 id: fastScroll
+                __hasPageHeight: false
                 listView: listView
             }
         }
-
-        /*VerticalScrollDecorator {
-            flickable: listView
-        }*/
 
         BusyIndicator {
             anchors.centerIn: listView
@@ -130,74 +124,112 @@ Dialog {
     }
 
     Component {
+        id: searchComponent
+        SearchField {
+            width: parent.width
+            placeholderText: qsTr("Search contacts")
+            onTextChanged: {
+                if (page.status == DialogStatus.Opened) {
+                    allContactsModel.search(text)
+                }
+            }
+        }
+    }
+
+    Component {
+        id: sectionDelegate
+        SectionHeader {
+            text: section
+        }
+    }
+
+    Component {
         id: contactsDelegate
 
-        BackgroundItem {
-            id: item
+        Column {
             width: parent.width
-            height: Theme.itemSizeMedium
-            visible: height > 0
-            highlighted: down || checked
-            property bool checked: page.numbers.indexOf(modelData.number) != -1
+            Repeater {
+                id: internal
+                width: parent.width
+                model: person.phoneDetails.length
+                delegate: BackgroundItem {
+                    id: innerItem
+                    width: parent.width
+                    height: Theme.itemSizeMedium
+                    highlighted: down || checked
+                    property bool checked: page.numbers.indexOf(number) != -1
+                    property string number: person.phoneDetails[index].normalizedNumber
 
-            AvatarHolder {
-                id: ava
-                width: Theme.iconSizeLarge
-                height: Theme.iconSizeLarge
-                source: modelData.avatar
-                anchors.left: parent.left
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.verticalCenter: parent.verticalCenter
-            }
+                    onClicked: {
+                        var vnumbers = page.numbers
+                        var vnames = page.names
+                        var vavatars = page.avatars
+                        var exists = vnumbers.indexOf(number)
+                        if (exists != -1) {
+                            vnumbers.splice(exists, 1)
+                            vnames.splice(exists, 1)
+                            vavatars.splice(exists, 1)
+                        }
+                        else {
+                            vnumbers.splice(0, 0, number)
+                            vnames.splice(0, 0, displayLabel)
+                            vavatars.splice(0, 0, person.avatarPath)
+                        }
+                        page.numbers = vnumbers
+                        page.names = vnames
+                        page.avatars = vavatars
+                    }
 
-            Label {
-                id: nickname
-                font.pixelSize: Theme.fontSizeMedium
-                text: modelData.nickname
-                anchors.left: ava.right
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.top: parent.top
-                anchors.topMargin: Theme.paddingSmall
-                anchors.right: parent.right
-                anchors.rightMargin: Theme.paddingMedium
-                wrapMode: Text.NoWrap
-                color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
-                truncationMode: TruncationMode.Fade
-            }
+                    Rectangle {
+                        id: avaplaceholder
+                        anchors {
+                            left: parent.left
+                            leftMargin: Theme.paddingLarge
+                            verticalCenter: parent.verticalCenter
+                        }
 
-            Label {
-                id: status
-                font.pixelSize: Theme.fontSizeSmall
-                text: modelData.number
-                anchors.left: ava.right
-                anchors.leftMargin: Theme.paddingLarge
-                anchors.bottom: parent.bottom
-                anchors.bottomMargin: Theme.paddingSmall
-                anchors.right: parent.right
-                anchors.rightMargin: Theme.paddingMedium
-                wrapMode: Text.NoWrap
-                elide: Text.ElideRight
-                color: item.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
-            }
+                        width: ava.width
+                        height: ava.height
+                        color: ava.status == Image.Ready ? "transparent" : "#40FFFFFF"
 
-            onClicked: {
-                var vnumbers = page.numbers
-                var vnames = page.names
-                var vavatars = page.avatars
-                var exists = vnumbers.indexOf(modelData.number)
-                if (exists != -1) {
-                    vnumbers.splice(exists, 1)
-                    vnames.splice(exists, 1)
-                    vavatars.splice(exists, 1)
+                        Image {
+                            id: ava
+                            width: Theme.itemSizeMedium
+                            height: width
+                            source: person.avatarPath
+                            cache: true
+                            asynchronous: true
+                        }
+                    }
+
+                    Column {
+                        id: content
+                        anchors {
+                            left: avaplaceholder.right
+                            right: parent.right
+                            margins: Theme.paddingLarge
+                            verticalCenter: parent.verticalCenter
+                        }
+                        spacing: Theme.paddingMedium
+
+                        Label {
+                            width: parent.width
+                            wrapMode: Text.NoWrap
+                            elide: Text.ElideRight
+                            text: displayLabel
+                            color: innerItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                        }
+
+                        Label {
+                            width: parent.width
+                            wrapMode: Text.NoWrap
+                            elide: Text.ElideRight
+                            font.pixelSize: Theme.fontSizeSmall
+                            text: number
+                            color: innerItem.highlighted ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                        }
+                    }
                 }
-                else {
-                    vnumbers.splice(0, 0, modelData.number)
-                    vnames.splice(0, 0, modelData.nickname)
-                    vavatars.splice(0, 0, modelData.avatar)
-                }
-                page.numbers = vnumbers
-                page.names = vnames
-                page.avatars = vavatars
             }
         }
     }
