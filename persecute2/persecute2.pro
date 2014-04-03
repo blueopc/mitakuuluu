@@ -53,4 +53,5 @@ OTHER_FILES += $$files(rpm/*) \
     harbour-mitakuuluu.desktop \
     harbour-mitakuuluu.png \
     qml/Recorder.qml \
-    qml/SendContactCard.qml
+    qml/SendContactCard.qml \
+    qml/ModernDelegate.qml
