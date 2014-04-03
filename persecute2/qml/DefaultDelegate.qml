@@ -145,7 +145,7 @@ ListItem {
 
     Rectangle {
         width: (model.msgstatus == 5) ? 10 : 5
-        color: Theme.rgba(msgStatusColor(model), 0.2)
+        color: msgStatusColor(model)
         anchors {
             top: parent.top
             bottom: parent.bottom
@@ -332,7 +332,7 @@ ListItem {
                 text: (model.mediaprogress > 0 && model.mediaprogress < 100) ? qsTr("Cancel download") : qsTr("Delete")
                 onClicked: {
                     if (model.mediaprogress > 0 && model.mediaprogress < 100)
-                        whatsapp.cancelDownload(dmsgid, page.jid)
+                        whatsapp.cancelDownload(model.msgid, page.jid)
                     else
                         remove()
                 }
