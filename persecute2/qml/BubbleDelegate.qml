@@ -34,7 +34,7 @@ Item {
 
     Component.onCompleted: {
         if (model.author === roster.myJid) {
-            bubble.anchors.right = item.left;
+            bubble.anchors.left = item.left;
             bubble.anchors.leftMargin = Theme.paddingMedium;
             msginfo.anchors.left = item.left;
             msginfo.anchors.leftMargin = Theme.paddingLarge;
@@ -44,7 +44,6 @@ Item {
             timeStatusRow.anchors.leftMargin = Theme.paddingLarge;
             msginfo.horizontalAlignment = Text.AlignLeft;
             msg.horizontalAlignment = Text.AlignLeft;
-            //bubble.color = Theme.rgba("#ADD8E6", 0.4);
             playerPlaceholder.anchors.right = item.right
             playerPlaceholder.anchors.leftMargin = Theme.paddingSmall
             setTickView();
@@ -78,7 +77,6 @@ Item {
             playerPlaceholder.anchors.right = bubble.left
             playerPlaceholder.anchors.leftMargin = Theme.paddingSmall
         }
-        bubble.color = Theme.rgba(getContactColor(model.author), Theme.highlightBackgroundOpacity);
 
         if (model.msgtype == 3) {
             if (model.mediatype == 1 || model.mediatype == 3 || model.mediatype == 5) {
@@ -141,6 +139,7 @@ Item {
         }
         width: Math.max(getWidthBubble(), Theme.itemSizeLarge * 2)
         radius: 8
+        color: Theme.rgba(getContactColor(model.author), Theme.highlightBackgroundOpacity)
     }
 
     Label {
