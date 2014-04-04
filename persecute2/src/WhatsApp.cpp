@@ -7,6 +7,7 @@
 #include <QDateTime>
 #include <QDesktopServices>
 #include <QImage>
+#include <QImageReader>
 #include <QTransform>
 #include <QGuiApplication>
 #include <QClipboard>
@@ -550,6 +551,23 @@ QString WhatsApp::rotateImage(const QString &path, int rotation)
     return QString();
 }
 
+QString WhatsApp::saveVoice(const QString &path)
+{
+    qDebug() << "Requested to save" << path << "to gallery";
+    if (!path.contains("/home/nemo/Music")) {
+        QString cutpath = path;
+        cutpath = cutpath.replace("file://", "");
+        QFile old(cutpath);
+        if (old.exists()) {
+            QString fname = cutpath.split("/").last();
+            QString destination = QString("/home/nemo/Music/%1").arg(fname);
+            old.copy(cutpath, destination);
+            return destination;
+        }
+    }
+    return path;
+}
+
 QString WhatsApp::saveImage(const QString &path)
 {
     qDebug() << "Requested to save" << path << "to gallery";
@@ -573,7 +591,7 @@ QString WhatsApp::saveImage(const QString &path)
             return name;
         }
     }
-    return QString();
+    return path;
 }
 
 void WhatsApp::openProfile(const QString &name, const QString &phone, const QString avatar)

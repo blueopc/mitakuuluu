@@ -162,6 +162,7 @@ public slots:
     void sendMedia(const QStringList &jids, const QString &path);
     void sendVCard(const QStringList &jids, const QString &name, const QString& data);
     QString rotateImage(const QString &path, int rotation);
+    QString saveVoice(const QString &path);
     QString saveImage(const QString &path);
     void openProfile(const QString &name, const QString &phone, const QString avatar = QString());
     void removeAccount();
