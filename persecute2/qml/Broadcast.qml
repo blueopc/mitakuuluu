@@ -11,6 +11,18 @@ Dialog {
         }
     }
 
+    property bool inStack: false
+
+    Connections {
+        target: pageStack
+        onCurrentPageChanged: {
+            var haveBroadcast = pageStack.find(function(xpage) {
+                return (xpage.objectName == "broadcast")
+            })
+            inStack = (haveBroadcast && haveBroadcast.objectName == "broadcast")
+        }
+    }
+
     onAccepted: {
         if (messageText.checked) {
             whatsapp.sendBroadcast(page.jids, textArea.text)
@@ -53,7 +65,7 @@ Dialog {
         messageMedia.checked = true
         mediaPath.text = path
         page.open()
-        if (pageStack.currentPage.objectName != "broadcast")
+        if (!inStack)
             page.open()
     }
 
@@ -61,7 +73,7 @@ Dialog {
         mediaRow.hideAll()
         messageVoice.checked = true
         mediaPath.text = path
-        if (pageStack.currentPage.objectName != "broadcast")
+        if (!inStack)
             page.open()
     }
 
@@ -73,7 +85,7 @@ Dialog {
         location.zoom = zoom
         location.googlemaps = googlemaps
         location.loadPreview()
-        if (pageStack.currentPage.objectName != "broadcast")
+        if (!inStack)
             page.open()
     }
 
@@ -82,7 +94,7 @@ Dialog {
         messageContact.checked = true
         mediaPath.text = name
         mediaPath.data = data
-        if (pageStack.currentPage.objectName != "broadcast")
+        if (!inStack)
             page.open()
     }
 
@@ -286,6 +298,7 @@ Dialog {
                         horizontalAlignment: Text.AlignHCenter
                         verticalAlignment: Text.AlignVCenter
                         anchors.fill: parent
+                        wrapMode: Text.Wrap
                     }
                 }
 
@@ -300,7 +313,7 @@ Dialog {
                 BusyIndicator {
                     anchors.centerIn: location
                     running: visible
-                    visible: location.status != Image.Ready
+                    visible: location.status == Image.Loading
                     size: BusyIndicatorSize.Large
                 }
             }
