@@ -16,13 +16,14 @@ Dialog {
 
     onAccepted: {
         console.log("accepting: " + recorder.path)
+        var savePath = whatsapp.saveVoice(recorder.path)
         if (broadcastMode) {
             //pageStack.pop(roster, PageStackAction.Immediate)
-            roster.sendAudioNote(recorder.path)
+            roster.sendAudioNote(savePath)
         }
         else {
             //pageStack.pop(conversation, PageStackAction.Immediate)
-            conversation.sendAudioNote(recorder.path)
+            conversation.sendAudioNote(savePath)
         }
         destroyComponents()
     }
