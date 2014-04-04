@@ -143,8 +143,11 @@ Page {
                         else if (currentIndex == 1) {
                             conversationTheme = "/usr/share/harbour-mitakuuluu/qml/BubbleDelegate.qml"
                         }
+                        else if (currentIndex == 2) {
+                            conversationTheme = "/usr/share/harbour-mitakuuluu/qml/ModernDelegate.qml"
+                        }
                         else {
-                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex - 2]
+                            conversationTheme = "/home/nemo/.whatsapp/delegates/" + conversationDelegates[currentIndex - 3]
                         }
                         conversationIndex = parseInt(currentIndex)
                     }
@@ -153,15 +156,6 @@ Page {
                     currentIndex = settings.value("conversationIndex", parseInt(0))
                 }
             }
-
-            /*TextSwitch {
-                checked: asynchronousDelegate
-                text: qsTr("Load delegates asynchronously")
-                onClicked: {
-                    asynchronousDelegate = checked
-                    settings.setValue("asynchronousDelegate", checked)
-                }
-            }*/
 
             TextSwitch {
                 checked: notifyActive

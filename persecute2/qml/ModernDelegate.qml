@@ -1,10 +1,14 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
+import Sailfish.Silica.private 1.0
 import QtMultimedia 5.0
 import "Utilities.js" as Utilities
 
-Item {
+MouseArea {
     id: item
+
+    property bool down: pressed && containsMouse
+
     width: parent.width
     height: content.height + Theme.paddingLarge + (menuOpen ? (_menuItem.height + Theme.paddingMedium) : 0) + (urlmenuOpen ? (_urlmenuItem.height + Theme.paddingMedium) : 0)
     ListView.onRemove: animateRemoval(item)
@@ -23,12 +27,17 @@ Item {
     property bool urlmenuOpen: _urlmenuItem != null && _urlmenuItem._open
 
     property string myJid: roster.myJid
-    property variant messageColor: mArea.pressed ? highlightColor : contactColor
+    property variant messageColor: down ? highlightColor : contactColor
     property variant contactColor: Theme.rgba(getContactColor(model.author), Theme.highlightBackgroundOpacity)
     property variant highlightColor: Theme.rgba(Theme.highlightBackgroundColor, Theme.highlightBackgroundOpacity)
 
     property int maxWidth: parent.width - Theme.itemSizeLarge
     onMaxWidthChanged: changeMessageWidth()
+
+    DragFilter.screenMargin: Theme.paddingLarge
+    onPressed: item.DragFilter.begin(mouse.x, mouse.y)
+    onCanceled: item.DragFilter.end()
+    onPreventStealingChanged: if (preventStealing) item.DragFilter.end()
 
     Component.onCompleted: {
         if (model.msgtype == 3) {
@@ -55,6 +64,9 @@ Item {
                 locationLoader.active = true
             }
         }
+        else if (model.msgtype == 2) {
+            textLoader.active = true
+        }
     }
 
     Component.onDestruction: {
@@ -69,6 +81,27 @@ Item {
 
         // This item must not be removed if reused in an ItemPool
         __silica_item_removed = false
+    }
+
+    onClicked: {
+        if (model.msgtype == 2) {
+            var links = message.text.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/gi);
+            if (links && links.length > 0) {
+                var urlmodel = []
+                links.forEach(function(link) {
+                    var groups = link.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/i);
+                    var urlink = [groups[2], groups[1]]
+                    urlmodel[urlmodel.length] = urlink
+                });
+                showUrlMenu({"model" : urlmodel})
+            }
+        }
+        else {
+            openMedia()
+        }
+    }
+    onPressAndHold: {
+        showMenu()
     }
 
     onMenuOpenChanged: {
@@ -198,6 +231,22 @@ Item {
         }
     }
 
+    function locationPreview(w, h, lat, lon, z) {
+        return "http://m.nok.it/?ctr="
+                + lat
+                + ","
+                + lon
+                + "&w=" + w
+                + "&h=" + h
+                + "&poix0="
+                + lat
+                + ","
+                + lon
+                + ";red;white;20;.;"
+                + "&z=" + z
+                + "&nord&f=0&poithm=1&poilbl=0"
+    }
+
     Item {
         id: arrowBg
         clip: true
@@ -241,38 +290,13 @@ Item {
         color: messageColor
     }
 
-    MouseArea {
-        id: mArea
-        anchors.fill: parent
-        onClicked: {
-            if (model.msgtype == 2) {
-                var links = message.text.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/gi);
-                if (links && links.length > 0) {
-                    var urlmodel = []
-                    links.forEach(function(link) {
-                        var groups = link.match(/<a.*?href=\"(.*?)\">(.*?)<\/a>/i);
-                        var urlink = [groups[2], groups[1]]
-                        urlmodel[urlmodel.length] = urlink
-                    });
-                    showUrlMenu({"model" : urlmodel})
-                }
-            }
-            else if (model.localurl.length > 0) {
-                openMedia()
-            }
-        }
-        onPressAndHold: {
-            showMenu()
-        }
-    }
-
     Column {
         id: content
         anchors {
             top: parent.top
             margins: Theme.paddingLarge
         }
-        property int textWidth: Math.max(message.paintedWidth, info.width)
+        property int textWidth: Math.max(textLoader.width, info.width)
         property int mediaWidth: imageLoader.width || playerLoader.width || videoLoader.width || contactLoader.width || locationLoader.width
         width: Math.max(textWidth, mediaWidth)
         Component.onCompleted: {
@@ -310,15 +334,10 @@ Item {
             active: false
             sourceComponent: locationComponent
         }
-        Label {
-            id: message
-            visible: model.msgtype == 2
-            text: visible ? Utilities.linkify(Utilities.emojify(model.message, emojiPath), Theme.highlightColor) : ""
-            textFormat: Text.RichText
-            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-            font.pixelSize: fontSize
-            color: mArea.pressed ? Theme.highlightColor : Theme.primaryColor
-            onPaintedWidthChanged: changeMessageWidth()
+        Loader {
+            id: textLoader
+            active: false
+            sourceComponent: textComponent
         }
         Row {
             id: info
@@ -330,7 +349,7 @@ Item {
                 id: time
                 text: timestampToTime(model.timestamp)
                 font.pixelSize: fontSize - 4
-                color: mArea.pressed ? Theme.secondaryHighlightColor : Theme.secondaryColor
+                color: down ? Theme.secondaryHighlightColor : Theme.secondaryColor
             }
 
             Loader {
@@ -370,6 +389,20 @@ Item {
                 color: "#8000ff00"
                 visible: model.msgstatus == 5
             }
+        }
+    }
+
+    Component {
+        id: textComponent
+
+        Label {
+            id: message
+            text: visible ? Utilities.linkify(Utilities.emojify(model.message, emojiPath), Theme.highlightColor) : ""
+            textFormat: Text.RichText
+            wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+            font.pixelSize: fontSize
+            color: down ? Theme.highlightColor : Theme.primaryColor
+            onPaintedWidthChanged: changeMessageWidth()
         }
     }
 
@@ -490,17 +523,14 @@ Item {
 
     Component {
         id: contactComponent
-        Item {
+        Row {
             id: contactItem
             height: Theme.itemSizeMedium
-            width: contactImage.width + contactName.paintedWidth + Theme.paddingLarge
+            spacing: Theme.paddingLarge
 
             Image {
                 id: contactImage
-                anchors {
-                    top: parent.top
-                    left: parent.left
-                }
+                anchors.verticalCenter: parent.verticalCenter
                 width: Theme.itemSizeMedium
                 height: Theme.itemSizeMedium
                 source: "image://theme/icon-m-service-generic"
@@ -509,13 +539,7 @@ Item {
 
             Label {
                 id: contactName
-                anchors {
-                    verticalCenter: contactImage.verticalCenter
-                    right: parent.right
-                    rightMargin: Theme.paddingMedium
-                    left: contactImage.right
-                    leftMargin: Theme.paddingMedium
-                }
+                anchors.verticalCenter: parent.verticalCenter
                 wrapMode: Text.NoWrap
                 text: model.medianame
                 font.pixelSize: fontSize
@@ -525,9 +549,8 @@ Item {
 
     Component {
         id: playerComponent
-        Item {
+        Row {
             id: playerItem
-            width: maxWidth
             height: visible ? Theme.itemSizeMedium : 0
             property string source: whatsapp.checkIfExists(model.localurl)
             //onSourceChanged: player.source = whatsapp.checkIfExists(source)
@@ -546,10 +569,7 @@ Item {
 
             IconButton {
                 id: playButton
-                anchors {
-                    verticalCenter: parent.verticalCenter
-                    left: parent.left
-                }
+                anchors.verticalCenter: parent.verticalCenter
                 icon.source: source.length > 0 ? (player.playbackState == Audio.PlayingState ? "image://theme/icon-m-pause"
                                                                                              : "image://theme/icon-m-play")
                                                : ((model.mediaprogress > 0 && model.mediaprogress < 100) ? "image://theme/icon-m-clear" : "image://theme/icon-m-down")
@@ -570,21 +590,18 @@ Item {
                             downloadMedia()
                     }
                 }
-            }
 
-            ProgressCircle {
-                anchors.fill: playButton
-                visible: model.mediaprogress > 0 && model.mediaprogress < 100
-                value: model.mediaprogress
+                ProgressCircle {
+                    anchors.fill: parent
+                    visible: model.mediaprogress > 0 && model.mediaprogress < 100
+                    value: model.mediaprogress
+                }
             }
 
             Slider {
                 id: playerSeek
-                anchors {
-                    left: playButton.right
-                    right: parent.right
-                    verticalCenter: parent.verticalCenter
-                }
+                anchors.verticalCenter: parent.verticalCenter
+                width: maxWidth - playButton.width
                 minimumValue: 0
                 maximumValue: 100
                 stepSize: 1
@@ -597,45 +614,21 @@ Item {
 
     Component {
         id: locationComponent
-        Item {
-            id: locationItem
-            width: prevWidth + mediaDesc.width + Theme.paddingLarge
-            height: prevHeight
-            property int prevWidth: (locprev.status == Image.Ready) ? locprev.width : Theme.itemSizeExtraLarge
-            property int prevHeight: (locprev.status == Image.Ready) ? locprev.height : Theme.itemSizeExtraLarge
-
-            Image {
-                id: locprev
-                anchors {
-                    left: parent.left
-                    top: parent.top
-                }
-                fillMode: Image.PreserveAspectFit
-                source: getMediaPreview(model)
-                sourceSize.width: maxWidth
-                asynchronous: true
-                cache: true
-                clip: true
-                smooth: true
-            }
+        Image {
+            id: locprev
+            anchors.verticalCenter: parent.verticalCenter
+            width: maxWidth
+            height: Theme.itemSizeExtraLarge
+            source: locationPreview(width, height, model.medialat, model.medialon, 14)
+            asynchronous: true
+            cache: true
+            smooth: true
 
             BusyIndicator {
                 anchors.centerIn: parent
                 size: BusyIndicatorSize.Medium
                 running: visible
                 visible: locprev.status == Image.Loading
-            }
-
-            Label {
-                id: mediaDesc
-                anchors {
-                    top: parent.top
-                    left: locprev.right
-                    leftMargin: Theme.paddingMedium
-                }
-                wrapMode: Text.NoWrap
-                text: model.medianame + "\n" + model.medialat + "\n" + model.medialon
-                font.pixelSize: fontSize - 4
             }
         }
     }
