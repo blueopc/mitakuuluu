@@ -660,7 +660,7 @@ MouseArea {
         ContextMenu {
             MenuItem {
                 text: qsTr("Copy")
-                enabled: conversationModel.getModelByMsgId(model.msgid).mediatype != 4
+                visible: conversationModel.getModelByMsgId(model.msgid).mediatype != 4
                 onClicked: {
                     conversationModel.copyToClipboard(model.msgid)
                     banner.notify(qsTr("Message copied to clipboard"))
