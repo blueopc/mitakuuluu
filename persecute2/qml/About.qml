@@ -38,9 +38,8 @@ Page {
             PageHeader {
                 title: "About Mitäkuuluu"
             }
-
             Label {
-                text: "v0.2-9"
+                text: "v0.2-10"
                 font.pixelSize: Theme.fontSizeMedium
                 width: parent.width
                 horizontalAlignment: Text.AlignHCenter
