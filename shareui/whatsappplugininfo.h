@@ -9,12 +9,14 @@ class WhatsappPluginInfo : public TransferPluginInfo
     Q_OBJECT
 public:
     WhatsappPluginInfo();
+    ~WhatsappPluginInfo();
     QList<TransferMethodInfo> info() const;
     void query();
     bool ready() const;
 
 private:
-    QList<TransferMethodInfo> infoList;
+    QList<TransferMethodInfo> m_infoList;
+    bool m_ready;
 
 };
 

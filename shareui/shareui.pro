@@ -1,6 +1,6 @@
 TEMPLATE = lib
 
-TARGET = mitakuuluushareplugin
+TARGET = $$qtLibraryTarget(mitakuuluushareplugin)
 target.path = /usr/lib/nemo-transferengine/plugins
 
 QT += dbus
@@ -17,6 +17,7 @@ SOURCES += \
     whatsappplugininfo.cpp \
     whatsappmediatransfer.cpp
 
-INSTALLS += target
+qml.files = shareui
+qml.path = /usr/share/harbour-mitakuuluu
 
-OTHER_FILES += transferplugin.json
+INSTALLS += target qml

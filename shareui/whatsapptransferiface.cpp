@@ -4,12 +4,22 @@
 
 #include <QtPlugin>
 
-QString WhatsappTransferIface::pluginId()
+WhatsappTransferIface::WhatsappTransferIface()
 {
-    return QLatin1String("Mitakuuluu");
+
 }
 
-bool WhatsappTransferIface::enabled()
+WhatsappTransferIface::~WhatsappTransferIface()
+{
+
+}
+
+QString WhatsappTransferIface::pluginId() const
+{
+    return QLatin1String("MitakuuluuSharePlugin");
+}
+
+bool WhatsappTransferIface::enabled() const
 {
     return true;
 }

@@ -2,6 +2,20 @@
 
 WhatsappPluginInfo::WhatsappPluginInfo()
 {
+}
+
+WhatsappPluginInfo::~WhatsappPluginInfo()
+{
+
+}
+
+QList<TransferMethodInfo> WhatsappPluginInfo::info() const
+{
+    return m_infoList;
+}
+
+void WhatsappPluginInfo::query()
+{
     TransferMethodInfo info;
 
     QStringList capabilities;
@@ -11,28 +25,17 @@ WhatsappPluginInfo::WhatsappPluginInfo()
                  << QLatin1String("text/vcard");
 
     info.displayName     = QLatin1String("Mitakuuluu");
-    info.userName        = "";
-    info.accountId       = -1;
-    info.methodId        = QLatin1String("whatsapp-share-ui-plugin");
+    info.methodId        = QLatin1String("MitakuuluuSharePlugin");
     info.shareUIPath     = QLatin1String("/usr/share/harbour-mitakuuluu/shareui/ShareUI.qml");
     info.capabilitities  = capabilities;
-    infoList.clear();
-    infoList << info;
+    m_infoList.clear();
+    m_infoList << info;
 
-    Q_EMIT infoReady();
-}
-
-QList<TransferMethodInfo> WhatsappPluginInfo::info() const
-{
-    return infoList;
-}
-
-void WhatsappPluginInfo::query()
-{
+    m_ready = true;
     Q_EMIT infoReady();
 }
 
 bool WhatsappPluginInfo::ready() const
 {
-    return true;
+    return m_ready;
 }
